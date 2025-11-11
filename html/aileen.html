@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" class="surf">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/aileen_style.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <title>An AI decision support tool</title>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <nav>
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul>
+                    <li><a href="../index.html#header">Home</a></li>
+                    <li><a href="../index.html#project">Projects</a></li>
+                    <li><a href="../index.html#about">About me</a></li>
+                    <li><a href="../index.html#contact">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <section>
+        <div class="info">
+            <div>
+                <h1>An AI for mammography</h1>
+                <p><span>Type:</span> Group of two</p>
+                <p><span>When:</span> 2024</p>
+                <p><span>Duration:</span> 20 weeks</p>
+                <p><span>Project scope:</span> Master's thesis on AI and mammography in collaboration with the start-up
+                    company Aileen Health.</p>
+                <p>The project aimed to explore key factors for building trust and motivation among radiologists to integrate AI within the 
+                    existing mammography workflow and, based on these findings, develop a design proposal for Aileen Health. </p>
+            </div>
+            <div class="aileen"><img src="../aileen/computer.svg"></div>
+        </div>
+    </section>
+
+    <div class="aileen_problem">
+        <div class="problem"><img src="../aileen_two/ms.jpeg"></div>
+        <div>
+            <h2>The problem</h2>
+            <p>About one-third of breast cancer tumors reach a size where they are noticeable to women, often signifying
+                advanced stages of the disease and complicating treatment. This could be due to the tumor being either
+                rapidly growing or not detected early enough by medical professionals. The AI startup Aileen Health uses
+                generative AI to simulate cancer by creating future medical images that predict when and where breast cancer might occur.
+                This approach aims to make patients more aware of their risk, help radiologists avoid invasive procedures,
+                and help pharma identify treatment responses for patients.
+            </p>
+        </div>
+    </div>
+    <div class="purpose">
+        <div>
+            <h2>Purpose of the Master's thesis</h2>
+            <p>To ensure successful AI implementation, radiologists must trust and adapt to the new system. This master's thesis 
+                investigated how radiologists interact with AI, focusing on optimizing the presentation of AI-generated visualizations 
+                to build trust, promote adoption, and facilitate effective usage. The thesis aimed to answer the following 
+                research question: What are the key factors for building trust and integrating AI-based predictions into the current 
+                mammography screening workflow to support radiologists?</p>
+        </div>
+        <div class="research_question">
+            <p class="headline_question">Research question</p>
+            <p class="question">
+                What are the key factors for building trust and integrating AI-based predictions into the 
+                current mammography screening workflow to support radiologists?
+            </p>
+        </div>
+    </div>
+
+
+    <div class="process">
+        <div class="thinking">
+            <img src="../aileen/designthiking.svg">
+        </div>
+        <div>
+            <h2>The process</h2>
+            <p>Our process began with an extensive literature review to gain a deeper understanding
+                of breast cancer and the current use of AI in this field. We used an iterative design
+                process with five phases: empathize, define, ideate, prototype, and test. Furthermore, we conducted interviews and 
+                observations with breast radiologists. These insights led to the development of requirements and guidelines for our 
+                final design solution.</p>
+        </div>
+    </div>
+
+    <div class="result_text">
+        <div>
+            <h2>The result</h2>
+            <p>
+                The design proposal includes three main components: the Future Multiview, the Future AI Overview, and the Landing Page. 
+                Together, these elements aim to build radiologists' trust in the AI system and encourage its integration into their 
+                workflow to improve patient care.
+            </p>
+        </div>
+        <div class="tre">
+            <p>
+                3 parts
+            </p>
+        </div>
+    </div>
+
+    <div class="result_multiview">
+        <h2>1. Future Multiview</h2>
+        <p>
+            This file directs radiologists to suspicious areas and provides insight into the likelihood of growth. It
+            includes several
+            images, capturing both the right and left breast in two different views.
+        </p>
+    </div>
+    <div class="multi">
+        <div class="result_1">
+            <img src="../aileen_two/result.svg">
+            <h2>After</h2>
+        </div>
+        <div class="result_1">
+            <img src="../aileen_two/before.svg">
+            <h2>Before</h2>
+        </div>
+    </div>
+
+    <div class="result_overview">
+        <h2>2. Future AI Overview</h2>
+        <p>
+            This file clarifies the rationale behind the AI's assessment. After reviewing the Future Multiview, 
+            users should proceed to this overview if they desire more comprehensive insights into the suspicious area and the 
+            AI's assessment. 
+        </p>
+    </div>
+    <div class="result_2">
+        <div class="result_1">
+            <img src="../aileen/overview.svg">
+            <h2>After</h2>
+        </div>
+        <div class="result_1">
+            <img src="../aileen/overview_before.svg">
+            <h2>Before</h2>
+        </div>
+    </div>
+
+
+    <div class="result_landing">
+        <h2>3. Landing Page</h2>
+        <p>
+            The landing page is a website intended to provide radiologists with the necessary information before they undergo 
+            training to learn the system.
+        </p>
+    </div>
+
+    <div class="result_3">
+        <div class="gif"><img id="animated-gif" src="../aileen/aileen_gif.gif" alt="GIF">
+        </div>
+        <div class="landing">
+            <img src="../aileen/landing.png">
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const navLinks = document.querySelector('nav ul');
+            const galleryItems = document.querySelectorAll('.gallery__item');
+
+            // Add click event for hamburger menu
+            hamburgerMenu.addEventListener('click', function () {
+                hamburgerMenu.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Add click event for gallery items
+            galleryItems.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    // Toggle a class to change the background color on tap/click
+                    this.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

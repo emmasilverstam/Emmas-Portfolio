@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="surf">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/prom_style.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <title>Prom</title>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <nav>
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul>
+                    <li><a href="../index.html#header">Home</a></li>
+                    <li><a href="../index.html#project">Projects</a></li>
+                    <li><a href="../index.html#about">About me</a></li>
+                    <li><a href="../index.html#contact">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <section>
+        <div class="info">
+            <div>
+                <h1>A prom</h1>
+                <p><span>Type:</span> Individual work</p>
+                <p><span>When:</span> 2022</p>
+                <p><span>Duration:</span> Two weeks</p>
+                <p><span>Project scope:</span> Design work for the ball committee</p>
+                <p>The Industrial Design Engineering program celebrated 20 years with
+                    an anniversary ball. I was responsible for the visual identity of the event.</p>
+            </div>
+            <div class="prom"><img src="../images/logga_siffra.png"></div>
+        </div>
+    </section>
+    <div class="post">
+        <div>
+            <h2>Posters</h2>
+            <p>Two posters were created to promote the event, both designed in the section's 
+                signature color, Bordeaux NCS S4050-R10B. </p>
+        </div>
+        <div class="poster" ><img src="../images/poster1.png"></div>
+        <div class="poster"><img src="../images/poster2.png"></div>
+    </div>
+    <div class="pictures">
+        <div class="poster"><img src="../images/picture_prom1.jpg"></div>
+        <div class="poster"><img src="../images/picture_prom2.jpg"></div>
+    </div>
+    <section class="background">
+        <div class="logo-container">
+            <div class="logo">
+                <div class="logo_old"><img src="../images/logga_orginal.png">
+                    <p class="bildtext2"><span class="produkt">Original logo</span></p>
+                </div>
+                <div class="logo_new">
+                    <div class="line"></div>
+                    <div class="text-beside-line">Little My from the Moomin series is
+                        the patron saint of the section.</div>
+                    <img src="../images/bal_logga.png">
+                    <p class="bildtext"><span class="produkt">Redesigned logo</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="songhafte">
+            <h2>Song booklet</h2>
+            <p>At the ball, there were also song booklets that included challenges such as crossword 
+                puzzles and travel information for the journey home.
+            </p>
+        </div>
+        <div class="song">
+            <div class="song_1"><img src="../images/song_1.png"></div>
+            <div class="song_1"><img src="../images/song_2.png"></div>
+            <div class="song_1"><img src="../images/song_3.png"></div>
+            <div class="song_1"><img src="../images/song_4.png"></div>
+        </div>
+    </section>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const hamburgerMenu = document.querySelector('.hamburger-menu');
+          const navLinks = document.querySelector('nav ul');
+          const galleryItems = document.querySelectorAll('.gallery__item');
+      
+          // Add click event for hamburger menu
+          hamburgerMenu.addEventListener('click', function () {
+            hamburgerMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+          });
+      
+          // Add click event for gallery items
+          galleryItems.forEach(function (item) {
+            item.addEventListener('click', function () {
+              // Toggle a class to change the background color on tap/click
+              this.classList.toggle('active');
+            });
+          });
+        });
+      </script>
+</body>
+
+</html>
