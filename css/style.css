@@ -1738,20 +1738,20 @@ main.row {
     }
       .img7{
         width: 90%;         /* gör bilden mindre */
-        margin-top: 1rem;   /* flytta ned/upp */
+        margin-top: 3rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: auto;
         display: block;
     }
     .img8{
-        width: 115%;         /* gör bilden mindre */
+        width: 120%;         /* gör bilden mindre */
         margin-top: 3rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
-        margin-right: 3rem;
+        margin-right: 4rem;
         display: block;
     }
     .img9{
-        width: 75%;         /* gör bilden mindre */
+        width: 78%;         /* gör bilden mindre */
         margin-top: 4rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: auto;
