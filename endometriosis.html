@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="surf">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/endometriosis_style.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <title>EnviroMate</title>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <nav>
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul>
+                    <li><a href="../index.html#header">Home</a></li>
+                    <li><a href="../index.html#project">Projects</a></li>
+                    <li><a href="../index.html#about">About me</a></li>
+                    <li><a href="../index.html#contact">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <section>
+        <div class="info">
+            <div>
+                <h1>An AI tool</h1>
+                <p><span>Type:</span> Group work</p>
+                <p><span>When:</span> 2023</p>
+                <p><span>Duration:</span> Ten weeks, half time</p>
+                <p><span>Project scope:</span>  Creation of an AI tool for researchers</p>
+                <p>This project investigates 
+                    the role of researchers in addressing climate change and explores the potential of Artificial 
+                    Intelligence (AI) to improve how organizations and researchers operate in this context. The aim was 
+                    to develop a service that becomes a researcher's ultimate companion, offering support in reducing the 
+                    time spent writing reports and communicating research findings. Like a best friend, this service understands 
+                    that researchers want to focus on conducting groundbreaking research rather than getting stuck in 
+                    communication issues.</p>
+            </div>
+            <div class="mate"><img src="../AI/mate.png"></div>
+        </div>
+    </section>
+
+    <div class="about">
+        <div class="box">
+            <h2>EnviroMate</h2>
+            <p>An online tool based on an AI model that enables
+                researchers to input data and swiftly generate content for
+                publication.</p>
+        </div>
+        <div class="box">
+            <h2>What is the idea?</h2>
+            <p>To save time and help climate researchers
+                communicate their findings. </p>
+        </div>
+        <div class="box">
+            <h2>What is its function?</h2>
+            <p>To improve workflow times and researcher's
+                communicating capacities with different types of audiences
+                and within different contexts.</p>
+        </div>
+    </div>
+
+    <div class="overview">
+        <div>
+            <h2>An overview of the AI</h2>
+            <p>Several alternative solutions were studied to address the possibility 
+                of using AI to help the researcher communicate their findings in different formats. 
+                Through careful evaluation, six key features were chosen to empower researchers to 
+                effectively communicate their results to a broader audience. To further clarify the purpose 
+                and functionality of the system, the identified features were categorized into three 
+                different categories: Writing Assistant, Visualization, and Presentation. These categories 
+                contained different features that aimed to assist researchers in various stages of converting their discoveries.</p>
+        </div>
+        <div class="AI"><img src="../AI/overview.png"></div>
+    </div>
+
+    <div class="report">
+        <div>
+            <h2>Writing Assistant</h2>
+            <p>In this project, developing an AI writing assistance required implementing a pre-trained 
+                model called Bidirectional Encoder Representations from Transformers (BERT). In addition, the model was 
+                fine-tuned using datasets to optimize its performance and accuracy. </p>
+        </div>
+        <div class="AI_report"><img src="../AI/report_ai.png"></div>
+    </div>
+
+    <div>
+        <div class="report_gif"><img src="../AI/report.gif"></div>
+    </div>
+
+    <div class="vis">
+        <div>
+            <h2>Visualization</h2>
+            <p>The system also offered a visualization tool, which assisted researchers in communicating their 
+                information more effectively. To make these features feasible, a collaboration was formed with the 
+                company Flourish to avoid the substantial costs associated with training and developing models for 
+                diverse visualizations. Moreover, EnviroMate offered a convenient interface and 
+                acted as a reliable guide by suggesting the most suitable visualizations for each occasion. By analyzing the 
+                data and the selected target group, EnviroMate provided valuable recommendations tailored to specific needs. 
+                A rule-based approach enabled the recommendations using specific guidelines and criteria to determine the 
+                appropriate visualizations for different scenarios.</p>
+        </div>
+        <div class="AI_vis"><img src="../AI/flourish_ai.png"></div>
+    </div>
+
+    <div>
+        <div class="report_gif"><img src="../AI/flourish.gif"></div>
+    </div>
+
+    <div class="present">
+        <div>
+            <h2>Presentation</h2>
+            <p>EnviroMate also provided a feature for generating scripts for oral speeches and presentation slides. However, 
+                since no pre-existing datasets contained scripts and related reports, we needed to create the sets from scratch.</p>
+        </div>
+        <div class="AI_vis"><img src="../AI/presentation.png"></div>
+    </div>
+
+    <div>
+        <div class="report_gif"><img src="../AI/ppoint.gif"></div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const hamburgerMenu = document.querySelector('.hamburger-menu');
+          const navLinks = document.querySelector('nav ul');
+          const galleryItems = document.querySelectorAll('.gallery__item');
+      
+          // Add click event for hamburger menu
+          hamburgerMenu.addEventListener('click', function () {
+            hamburgerMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+          });
+      
+          // Add click event for gallery items
+          galleryItems.forEach(function (item) {
+            item.addEventListener('click', function () {
+              // Toggle a class to change the background color on tap/click
+              this.classList.toggle('active');
+            });
+          });
+        });
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="surf">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/museum_style.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <title>Flower</title>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <nav>
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul>
+                    <li><a href="../index.html#header">Home</a></li>
+                    <li><a href="../index.html#project">Projects</a></li>
+                    <li><a href="../index.html#about">About me</a></li>
+                    <li><a href="../index.html#contact">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <section>
+        <div class="info">
+            <div>
+                <h1>A helmet</h1>
+                <p><span>Type:</span> Group work</p>
+                <p><span>When:</span> 2020</p>
+                <p><span>Duration:</span> Ten weeks, half time</p>
+                <p><span>Project scope:</span> School project</p>
+                <p>The purpose of the project was to design a helmet for the company Styr & Ställ. 
+                    The product had to match the company's design language and meet identified user requirements. 
+                    The primary objective was to design a helmet that appeals to a wide range of users, 
+                    as the most effective helmet is the one that is constantly used.</p>
+            </div>
+            <div class="bike"><img src="../helmet/bike.png" ></div>
+        </div>
+        <div class="step_1">
+            <div class="mood"><img src="../helmet/mood_helm.jpg" ></div>
+            <div><h2>Process</h2>
+                <p>A mood board was created to establish a shared understanding of the emotions the product 
+                    should evoke.</p></div>
+        </div>
+        <div class="sketch"><h2>Sketches</h2></div>
+        <div class="step_2">
+            <div class="sketches"><img src="../helmet/helmet1.png" class="helmet1"></div>
+            <div class="sketches"><img src="../helmet/helmet2.png" class="helmet2"></div>
+            <div class="sketches"><img src="../helmet/helmet3.png" class="helmet3"></div>
+        </div>
+
+
+        <div class="step_3">
+            <div ><img src="../helmet/helmet_result3.png" class="result_helm"></div>
+            <div class="result">
+                <h2>The result</h2>
+                <p>The curve of the bicycle frame inspires the stripes on the helmet, and the color 
+                    is chosen to match the bike's color. The soft curves were combined with numerous 
+                    ventilation holes to obtain a sporty appearance. The helmet has a hard outer shell 
+                    made of ABS plastic, which is lightweight, water resistant, and has a low production cost. 
+                    These properties were necessary for the helmet to withstand the many weather conditions in Gothenburg. 
+                    The helmet's inner shell consists of the shock-absorbing foam material EPP. The helmet contains no soft 
+                    sections to keep the surface clean and fresh.</p>
+            </div>
+        </div>
+
+        <div class="step_4">
+            <div><h2>A poster</h2>
+                <p>The aim of the poster was to provide a clear and engaging explanation of the products 
+                    and their connection to the existing Styr & Ställ system. The poster contains a bike 
+                    path mirroring the curve, drawing inspiration from the bike frame's shape. The color 
+                    palette was selected to align with Styr & Ställ's website, ensuring consistency with 
+                    the system's overall graphic profile for easy recognition and association.</p>
+            </div>
+            <div class="poster"><img src="../helmet/poster.png" class="postis" ></div>
+        </div>
+
+
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const hamburgerMenu = document.querySelector('.hamburger-menu');
+          const navLinks = document.querySelector('nav ul');
+          const galleryItems = document.querySelectorAll('.gallery__item');
+      
+          // Add click event for hamburger menu
+          hamburgerMenu.addEventListener('click', function () {
+            hamburgerMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+          });
+      
+          // Add click event for gallery items
+          galleryItems.forEach(function (item) {
+            item.addEventListener('click', function () {
+              // Toggle a class to change the background color on tap/click
+              this.classList.toggle('active');
+            });
+          });
+        });
+      </script>
+</body>
+
+</html>

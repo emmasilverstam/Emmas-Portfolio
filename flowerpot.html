@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="surf">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/flowerpot_style.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <title>A game</title>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <nav>
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul>
+                    <li><a href="../index.html#header">Home</a></li>
+                    <li><a href="../index.html#project">Projects</a></li>
+                    <li><a href="../index.html#about">About me</a></li>
+                    <li><a href="../index.html#contact">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <section>
+        <div class="info">
+            <div>
+                <h1>A game</h1>
+                <p><span>Type:</span> Group work</p>
+                <p><span>When:</span> 2023</p>
+                <p><span>Duration:</span> Ten weeks, half time</p>
+                <p><span>Project scope:</span>  Creation of a game in collaboration with Prison Island</p>
+                <p>This project explored the dynamics of teamwork and collaboration within interaction design
+                     and the entertainment company Prison Island. The aim was to develop a new game cell, 
+                     Twister with a twist, where teamwork and communication are essential. </p>
+            </div>
+            <div class="twister"><img src="../Twister/twisterroom.png"></div>
+        </div>
+    </section>
+
+    <div class="twister_prototype">
+        <div class="prototyp"><img src="../twister_two/bygg.png"></div>
+        <div>
+            <h2>The process</h2>
+            <p>The project started with an ideation session, mainly brainstorming
+                 and braindrawing, to generate many ideas within a limited timeframe. 
+                 After that, low-fidelity prototypes were made in different stages to develop 
+                 the final idea further. Finally, a high-fidelity prototype was made to visualize 
+                 the cell concept for Prison Island. The primary objective was to construct a visual representation 
+                 that could be presented to the intended users for evaluation and feedback. The high-fidelity prototype 
+                 was constructed using chipboards and joists. On the surface of the chipboard, 23 circles were marked 
+                 out and then painted in the original Twister colors: red, green, blue, and yellow. Six holes were 
+                 drilled around each circle, and behind each hole, an LED strip was positioned to illuminate based on an 
+                 Arduino code.</p>
+        </div>
+    </div>
+
+    <div class="twister_final">
+        <h2>The result</h2>
+            <p>The developed cell Twister with a twist is an innovative take on the classic Twister game. In contrast to the 
+                traditional competitive nature of Twister, this version promotes teamwork and collaboration among players to 
+                collect points. To succeed in this game, participants must operate as a team to reach maximum points. 
+                Communication is essential since team members must synchronize their movements, predict each other's actions, 
+                and provide clear instructions to ensure efficient gameplay.</p>
+    </div>
+
+    <div class="twister_proto_final">
+        <div class="prototyp"><img src="../Twister/final_proto.jpg"></div>
+        <div class="prototyp"><img src="../Twister/twisterposter.png"></div>
+    </div>
+
+    <div class="gif_twister">
+        <div class="twister_gif"><img src="../Twister/gif_twister.gif"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const hamburgerMenu = document.querySelector('.hamburger-menu');
+          const navLinks = document.querySelector('nav ul');
+          const galleryItems = document.querySelectorAll('.gallery__item');
+      
+          // Add click event for hamburger menu
+          hamburgerMenu.addEventListener('click', function () {
+            hamburgerMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+          });
+      
+          // Add click event for gallery items
+          galleryItems.forEach(function (item) {
+            item.addEventListener('click', function () {
+              // Toggle a class to change the background color on tap/click
+              this.classList.toggle('active');
+            });
+          });
+        });
+      </script>
+</body>
+
+</html>

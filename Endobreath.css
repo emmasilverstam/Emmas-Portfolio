@@ -1,0 +1,1171 @@
+@import url("https://use.typekit.net/ymm5trk.css");
+
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: "futura-pt", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.2rem;
+    color: #3f2e26;
+    background-color: #ffffff;
+}
+
+h1 {
+    font-size: 5rem;
+    color: #3f2e26;
+    font-weight: 300;
+    width: 31rem;
+    line-height: 1em;
+    margin-top: 7rem;
+    margin-bottom: 3rem;
+}
+
+
+h2 {
+    font-size: 1.7rem;
+    color: #3f2e26;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+p {
+    width: 31rem;
+}
+
+a {
+    color: #3f2e26;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+
+/* ===== NAV (desktop) ===== */
+nav {
+    max-width: 72rem;
+    margin-left: 70%;
+    margin-top: 2rem;
+    position: relative;   /* gör att z-index fungerar */
+    z-index: 1000;        /* hög siffra så den ligger över allt annat */
+
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav ul span {
+    color: #3f2e26;
+}
+
+nav a {
+    color: #3f2e26;
+    margin: 0.5rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: #3f2e26;
+    text-decoration-thickness: 0.2rem;
+
+}
+
+/* ===== INTRO ===== */
+.info {
+    display: grid;
+    grid-template-columns: repeat(2, 36%);
+    position: center;
+    justify-content: center;
+    column-gap: 3%;
+    row-gap: 5rem;
+    margin-top: -2rem;
+    margin-bottom: -5rem;
+}
+
+.description {
+    font-family: 700;
+}
+
+p span {
+    font-weight: 700;
+    color: #3f2e26;
+}
+
+.pendel img {
+    width: 130%;
+    margin-left: 2.5rem;
+    margin-top: -3rem;
+}
+
+/* ===== ALTERNATING SECTIONS ===== */
+.step_1 {
+    display: grid;
+    grid-template-columns: repeat(2, 35%);
+    grid-template-rows: repeat(1, 65%);
+    position: center;
+    justify-content: center;
+    column-gap: 5%;
+    row-gap: 5rem;
+    margin-bottom: -1rem;
+    margin-top: 10rem;
+}
+
+.step_1 h2{
+    margin-top: -4rem;
+}
+
+.mood img {
+    width: 100%;
+    margin-top: -4rem;
+}
+/* Startläge: lite utanför och osynlig (styrt av JS, ingen transition) */
+#moodboard-section .mood img {
+  transform: translateX(-160px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Startläge för höger-in-animationen (spegelvänd mot första blocket) */
+#moodboard-right-section .mood img {
+  transform: translateX(160px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+/* --- Scroll-in animation för bilder --- */
+
+/* Vänster-in */
+#moodboard-section-1 .mood img,
+#moodboard-section-3 .mood img,
+#moodboard-section-5 .mood img {
+  transform: translateX(-160px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Höger-in */
+#moodboard-section-2 .mood img,
+#moodboard-section-4 .mood img {
+  transform: translateX(160px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+
+
+/* ===== “THE PROCESS” STRIP ===== */
+.step_2 {
+  width: 100%;
+  background-color: #FFD6D6;
+  padding: 6rem 0 4rem 0;      /* extra luft under rubriken */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;            /* skapar avstånd från rubriken */
+}
+
+/* Bildsektionen */
+.step_2 .sketches {
+  width: 100%;
+  max-width: 1120px;
+  background: #FFD6D6;
+  overflow: hidden;
+}
+
+.step_2 .sketches img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* Rubriken "Sketches" */
+.sketch {
+  width: 75%;
+  max-width: 72rem;
+  margin: 7rem auto 0;
+}
+
+
+.sketch {
+    display: grid;
+    grid-template-columns: repeat(1, 75%);
+    position: center;
+    justify-content: center;
+    column-gap: 5%;
+    margin-top: 12rem;
+    margin-bottom: -5rem;
+    margin-left: 3rem;
+}
+
+.sketch p {
+    margin-top: 0rem;
+}
+
+/* ===== Pink 3-up ===== */
+.pink-section {
+  width: 100%;
+  background-color: #FFD6D6;
+  padding: 3.5rem 0 4rem;
+  margin-top: 2rem;
+}
+
+.pink-wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.pink-section h2 {
+  color: #3f2e26;
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin: 0 0 1rem 0;
+}
+
+/* Kort text under rubriken */
+.pink-intro {
+  color: #3f2e26;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 0 2rem 0;
+}
+
+.pink-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* gör varje cell lika hög och centrerar bilden */
+.pink-grid figure {
+  margin: 0;
+  height: 420px;                 /* desktophöjd – justera vid behov */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFD6D6;           /* samma rosa – “letterbox” smälter in */
+  overflow: hidden;              /* snygga kanter om bilden är större */
+  border-radius: 6px;
+}
+
+/* visa hela bilden */
+.pink-grid img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;                   /* behåll proportioner */
+  height: auto;
+  object-fit: contain;           /* ingen beskärning */
+  display: block;
+}
+
+/* Responsivt: 2 i rad på tablet, 1 på mobil + lägre höjd */
+@media (max-width: 1050px) {
+  .pink-grid { grid-template-columns: repeat(2, 1fr); }
+  .pink-grid figure { height: 360px; }
+}
+@media (max-width: 600px) {
+  .pink-grid { grid-template-columns: 1fr; }
+  .pink-grid figure { height: 320px; }
+}
+/* --- Animerad uppdukning för rosa blocket --- */
+.pink-grid figure {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* När sektionen är i vy: visa alla bilder */
+.pink-grid.in-view figure {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger-delay för varje bild */
+.pink-grid.in-view figure:nth-child(1) { transition-delay: 0.1s; }
+.pink-grid.in-view figure:nth-child(2) { transition-delay: 0.3s; }
+.pink-grid.in-view figure:nth-child(3) { transition-delay: 0.5s; }
+
+
+/* =========================
+   RESULT GALLERY (scoped)
+   ========================= */
+#result-gallery { width: 100%; }
+
+#result-gallery .rg-wrap{
+  width: min(1000px, 92%);
+  margin: 0 auto;
+  padding-inline: 0.5rem;
+}
+
+#result-gallery .rg-title{
+margin-top: 5rem;
+  color:#3f2e26;
+  font-weight:700;
+  font-size:1.7rem;
+  margin-left: -3rem;
+
+}
+
+#result-gallery .rg-intro{
+  color:#3f2e26;
+  font-size:1.1rem;
+  margin: 0 0 1.25rem;
+  margin-left: -3rem;
+}
+
+/* Pink viewport: fixed height but responsive; centers content both ways */
+#result-gallery .rg-viewport{
+  position: relative;
+  width: 100%;
+  background:#FFD6D6;
+  height: clamp(550px, 58vh, 560px);  /* adjust once if you want */
+  display: grid;
+  place-items: center;               /* perfect centering */
+  overflow: hidden;
+}
+
+/* Slides all sit in the same centered spot, we fade between them */
+#result-gallery .rg-slide{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;            /* only the active one should interact */
+}
+
+#result-gallery .rg-slide[aria-hidden="false"]{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#result-gallery .rg-slide img{
+  /* Make sure the whole image is visible and centered */
+  max-width: min(38%, 600px);
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;   /* no cropping */
+  display: block;
+}
+
+/* Controls */
+#result-gallery .rg-btn{
+  position: absolute;
+  margin-left: 15rem;
+  margin-right: 15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: #3f2e26;
+  font-size: 4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: .25rem .5rem;
+  transition: opacity .2s ease;
+  opacity: .9;
+}
+
+#result-gallery .rg-btn:hover { opacity: 1; }
+#result-gallery .rg-prev{ left: 16px; }
+#result-gallery .rg-next{ right: 16px; }
+
+@media (max-width: 700px){
+  #result-gallery .rg-btn{ font-size: 1.9rem; }
+  #result-gallery .rg-viewport{ height: clamp(240px, 48vh, 440px); }
+}
+
+
+
+
+
+/* ===== THE RESULT (video/text) ===== */
+.pink-video-split {
+  width: 100%;
+  background-color: #FFD6D6;
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  align-items: center;
+  overflow: hidden;
+  height: 500px; /* öka höjden lite för bättre proportion */
+  position: relative;
+  margin-top: 5rem;
+}
+
+/* Texten till vänster */
+.pink-video-split .text-side {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: 3rem;
+  margin-top: -8rem;
+  padding: 0 1rem;
+  color: #3f2e26;
+  transform: translateY(-40px);
+  position: relative;
+  z-index: 1;
+}
+
+.pink-video-split .text-side h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.pink-video-split .text-side p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 36ch;
+}
+
+/* Videon till höger */
+.pink-video-split .video-side {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.pink-video-split .video-side video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* fyll hela blocket (beskär båda håll) */
+  object-position: center;  /* centrera motivet */
+  transform: scale(1.033);   /* zooma försiktigt för att ta bort svarta ränder */
+  transform-origin: center;
+  display: block;
+  border: none;
+  outline: none;
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;     /* se till att kontrollerna fungerar */
+}
+
+/* Responsivitet för video-blocket */
+@media (max-width: 1100px) {
+  .pink-video-split {
+    grid-template-columns: 0.9fr 1.4fr;
+    height: 520px;
+  }
+  .pink-video-split .video-side video {
+    transform: scale(1.01);
+  }
+}
+
+@media (max-width: 850px) {
+  .pink-video-split {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .pink-video-split .text-side {
+    max-width: 90%;
+    margin: 2rem auto 1rem;
+    transform: none;
+  }
+  .pink-video-split .video-side {
+    justify-content: center;
+  }
+  .pink-video-split .video-side video {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* visa hela videon på mobil */
+    transform: none;
+  }
+}
+
+
+
+
+/* ===== (unused pendel/arrow – original behålls) ===== */
+.pendel1 img {
+    width: 45%;
+    opacity: 1;
+    /* Initially visible */
+}
+
+.pendel2 img {
+    width: 45%;
+    opacity: 0;
+    /* Initially hidden */
+    animation: showPendulum2 1s forwards;
+    animation-delay: 1.5s;
+}
+
+.pendel3 img {
+    width: 90%;
+    opacity: 0;
+    /* Initially hidden */
+    animation: showPendulum3 1s forwards;
+    animation-delay: 2.5s;
+}
+
+/* Styling for pendulum images */
+.pendel1,
+.pendel2,
+.pendel3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Lägg till position relative */
+}
+
+.pendel1 img {
+    width: 45%;
+    opacity: 1;
+    /* Initialt synlig */
+}
+
+.pendel2 img {
+    width: 45%;
+    opacity: 0;
+    /* Initialt dold */
+    animation: showPendulum2 2s forwards;
+    animation-delay: 1.5s;
+}
+
+.pendel3 img {
+    width: 90%;
+    opacity: 0;
+    /* Initialt dold */
+    animation: showPendulum3 2s forwards;
+    animation-delay: 2.5s;
+}
+
+/* Pilstyling */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #3f2e26;
+    transition: opacity 0.5s;
+    opacity: 0;
+    /* Initialt dold */
+}
+
+.arrow::before {
+    content: "";
+    position: absolute;
+    top: -0.05rem;
+    right: 0.5rem;
+    width: 3rem;
+    /* Bredden på den vertikala linjen */
+    height: 0.1rem;
+    /* Höjden på linjen */
+    background-color: #004038
+}
+
+/* Pilar mellan pendelbilder */
+.pendel2 .arrow2 {
+    left: -1rem;
+    /* Justera pilens position vid behov */
+    opacity: 0;
+    /* Initialt dold */
+    animation: showArrow 5s forwards infinite;
+    /* Använd samma animation för alla pilar */
+    animation-delay: 1s;
+}
+
+.pendel3 .arrow3 {
+    left: -1rem;
+    /* Justera pilens position vid behov */
+    opacity: 0;
+    /* Initialt dold */
+    animation: showArrow 5s forwards infinite;
+    /* Använd samma animation för alla pilar */
+    animation-delay: 2s;
+}
+
+/* Pilen animation */
+@keyframes showArrow {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+/* Nyckelram för att gradvis visa pendel 2 */
+@keyframes showPendulum2 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Nyckelram för att gradvis visa pendel 3 */
+@keyframes showPendulum3 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes moveArrow {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* ===== Interface (original, även om ej används här) ===== */
+.interface {
+    display: grid;
+    grid-template-columns: repeat(2, 35%);
+    position: center;
+    justify-content: center;
+    column-gap: 5%;
+    row-gap: 5rem;
+    margin-bottom: -5rem;
+    margin-top: 7rem;
+}
+
+.sidor img {
+    width: 110%;
+    margin-top: 4rem;
+    margin-left: -3rem;
+}
+
+
+/* ===== THE PROTOTYPE text ===== */
+.result {
+    display: grid;
+    grid-template-columns: repeat(1, 75%);
+    position: center;
+    justify-content: center;
+    margin-top: 6rem;
+}
+
+.result h2 {
+    margin-bottom: 0rem;
+}
+
+/* ===== Bottom 3-up (images + video) ===== */
+.step_3 {
+  display: grid;
+  grid-template-columns: repeat(3, 23.666%);
+  justify-content: center;
+  column-gap: 2%;
+  margin-top: 0rem;
+  margin-bottom: 5rem;
+}
+
+/* Gör varje ruta lika stor */
+.step_3 .pic1,
+.step_3 .pic2,
+.step_3 .pic3 {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+/* Media fyller rutan */
+.step_3 img,
+.step_3 video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* --- POP-IN animation --- */
+.pop-in {
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    opacity 520ms ease,
+    transform 520ms cubic-bezier(.2,.9,.2,1.1);
+  will-change: opacity, transform;
+}
+
+.pop-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Respekt för “reduce motion” */
+@media (prefers-reduced-motion: reduce) {
+  .pop-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+.pic:nth-child(2) img {
+  transform: scale(1.15);   /* förstora något */
+}
+.pic:nth-child(6) img {
+  transform: scale(1.07);   /* förstora något */
+}
+.pic:nth-child(1) img {
+  transform: scale(1.03);   /* förstora något */
+}
+.pic:nth-child(3) img {
+  transform: scale(1.05);   /* förstora något */
+}
+
+
+
+/* när sektionen är i vy: animera korten */
+.step_3.in-view .pic { animation: fadeUp 600ms ease-out forwards; }
+
+/* vänster→höger-stagger */
+.step_3.in-view .pic:nth-child(1) { animation-delay: 0ms; }
+.step_3.in-view .pic:nth-child(2) { animation-delay: 120ms; }
+.step_3.in-view .pic:nth-child(3) { animation-delay: 240ms; }
+.step_3.in-view .pic:nth-child(4) { animation-delay: 360ms; }
+.step_3.in-view .pic:nth-child(5) { animation-delay: 480ms; }
+.step_3.in-view .pic:nth-child(6) { animation-delay: 600ms; }
+.step_3.in-view .pic:nth-child(7) { animation-delay: 720ms; }
+
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+/* Samma “containerbredd” som resten */
+#prototyping-gallery {
+  width: 75%;
+  max-width: 72rem;    /* samma tak som nav */
+  margin: 2rem auto 5rem;  /* centrera + luft ovan/under */
+}
+
+/* På mindre skärmar använder du 90% – matchar dina andra sektioner */
+@media (max-width: 1050px) {
+  #prototyping-gallery { width: 90%; }
+}
+@media (max-width: 800px) {
+  #prototyping-gallery { width: 90%; }
+}
+@media (max-width: 500px) {
+  #prototyping-gallery { width: 90%; }
+}
+
+/* ------ Hover-effekt utan konflikt med fadeUp ------ */
+
+/* Gör bara hover-effekten på enheter som faktiskt har hover */
+@media (hover: hover) {
+  /* mjuk övergång på själva bilden */
+  .step_3 .pic img {
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    transform-origin: center center;
+    will-change: transform;
+  }
+
+  /* när man hovrar över galleriet: alla bilder krymper lite */
+  .step_3:hover .pic img {
+    transform: scale(0.92);
+    opacity: 0.5;
+  }
+
+  /* den man hovrar: förstoras och blir fullt opak */
+  .step_3 .pic:hover img {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+    @media (hover: hover) {
+    .step_3:hover .pic:nth-child(2):not(:hover) img {
+        transform: scale(1.05);  /* större än övriga syskon */
+        opacity: 0.5;
+        filter: none;
+    }
+
+    /* När just 2 & 6 är hovrade: extra stor */
+    .step_3 .pic:nth-child(2):hover img {
+        transform: scale(1.30); /* din “extra”-effekt */
+    }
+    }
+        @media (hover: hover) {
+    .step_3:hover .pic:nth-child(6):not(:hover) img {
+        transform: scale(1.0);  /* större än övriga syskon */
+        opacity: 0.5;
+        filter: none;
+    }
+
+    /* När just 2 & 6 är hovrade: extra stor */
+    .step_3 .pic:nth-child(6):hover img {
+        transform: scale(1.22); /* din “extra”-effekt */
+    }
+    }
+}
+
+
+
+/* ===== “slutgiltig” block ===== */
+.slutgiltig {
+    display: grid;
+    grid-template-columns: repeat(1, 75%);
+    position: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* ===== Scroll image section (unused) ===== */
+.scroll-image-section {
+  width: 75%;
+  max-width: 72rem;
+  margin: 6rem auto;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Start: helt utanför fönstret till höger */
+.scroll-image-section img {
+  width: 100%;
+  height: auto;
+  transform: translateX(100vw); /* = hela viewportens bredd */
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* För användare som minskar rörelse */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-image-section img {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+
+
+/* ===== Miljö (unused) ===== */
+.miljo-section {
+  background-color: #683741; /* byt till valfri färg */
+  padding: 3rem 0;           /* skapar luft ovanför och under bilden */
+  display: flex;
+  justify-content: center;
+}
+
+/* Själva bilden */
+.miljo img {
+  width: 100%;
+  max-width: 72rem;
+  border-radius: 10px;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 2; /* se till att bilden ligger ovanpå bakgrunden */
+}
+#result-section .miljo img {
+  opacity: 0;
+  margin-top: 0rem;
+  transform: translateY(30px);
+  transition: opacity 3s ease, transform 3s ease;
+  will-change: opacity, transform;
+}
+
+#result-section.visible .miljo img {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #result-section .miljo img {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
+
+/* ===== Video overlay (unused markup) ===== */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background:#000;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Täckande lager som alltid är centrerat */
+.video-overlay {
+  position: absolute;
+  inset: 0;                 /* top/right/bottom/left: 0 */
+  display: grid;
+  place-items: center;      /* CENTRERAR innehållet perfekt */
+  pointer-events: none;     /* låt endast knappen ta klick */
+}
+
+/* Själva knappen */
+.play-btn {
+  pointer-events: auto;     /* gör knappen klickbar */
+  font-size: 3rem;
+  color: #fff;
+  background: rgba(0,0,0,.6);
+  border: 0;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.play-btn:hover { background: rgba(0,0,0,.8); }
+
+/* Dölj overlay när videon spelas */
+.video-wrapper.playing .video-overlay { display: none; }
+
+
+
+/* ===== Poster (unused) ===== */
+.poster {
+    display: grid;
+    grid-template-columns: repeat(2, 35%);
+    position: center;
+    justify-content: center;
+    column-gap: 5%;
+    row-gap: 5rem;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+}
+
+.post img {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* ===== Hamburger icon base ===== */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #353535;
+    margin: 6px 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE HOTFIXES — lägg LÄNGST NED i filen
+   (desktop lämnas orörd)
+   ========================================================= */
+
+* { box-sizing: border-box; }
+html, body { overflow-x: hidden; }
+
+/* 0) Gemensamma justeringar */
+#result-gallery .rg-title,
+#result-gallery .rg-intro { margin-left: 0 !important; }
+
+/* Låt alla grid-sektioner släppa fasta radhöjder på små skärmar */
+@media (max-width: 1050px){
+  .info,
+  .step_1,
+  .step_2,
+  .interface,
+  .miljo,
+  .poster,
+  .step_3 {
+    grid-template-rows: none !important;
+    grid-auto-rows: auto !important;
+  }
+
+  /* “The process”-bandet får luft uppåt/neråt
+     och krockar inte med texten ovan */
+  .info{ margin-bottom: 2.5rem !important; }
+  .sketch{
+    width: 90%;
+    max-width: 72rem;
+    margin: 3rem auto 0 !important;
+    padding: 0;
+  }
+  .step_2{
+    padding: 2.5rem 0 2.5rem !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Rubriker och brödtext får normal rytm */
+  h1{ margin-top: 2rem !important; margin-bottom: 1rem !important; width: 100% !important; }
+  h2{ margin-top: 0 !important; margin-bottom: 0.75rem !important; }
+  p{ width: 100% !important; }
+
+  /* Första bilden (pendel) – rimlig storlek och centrering */
+  .pendel{ order: -1; }
+  .pendel img{
+    width: min(80%, 420px) !important;
+    margin: 0 auto !important;
+    display: block;
+  }
+
+  /* Alternating block (.step_1) – text över bild på mobil */
+  .step_1{
+    grid-template-columns: 1fr !important;
+    row-gap: 1.25rem !important;
+    margin-top: 2rem !important;
+  }
+  .step_1 > :not(.mood){ order: 1; }
+  .step_1 > .mood{ order: 2; }
+  .step_1 .mood img{ margin-top: 0 !important; width: 100%; height: auto; }
+
+  /* Rosa 3-up (body mapping) – 2 kolumner på tablet */
+  .pink-grid{ grid-template-columns: repeat(2, 1fr) !important; }
+  .pink-grid figure{ height: 360px !important; }
+
+  /* Resultat-video – två kolumner på liten dator/små tablets */
+  .pink-video-split{
+    grid-template-columns: 0.9fr 1.1fr !important;
+    height: auto !important;
+    gap: 1rem;
+  }
+  .pink-video-split .text-side{
+    margin: 1.5rem auto 0 !important;
+    transform: none !important;
+    max-width: 90% !important;
+  }
+  .pink-video-split .video-side video{
+    transform: none !important;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Nedre prototyp-galleri – håll isär, inga överlapp */
+  .step_3{
+    align-items: start !important;
+    margin-top: 1.5rem !important;
+  }
+
+  /* Carousel: normal titel/intro + rimlig höjd */
+  #result-gallery .rg-wrap{ width: min(1000px, 92%) !important; }
+  #result-gallery .rg-viewport{
+    height: clamp(320px, 52vh, 520px) !important;
+  }
+}
+
+/* iPad / mindre laptops */
+@media (max-width: 800px){
+  /* Ta bort alla negativa marginaler som skapat krockar */
+  .sketch{ margin-top: 1.5rem !important; }
+  .result{ margin-top: 2rem !important; }
+  .rg-title, .rg-intro{ text-align: left; }
+  .pink-grid{ grid-template-columns: 1fr 1fr !important; }
+  .pink-grid figure{ height: 320px !important; }
+}
+
+/* Stor telefon */
+@media (max-width: 600px){
+  /* Första bilden ska ligga överst – redan ordnat via .pendel{order:-1} */
+  .info{
+    grid-template-columns: 1fr !important;
+    row-gap: 1rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  /* Rubriker och text */
+  h1{
+    font-size: 2.8rem !important;
+    line-height: 1.05;
+    margin-top: 1rem !important;
+  }
+
+  /* Rosa 3-up -> 1 kolumn */
+  .pink-grid{ grid-template-columns: 1fr !important; }
+  .pink-grid figure{ height: auto !important; }
+
+  /* Nedre 3-up (bild, bild, video) -> 1 kolumn */
+  .step_3{
+    grid-template-columns: 1fr !important;
+    row-gap: 1.25rem !important;
+  }
+  .step_3 .pic1,
+  .step_3 .pic2,
+  .step_3 .pic3{
+    aspect-ratio: auto !important;
+    margin-top: 0 !important;
+  }
+
+  /* Carousel höjd + pilar mindre */
+  #result-gallery .rg-viewport{ height: clamp(240px, 48vh, 420px) !important; }
+  #result-gallery .rg-btn{ font-size: 2rem !important; }
+
+  /* “The Result” (video/text) staplas och får luft */
+  .pink-video-split{
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+    margin-top: 2rem !important;
+  }
+  .pink-video-split .text-side{ margin: 1rem auto !important; }
+}
+
+/* Mellan/liten telefon – städa bort kvarvarande hårdkodade höjder */
+@media (max-width: 430px){
+  .info,
+  .step_1,
+  .step_2,
+  .interface,
+  .miljo,
+  .poster{
+    row-gap: 1rem !important;
+  }
+
+  /* Ta bort gamla fasta grid-rows som gav enorma tomrum */
+  .info,
+  .step_1,
+  .step_2,
+  .interface,
+  .miljo,
+  .poster{
+    grid-template-rows: none !important;
+  }
+}
+
+/* Hamburgermenyn: säkerställ att listan öppnas korrekt och inte krockar */
+@media (max-width: 800px){
+  nav{ max-width: 100% !important; margin: 1rem 0 0 0 !important; }
+  .hamburger-menu{ display: block !important; margin-left: 1rem; }
+  nav ul{
+    display: none !important;
+    flex-direction: column !important;
+    background-color: #EBEBEB;
+    width: 92%;
+    margin: 0.5rem auto 0;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+  }
+  nav ul.active{ display: flex !important; }
+}

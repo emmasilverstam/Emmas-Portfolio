@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" class="surf">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+  <link href="css/normalize.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/Benefit.css" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <title>BeneFit</title>
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <nav>
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <ul>
+          <li><a href="../index.html#header">Home</a></li>
+          <li><a href="../index.html#project">Projects</a></li>
+          <li><a href="../index.html#about">About me</a></li>
+          <li><a href="../index.html#contact">Contacts</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <main>
+    <!-- Din topp-info som tidigare -->
+    <section class="info">
+      <div>
+        <h1>Exercise & Nutrition planner</h1>
+        <p><span>Type:</span> Individual work</p>
+        <p><span>When:</span> 2024</p>
+        <p><span>Duration:</span> Three weeks, half time</p>
+        <p><span>Project scope:</span> School project in Graphical Interfaces</p>
+        <p>The aim of this project was to design a desktop application that supports users’ well-being through personalised fitness and nutrition plans. The design process was iterative, with continuous feedback from teachers and fellow students helping to refine both functionality and visual expression. A Figma prototype was developed to illustrate key features such as customisable workouts, meal plans, and progress tracking.
+
+To explore different user needs and motivations, two user scenarios, Louise and Victor were created, representing distinct approaches to fitness planning. The overall focus was on usability, clarity, and a user-centred experience that feels both supportive and adaptable.</p>
+      </div>
+      <div class="booking"><img src="../Fitness.png" alt="TaleAble mockup"></div>
+    </section>
+
+    <!-- NY: Alternating text + video-sektioner -->
+    <section class="features">
+      <!-- 1) Text vänster, video höger -->
+      <article class="feature">
+        <div class="feature__text">
+          <h2>User 1 - Louise</h2>
+          <p>
+        Louise, 36, is new to fitness and nutrition and wants to build a more balanced routine without feeling overwhelmed.
+        Through Benefit, she can easily start her journey by creating a profile with personal and dietary preferences.
+        The platform then generates a ready-made plan that combines workouts and meals designed to fit her lifestyle.
+        Louise appreciates how simple it is to adjust her plan, explore new recipes, and stay motivated by tracking her progress visually.
+        In the app, Louise can:
+          </p>
+          <ul>
+            <li>Adjust her weekly schedule in the calendar</li>
+            <li>Swap or remove sessions</li>
+            <li>Explore and edit recipes</li>
+            <li>Share grocery lists</li>
+            <li>Track progress and mark workouts as done</li>
+          </ul>
+        </div>
+        <div class="feature__media">
+            <video class="autoplay-on-scroll" src="../BeneFit/Video_Louise.mp4"
+       muted playsinline preload="metadata"></video>
+        </div>
+      </article>
+      <!-- 2) Video vänster, text höger -->
+      <article class="feature feature--reverse">
+        <div class="feature__text">
+          <h2>User 2 - Victor</h2>
+          <p>
+        Victor, 27, is a dedicated and active user who wants to refresh his training routine.
+        After months of following the same workouts, he returns to <em>Benefit</em> to explore new inspiration.
+        Instead of choosing a fixed plan, he decides to generate suggestions based on his updated preferences and allergy information.
+        Victor values flexibility, he prefers to customize his experience, pick exercises that match his goals, and save favorites to build his own schedule.
+        In the app, Victor can:
+          </p>
+              <ul>
+      <li>Browse and filter workouts</li>
+      <li>Hide calorie information</li>
+      <li>Save favorite exercises and meals</li>
+      <li>Create and send grocery lists</li>
+      <li>Add activities to his personal calendar</li>
+    </ul>
+        </div>
+        <div class="feature__media">
+          <video class="autoplay-on-scroll" src="../BeneFit/Video_Victor.mp4"
+       muted playsinline preload="metadata"></video>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <!-- Hamburger + gallery script (oförändrat, men utan GIF-kod) -->
+   <script>
+  (function () {
+    const videos = document.querySelectorAll('.autoplay-on-scroll');
+
+    // Fade/slide in: lägg "in-view" på media-containern när den syns
+    const revealTargets = document.querySelectorAll('.feature__media, .feature__text');
+
+    const playObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const v = entry.target;
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+          // Spela när minst ~60% syns
+          v.dataset.shouldPlay = '1';
+          v.play().catch(() => {}); // iOS/Android kräver muted + playsinline (vi har det)
+        } else {
+          v.dataset.shouldPlay = '0';
+          v.pause();
+        }
+      });
+    }, { threshold: [0, 0.6, 1] });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.2 });
+
+    videos.forEach(v => {
+      // När videon tar slut: börja om, men bara om den borde spela
+      v.addEventListener('ended', () => {
+        v.currentTime = 0;
+        if (v.dataset.shouldPlay === '1') {
+          v.play().catch(() => {});
+        }
+      });
+      playObserver.observe(v);
+    });
+
+    revealTargets.forEach(el => revealObserver.observe(el));
+  })();
+</script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+      const navLinks = document.querySelector('nav ul');
+      const galleryItems = document.querySelectorAll('.gallery__item');
+
+      hamburgerMenu.addEventListener('click', function () {
+        hamburgerMenu.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+
+      galleryItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+          this.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
