@@ -1,0 +1,1002 @@
+@import url("https://use.typekit.net/ymm5trk.css");
+
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: "futura-pt", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.2rem;
+    color: #353535;
+    background-color: #EBEBEB;
+}
+
+h1 {
+    font-size: 5rem;
+    color: #004038;
+    font-weight: 300;
+    width: 33rem;
+    line-height: 1em;
+    margin-top: 7rem;
+    margin-bottom: 3rem;
+}
+
+
+h2 {
+    font-size: 1.7rem;
+    color: #004038;
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+p {
+    width: 33rem;
+    margin-top: 1rem;
+}
+
+a {
+    color: #004038;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.3rem;
+
+}
+
+
+nav {
+    max-width: 72rem;
+    margin-left: 70%;
+    margin-top: 2rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav ul span {
+    color: #004038;
+}
+
+nav a {
+    color: #004038;
+    margin: 0.5rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: #004038;
+    text-decoration-thickness: 0.2rem;
+
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(2, 36%);
+    grid-template-rows: repeat(1, 65%);
+    position: center;
+    justify-content: center;
+    column-gap: 3%;
+    row-gap: 5rem;
+    margin-top: 2rem;
+    margin-bottom: -5rem;
+    overflow: hidden;
+}
+
+.bike img {
+    width: 160%;
+    margin-top: -10rem;
+    margin-left: -7rem;
+    
+}
+
+.step_1 {
+    display: grid;
+    grid-template-columns: repeat(2, 35%);
+    grid-template-rows: repeat(1, 65%);
+    position: center;
+    justify-content: center;
+    column-gap: 5%;
+    row-gap: 5rem;
+    margin-bottom: -5rem;
+    margin-top: 5rem;
+}
+
+.step_1 h2{
+    margin-top: 0;
+}
+
+.mood img {
+    width: 100%;
+    margin-top: 0;
+}
+
+.sketch {
+    display: grid;
+    grid-template-columns: repeat(2, 35%);
+    grid-template-rows: repeat(1, 1rem);
+    position: center;
+    justify-content: center;
+    column-gap: 5%;
+    margin-top: 14rem;
+    margin-bottom: -2rem;
+}
+.step_2 {
+    display: grid;
+    grid-template-columns: repeat(3, 23.333%);
+    grid-template-rows: repeat(1, 100%);
+    position: center;
+    justify-content: center;
+    column-gap: 2.5%;
+    row-gap: 5rem;
+    background-color: #d7d7d7;
+    padding-bottom: 1.5rem;
+    padding-top: 2rem;
+
+}
+
+.helmet1{
+    margin-top: 0rem;
+}
+
+.helmet2{
+    margin-top: 2rem;
+}
+
+.helmet3{
+    margin-top: 3rem;
+}
+
+
+.step_3 {
+    display: grid;
+    grid-template-columns: repeat(2, 36%);
+    position: center;
+    justify-content: center;
+    column-gap: 5%;
+    row-gap: 1rem;
+    margin-top: 5rem;
+}
+
+.result_helm{
+    width: 145%;
+    margin-top: -4rem;
+}
+
+.step_4 {
+    display: grid;
+    grid-template-columns: repeat(2, 35%);
+    position: center;
+    justify-content: center;
+    column-gap: 5%;
+    row-gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+.postis{
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+
+.helm img {
+    width: 80%;
+}
+
+
+.description {
+    font-family: 700;
+}
+
+p span {
+    font-weight: 700;
+    color: #004038;
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #353535;
+    margin: 6px 0;
+}
+
+/*Liten dator */
+@media only screen and (max-width: 1050px) {
+
+    h1 {
+        font-size: 5rem;
+        color: #004038;
+        font-weight: 300;
+        width: 27rem;
+        line-height: 0.8em;
+        margin-top: 1.5em;
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+        color: #004038;
+        font-weight: 700;
+        margin-top: 1rem;
+    }
+
+    p {
+        width: 27rem;
+        margin-top: 1rem;
+    }
+
+    a {
+        color: #004038;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.3rem;
+    }
+
+
+    .info {
+        display: grid;
+        grid-template-columns: repeat(2, 43.5%);
+        position: center;
+        justify-content: center;
+        column-gap: 3%;
+        margin-top: 2rem;
+        margin-bottom: -5rem;
+    }
+
+    .bike img {
+        width: 150%;
+        margin-top: -7rem;
+        margin-left: -7rem;
+        
+    }
+    
+    .step_1 {
+        display: grid;
+        grid-template-columns: repeat(2, 42.5%);
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 5rem;
+        margin-bottom: -5rem;
+        margin-top: 8rem;
+    }
+    
+    
+    .sketch {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        margin-top: 12rem;
+        margin-bottom: -2rem;
+    }
+    .step_2 {
+        display: grid;
+        grid-template-columns: repeat(3, 28.333%);
+        position: center;
+        justify-content: center;
+        column-gap: 2.5%;
+        background-color: #d7d7d7;
+        padding-bottom: 1.5rem;
+        padding-top: 2rem;
+    
+    }
+    
+    .helmet1{
+        margin-top: 0rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    .helmet2{
+        margin-top: 1.5rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    .helmet3{
+        margin-top: 2rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    
+    .step_3 {
+        display: grid;
+        grid-template-columns: repeat(2, 42.5%);
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 1rem;
+        margin-top: 5rem;
+    }
+    
+    .result_helm{
+        width: 145%;
+        margin-top: 1rem;
+        margin-left: -1rem;
+    }
+    
+    .step_4 {
+        display: grid;
+        grid-template-columns: repeat(2, 42.5%);
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 5.5;
+        width: 90%;
+        margin-top: -2rem;
+        color: #004038;
+    }
+
+
+    p {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    nav {
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 0.5rem 0;
+    }
+
+
+    .hamburger-menu {
+        display: block;
+        margin-left: 1rem;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        background-color: #EBEBEB;
+        width: 90%;
+        padding: 1rem;
+        box-shadow: 0 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
+    }
+
+    .hamburger-menu.active+nav ul {
+        display: flex;
+    }
+
+    nav ul.active {
+        margin-left: 0rem;
+        display: flex;
+        flex-direction: column;
+        top: 3rem;
+        background-color: #EBEBEB;
+        width: 96%;
+        box-shadow: 0 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 25rem 30rem;
+        position: center;
+        justify-content: center;
+        row-gap: 5rem;
+        margin-top: 1rem;
+        overflow: hidden;
+    }
+
+    .bike{
+        order: -1;
+    }
+
+    .bike img {
+        width: 120%;
+        margin-top: -15rem;
+        margin-left: -5rem;
+        
+    }
+    
+    .step_1 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 27rem 7rem;
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 5rem;
+        margin-bottom: -5rem;
+        margin-top: 1rem;
+    }
+    
+    
+    .sketch {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        margin-top: 10rem;
+        margin-bottom: -2rem;
+    }
+    .step_2 {
+        display: grid;
+        grid-template-columns: repeat(3, 28.333%);
+        position: center;
+        justify-content: center;
+        column-gap: 2.5%;
+        background-color: #d7d7d7;
+        padding-bottom: 1.5rem;
+        padding-top: 2rem;
+        margin-top: 1rem;
+    
+    }
+    
+    .helmet1{
+        margin-top: 1rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    .helmet2{
+        margin-top: 2.5rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    .helmet3{
+        margin-top: 3rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    
+    .step_3 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 14rem 40rem;
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 1rem;
+        margin-top: 5rem;
+    }
+
+    .result{
+        order: -1;
+    }
+    
+    .result_helm{
+        width: 100%;
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+    
+    .step_4 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 14rem 40rem;
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+}
+
+/* stor telefon */
+@media only screen and (max-width: 500px) { 
+    h1 {
+        font-size: 2.8rem;
+        width: 100%;
+        margin-top: -4rem;
+        margin-left: 0;
+    }
+
+    h1 span {
+        font-size: 2.8rem;
+    }
+
+    p {
+        width: 90%;
+        margin-top: 1rem;
+        margin-bottom: 0rem;
+    }
+
+    nav {
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 0.5rem 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+        margin-left: 0rem;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        background-color: #EBEBEB;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hamburger-menu.active + nav ul {
+        display: flex;
+    }
+
+    nav ul.active {
+        display: flex;
+        flex-direction: column;
+        top: 2rem;
+        background-color: #EBEBEB;
+        width: 90%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+        margin: 0;
+    }
+
+    .info {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 19rem 32rem;
+        position: center;
+        justify-content: center;
+        row-gap: 2rem;
+        margin-top: 1rem;
+        overflow: hidden;
+    }
+
+    .bike{
+        order: -1;
+    }
+
+    .bike img {
+        width: 120%;
+        margin-top: -7rem;
+        margin-left: -2rem;
+        
+    }
+    
+    .step_1 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 13rem 7rem;
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 5rem;
+        margin-bottom: -5rem;
+        margin-top: 0rem;
+    }
+
+    .step_1 h2{
+        margin-bottom: 0rem;
+    }
+    
+    
+    .sketch {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        margin-top: 10rem;
+        margin-bottom: -2rem;
+    }
+    .step_2 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: repeat(3, 18rem);
+        position: center;
+        justify-content: center;
+        column-gap: 2.5%;
+        background-color: #d7d7d7;
+        padding-bottom:5rem;
+        padding-top: 2rem;
+        margin-top: 1rem;
+    
+    }
+    
+    .helmet1{
+        margin-top: 1rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    .helmet2{
+        margin-top: 2.5rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    .helmet3{
+        margin-top: 3rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    
+    .step_3 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 25rem 24rem;
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 1rem;
+        margin-top: 3rem;
+    }
+
+    .result{
+        order: -1;
+    }
+    
+    .result_helm{
+        width: 100%;
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+    
+    .step_4 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 21rem 40rem;
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+}
+/*mellan telefon*/
+@media only screen and (max-width: 400px) {
+    h1 {
+        font-size: 2.8rem;
+        width: 100%;
+        margin-top: -4rem;
+        margin-left: 0;
+    }
+
+    h1 span {
+        font-size: 2.8rem;
+    }
+
+    p {
+        width: 90%;
+        margin-top: 1rem;
+        margin-bottom: 0rem;
+    }
+
+    .info {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 18rem 34rem;
+        position: center;
+        justify-content: center;
+        row-gap: 2rem;
+        margin-top: 1rem;
+        overflow: hidden;
+    }
+
+    .bike{
+        order: -1;
+    }
+
+    .bike img {
+        width: 130%;
+        margin-top: -7rem;
+        margin-left: -3rem;
+        
+    }
+    
+    .step_1 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 11rem 8rem;
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 5rem;
+        margin-bottom: -5rem;
+        margin-top: 0rem;
+    }
+
+    .step_1 h2{
+        margin-bottom: 0rem;
+    }
+    
+    
+    .sketch {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        margin-top: 10rem;
+        margin-bottom: -2rem;
+    }
+    .step_2 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: repeat(3, 13rem);
+        position: center;
+        justify-content: center;
+        column-gap: 2.5%;
+        background-color: #d7d7d7;
+        padding-bottom:9rem;
+        padding-top: 2rem;
+        margin-top: 1rem;
+    
+    }
+    
+    .helmet1{
+        margin-top: 1rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    .helmet2{
+        margin-top: 2.5rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    .helmet3{
+        margin-top: 3rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    
+    .step_3 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 28rem 22rem;
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 1rem;
+        margin-top: 3rem;
+    }
+
+    .result{
+        order: -1;
+    }
+    
+    .result_helm{
+        width: 100%;
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+    
+    .step_4 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 22rem 30rem;
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+}
+
+/* Liten telefon */
+@media only screen and (max-width: 350px) {
+    h1 {
+        font-size: 2.8rem;
+        width: 100%;
+        margin-top: -4rem;
+        margin-left: 0;
+    }
+
+    h1 span {
+        font-size: 2.8rem;
+    }
+
+    p {
+        width: 90%;
+        margin-top: 1rem;
+        margin-bottom: 0rem;
+    }
+
+    nav {
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        background-color: #EBEBEB;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hamburger-menu.active + nav ul {
+        display: flex;
+    }
+
+    nav ul.active {
+        display: flex;
+        flex-direction: column;
+        top: 2rem;
+        background-color: #EBEBEB;
+        width: 90%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+        margin: 0;
+    }
+
+    
+    .info {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 16rem 36rem;
+        position: center;
+        justify-content: center;
+        row-gap: 2rem;
+        margin-top: 1rem;
+        overflow: hidden;
+    }
+    
+    .bike{
+        order: -1;
+    }
+
+    .bike img {
+        width: 130%;
+        margin-top: -6rem;
+        margin-left: -3rem;
+        
+    }
+    
+    .step_1 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 9rem 10rem;
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 5rem;
+        margin-bottom: -5rem;
+        margin-top: 0rem;
+    }
+
+    .step_1 h2{
+        margin-bottom: 0rem;
+    }
+    
+    
+    .sketch {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        margin-top: 10rem;
+        margin-bottom: -2rem;
+    }
+    .step_2 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: repeat(3, 10rem);
+        position: center;
+        justify-content: center;
+        column-gap: 2.5%;
+        background-color: #d7d7d7;
+        padding-bottom:9rem;
+        padding-top: 2rem;
+        margin-top: 1rem;
+    
+    }
+    
+    .helmet1{
+        margin-top: 1rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    .helmet2{
+        margin-top: 2.5rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    .helmet3{
+        margin-top: 3rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    
+    
+    .step_3 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 33rem 19rem;
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 1rem;
+        margin-top: 3rem;
+    }
+
+    .result{
+        order: -1;
+    }
+    
+    .result_helm{
+        width: 100%;
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+    
+    .step_4 {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: 26rem 30rem;
+        position: center;
+        justify-content: center;
+        column-gap: 5%;
+        row-gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+}
