@@ -519,3 +519,41 @@ nav a:hover{
   /* Line-up-bilder – inga skalningar som kan “spilla” över */
   .step_3 .pic img{ transform:none !important; }
 }
+/* ============================= */
+/* HAMBURGER MENU TO LEFT FIX    */
+/* ============================= */
+@media (max-width:1050px){
+  nav{
+    justify-content:flex-start; /* flytta innehållet till vänster */
+    padding-left:1rem;
+  }
+
+  .hamburger-menu{
+    display:block;
+    margin-left:0;       /* nollställ tidigare marginal */
+    order:-1;            /* lägg den före länkarna */
+  }
+
+  nav ul{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    background:#EBEBEB;
+    width:90%;
+    padding:1rem;
+    margin:0 auto;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
+  }
+
+  .hamburger-menu.active + ul,
+  nav ul.active{
+    display:flex;
+    justify-content:center;
+  }
+}
+
+/* Extra säkert på små mobiler */
+@media (max-width:500px){
+  nav{ justify-content:flex-start; padding-left:.75rem; }
+  .hamburger-menu{ margin-left:0; }
+}
