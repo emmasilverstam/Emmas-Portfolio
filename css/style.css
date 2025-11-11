@@ -1128,7 +1128,7 @@ main.row {
 
     .gallery {
         grid-template-columns: repeat(1, 90%);
-        grid-template-rows: repeat(6, 30rem);
+        grid-template-rows: repeat(9, 30rem);
         grid-gap: 0.9rem 1rem;
         justify-content: center;
     }
@@ -1284,42 +1284,74 @@ main.row {
     .con_line {
         margin-top: 7rem;
     }
-
     .img1 {
-        width: 65%;
-        margin-left: 4rem;
-        margin-top: 4rem;
+        width: 80%;
+        margin-top: 2rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: auto;
+        display: block;
 
     }
 
     .img2 {
-        width: 75%;
-        margin-left: 1.8rem;
-        margin-top: 5.5rem;
+        width: 100%;         /* gör bilden mindre */
+        margin-top: 0rem;   /* flytta ned/upp */
+        margin-left: 0;  /* centrera horisontellt */
+        display: block;
     }
 
     .img3 {
-        width: 60%;
-        margin-left: 4.9rem;
-        margin-top: 0rem;
+        width: 80%;         /* gör bilden mindre */
+        margin-top: 3rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: auto;
+        display: block;
     }
 
     .img4 {
-        width: 75%;
-        margin-left: 3.1rem;
-        margin-top: 6rem;
+        width: 95%;         /* gör bilden mindre */
+        margin-top: 2rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: auto;
+        display: block;
     }
 
     .img5 {
-        width: 75%;
-        margin-left: 3rem;
-        margin-top: 9rem;
+       width: 96%;         /* gör bilden mindre */
+        margin-top: 5rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: 0;
+        display: block;
     }
 
     .img6 {
-        width: 75%;
-        margin-left: 2.9rem;
-        margin-top: 4.5rem;
+        width: 87%;         /* gör bilden mindre */
+        margin-top: 1rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: 0rem;
+        display: block;
+
+    }
+      .img7{
+        width: 90%;         /* gör bilden mindre */
+        margin-top: 1rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: auto;
+        display: block;
+    }
+    .img8{
+        width: 110%;         /* gör bilden mindre */
+        margin-top: 2rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: 3rem;
+        display: block;
+    }
+    .img9{
+        width: 75%;         /* gör bilden mindre */
+        margin-top: 2.5rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: auto;
+        display: block;
     }
 
     .row .col:nth-child(2) {
@@ -1331,43 +1363,77 @@ main.row {
 /*mellan telefon*/
 @media only screen and (max-width: 400px) {
 
-    .img1 {
-        width: 65%;
-        margin-left: 3.7rem;
-        margin-top: 5rem;
+.img1 {
+        width: 80%;
+        margin-top: 2rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: auto;
+        display: block;
 
     }
 
     .img2 {
-        width: 75%;
-        margin-left: 1.8rem;
-        margin-top: 5.5rem;
+        width: 100%;         /* gör bilden mindre */
+        margin-top: 0rem;   /* flytta ned/upp */
+        margin-left: 0;  /* centrera horisontellt */
+        display: block;
     }
 
     .img3 {
-        width: 60%;
-        margin-left: 4.2rem;
-        margin-top: 1.5rem;
+        width: 80%;         /* gör bilden mindre */
+        margin-top: 3rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: auto;
+        display: block;
     }
 
     .img4 {
-        width: 75%;
-        margin-left: 2.7rem;
-        margin-top: 6.2rem;
+        width: 95%;         /* gör bilden mindre */
+        margin-top: 2rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: auto;
+        display: block;
     }
 
     .img5 {
-        width: 75%;
-        margin-left: 2.6rem;
-        margin-top: 9rem;
+       width: 96%;         /* gör bilden mindre */
+        margin-top: 5rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: 0;
+        display: block;
     }
 
     .img6 {
-        width: 75%;
-        margin-left: 2.4rem;
-        margin-top: 5.2rem;
+        width: 87%;         /* gör bilden mindre */
+        margin-top: 1rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: 0rem;
+        display: block;
 
     }
+      .img7{
+        width: 90%;         /* gör bilden mindre */
+        margin-top: 1rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: auto;
+        display: block;
+    }
+    .img8{
+        width: 110%;         /* gör bilden mindre */
+        margin-top: 2rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: 3rem;
+        display: block;
+    }
+    .img9{
+        width: 75%;         /* gör bilden mindre */
+        margin-top: 2.5rem;   /* flytta ned/upp */
+        margin-left: auto;  /* centrera horisontellt */
+        margin-right: auto;
+        display: block;
+    }
+
+
 
     .title h2 {
         margin-top: 3rem;
@@ -1622,9 +1688,9 @@ main.row {
         margin-top: 13rem;
     }
 
-    .img1 {
+.img1 {
         width: 80%;
-        margin-top: 0rem;   /* flytta ned/upp */
+        margin-top: 2rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: auto;
         display: block;
@@ -1633,14 +1699,14 @@ main.row {
 
     .img2 {
         width: 100%;         /* gör bilden mindre */
-        margin-top: -1rem;   /* flytta ned/upp */
+        margin-top: 0rem;   /* flytta ned/upp */
         margin-left: 0;  /* centrera horisontellt */
         display: block;
     }
 
     .img3 {
         width: 80%;         /* gör bilden mindre */
-        margin-top: 1rem;   /* flytta ned/upp */
+        margin-top: 3rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: auto;
         display: block;
@@ -1648,7 +1714,7 @@ main.row {
 
     .img4 {
         width: 95%;         /* gör bilden mindre */
-        margin-top: 0rem;   /* flytta ned/upp */
+        margin-top: 2rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: auto;
         display: block;
@@ -1656,7 +1722,7 @@ main.row {
 
     .img5 {
        width: 96%;         /* gör bilden mindre */
-        margin-top: 3rem;   /* flytta ned/upp */
+        margin-top: 5rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: 0;
         display: block;
@@ -1664,29 +1730,29 @@ main.row {
 
     .img6 {
         width: 87%;         /* gör bilden mindre */
-        margin-top: -0.5rem;   /* flytta ned/upp */
+        margin-top: 1rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
-        margin-right: -2;
+        margin-right: 0rem;
         display: block;
 
     }
       .img7{
         width: 90%;         /* gör bilden mindre */
-        margin-top: 0rem;   /* flytta ned/upp */
+        margin-top: 1rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: auto;
         display: block;
     }
     .img8{
         width: 110%;         /* gör bilden mindre */
-        margin-top: 0,5rem;   /* flytta ned/upp */
+        margin-top: 2rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
+        margin-right: 3rem;
         display: block;
     }
     .img9{
         width: 75%;         /* gör bilden mindre */
-        margin-top: 1rem;   /* flytta ned/upp */
+        margin-top: 2.5rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: auto;
         display: block;
