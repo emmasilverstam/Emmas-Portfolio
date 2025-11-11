@@ -1,6 +1,8 @@
 @import url("https://use.typekit.net/ymm5trk.css");
 
-/* === Basfärger (samma på ALLA storlekar) === */
+/* =========================
+   Base
+   ========================= */
 :root{
   --text:#3f2e26;
   --bg:#ffffff;
@@ -14,15 +16,18 @@ body{
   font-size:1.2rem;
   color:var(--text);
   background-color:var(--bg);
+  margin:0;
 }
 
-/* ===== Text ===== */
+/* =========================
+   Typography
+   ========================= */
 h1{
   font-size:5rem;
   color:var(--text);
   font-weight:300;
   line-height:1.05;
-  margin:7rem 0 3rem;   /* inga negativa marginaler */
+  margin:7rem 0 3rem;
   max-width:33rem;
 }
 h2{
@@ -31,8 +36,8 @@ h2{
   font-weight:700;
   margin:0 0 1rem;
 }
-p{ max-width:31rem; }
-p span{ font-weight:700; color:var(--text); }
+p{ max-width:31rem; line-height:1.6; }
+p span{ font-weight:700; }
 
 a{
   color:var(--text);
@@ -42,11 +47,12 @@ a{
 }
 a:hover{
   text-decoration:underline;
-  text-decoration-color:var(--text);
   text-decoration-thickness:0.2rem;
 }
 
-/* ===== Nav ===== */
+/* =========================
+   Nav / Header (DESKTOP oförändrat)
+   ========================= */
 nav{ max-width:72rem; margin-left:70%; margin-top:2rem; }
 nav ul{
   list-style:none;
@@ -59,11 +65,13 @@ nav a{ margin:0.5rem; }
 .hamburger-menu{ display:none; cursor:pointer; }
 .bar{ width:25px; height:3px; background:#353535; margin:6px 0; }
 
-/* ===== Intro/info (text + mockup) ===== */
+/* =========================
+   Intro: text + mockup
+   ========================= */
 .info{
-  max-width:70rem;                 /* samma som features */
+  max-width:70rem;
   margin: -2rem auto 0;
-  padding:0 1.25rem;               /* samma sidmarginaler som features */
+  padding:0 1.25rem;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:3rem;
@@ -73,21 +81,15 @@ nav a{ margin:0.5rem; }
   display:block;
   width:120%;
   height:auto;
-  max-width:1000px;                 /* hindrar overflow på desktop */
-  margin-top: 5rem;
-  margin-left: -2rem;
+  max-width:1000px;
+  margin-top:5rem;
+  margin-left:-2rem;
   object-fit:contain;
 }
-.features__title {
-  font-size: 3rem;           /* gör rubriken stor */
-  font-weight: 500;          /* fet stil */
-  color: var(--accent, #E2857D); /* välj färg – ersätt med din accentfärg */
-  margin-bottom: 2rem;       /* avstånd till första feature */
-  text-align: left;          /* eller center om du vill */
-}
 
-
-/* ===== Alternating text + video ===== */
+/* =========================
+   Alternating text + video
+   ========================= */
 .features{
   max-width:70rem;
   margin:12rem auto 6rem;
@@ -95,38 +97,23 @@ nav a{ margin:0.5rem; }
   scroll-margin-top:6rem;
 }
 
-/* --- STANDARD LAYOUT --- */
 .feature{
   display:grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns:max-content 1fr;
   align-items:start;
-  gap:-20rem;                 /* consistent spacing */
+  gap:3rem;
   margin-bottom:9rem;
 }
 
-/* --- REVERSED LAYOUT --- */
-.feature--reverse{
-  grid-template-columns: 1fr max-content;
-}
+.feature--reverse{ grid-template-columns:1fr max-content; }
 
 .feature__text{
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
 }
+.feature__text p{ max-width:30rem; }
 
-.feature__text p{
-  margin:0; line-height:1.6; color:var(--text);
-  max-width:30rem;
-}
-
-/* Media container */
-.feature__media{
-  width:100%;
-  overflow:visible;         /* allow the bleed */
-}
-
-/* Same size video both directions */
+.feature__media{ width:100%; overflow:visible; }
 .feature__media video{
   display:block;
   width:110%;
@@ -136,26 +123,18 @@ nav a{ margin:0.5rem; }
   max-width:none;
 }
 
-/* Bleed direction */
-.feature:not(.feature--reverse) .feature__media video{
-  margin-right:-20%;        /* push 20% out to the right */
-}
+.feature:not(.feature--reverse) .feature__media video{ margin-right:-20%; }
+.feature.feature--reverse .feature__media video{ margin-left:-15%; }
 
-.feature--reverse .feature__media video{
-  margin-left:-15%;         /* push 20% out to the left */
-}
-
-/* Optional: explicit ordering for reverse */
 .feature--reverse .feature__text{ order:2; }
 .feature--reverse .feature__media{ order:1; }
 
-/* Scroll reveal (unchanged) */
+/* reveal */
 .feature__media,
 .feature__text{
   opacity:0;
   transform:translateY(24px);
   transition:opacity .6s ease, transform .6s ease;
-  will-change:opacity, transform;
 }
 .feature__media.in-view,
 .feature__text.in-view{
@@ -163,14 +142,13 @@ nav a{ margin:0.5rem; }
   transform:translateY(0);
 }
 
-
-/* ===== Breakpoints ===== */
-
-/* Liten laptop / stor tablet */
-@media (max-width: 1050px){
+/* =========================
+   Breakpoints
+   ========================= */
+@media (max-width:1050px){
   h1{ margin-top:3rem; max-width:27rem; }
   .info{ gap:2rem; }
-  .features{ margin-top:4rem; }          /* lite extra tajt jämfört med desktop */
+  .features{ margin-top:4rem; }
   .booking img{
     width:110%;
     max-width:720px;
@@ -179,9 +157,8 @@ nav a{ margin:0.5rem; }
   }
 }
 
-/* Tablet & nedåt */
-@media (max-width: 900px){
-  /* Nav mobil */
+/* Tablet and below */
+@media (max-width:900px){
   nav{ max-width:100%; margin-left:0; margin-top:1rem; }
   .hamburger-menu{ display:block; margin-left:1rem; }
   nav ul{ flex-direction:column; align-items:center; display:none; }
@@ -191,53 +168,75 @@ nav a{ margin:0.5rem; }
     background:#EBEBEB;
     width:96%;
     padding:1rem;
-    box-shadow:0 0.125rem 0.313rem rgba(0,0,0,.1);
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
     justify-content:center; align-items:center;
     margin:0 auto 1rem;
   }
 
-  /* Stackad intro + features, behåll samma sidmarginaler */
   .info{
     grid-template-columns:1fr;
     gap:1.5rem;
-    margin-top:0;                   /* ingen extra luft ovanpå */
+    margin-top:0;
     padding:0 1rem;
   }
-  .booking{ order:2; }              /* byt till -1 om bild ska ligga först */
+  .booking{ order:-1; }
   .booking img{
     width:100%;
     max-width:100%;
-    margin-left:0;
-    margin-top:0;                   /* tar bort glapp under texten */
+    margin:0;
   }
 
-  .features{
-    padding:0 1rem;
-    margin-top:2.5rem;              /* tajt mellan första bilden och "Prototyping" */
-  }
+  .features{ padding:0 1rem; margin-top:2.5rem; }
   .feature{
     grid-template-columns:1fr;
     gap:1.25rem;
     margin-bottom:5rem;
   }
-  .feature--reverse{ direction:ltr; }    /* ingen växling när det är staplat */
-  .feature__text p{ max-width:100%; }
+
+  .feature__text{ order:1; }
+  .feature__media{ order:2; }
+  .feature.feature--reverse .feature__text{ order:1 !important; }
+  .feature.feature--reverse .feature__media{ order:2 !important; }
+
+  /* === Centrera båda videorna === */
+  .feature__media video{
+    width:90%;               /* jämna marginaler */
+    margin-inline:auto;      /* centrerar horisontellt */
+    display:block;
+  }
 
   h1{ max-width:100%; }
   p{ max-width:100%; }
 }
 
-/* Stor telefon */
-@media (max-width: 500px){
-  h1{
-    font-size:2.8rem;
-    margin:1rem 0 1.25rem;
-  }
-  .info{ padding:0 1rem; }
-  .features{ padding:0 1rem; margin-top:2rem; }
+@media (max-width:500px){
+  h1{ font-size:2.8rem; margin:1rem 0 1.25rem; }
+  .info, .features{ padding:0 1rem; }
 }
 
-/* Mindre telefon */
-@media (max-width: 350px){
+@media (max-width:350px){
   h1{ font-size:2.6rem; }
+}
+/* Force perfect centering for both videos on small screens */
+@media (max-width: 900px){
+  /* center the media container itself */
+  .feature__media{
+    display:flex;              /* allow easy centering */
+    justify-content:center;    /* center child horizontally */
+  }
+
+  /* reset any bleed + set symmetric margins */
+  .feature__media video{
+    width:min(700px, 90%);
+    max-width:100%;
+    margin:0 !important;       /* kill leftover left/right offsets */
+    display:block;
+  }
+
+  /* explicitly override desktop bleed rules with higher specificity */
+  .feature:not(.feature--reverse) .feature__media video,
+  .feature.feature--reverse .feature__media video{
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
 }
