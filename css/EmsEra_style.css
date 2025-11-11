@@ -6,8 +6,8 @@
   --bg:#ffffff;
   --accent:#683741;
   --muted:#d7d7d7;
-  --max:72rem;           /* gemensam maxbredd */
-  --content-w:75%;       /* standard innehållsbredd */
+  --max:72rem;
+  --content-w:75%;
 }
 
 html{ font-size:100%; }
@@ -72,7 +72,6 @@ nav a:hover{
 .bar{ width:25px; height:3px; background:#353535; margin:6px 0; }
 
 /* ========== Layout blocks ========== */
-/* Intro/info (text + logobild) */
 .info{
   display:grid;
   grid-template-columns:36% 36%;
@@ -99,7 +98,6 @@ nav a:hover{
 .step_1 h2{ margin-top:0; }
 .mood img{ width:100%; margin:0; }
 
-/* Startläge för moodboard-bilden (animeras med JS) */
 #moodboard-section .mood img{
   transform:translateX(-160px);
   opacity:0;
@@ -150,7 +148,7 @@ nav a:hover{
 }
 .result h2{ margin-bottom:0; }
 
-/* Step 3: The Line-up (7 bilder + stagger) */
+/* Step 3: The Line-up */
 #prototyping-gallery{
   width:var(--content-w);
   max-width:var(--max);
@@ -176,13 +174,11 @@ nav a:hover{
   display:block;
   background:#fff;
 }
-/* små variationsskalor som du hade */
 .pic:nth-child(2) img{ transform:scale(1.15); }
 .pic:nth-child(6) img{ transform:scale(1.07); }
 .pic:nth-child(1) img{ transform:scale(1.03); }
 .pic:nth-child(3) img{ transform:scale(1.05); }
 
-/* in-view = starta stagger */
 .step_3.in-view .pic{ animation:fadeUp 600ms ease-out forwards; }
 .step_3.in-view .pic:nth-child(1){ animation-delay:0ms; }
 .step_3.in-view .pic:nth-child(2){ animation-delay:120ms; }
@@ -194,7 +190,7 @@ nav a:hover{
 
 @keyframes fadeUp{ to{ opacity:1; transform:translateY(0); } }
 
-/* Hover-effekt (endast på enheter med hover) */
+/* Hover-effekt */
 @media (hover:hover){
   .step_3 .pic img{
     transition:transform .35s ease, opacity .35s ease;
@@ -209,7 +205,7 @@ nav a:hover{
   .step_3 .pic:nth-child(6):hover img{ transform:scale(1.22); }
 }
 
-/* Textblock (Colours/Materials + Tech sketch) */
+/* Textblock */
 .slutgiltig{
   display:grid;
   grid-template-columns:var(--content-w);
@@ -217,7 +213,7 @@ nav a:hover{
   margin-top:1rem;
 }
 
-/* Miljöfärgad sektion med stor bild */
+/* Colour section */
 .miljo-section{
   background:var(--accent);
   padding:3rem 0;
@@ -234,13 +230,11 @@ nav a:hover{
   z-index:2;
 }
 
-/* Fade-in för result-bilden */
+/* Fade-in */
 #result-section .miljo img{
   opacity:0;
-  margin-top:0;
   transform:translateY(30px);
   transition:opacity 3s ease, transform 3s ease;
-  will-change:opacity,transform;
 }
 #result-section.visible .miljo img{
   opacity:1;
@@ -250,7 +244,7 @@ nav a:hover{
   #result-section .miljo img{ opacity:1 !important; transform:none !important; transition:none !important; }
 }
 
-/* Horisontell scroll-in för teknisk skiss */
+/* Technical sketch scroll */
 .scroll-image-section{
   width:var(--content-w);
   max-width:var(--max);
@@ -269,14 +263,14 @@ nav a:hover{
   .scroll-image-section img{ transform:none !important; opacity:1 !important; }
 }
 
-/* ===================== */
-/* ===== RESPONSIVE ==== */
-/* ===================== */
+/* ========================== */
+/* ===== RESPONSIVE  ======== */
+/* ========================== */
 
-/* ≤1050px — tajtare keywords, behåll desktop i övrigt */
+/* ≤1050px – tajtare keywords */
 @media (max-width:1050px){
   .step_2{
-    grid-template-columns:repeat(3, 30%);
+    grid-template-columns:repeat(3,30%);
     column-gap:.75rem;
     row-gap:.75rem;
     padding:1.25rem 0;
@@ -284,16 +278,45 @@ nav a:hover{
   }
 }
 
-/* ≤800px — iPad: moodboard-ordning, tajtare keywords, lineup nära, större colour-bild, hamburger */
+/* ≤800px – iPad och små laptops */
 @media (max-width:800px){
   /* Hamburger */
   .hamburger-menu{ display:block; margin-left:1rem; }
-  nav ul{ display:none; flex-direction:column; background:#EBEBEB; width:90%; padding:1rem; margin:0 auto;
-          box-shadow:0 2px 5px rgba(0,0,0,.1); }
+  nav ul{
+    display:none;
+    flex-direction:column;
+    background:#EBEBEB;
+    width:90%;
+    padding:1rem;
+    margin:0 auto;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
+  }
   .hamburger-menu.active + ul,
-  nav ul.active{ display:flex; align-items:center; justify-content:center; }
+  nav ul.active{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
 
-  /* Moodboard: text -> bild (utan att röra desktop) */
+  /* Första bilden över text/rubrik */
+  .info{
+    grid-template-columns:90%;
+    grid-auto-rows:auto;
+    row-gap:1rem;
+    margin-top:1rem;
+  }
+  .pendel{
+    order:-1;
+    margin-bottom:1rem;
+  }
+  .pendel img{
+    width:100%;
+    max-width:600px;
+    margin:0 auto;
+    display:block;
+  }
+
+  /* Moodboard: text före bild */
   .step_1{
     grid-template-columns:90%;
     grid-template-areas:
@@ -305,57 +328,80 @@ nav a:hover{
   .step_1 > .mood{ grid-area:image; }
   .step_1 > div:not(.mood){ grid-area:text; }
 
-  /* Intro-bilden högst upp på små skärmar */
-  .info{
-    grid-template-columns:90%;
-    grid-auto-rows:auto;
-    row-gap:2rem;
-    margin-top:1rem;
-  }
-  .pendel{ order:-1; }
-  .pendel img{ width:60%; margin:0 auto; display:block; }
-
   /* Keywords tajtare */
   .step_2{
     background:var(--muted);
-    grid-template-columns:repeat(3, 30%);
+    grid-template-columns:repeat(3,30%);
     column-gap:.75rem;
     row-gap:.75rem;
     padding:1.25rem 0;
     margin-top:1rem;
   }
 
-  /* Line-up text direkt efter grå sektionen */
-  .result{
-    grid-template-columns:90%;
-    margin-top:1.25rem;
-  }
+  /* Line-up text direkt efter keywords */
+  .result{ grid-template-columns:90%; margin-top:1rem; }
 
-  /* Line-up bilder synliga (IO kan vara trög på mobil) */
+  /* Line-up bilder synliga och i två kolumner */
+  .step_3{
+    grid-template-columns:repeat(2,1fr);
+    gap:1rem;
+    margin-top:0;
+  }
   .step_3 .pic{
     opacity:1;
     transform:none;
+    overflow:hidden;
+  }
+  .step_3 .pic img{
+    width:100%;
+    height:auto;
+    display:block;
+    transform:none !important;
   }
 
-  /* Colour & Materials-bild större på små skärmar */
-  .miljo img{
-    max-width:min(96rem, 92vw);
+  /* Colour-bild större */
+  .miljo img{ max-width:min(96rem,92vw); }
+
+  /* Sista bilden – ingen scroll-in, visa hel */
+  .scroll-image-section{
+    width:100%;
+    max-width:100%;
+    margin:2rem 0;
+    overflow:visible;
+  }
+  .scroll-image-section img{
+    transform:none !important;
+    opacity:1 !important;
+    width:100%;
+    height:auto;
+    max-width:none;
+    display:block;
   }
 }
 
-/* ≤500px — mobil: en kolumn där det behövs, extra tight */
+/* ≤500px – mobil */
 @media (max-width:500px){
-  /* Menylistan lite smalare */
-  nav ul{ width:90%; }
+  /* Textblock får full bredd */
+  h1,h2,p{ width:100%; max-width:100%; }
 
-  /* Info: logo överst */
+  /* Första bilden överst och stor */
   .info{
     grid-template-columns:90%;
-    row-gap:1.5rem;
+    margin-top:.5rem;
+    row-gap:1rem;
   }
-  .pendel img{ width:100%; }
+  .pendel{
+    order:-1;
+    margin-bottom:1rem;
+  }
+  .pendel img{
+    width:100%;
+    max-width:550px;
+    margin:0 auto;
+    display:block;
+  }
 
-  /* Moodboard: behåll text överst, bild under */
+  /* Moodboard */
   .step_1{
     grid-template-columns:90%;
     grid-template-areas:
@@ -365,34 +411,111 @@ nav a:hover{
     margin-top:1rem;
   }
 
-  /* Keywords: en kolumn, tajt */
+  /* Keywords – en kolumn */
   .step_2{
-    grid-template-columns:70%;
-    grid-auto-rows:18rem;
-    row-gap:1rem;
-    padding:1rem 0 1.25rem;
-    margin-top:1rem;
-  }
-
-  /* Line-up: nära och i en kolumn */
-  .result{
     grid-template-columns:90%;
-    margin-top:1rem;
+    grid-auto-rows:16rem;
+    row-gap:.75rem;
+    padding:.75rem 0 1rem;
+    margin-top:.75rem;
   }
+  .step_2 .sketches{ height:16rem; }
+
+  /* Line-up en kolumn, inga överlapp */
+  .result{ grid-template-columns:90%; margin-top:1rem; }
   .step_3{
     grid-template-columns:90%;
-    grid-auto-rows:28rem;
-    row-gap:1rem;
-    margin-top:0;
+    grid-auto-rows:auto;
+    gap:.75rem;
+    margin:.5rem 0 2rem;
   }
   .step_3 .pic{
+    overflow:hidden;
     opacity:1;
     transform:none;
   }
+  .step_3 .pic img{
+    width:100%;
+    height:auto;
+    display:block;
+    transform:none !important;
+  }
 
-  /* Colour & Materials: full bredd */
-  .miljo img{
+  /* Colour & Materials full bredd */
+  .miljo img{ width:100%; max-width:none; }
+
+  /* Sista bilden – statisk och större */
+  .scroll-image-section{
+    width:100%;
+    max-width:100%;
+    margin:1.5rem 0 2rem;
+  }
+  .scroll-image-section img{
+    transform:none !important;
+    opacity:1 !important;
     width:100%;
     max-width:none;
   }
+}
+
+/* ≤360px – extra små telefoner */
+@media (max-width:360px){
+  .step_2 .sketches{ height:14rem; }
+  .step_3{ gap:.6rem; }
+}
+/* ============================= */
+/* ANTI-OVERLAP PATCH – paste last */
+/* ============================= */
+
+/* ≤1050px: ta bort negativa marginaler och gör texten flytande */
+@media (max-width:1050px){
+  /* textblock får full bredd → ingen inträngning i nästa sektion */
+  h1, h2, p{ width:100%; max-width:100%; }
+
+  /* Intro + Moodboard */
+  .info{ margin:1rem 0 0; row-gap:1.25rem; }
+  .step_1{ margin:1.5rem 0 0; row-gap:1.25rem; }
+
+  /* Key words-textblocket hade -5rem under → ta bort */
+  .sketch{
+    width:90%;
+    max-width:var(--max);
+    margin:2rem auto 1rem;   /* ingen negativ bottenmarginal */
+  }
+
+  /* Grå keywords-sektionen: lite luft uppåt, ingen intrång */
+  .step_2{
+    margin-top:1rem;
+    padding:1rem 0 1rem;
+    column-gap:.75rem;
+    row-gap:.75rem;
+  }
+
+  /* The Line-up-text direkt efter, utan stora toppmarginaler */
+  .result{
+    grid-template-columns:90%;
+    margin-top:1rem;
+    position:relative;
+    z-index:1;               /* lägre än tidigare så inget lägger sig över */
+  }
+
+  /* Säkerställ att grå bakgrunden inte täcker text */
+  .step_2, .result, .slutgiltig{ background:transparent; }
+}
+
+/* ≤800px: samma, plus säkrare avstånd */
+@media (max-width:800px){
+  .info{ margin-top:1rem; }
+  .step_1{ margin-top:1rem; }
+  .sketch{ margin:1.5rem auto .75rem; }
+  .result{ margin-top:.75rem; }
+}
+
+/* ≤500px: extra tight utan överlapp */
+@media (max-width:500px){
+  .sketch{ width:90%; margin:1.25rem auto .5rem; }
+  .step_2{ grid-template-columns:90%; grid-auto-rows:16rem; }
+  .result{ grid-template-columns:90%; margin-top:.75rem; }
+  /* Line-up-bilder – inga skalningar som kan “spilla” över */
+  .step_3 .pic img{ transform:none !important; }
 }
