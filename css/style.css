@@ -1602,7 +1602,7 @@ main.row {
         height: 8rem;
         position: relative;
         padding: 1rem;
-        border: 0.05rem solid #dad8d8;
+        border: 0.05rem solid #ffffff;
         background-color: #ffffff;
         transition: all 0.4s;
         margin-bottom: 1rem;
@@ -1690,7 +1690,7 @@ main.row {
 
 .img1 {
         width: 80%;
-        margin-top: 2rem;   /* flytta ned/upp */
+        margin-top: 4rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: auto;
         display: block;
@@ -1699,14 +1699,14 @@ main.row {
 
     .img2 {
         width: 100%;         /* gör bilden mindre */
-        margin-top: 0rem;   /* flytta ned/upp */
+        margin-top: 2rem;   /* flytta ned/upp */
         margin-left: 0;  /* centrera horisontellt */
         display: block;
     }
 
     .img3 {
         width: 80%;         /* gör bilden mindre */
-        margin-top: 3rem;   /* flytta ned/upp */
+        margin-top: 4rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: auto;
         display: block;
@@ -1714,7 +1714,7 @@ main.row {
 
     .img4 {
         width: 95%;         /* gör bilden mindre */
-        margin-top: 2rem;   /* flytta ned/upp */
+        margin-top: 3rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: auto;
         display: block;
@@ -1722,7 +1722,7 @@ main.row {
 
     .img5 {
        width: 96%;         /* gör bilden mindre */
-        margin-top: 5rem;   /* flytta ned/upp */
+        margin-top: 6rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: 0;
         display: block;
@@ -1730,7 +1730,7 @@ main.row {
 
     .img6 {
         width: 87%;         /* gör bilden mindre */
-        margin-top: 1rem;   /* flytta ned/upp */
+        margin-top: 2rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: 0rem;
         display: block;
@@ -1744,15 +1744,15 @@ main.row {
         display: block;
     }
     .img8{
-        width: 110%;         /* gör bilden mindre */
-        margin-top: 2rem;   /* flytta ned/upp */
+        width: 115%;         /* gör bilden mindre */
+        margin-top: 3rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: 3rem;
         display: block;
     }
     .img9{
         width: 75%;         /* gör bilden mindre */
-        margin-top: 2.5rem;   /* flytta ned/upp */
+        margin-top: 4rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: auto;
         display: block;
