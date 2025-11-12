@@ -1,1763 +1,307 @@
-@import url("https://use.typekit.net/ymm5trk.css");
-
-
-html {
-    font-size: 100%;
-}
-
-body {
-    font-family: "futura-pt", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 1.2rem;
-    color: #3e2e26;
-    background-color: #dbecff;
-    /*#e1d3c8;*/
-}
-h1 {
-    font-size: 5rem;
-    color: #3e2e26;
-    font-weight: 300;
-    width: 37rem;
-    line-height: 1em;
-    margin-top: 1.5em;
-    margin-bottom: 0;
-}
-#cv {
-    font-weight: 700;
-}
-h2 {
-    font-size: 1.7rem;
-    color: #3e2e26;
-    font-weight: 700;
-    margin-top: 0.5rem;
-}
-p {
-    width: 33rem;
-    margin-top: 1rem;
-}
-a {
-    color: #3e2e26;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 2rem;
-}
-nav {
-    max-width: 72rem;
-    margin-left: 35%;
-    margin-top: 2rem;
-}
-nav ul {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-nav ul span {
-    color: #3e2e26;
-}
-nav a {
-    color: #3e2e26;
-    margin: 1rem;
-}
-nav a:hover {
-    text-decoration: underline;
-    text-decoration-color: #3e2e26;
-    text-decoration-thickness: 0.2rem;
-}
-.bildcv {
-    background: url(../images/Pro1-01-02.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    box-shadow: inset 0 0 0 0.1rem rgb(255 255 255 / 30%);
-    justify-self: center;
-    width: 24rem;
-    height: 24rem;
-    animation: profile__animate 8s ease-in-out infinite 0s;
-    margin-top: 5rem;
-}
-
-.contain {
-    position: relative;
-    text-align: left;
-}
-
-.text_line {
-    position: relative;
-    margin-left: -4rem;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #3e2e26;
-}
-
-
-@keyframes profile__animate {
-    0% {
-        border-radius: 51% 49% 58% 42% / 68% 60% 40% 32%;
-    }
-
-    50% {
-        border-radius: 71% 29% 37% 63% / 41% 36% 64% 59%;
-    }
-
-    100% {
-        border-radius: 51% 49% 58% 42% / 68% 60% 40% 32%;
-    }
-}
-
-.header {
-    display: grid;
-    grid-template-columns: repeat(2, 31%);
-    grid-template-rows: repeat(1, 65%);
-    position: center;
-    justify-content: center;
-    column-gap: 7rem;
-    row-gap: 5rem;
-    margin-top: 2rem;
-    margin-bottom: -5rem;
-}
-
-.linkedin {
-    color: #3f2e26;
-    font-size: 2.5rem;
-}
-
-.icons {
-    display: flex;
-    justify-content: left;
-    column-gap: 1rem;
-}
-
-.icons_contact {
-    display: grid;
-    grid-template-columns: repeat(1, 100%);
-    grid-template-rows: repeat(3, 18%);
-    position: center;
-    justify-content: center;
-    margin-top: -7rem;
-    row-gap: 1rem;
-}
-
-.icons_contact p {
-    margin-top: -2rem;
-    margin-left: 3rem;
-
-}
-
-.contact {
-    display: grid;
-    grid-template-columns: repeat(2, 32%);
-    grid-template-rows: repeat(2, 13rem);
-    position: center;
-    justify-content: center;
-    column-gap: 7rem;
-    row-gap: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 0rem;
-}
-
-.contact h1 {
-    font-size: 1.7rem;
-    font-weight: 700;
-}
-
-.project {
-    display: grid;
-    grid-template-columns: repeat(2, 31%);
-    justify-content: center;
-    position: center;
-    column-gap: 7rem;
-}
-.project h1 {
-    font-size: 2rem;
-    margin-top: 6rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-}
-.project p {
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
-}
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 22%);
-  grid-auto-rows: 22rem; /* Gör varje projekt mer kvadratiskt */
-  gap: 1.2rem 2rem;
-  justify-content: center;
-}
-.gallery__item {
-  position: relative;
-  background-color: #ffffff;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: box-shadow 0.3s ease;
-  border-radius: 0.1rem;
-}
-
-.gallery__item a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 1;
-  transition: opacity 0.3s ease;
-}
-
-.gallery__item:hover { box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.3); }
-.gallery__item:hover a { opacity: 0.1; }
-
-/* ✅ Bildtexten sitter fast i nederkant, beige innan hover */
-.bildtext{
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 100%;
-  padding: 1rem;
-  margin: 0;
-  background-color: #dbecff; /* beige */
-  text-align: center;
-  line-height: 1.3rem;
-  box-sizing: border-box;
-  z-index: 2;
-}
-
-/* Overlay-texten överst */
-.overlay-text1{
-  color: #3f2e26;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  max-width: 80%;
-  padding: 1rem;
-  box-sizing: border-box;
-  line-height: 1.3rem;
-  font-size: 1.2rem;
-  margin-top: -2rem;
-  font-weight: 300;
-  z-index: 3;
-}
-.gallery__item:hover .overlay-text1{ opacity: 1; }
-
-
-
-.produkt {
-    font-weight: 700;
-    color: #3f2e26;
-}
-.img1 {
-    width: 80%;         /* gör bilden mindre */
-    margin-top: 0rem;   /* flytta ned/upp */
-    margin-left: auto;  /* centrera horisontellt */
-    margin-right: auto;
-    display: block;
-}
-.img2 {
-    width: 100%;         /* gör bilden mindre */
-    margin-top: -1rem;   /* flytta ned/upp */
-    margin-left: 0;  /* centrera horisontellt */
-    display: block;
-}
-
-.img3 {
-    width: 80%;         /* gör bilden mindre */
-    margin-top: 1rem;   /* flytta ned/upp */
-    margin-left: auto;  /* centrera horisontellt */
-    margin-right: auto;
-    display: block;
-}
-
-.img4 {
-    width: 95%;         /* gör bilden mindre */
-    margin-top: 0rem;   /* flytta ned/upp */
-    margin-left: auto;  /* centrera horisontellt */
-    margin-right: auto;
-    display: block;
-}
-
-.img5 {
-    width: 96%;         /* gör bilden mindre */
-    margin-top: 3rem;   /* flytta ned/upp */
-    margin-left: auto;  /* centrera horisontellt */
-    margin-right: 0;
-    display: block;
-}
-
-.img6 {
-    width: 87%;         /* gör bilden mindre */
-    margin-top: -0.5rem;   /* flytta ned/upp */
-    margin-left: auto;  /* centrera horisontellt */
-    margin-right: -2;
-    display: block;
-}
-.img7 {
-    width: 90%;         /* gör bilden mindre */
-    margin-top: 0rem;   /* flytta ned/upp */
-    margin-left: auto;  /* centrera horisontellt */
-    margin-right: auto;
-    display: block;
-}
-.img8 {
-    width: 110%;         /* gör bilden mindre */
-    margin-top: 0,5rem;   /* flytta ned/upp */
-    margin-left: auto;  /* centrera horisontellt */
-    margin-right: auto;
-    display: block;
-}
-.img9 {
-    width: 75%;         /* gör bilden mindre */
-    margin-top: 1rem;   /* flytta ned/upp */
-    margin-left: auto;  /* centrera horisontellt */
-    margin-right: auto;
-    display: block;
-}
-
-.hamburger-menu {
-    display: none;
-    cursor: pointer;
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: #353535;
-    margin: 6px 0;
-}
-
-
-.about {
-    display: grid;
-    grid-template-columns: repeat(2, 31%);
-    justify-content: center;
-    position: center;
-    column-gap: 7rem;
-    margin-left: 0;
-
-}
-
-.about h1 {
-    font-size: 1.7rem;
-    grid-template-columns: repeat(2, 31%);
-    justify-content: center;
-    position: center;
-    column-gap: 7rem;
-    color: #3e2e26;
-    margin-top: 7rem;
-    font-weight: 700;
-
-}
-
-.about h3 {
-    font-size: 1.2rem;
-    grid-template-columns: repeat(2, 31%);
-    justify-content: center;
-    position: center;
-    column-gap: 7rem;
-    color: #3e2e26;
-    margin-bottom: 0rem;
-    margin-top: 2rem;
-}
-
-.about p {
-    margin-top: 0.5rem;
-}
-
-hr {
-    border: 0.1px solid #d7d7d7;
-    margin: 1rem auto;
-    margin-top: 3rem;
-    width: 70%;
-    position: center;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-
-
-main.row {
-    display: grid;
-    grid-template-columns: repeat(2, 31%);
-    position: center;
-    justify-content: center;
-    column-gap: 7rem;
-    margin-top: 3rem;
-    margin-bottom: 5rem;
-}
-
-.title h2 {
-    font-weight: 700;
-    font-size: 1.7rem;
-    margin-top: 3rem;
-    margin-bottom: 2.5rem;
-}
-
-
-.col .contents {
-    padding: 0rem 2rem;
-    border-left: 0.1rem solid #c5c5c5
-}
-
-.col .contents .box {
-    width: 25rem;
-    height: 6rem;
-    position: relative;
-    padding: 1rem;
-    border: 0.05rem solid #ffffff;
-    background-color: #ffffff;
-    transition: all 0.4s;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
-
-}
-
-
-.col .contents .box::before {
-    content: '';
-    position: absolute;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    right: calc(100% + 1.6rem);
-    top: -0.2rem;
-    background-color: #3e2e26;
-
-}
-
-.box h4 {
-    position: relative;
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin-top: 0.5rem;
-    padding: 0;
-    margin-top: 0rem;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-}
-
-.box h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    padding: 0;
-    margin-top: 0.5rem;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    color: #3e2e26;
-    ;
-}
-
-.box p {
-    font-size: 1.2rem;
-    padding: 0;
-    margin-top: 0.5rem;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-}
-
-
-/*Liten dator */
-@media only screen and (max-width: 1050px) {
-
-    h1 {
-        font-size: 5rem;
-        color: #3e2e26;
-        font-weight: 300;
-        width: 27rem;
-        line-height: 1em;
-        margin-top: 1.5em;
-        margin-bottom: 0;
-    }
-
-    h2 {
-        font-size: 1.7rem;
-        color: #3e2e26;
-        font-weight: 700;
-        margin-top: 0.5rem;
-    }
-
-    p {
-        width: 27rem;
-        margin-top: 1rem;
-    }
-
-    a {
-        color: #3e2e26;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1.3rem;
-
-    }
-
-
-    .bildcv {
-        background: url(../images/Pro1-01-02.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        box-shadow: inset 0 0 0 0.1rem rgb(255 255 255 / 30%);
-        justify-self: center;
-        width: 24rem;
-        height: 24rem;
-        animation: profile__animate 8s ease-in-out infinite 0s;
-        margin-top: 5rem;
-    }
-
-    .bildaboutme {
-        position: relative;
-        background: url(../images/sam.JPG);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        box-shadow: inset 0 0 0 0.1rem rgb(255 255 255 / 30%);
-        justify-self: center;
-        width: 24rem;
-        height: 24rem;
-        margin-top: 7rem;
-        animation: profile__animate 8s ease-in-out infinite 0s;
-    }
-
-
-
-    .arrow {
-        position: absolute;
-        top: 8rem;
-        left: 15%;
-        transform: rotate(-270deg);
-        width: 0;
-        height: 0;
-        border-left: 0.7rem solid transparent;
-        border-right: 0.7rem solid transparent;
-        border-bottom: 1.4rem solid #3e2e26;
-    
-    }
-    
-    .text_line {
-        position: relative;
-        margin-left: -4rem;
-        font-weight: 700;
-        font-size: 1.2rem;
-        color: #3e2e26;
-    }
-    
-    
-    .line {
-        position: absolute;
-        top: 8.3rem;
-        left: 19%;
-        width: 5rem;
-        height: 0.2rem;
-        background-color: #3e2e26;
-        transform-origin: 0% 100%;
-        transform: rotate(180deg);
-    }
-    
-    
-    .line::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 0.2rem;
-        /* Bredden på den vertikala linjen */
-        height: 6.5rem;
-        /* Höjden på linjen */
-        background-color: #3e2e26;
-    }
-    
-
-    .header {
-        display: grid;
-        grid-template-columns: repeat(2, 43.5%);
-        grid-template-rows: repeat(1, 65%);
-        position: center;
-        justify-content: center;
-        column-gap: 3%;
-        row-gap: 5rem;
-        margin-top: 2rem;
-        margin-bottom: -5rem;
-    }
-
-    .linkedin {
-        color: #3e2e26;
-        font-size: 2.5rem;
-    }
-
-
-    .icons_contact {
-        display: grid;
-        grid-template-columns: repeat(1, 100%);
-        grid-template-rows: repeat(3, 16%);
-        position: center;
-        justify-content: center;
-        margin-top: -7rem;
-        row-gap: 1rem;
-    }
-
-    .icons_contact p {
-        margin-top: -2rem;
-        margin-left: 3rem;
-
-    }
-
-
-    .contact {
-        display: grid;
-        grid-template-columns: repeat(2, 43.5%);
-        grid-template-rows: repeat(2, 13rem);
-        position: center;
-        justify-content: center;
-        column-gap: 3%;
-        row-gap: 1rem;
-        margin-top: 2rem;
-        margin-bottom: 0rem;
-    }
-
-    .contact h1 {
-        font-size: 1.7rem;
-        font-weight: 700;
-    }
-
-
-
-    .project {
-        display: grid;
-        grid-template-columns: repeat(2, 43.5%);
-        column-gap: 3%;
-        justify-content: center;
-        position: center;
-
-    }
-
-    .project h1 {
-        font-size: 2rem;
-        margin-top: 6rem;
-        margin-bottom: 1.5rem;
-        font-weight: 700;
-    }
-
-    .project p {
-        margin-top: 0.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 28%);
-        grid-template-rows: repeat(2, 30rem);
-        column-gap: 3%;
-        row-gap: 0.9rem;
-        position: center;
-        justify-content: center;
-        margin-top: 0;
-        cursor: pointer;
-    }
-
-
-    .img1 {
-        width: 70%;
-        margin-left: 3rem;
-        margin-top: 5.5rem;
-
-    }
-
-    .img2 {
-        width: 75%;
-        margin-left: 1.8rem;
-        margin-top: 6.2rem;
-    }
-
-    .img3 {
-        width: 65%;
-        margin-left: 3.2rem;
-        margin-top: 1.8rem;
-    }
-
-    .img4 {
-        width: 80%;
-        margin-left: 1.8rem;
-        margin-top: 7rem;
-    }
-
-    .img5 {
-        width: 80%;
-        margin-left: 1.9rem;
-        margin-top: 10rem;
-    }
-
-    .img6 {
-        width: 80%;
-        margin-left: 1.8rem;
-        margin-top: 5.5rem;
-
-    }
-
-    .about {
-        display: grid;
-        grid-template-columns: repeat(2, 40%);
-        justify-content: center;
-        position: center;
-        column-gap: 10%;
-        margin-left: 0;
-
-    }
-
-    .about h1 {
-        font-size: 1.7rem;
-        grid-template-columns: repeat(2, 43.5%);
-        justify-content: center;
-        position: center;
-        column-gap: 3%;
-        color: #3e2e26;
-        margin-top: 6rem;
-        font-weight: 700;
-
-    }
-
-    .about h3 {
-        font-size: 1.2rem;
-        grid-template-columns: repeat(2, 31%);
-        justify-content: center;
-        position: center;
-        column-gap: 7rem;
-        color: #3e2e26;
-        margin-bottom: 0rem;
-        margin-top: 2rem;
-    }
-
-    .about p {
-        margin-top: 0.5rem;
-    }
-
-    hr {
-        border: 0.1px solid #d7d7d7;
-        margin: 1rem auto;
-        margin-top: rem;
-        width: 90%;
-        position: center;
-        justify-content: center;
-        margin-top: 2rem;
-    }
-
-
-
-    main.row {
-        display: grid;
-        grid-template-columns: repeat(2, 42.25%);
-        position: center;
-        justify-content: center;
-        column-gap: 4.5%;
-        margin-top: 3rem;
-        margin-bottom: 5rem;
-    }
-
-    .title h2 {
-        font-weight: 700;
-        font-size: 1.7rem;
-        margin-top: 3rem;
-        margin-bottom: 2.5rem;
-    }
-
-
-    .col .contents {
-        padding: 0rem 2rem;
-        border-left: 0.1rem solid #c5c5c5
-    }
-
-    .col .contents .box {
-        width: 100%;
-        height: 7rem;
-        position: relative;
-        padding: 1rem;
-        border: 0.05rem solid #ffffff;
-        background-color: #d7d7d7;
-        transition: all 0.4s;
-        margin-bottom: 1rem;
-
-    }
-
-
-    .col .contents .box::before {
-        content: '';
-        position: absolute;
-        width: 1rem;
-        height: 1rem;
-        border-radius: 50%;
-        right: calc(100% + 1.6rem);
-        top: -0.2rem;
-        background-color: #3e2e26;
-
-    }
-
-    .box h4 {
-        position: relative;
-        font-size: 1.2rem;
-        font-weight: 300;
-        margin-top: 0.5rem;
-        padding: 0;
-        margin-top: 0rem;
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 0;
-    }
-
-    .box h3 {
-        font-size: 1.2rem;
-        font-weight: 700;
-        padding: 0;
-        margin-top: 0.5rem;
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 0;
-        color: #3e2e26;
-        ;
-    }
-
-    .box p {
-        font-size: 1.2rem;
-        padding: 0;
-        margin-top: 0.5rem;
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 0;
-    }
-
-    .con_line {
-        margin-top: 2rem;
-    }
-
-}
-
-
-
-/*iPad */
-@media only screen and (max-width: 800px) {
-
-    h1 {
-        font-size: 5.5;
-        width: 90%;
-        margin-top: -6rem;
-        color: #3e2e26;
-    }
-
-
-    p {
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    .project h1 {
-        font-size: 1.7rem;
-        margin-top: 14rem;
-    }
-
-    nav {
-        max-width: 100%;
-        margin-left: 0;
-        margin-top: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        margin: 0.5rem 0;
-    }
-
-    .header {
-        grid-template-columns: repeat(1, 90%);
-        column-gap: 0;
-        row-gap: 2rem;
-        margin-left: 0;
-    }
-
-    .project {
-        grid-template-columns: repeat(1, 90%);
-        column-gap: 0;
-        justify-content: center;
-        margin-top: -3rem;
-    }
-
-    .gallery {
-        grid-template-columns: repeat(2, 44%);
-        grid-template-rows: repeat(3, 30rem);
-        grid-gap: 0.9rem 1rem;
-        justify-content: center;
-    }
-
-
-
-    .bildcv {
-        order: -1;
-        width: 20rem;
-        height: 20rem;
-        margin-top: 0;
-        margin-bottom: 3rem;
-    }
-
-
-    .about {
-        display: grid;
-        grid-template-columns: repeat(1, 90%);
-        grid-template-rows: repeat(3, 18rem);
-        grid-gap: 0.9rem 1rem;
-        justify-content: center;
-        position: center;
-        margin-left: 0;
-
-    }
-
-    .bildaboutme {
-        order: -1;
-        width: 20rem;
-        height: 20rem;
-        margin-top: 3rem;
-    }
-
-
-    .about h1 {
-        margin-top: 7rem;
-
-    }
-
-    .contain {
-        display: none;
-    }
-
-    .arrow {
-        display: none;
-
-    }
-
-    .text_line {
-        display: none;
-    }
-
-
-    .line {
-        display: none;
-    }
-
-    hr {
-        width: 90%;
-    }
-
-    main.row {
-        display: grid;
-        grid-template-columns: repeat(2, 44%);
-        grid-template-rows: repeat(2, 16rem);
-        grid-gap: 0.9rem 1rem;
-        justify-content: center;
-        position: center;
-        margin-left: 0;
-        margin-top: 5rem;
-    }
-
-    .col .contents .box {
-        width: 90%;
-        height: 8rem;
-        position: relative;
-        padding: 1rem;
-        border: 0.05rem solid #dad8d8;
-        background-color: #d7d7d7;
-        transition: all 0.4s;
-        margin-bottom: 1rem;
-
-    }
-
-    .title h2 {
-        margin-top: -5.5rem;
-    }
-
-    .contact {
-        display: grid;
-        grid-template-columns: repeat(1, 90%);
-        grid-template-rows: repeat(1, 1rem);
-        grid-gap: 0.9rem 1rem;
-        justify-content: center;
-        position: center;
-        margin-left: 0;
-    }
-
-    .contact h1 {
-        font-size: 1.7rem;
-        color: #3e2e26;
-        margin-top: 2rem;
-    }
-
-    .icons_contact {
-        display: grid;
-        grid-template-columns: repeat(1, 100%);
-        grid-template-rows: repeat(3, 18%);
-        position: center;
-        justify-content: center;
-        margin-top: 3rem;
-        row-gap: 2rem;
-        margin-bottom: 3rem;
-    }
-
-    .hamburger-menu {
-        display: block;
-        margin-left: 1rem;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    nav ul {
-        flex-direction: column;
-        background-color: #EBEBEB;
-        width: 100%;
-        padding: 1rem;
-        box-shadow: 0 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
-    }
-
-    .hamburger-menu.active+nav ul {
-        display: flex;
-    }
-
-    nav ul.active {
-        display: flex;
-        flex-direction: column;
-        top: 3rem;
-        background-color: #EBEBEB;
-        width: 100%;
-        box-shadow: 0 0.125rem 0.313rem rgba(0, 0, 0, 0.1);
-        justify-content: center;
-        align-items: center;
-    }
-
-    .img1 {
-        width: 70%;
-        margin-left: 3.2rem;
-        margin-top: 5rem;
-
-    }
-
-    .img2 {
-        width: 75%;
-        margin-left: 1.8rem;
-        margin-top: 5.5rem;
-    }
-
-    .img3 {
-        width: 65%;
-        margin-left: 4rem;
-        margin-top: 1rem;
-    }
-
-    .con_line {
-        margin-top: 12rem;
-    }
-
-
-
-}
-
-/*stor telefon*/
-@media only screen and (max-width: 500px) {
-    h1 {
-        font-size: 2.8rem;
-        width: 100%;
-        margin-top: -4rem;
-        margin-left: 0;
-    }
-
-    h1 span {
-        font-size: 2.8rem;
-    }
-
-    p {
-        width: 90%;
-        margin-top: 1rem;
-        margin-bottom: 0rem;
-    }
-
-    nav {
-        max-width: 100%;
-        margin-left: 0;
-        margin-top: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        margin: 0.5rem 0;
-    }
-
-    .header {
-        grid-template-columns: repeat(1, 90%);
-        column-gap: 0;
-        row-gap: 2rem;
-        padding: 0;
-        margin: 0;
-    }
-
-    .project {
-        grid-template-columns: repeat(1, 90%);
-        column-gap: 0;
-        justify-content: center;
-        margin-top: -3rem;
-    }
-
-    .project h1 {
-        font-size: 1.7rem;
-        margin-top: 12rem;
-    }
-
-    .project h1 span {
-        font-size: 1.7rem;
-    }
-
-
-    .project p {
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .gallery {
-        grid-template-columns: repeat(1, 90%);
-        grid-template-rows: repeat(9, 30rem);
-        grid-gap: 0.9rem 1rem;
-        justify-content: center;
-    }
-
-    .bildcv {
-        order: -1;
-        width: 15rem;
-        height: 15rem;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .about {
-        display: grid;
-        grid-template-columns: repeat(1, 90%);
-        grid-template-rows: repeat(3, 18rem);
-        grid-gap: 0.9rem 1rem;
-        justify-content: center;
-        position: center;
-        margin-left: 0;
-
-    }
-
-    .bildaboutme {
-        order: -1;
-        width: 15rem;
-        height: 15rem;
-        margin-top: 3rem;
-        margin-bottom: 0;
-    }
-
-
-    .about h1 {
-        margin-top: 2.3rem;
-
-    }
-
-    .contain {
-        display: none;
-    }
-
-    .arrow {
-        display: none;
-
-    }
-
-    .text_line {
-        display: none;
-    }
-
-
-    .line {
-        display: none;
-    }
-
-    main.row {
-        display: grid;
-        grid-template-columns: repeat(1, 90%);
-        grid-template-rows: repeat(2, 37rem);
-        row-gap: 1.2rem;
-        justify-content: center;
-        position: center;
-        margin-left: 0;
-        margin-top: 1rem;
-    }
-
-    .col .contents .box {
-        width: 100%;
-        height: 8rem;
-        position: relative;
-        padding: 1rem;
-        border: 0.05rem solid #dad8d8;
-        background-color: #d7d7d7;
-        transition: all 0.4s;
-        margin-bottom: 1rem;
-
-    }
-
-    .title h2 {
-        margin-top: 1rem;
-    }
-
-    .contact {
-        display: grid;
-        grid-template-columns: repeat(1, 90%);
-        grid-template-rows: repeat(1, 1rem);
-        grid-gap: 0.9rem 1rem;
-        justify-content: center;
-        position: center;
-        margin-left: 0;
-        margin-top: 8rem;
-    }
-
-    .contact h1 {
-        font-size: 1.7rem;
-        color: #3e2e26;
-    }
-
-    .icons_contact {
-        display: grid;
-        grid-template-columns: repeat(1, 100%);
-        grid-template-rows: repeat(3, 18%);
-        position: center;
-        justify-content: center;
-        margin-top: 3rem;
-        row-gap: 2rem;
-        margin-bottom: 3rem;
-    }
-
-    .hamburger-menu {
-        display: block;
-        margin-left: 1rem;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    nav ul {
-        flex-direction: column;
-        background-color: #EBEBEB;
-        width: 100%;
-        padding: 1rem;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        justify-content: center;
-        align-items: center;
-    }
-
-    .hamburger-menu.active+nav ul {
-        display: flex;
-    }
-
-    nav ul.active {
-        display: flex;
-        flex-direction: column;
-        top: 2rem;
-        background-color: #EBEBEB;
-        width: 100%;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
-
-    hr {
-        border: 0.1px solid #d7d7d7;
-        margin: 2rem auto;
-        width: 40%;
-        position: center;
-        justify-content: center;
-    }
-
-    .con_line {
-        margin-top: 7rem;
-    }
-    .img1 {
-        width: 80%;
-        margin-top: 2rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-
-    }
-
-    .img2 {
-        width: 100%;         /* gör bilden mindre */
-        margin-top: 0rem;   /* flytta ned/upp */
-        margin-left: 0;  /* centrera horisontellt */
-        display: block;
-    }
-
-    .img3 {
-        width: 80%;         /* gör bilden mindre */
-        margin-top: 3rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-    }
-
-    .img4 {
-        width: 95%;         /* gör bilden mindre */
-        margin-top: 2rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-    }
-
-    .img5 {
-       width: 96%;         /* gör bilden mindre */
-        margin-top: 5rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: 0;
-        display: block;
-    }
-
-    .img6 {
-        width: 87%;         /* gör bilden mindre */
-        margin-top: 1rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: 0rem;
-        display: block;
-
-    }
-      .img7{
-        width: 90%;         /* gör bilden mindre */
-        margin-top: 3rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-    }
-    .img8{
-        width: 115%;         /* gör bilden mindre */
-        margin-top: 2rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: 3rem;
-        display: block;
-    }
-    .img9{
-        width: 78%;         /* gör bilden mindre */
-        margin-top: 2.5rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-    }
-
-    .row .col:nth-child(2) {
-        margin-top: 2rem;
-    }
-
-}
-
-/*mellan telefon*/
-@media only screen and (max-width: 400px) {
-
-.img1 {
-        width: 80%;
-        margin-top: 4rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-
-    }
-
-    .img2 {
-        width: 100%;         /* gör bilden mindre */
-        margin-top: 2rem;   /* flytta ned/upp */
-        margin-left: 0;  /* centrera horisontellt */
-        display: block;
-    }
-
-    .img3 {
-        width: 80%;         /* gör bilden mindre */
-        margin-top: 4rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-    }
-
-    .img4 {
-        width: 95%;         /* gör bilden mindre */
-        margin-top: 3rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-    }
-
-    .img5 {
-       width: 96%;         /* gör bilden mindre */
-        margin-top: 6rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: 0;
-        display: block;
-    }
-
-    .img6 {
-        width: 87%;         /* gör bilden mindre */
-        margin-top: 2rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: 0rem;
-        display: block;
-
-    }
-      .img7{
-        width: 90%;         /* gör bilden mindre */
-        margin-top: 1rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-    }
-    .img8{
-        width: 115%;         /* gör bilden mindre */
-        margin-top: 3rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: 3rem;
-        display: block;
-    }
-    .img9{
-        width: 75%;         /* gör bilden mindre */
-        margin-top: 4rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-    }
-
-
-
-    .title h2 {
-        margin-top: 3rem;
-        color: #3e2e26;
-    }
-
-    .con_line {
-        margin-top: 10rem;
-    }
-
-    .contact {
-        display: grid;
-        grid-template-columns: repeat(1, 90%);
-        grid-template-rows: repeat(1, 1rem);
-        grid-gap: 0.9rem 1rem;
-        justify-content: center;
-        position: center;
-        margin-left: 0;
-        margin-top: 7rem;
-    }
-
-    .icons_contact {
-        display: grid;
-        grid-template-columns: repeat(1, 100%);
-        grid-template-rows: repeat(3, 18%);
-        position: center;
-        justify-content: center;
-        margin-top: 3rem;
-        row-gap: 2rem;
-        margin-bottom: 3rem;
-    }
-}
-
-/* Mobil*/
-@media only screen and (max-width: 350px) {
-    h1 {
-        font-size: 2.8rem;
-        width: 100%;
-        margin-top: -5rem;
-        margin-left: 0;
-        color: #3e2e26;
-    }
-
-    p {
-        width: 90%;
-        margin-top: 1rem;
-        margin-bottom: 0rem;
-    }
-
-    nav {
-        max-width: 100%;
-        margin-left: 0;
-        margin-top: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        margin: 0.5rem 0;
-    }
-
-    .header {
-        grid-template-columns: repeat(1, 90%);
-        column-gap: 0;
-        row-gap: 2rem;
-        padding: 0;
-        margin: 0;
-    }
-
-    .project {
-        grid-template-columns: repeat(1, 90%);
-        column-gap: 0;
-        justify-content: center;
-        margin-top: -3rem;
-    }
-
-    .project h1 {
-        font-size: 1.7rem;
-        margin-top: 12rem;
-    }
-
-    .project h1 span {
-        font-size: 1.7rem;
-    }
-
-
-    .project p {
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .gallery {
-        grid-template-columns: repeat(1, 90%);
-        grid-template-rows: repeat(9, 30rem);
-        grid-gap: 0.9rem 1rem;
-        justify-content: center;
-    }
-
-    .bildcv {
-        order: -1;
-        width: 15rem;
-        height: 15rem;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .about {
-        display: grid;
-        grid-template-columns: repeat(1, 90%);
-        grid-template-rows: repeat(3, 18rem);
-        grid-gap: 0.9rem 1rem;
-        justify-content: center;
-        position: center;
-        margin-left: 0;
-
-    }
-
-    .bildaboutme {
-        order: -1;
-        width: 15rem;
-        height: 15rem;
-        margin-top: 3rem;
-        margin-bottom: 0;
-    }
-
-
-    .about h1 {
-        margin-top: 2.3rem;
-
-    }
-
-    .contain {
-        display: none;
-    }
-
-    .arrow {
-        display: none;
-
-    }
-
-    .text_line {
-        display: none;
-    }
-
-
-    .line {
-        display: none;
-    }
-
-    main.row {
-        display: grid;
-        grid-template-columns: repeat(1, 90%);
-        grid-template-rows: repeat(2, 37rem);
-        row-gap: 1.2rem;
-        justify-content: center;
-        position: center;
-        margin-left: 0;
-        margin-top: 1rem;
-    }
-
-    .col .contents .box {
-        width: 100%;
-        height: 8rem;
-        position: relative;
-        padding: 1rem;
-        border: 0.05rem solid #ffffff;
-        background-color: #ffffff;
-        transition: all 0.4s;
-        margin-bottom: 1rem;
-
-    }
-
-    .title h2 {
-        margin-top: 7rem;
-        color: #3e2e26;
-    }
-
-    .contact {
-        display: grid;
-        grid-template-columns: repeat(1, 90%);
-        grid-template-rows: repeat(1, 1rem);
-        grid-gap: 0.9rem 1rem;
-        justify-content: center;
-        position: center;
-        margin-left: 0;
-        margin-top: 8rem;
-    }
-
-    .contact h1 {
-        font-size: 1.7rem;
-        color: #3e2e26;
-    }
-
-    .icons_contact {
-        display: grid;
-        grid-template-columns: repeat(1, 100%);
-        grid-template-rows: repeat(3, 18%);
-        position: center;
-        justify-content: center;
-        margin-top: 3rem;
-        row-gap: 2rem;
-        margin-bottom: 3rem;
-    }
-
-    .hamburger-menu {
-        display: block;
-        margin-left: 1rem;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    nav ul {
-        flex-direction: column;
-        background-color: #EBEBEB;
-        width: 100%;
-        padding: 1rem;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        justify-content: center;
-        align-items: center;
-    }
-
-    .hamburger-menu.active+nav ul {
-        display: flex;
-    }
-
-    nav ul.active {
-        display: flex;
-        flex-direction: column;
-        top: 2rem;
-        background-color: #EBEBEB;
-        width: 100%;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
-
-    hr {
-        border: 0.1px solid #d7d7d7;
-        margin: 2rem auto;
-        width: 40%;
-        position: center;
-        justify-content: center;
-    }
-
-    .con_line {
-        margin-top: 13rem;
-    }
-
-.img1 {
-        width: 80%;
-        margin-top: 4rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-
-    }
-
-    .img2 {
-        width: 100%;         /* gör bilden mindre */
-        margin-top: 2rem;   /* flytta ned/upp */
-        margin-left: 0;  /* centrera horisontellt */
-        display: block;
-    }
-
-    .img3 {
-        width: 80%;         /* gör bilden mindre */
-        margin-top: 4rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-    }
-
-    .img4 {
-        width: 95%;         /* gör bilden mindre */
-        margin-top: 3rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-    }
-
-    .img5 {
-       width: 96%;         /* gör bilden mindre */
-        margin-top: 6rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: 0;
-        display: block;
-    }
-
-    .img6 {
-        width: 87%;         /* gör bilden mindre */
-        margin-top: 2rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: 0rem;
-        display: block;
-
-    }
-      .img7{
-        width: 90%;         /* gör bilden mindre */
-        margin-top: 3rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-    }
-    .img8{
-        width: 120%;         /* gör bilden mindre */
-        margin-top: 3rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: 4rem;
-        display: block;
-    }
-    .img9{
-        width: 78%;         /* gör bilden mindre */
-        margin-top: 4rem;   /* flytta ned/upp */
-        margin-left: auto;  /* centrera horisontellt */
-        margin-right: auto;
-        display: block;
-    }
-}
-
-
-
+<!DOCTYPE html>
+<html lang="en" class="surf">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+  <link href="css/normalize.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <title>Emmas portfolio</title>
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <nav>
+        <div class="hamburger-menu" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu" role="button" tabindex="0">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <ul id="primary-nav">
+          <li><a href="#project">Projects</a></li>
+          <li><a href="#about">About me</a></li>
+          <li><a href="#contact">Contacts</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="header">
+        <div>
+          <h1><span>Hi, I'm<br></span><span class="multi-text"></span></h1>
+          <p>An industrial design engineer with a specialisation in interaction design</p>
+        </div>
+        <div class="bildcv"></div>
+        <div class="icons">
+          <a href="https://www.linkedin.com/in/emma-silverstam/" aria-label="LinkedIn – Emma Silverstam">
+            <i class="fa-brands fa-linkedin linkedin"></i>
+          </a>
+          <a href="mailto:emma-silverstam@hotmail.se" aria-label="Email – Emma Silverstam">
+            <i class="fa-solid fa-square-envelope linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+  </div>
+
+  <section>
+    <div class="project" id="project">
+      <div><h1>Projects</h1></div>
+      <div></div>
+    </div>
+
+    <div class="gallery">
+
+      <!-- 02 -->
+      <div class="gallery__item">
+        <a href="html/[HER]dles.html">
+          <img src="herdles.png" class="img2" alt="A interactive musemum – Digital design">
+        </a>
+        <p class="bildtext"><span class="produkt">01. An interactive museum</span><br>Exhibition design</p>
+        <p class="overlay-text1">A project to develop a interactive museum experience about women in sports</p>
+      </div>
+
+      <!-- 04 -->
+      <div class="gallery__item">
+        <a href="html/TaleAble.html">
+          <img src="Toy.png" class="img4" alt="Toy for children – Digital design">
+        </a>
+        <p class="bildtext"><span class="produkt">02. A storytelling app for children</span><br>Digital design</p>
+        <p class="overlay-text1">A project to develop an inclusive and creative storytelling experience for children</p>
+      </div>
+
+      <!-- 05 -->
+      <div class="gallery__item">
+        <a href="html/Endobreath.html">
+          <img src="endobreath.png" class="img5" alt="A pillow for endometriosis – Soma design">
+        </a>
+        <p class="bildtext"><span class="produkt">03. A pillow for endometriosis</span><br>Soma design</p>
+        <p class="overlay-text1">A design project exploring soma design principles through the development of a product for endometriosis</p>
+      </div>
+
+      <!-- 06 -->
+      <div class="gallery__item">
+        <a href="html/Meloflora.html">
+          <img src="Logo Meloflora.png" class="img6" alt="Interactive flowerpot – Product design">
+        </a>
+        <p class="bildtext"><span class="produkt">04. An interactive flowerpot</span><br>Tangible design</p>
+        <p class="overlay-text1">A project to design a human–plant interaction through iterative prototyping of a tangible, sensory-based design</p>
+      </div>
+
+      <!-- 07 -->
+      <div class="gallery__item">
+        <a href="html/Benefit.html">
+          <img src="Fitness.png" class="img7" alt="Fitness application – Digital design">
+        </a>
+        <p class="bildtext"><span class="produkt">05. A Fitness & Nutrition website</span><br>Digital design</p>
+        <p class="overlay-text1">A speculative wearable exploring empathy and embodiment in healthcare.</p>
+      </div>
+
+      <!-- 08 -->
+      <div class="gallery__item">
+        <a href="html/project8.html">
+          <img src="accessability.png" class="img8" alt="Museum interaction – Exhibition design">
+        </a>
+        <p class="bildtext"><span class="produkt">06. A website for...</span><br>Universal design</p>
+        <p class="overlay-text1">An interactive museum installation celebrating women’s sports history.</p>
+      </div>
+
+      <!-- 09 -->
+      <div class="gallery__item">
+        <a href="html/EmsEra.html">
+          <img src="logo-01-01.png" class="img9" alt="Fashion collection – Fashion design">
+        </a>
+        <p class="bildtext"><span class="produkt">07. A Fashion Collection</span><br>Fashion design</p>
+        <p class="overlay-text1">A project to design my own fashion collection</p>
+      </div>
+      
+      <!-- 03 -->
+      <div class="gallery__item">
+        <a href="html/furniture.html">
+          <img src="kandidat-02.png" class="img3" alt="Furniture for remote work – Product design">
+        </a>
+        <p class="bildtext"><span class="produkt">08. A Furniture for remote work</span><br>Product design</p>
+        <p class="overlay-text1">A project to design a furniture for remote work for the company AJ produkter</p>
+      </div>
+            <!-- 01 -->
+      <div class="gallery__item">
+        <a href="html/furniture.html">
+          <img src="projekt1-01.png" class="img1" alt="Master Thesis – Mammography AI">
+        </a>
+        <p class="bildtext"><span class="produkt">09. A circular home styling app</span><br>Digital design</p>
+        <p class="overlay-text1">A project to design a mobile application for coordinating a circular home styling workflow for the company Indie Studios</p>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="about" id="about">
+    <div>
+      <h1>About me</h1>
+      <p>I am a 27-year-old industrial design engineer and will be graduating in January with
+         a master’s degree in Interaction Design & Technologies from Chalmers University of Technology. 
+         My passion is simplifying complexity through technology and design. I am interested 
+         in graphic design, UI, and UX, and aim to create seamless digital experiences by combining 
+         creativity with innovative technology.</p>
+
+      <h3>Skills</h3>
+      <p>User Research / User Testing / Universal Design / UX / UI / <br>Graphic Design /
+        Product & Service Design / Prototyping / <br>Wireframing / Ideation </p>
+
+      <h3>Software & programming skills</h3>
+      <p>Adobe Creative Cloud / Figma / HTML / CSS /</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <main class="row">
+      <section class="col">
+        <header class="title"><h2>Education</h2></header>
+        <div class="contents">
+          <div class="box">
+            <h4>Aug 2023 - Jan 2026</h4>
+            <h3>MSc Interaction Design and Technologies</h3>
+            <p>Chalmers University of Technology, Gothenburg</p>
+          </div>
+          <div class="box">
+            <h4>Aug 2019 - Jun 2022</h4>
+            <h3>BSc Industrial Design</h3>
+            <p>Chalmers University of Technology, Gothenburg</p>
+          </div>
+          <div class="box">
+            <h4>Aug 2018 - Jun 2019</h4>
+            <h3>Preparatory Year in Engineering</h3>
+            <p>Chalmers University of Technology, Gothenburg</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="col">
+        <header class="title"><h2>Experience</h2></header>
+        <div class="contents">
+          <div class="box">
+            <h4>Sep 2025 - Jan 2026</h4>
+            <h3>Master Thesis at Invencon AB</h3>
+            <p>Chalmers University of Technology, Gothenburg</p>
+          </div>
+          <div class="box">
+            <h4>Jun 2025 - Aug 2025</h4>
+            <h3>Open project in Interaction Design at Omaia</h3>
+            <p>Chalmers University of Technology, Gothenburg</p>
+          </div>
+          <div class="box">
+            <h4>Mar 2025 - Jun 2025</h4>
+            <h3>Design project with the Olympic Museum in Lausanne & Sport Museum in Gothenburg</h3>
+            <p>Chalmers University of Technology, Gothenburg</p>
+          </div>
+          <div class="box">
+            <h4>Jan 2022 - Jun 2022</h4>
+            <h3>Bachelor Thesis at AJ Produkter</h3>
+            <p>Chalmers University of Technology, Gothenburg</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <section>
+    <div class="contact" id="contact">
+      <div><h1>Contacts</h1></div>
+      <div></div>
+      <div class="icons_contact">
+        <div>
+          <a href="https://www.linkedin.com/in/emma-silverstam/" aria-label="LinkedIn – Emma Silverstam">
+            <i class="fa-brands fa-linkedin linkedin"></i>
+          </a>
+          <p>Emma Silverstam</p>
+        </div>
+        <div>
+          <a href="mailto:emma-silverstam@hotmail.se" aria-label="Email – Emma Silverstam">
+            <i class="fa-solid fa-square-envelope linkedin"></i>
+          </a>
+          <p>emma-silverstam@hotmail.se</p>
+        </div>
+        <div>
+          <a href="tel:+46735800489" aria-label="Phone – Emma Silverstam">
+            <i class="fa-solid fa-square-phone linkedin"></i>
+          </a>
+          <p>+46 735 800 489</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://kit.fontawesome.com/fff0c42ad6.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+      const navLinks = document.querySelector('nav ul');
+      const galleryItems = document.querySelectorAll('.gallery__item');
+
+      function toggleMenu() {
+        hamburgerMenu.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        const isOpen = hamburgerMenu.classList.contains('active');
+        hamburgerMenu.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+
+      hamburgerMenu.addEventListener('click', toggleMenu);
+      hamburgerMenu.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
+      });
+
+      galleryItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+          this.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+
+  <script>
+    var typingEffect = new Typed(".multi-text", {
+      strings: ["Emma Silverstam"],
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 80,
+      backDelay: 1500
+    });
+  </script>
+
+  <script>
+    (function () {
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+      const navList  = document.querySelector('nav ul');
+      const burger   = document.querySelector('.hamburger-menu');
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function smoothScrollTo(targetId) {
+        const el = document.querySelector(targetId);
+        if (!el) return;
+        if (prefersReduced) el.scrollIntoView();
+        else el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          if (!href || !href.startsWith('#')) return;
+          e.preventDefault();
+          smoothScrollTo(href);
+
+          if (navList && navList.classList.contains('active')) navList.classList.remove('active');
+          if (burger && burger.classList.contains('active')) {
+            burger.classList.remove('active');
+            burger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
