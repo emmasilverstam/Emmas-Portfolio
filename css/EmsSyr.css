@@ -1,0 +1,268 @@
+@import url("https://use.typekit.net/ymm5trk.css");
+
+/* === Basfärger (samma på ALLA storlekar) === */
+:root{
+  --text:#3f2e26;
+  --bg:#ffffff;
+}
+
+html{ font-size:100%; }
+body{
+  font-family:"futura-pt",sans-serif;
+  font-weight:300;
+  font-style:normal;
+  font-size:1.2rem;
+  color:var(--text);
+  background-color:var(--bg);
+}
+
+/* ===== Text ===== */
+h1{
+  font-size:5rem;
+  color:var(--text);
+  font-weight:300;
+  line-height:1.05;
+  margin:7rem 0 3rem;   /* inga negativa marginaler */
+  max-width:33rem;
+}
+h2{
+  font-size:1.7rem;
+  color:var(--text);
+  font-weight:700;
+  margin:0 0 1rem;
+}
+p{ max-width:31rem; }
+p span{ font-weight:700; color:var(--text); }
+
+a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:700;
+  font-size:1.3rem;
+}
+a:hover{
+  text-decoration:underline;
+  text-decoration-color:var(--text);
+  text-decoration-thickness:0.2rem;
+}
+
+/* ===== Nav ===== */
+nav{ max-width:72rem; margin-left:70%; margin-top:2rem; }
+nav ul{
+  list-style:none;
+  display:flex;
+  margin:0; padding:0;
+  position:relative; z-index:1000;
+}
+nav a{ margin:0.5rem; }
+
+.hamburger-menu{ display:none; cursor:pointer; }
+.bar{ width:25px; height:3px; background:#353535; margin:6px 0; }
+
+/* ===== Intro/info (text + mockup) ===== */
+.info{
+  max-width:70rem;                 /* samma som features */
+  margin: -2rem auto 0;
+  padding:0 1.25rem;               /* samma sidmarginaler som features */
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:center;
+}
+.booking img{
+  display:block;
+  width:120%;
+  height:auto;
+  max-width:1000px;                 /* hindrar overflow på desktop */
+  margin-top: 5rem;
+  margin-left: -2rem;
+  object-fit:contain;
+}
+
+/* ===== Toppvideo (centrerad) ===== */
+.hero-video{
+  max-width:70rem;           /* matchar .features och .info */
+  margin:4rem auto 2rem;
+  padding:0 1.25rem;
+  margin-top: 8rem;
+}
+.hero-video__inner{
+  display:flex;
+  justify-content:center;    /* centrerar horisontellt */
+  align-items:center;
+}
+.hero-video__media{
+  display:block;
+  width:min(100%, 960px);    /* responsiv och snygg på stora skärmar */
+  height:auto;
+  object-fit:cover;
+}
+
+/* Mobiljusteringar (återanvänd befintliga brytpunkter) */
+@media (max-width: 900px){
+  .hero-video{ margin:2.5rem auto 1.5rem; padding:0 1rem; }
+}
+@media (max-width: 500px){
+  .hero-video{ margin:2rem auto 1rem; }
+}
+
+
+/* ===== Alternating text + video ===== */
+.features{
+  max-width:70rem;
+  margin:12rem auto 6rem;
+  padding:0 1.25rem;
+  scroll-margin-top:6rem;          /* snygg ankarrullning */
+}
+.feature{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:start;               /* gör att rubrikens topp möter videons topp */
+  margin-bottom:6rem;
+}
+.feature--reverse{ direction:rtl; }
+.feature--reverse > *{ direction:ltr; }
+
+.feature__text{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.feature__text p{
+  margin:0; line-height:1.6; color:var(--text);
+  max-width:36rem;
+}
+/* === Bild i feature-sektionen === */
+.feature__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.2rem;
+  margin-top: 2rem;
+  object-fit: cover;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.08); /* valfritt för djup */
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Scroll reveal-effekt, samma som videor */
+.feature__media.in-view .feature__image {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature__image {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+
+/* Video */
+.feature__media video{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:cover;
+}
+
+/* Scroll reveal */
+.feature__media,
+.feature__text{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .6s ease, transform .6s ease;
+  will-change:opacity, transform;
+}
+.feature__media.in-view,
+.feature__text.in-view{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== Breakpoints ===== */
+
+/* Liten laptop / stor tablet */
+@media (max-width: 1050px){
+  h1{ margin-top:3rem; max-width:27rem; }
+  .info{ gap:2rem; }
+  .features{ margin-top:4rem; }          /* lite extra tajt jämfört med desktop */
+  .booking img{
+    width:110%;
+    max-width:720px;
+    margin-left:-2%;
+    margin-top:1rem;
+  }
+}
+
+/* Tablet & nedåt */
+@media (max-width: 900px){
+  /* Nav mobil */
+  nav{ max-width:100%; margin-left:0; margin-top:1rem; }
+  .hamburger-menu{ display:block; margin-left:1rem; }
+  nav ul{ flex-direction:column; align-items:center; display:none; }
+  nav ul.active{
+    display:flex;
+    flex-direction:column;
+    background:#EBEBEB;
+    width:96%;
+    padding:1rem;
+    box-shadow:0 0.125rem 0.313rem rgba(0,0,0,.1);
+    justify-content:center; align-items:center;
+    margin:0 auto 1rem;
+  }
+
+  /* Stackad intro + features */
+  .info{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1.5rem;
+    margin-top:0;
+    padding:0 1rem;
+  }
+
+  /* ====== Viktigt: bilden först ====== */
+  .booking{ order:-1; }                  /* flyttar bilden överst */
+  .info > :not(.booking){ order:2; }     /* texten kommer efter */
+  .booking img{
+    width:100%;
+    max-width:100%;
+    margin-left:0;
+    margin-top:0;
+  }
+
+  .features{
+    padding:0 1rem;
+    margin-top:2.5rem;
+  }
+  .feature{
+    grid-template-columns:1fr;
+    gap:1.25rem;
+    margin-bottom:5rem;
+  }
+  .feature--reverse{ direction:ltr; }    /* ingen växling när det är staplat */
+  .feature__text p{ max-width:100%; }
+
+  h1{ max-width:100%; }
+  p{ max-width:100%; }
+}
+
+/* Stor telefon */
+@media (max-width: 500px){
+  h1{
+    font-size:2.8rem;
+    margin:1rem 0 1.25rem;
+  }
+  .info{ 
+    padding:0 1rem; 
+  }
+  /* bilden ligger redan först via order:-1 ovan */
+  .features{ 
+    padding:0 1rem; 
+    margin-top:2rem; 
+  }
+}
+
+/* Mindre telefon */
+@media (max-width: 350px){
+  h1{ font-size:2.6rem; }
+}
