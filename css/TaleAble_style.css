@@ -161,24 +161,28 @@ nav a{ margin:0.5rem; }
     margin:0 auto 1rem;
   }
 
-  /* Stackad intro + features, behåll samma sidmarginaler */
+  /* Stackad intro + features */
   .info{
+    display:grid;
     grid-template-columns:1fr;
     gap:1.5rem;
-    margin-top:0;                   /* ingen extra luft ovanpå */
+    margin-top:0;
     padding:0 1rem;
   }
-  .booking{ order:2; }              /* byt till -1 om bild ska ligga först */
+
+  /* ====== Viktigt: bilden först ====== */
+  .booking{ order:-1; }                  /* flyttar bilden överst */
+  .info > :not(.booking){ order:2; }     /* texten kommer efter */
   .booking img{
     width:100%;
     max-width:100%;
     margin-left:0;
-    margin-top:0;                   /* tar bort glapp under texten */
+    margin-top:0;
   }
 
   .features{
     padding:0 1rem;
-    margin-top:2.5rem;              /* tajt mellan första bilden och "Prototyping" */
+    margin-top:2.5rem;
   }
   .feature{
     grid-template-columns:1fr;
@@ -198,8 +202,14 @@ nav a{ margin:0.5rem; }
     font-size:2.8rem;
     margin:1rem 0 1.25rem;
   }
-  .info{ padding:0 1rem; }
-  .features{ padding:0 1rem; margin-top:2rem; }
+  .info{ 
+    padding:0 1rem; 
+  }
+  /* bilden ligger redan först via order:-1 ovan */
+  .features{ 
+    padding:0 1rem; 
+    margin-top:2rem; 
+  }
 }
 
 /* Mindre telefon */
