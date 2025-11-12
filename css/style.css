@@ -1801,4 +1801,8 @@ main.row {
     margin-top: -2rem !important; /* dra upp Contact-sektionen närmare */
   }
 }
+  /* === Luft mellan Education och Experience === */
+  .container .row .col:nth-child(2) {
+    margin-top: 2rem !important; /* öka eller minska beroende på önskat mellanrum */
+  }
 
