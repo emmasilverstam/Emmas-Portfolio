@@ -1340,7 +1340,7 @@ main.row {
         display: block;
     }
     .img8{
-        width: 85%;         /* gör bilden mindre */
+        width: 90%;         /* gör bilden mindre */
         margin-top: 1rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: 0rem;
@@ -1419,7 +1419,7 @@ main.row {
         display: block;
     }
     .img8{
-        width: 85%;         /* gör bilden mindre */
+        width: 95%;         /* gör bilden mindre */
         margin-top: 3rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: 0rem;
@@ -1744,7 +1744,7 @@ main.row {
         display: block;
     }
     .img8{
-        width: 95%;         /* gör bilden mindre */
+        width: 105%;         /* gör bilden mindre */
         margin-top: 3rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
         margin-right: 0rem;
