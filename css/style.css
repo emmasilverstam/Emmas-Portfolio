@@ -302,8 +302,8 @@ nav a:hover {
     display: block;
 }
 .img8 {
-    width: 110%;         /* gör bilden mindre */
-    margin-top: 0,5rem;   /* flytta ned/upp */
+    width: 90%;         /* gör bilden mindre */
+    margin-top: -0.5rem;   /* flytta ned/upp */
     margin-left: auto;  /* centrera horisontellt */
     margin-right: auto;
     display: block;
@@ -1340,10 +1340,10 @@ main.row {
         display: block;
     }
     .img8{
-        width: 115%;         /* gör bilden mindre */
-        margin-top: 2rem;   /* flytta ned/upp */
+        width: 85%;         /* gör bilden mindre */
+        margin-top: 1rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
-        margin-right: 3rem;
+        margin-right: 0rem;
         display: block;
     }
     .img9{
@@ -1419,10 +1419,10 @@ main.row {
         display: block;
     }
     .img8{
-        width: 115%;         /* gör bilden mindre */
+        width: 85%;         /* gör bilden mindre */
         margin-top: 3rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
-        margin-right: 3rem;
+        margin-right: 0rem;
         display: block;
     }
     .img9{
@@ -1744,10 +1744,10 @@ main.row {
         display: block;
     }
     .img8{
-        width: 120%;         /* gör bilden mindre */
+        width: 95%;         /* gör bilden mindre */
         margin-top: 3rem;   /* flytta ned/upp */
         margin-left: auto;  /* centrera horisontellt */
-        margin-right: 4rem;
+        margin-right: 0rem;
         display: block;
     }
     .img9{
@@ -1816,7 +1816,7 @@ main.row {
 
   /* Dra upp Education närmast About */
   .about + .container {
-    margin-top: -18rem !important;
+    margin-top: -15rem !important;
     padding-top: 0 !important;
   }
 
