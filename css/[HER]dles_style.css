@@ -452,7 +452,7 @@ p span {
 /* Liten dator */
 @media only screen and (max-width: 1050px) {
 
-   h1,h2,a{ color:#3f2e26; }
+  h1,h2,a{ color:#3f2e26; }
 
   /* H1 får inte klippas */
   h1{
@@ -610,13 +610,14 @@ p span {
     justify-content:center; align-items:center; margin:0;
   }
 
-  /* Intro: en kolumn, bild under text */
+  /* Intro: EN kolumn, BILD FÖRST */
   .info{
     display:grid; grid-template-columns:1fr; gap:2rem;
     max-width:90%; margin:1rem auto 0 auto;
   }
-  .pendel{ order:2; margin-top:0; }
-  .pendel img{ width:50%; margin:0 auto; display:block; }
+  .pendel{ order:1; margin-top:0; }
+  .info > :not(.pendel){ order:2; }
+  .pendel img{ width:60%; margin:0 auto; display:block; }
 
   .step_1{
     display:grid; grid-template-columns:1fr; gap:1.5rem;
@@ -634,7 +635,19 @@ p span {
     padding:3rem 0 1.5rem 0; max-width:90%; margin:1rem auto 0 auto;
   }
 
-  .interface-grid{ max-width:90%; margin:5rem auto 0 auto; gap:2rem; }
+  /* Interface-order: Radio före Hurdle på mindre skärmar */
+  .interface-grid{ 
+    display:flex; 
+    flex-wrap:wrap; 
+    justify-content:center; 
+    align-items:flex-start; 
+    max-width:90%; 
+    margin:5rem auto 0 auto; 
+    gap:2rem; 
+  }
+  .interface-grid .interface-item:nth-child(1){ order:1; } /* Game */
+  .interface-grid .interface-item:nth-child(3){ order:2; } /* Radio */
+  .interface-grid .interface-item:nth-child(2){ order:3; } /* Hurdle */
 
   .sidor img{ width:80%; margin:0 auto; display:block; }
 
@@ -677,7 +690,8 @@ p span {
     display:grid; grid-template-columns:1fr; gap:2rem;
     max-width:90%; margin:1rem auto 0 auto; overflow:hidden;
   }
-  .pendel{ order:2; margin-top:0; }
+  .pendel{ order:1; margin-top:0; }
+  .info > :not(.pendel){ order:2; }
   .pendel img{ width:100%; margin:0; }
 
   .step_1{
@@ -696,6 +710,8 @@ p span {
     max-width:70%; margin:4rem auto 0 auto;
     padding:4rem 0 3rem 0;
   }
+
+  /* behåll interface-ordningen från 800px (Radio före Hurdle) */
 
   .interface-grid{ max-width:90%; margin:5rem auto 0 auto; gap:1.25rem; }
 
@@ -740,6 +756,9 @@ p span {
   }
 
   .info{ max-width:90%; margin:1rem auto 0 auto; gap:1.5rem; }
+  .pendel{ order:1; }
+  .info > :not(.pendel){ order:2; }
+
   .step_1{ max-width:90%; margin:1rem auto 0 auto; gap:1rem; }
   .sketch{ max-width:90%; margin:2rem auto 0 auto; }
 
@@ -787,7 +806,8 @@ p span {
     display:grid; grid-template-columns:1fr; gap:1rem;
     max-width:90%; margin:1rem auto 0 auto;
   }
-  .pendel{ order:2; }
+  .pendel{ order:1; }
+  .info > :not(.pendel){ order:2; }
   .pendel img{ width:100%; margin:0; display:block; }
 
   /* Steg 1 */
@@ -815,6 +835,11 @@ p span {
     max-width:90%; margin:0 auto; gap:1rem;
     justify-content:flex-start; align-items:stretch;
   }
+  /* Ordning kvar: Game (1), Radio (2), Hurdle (3) */
+  .interface-grid .interface-item:nth-child(1){ order:1; }
+  .interface-grid .interface-item:nth-child(3){ order:2; }
+  .interface-grid .interface-item:nth-child(2){ order:3; }
+
   .interface-item h3, .interface-item p{ text-align:left; margin-left:0; }
 
   /* Video: lite smalare och mer luft mot texten ovan */
