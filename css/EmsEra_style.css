@@ -316,6 +316,21 @@ nav a:hover{
     display:block;
   }
 
+  /* 1) Mindre huvudrubrik på mindre skärmar */
+  h1{
+    font-size:3.2rem;        /* ned från desktop */
+    line-height:1.1;
+    margin-top:.25rem;
+    margin-bottom:.5rem;
+    width:100%;
+    max-width:100%;
+  }
+
+  /* 2) Fetstil för etiketterna i inforaden */
+  .info p > span:first-child{
+    font-weight:700;         /* "Type", "When", "Duration", "Project scope" */
+  }
+
   /* Moodboard: text före bild */
   .step_1{
     grid-template-columns:90%;
@@ -401,6 +416,18 @@ nav a:hover{
     display:block;
   }
 
+  /* 1) Ytterligare nedskalning av huvudrubrik på mobil */
+  h1{
+    font-size:2.6rem;
+    line-height:1.15;
+    margin: .5rem 0 .75rem;
+  }
+
+  /* 2) Behåll fetstil för etiketterna även här */
+  .info p > span:first-child{
+    font-weight:700;
+  }
+
   /* Moodboard */
   .step_1{
     grid-template-columns:90%;
@@ -462,7 +489,11 @@ nav a:hover{
 @media (max-width:360px){
   .step_2 .sketches{ height:14rem; }
   .step_3{ gap:.6rem; }
+
+  /* Finjustera rubriken så den inte bryts konstigt */
+  h1{ font-size:2.4rem; }
 }
+
 /* ============================= */
 /* ANTI-OVERLAP PATCH – paste last */
 /* ============================= */
@@ -519,6 +550,7 @@ nav a:hover{
   /* Line-up-bilder – inga skalningar som kan “spilla” över */
   .step_3 .pic img{ transform:none !important; }
 }
+
 /* ============================= */
 /* HAMBURGER MENU TO LEFT FIX    */
 /* ============================= */
