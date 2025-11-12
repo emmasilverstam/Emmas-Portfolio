@@ -1805,4 +1805,43 @@ main.row {
   .container .row .col:nth-child(2) {
     margin-top: 2rem !important; /* öka eller minska beroende på önskat mellanrum */
   }
+/* === SAMMA JUSTERINGAR FÖR ÄNNU MINDRE SKÄRMAR (≤ 500px) === */
+@media (max-width: 500px) {
 
+  /* Vita boxar */
+  .container .col .contents .box {
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+  }
+
+  /* Dra upp Education närmast About */
+  .about + .container {
+    margin-top: -18rem !important;
+    padding-top: 0 !important;
+  }
+
+  /* Minska internmarginal i Education */
+  .about + .container main.row {
+    margin-top: 0 !important;
+  }
+
+  /* Luft mellan Education och Experience */
+  .container .row .col:nth-child(2) {
+    margin-top: 2rem !important;
+  }
+
+  /* Justera rubrikens toppmarginal */
+  .about + .container .title h2 {
+    margin-top: 0 !important;
+  }
+
+  /* Minska avståndet under Experience */
+  .container {
+    margin-bottom: 16rem !important;
+  }
+
+  /* Dra upp Contact närmare Experience */
+  .container + .contact {
+    margin-top: -2rem !important;
+  }
+}
