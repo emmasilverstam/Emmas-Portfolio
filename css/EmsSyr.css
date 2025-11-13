@@ -74,7 +74,7 @@ nav a{ margin:0.5rem; }
   width:120%;
   height:auto;
   max-width:1000px;                 /* hindrar overflow på desktop */
-  margin-top: 5rem;
+  margin-top: -6  rem;
   margin-left: -2rem;
   object-fit:contain;
 }
