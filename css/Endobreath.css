@@ -191,7 +191,7 @@ p span {
 .sketch {
   width: 75%;
   max-width: 72rem;
-  margin: 7rem auto 0;
+  margin: rem auto 0;
 }
 
 
@@ -363,8 +363,8 @@ margin-top: 5rem;
 /* Controls */
 #result-gallery .rg-btn{
   position: absolute;
-  margin-left: 15rem;
-  margin-right: 15rem;
+  margin-left: 20rem;
+  margin-right: 20rem;
   top: 50%;
   transform: translateY(-50%);
   border: none;
@@ -409,7 +409,7 @@ margin-top: 5rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: 3rem;
-  margin-top: -8rem;
+  margin-top: 1rem;
   padding: 0 1rem;
   color: #3f2e26;
   transform: translateY(-40px);
@@ -1026,8 +1026,9 @@ html, body { overflow-x: hidden; }
   /* Första bilden (pendel) – rimlig storlek och centrering */
   .pendel{ order: -1; }
   .pendel img{
-    width: min(80%, 420px) !important;
-    margin: 0 auto !important;
+    width: min(96%, 430px) !important;
+    margin-right: -8rem!important;
+    margin-bottom: -2rem!important;
     display: block;
   }
 
@@ -1169,3 +1170,60 @@ html, body { overflow-x: hidden; }
   }
   nav ul.active{ display: flex !important; }
 }
+/* =========================================
+   EXTRA MOBIL/TABLET-FIXAR (lägg längst ned)
+   ========================================= */
+
+/* 1. Mer luft vänster/höger på mindre skärmar */
+@media (max-width: 800px) {
+  .info,
+  .step_1,
+  .sketch,
+  .result,
+  #prototyping-gallery,
+  #result-gallery .rg-wrap,
+  .pink-wrap {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 1.25rem;   /* horisontell padding */
+    margin-inline: 0;          /* ta bort konstiga marginaler */
+  }
+}
+
+/* 2. Carousellen – större bilder + bättre pilar */
+@media (max-width: 800px) {
+  /* gör bilden större i sliden */
+  #result-gallery .rg-slide img {
+    max-width: 80%;
+  }
+
+  /* pilarna närmare mitten och utan konstiga marginaler */
+  #result-gallery .rg-btn {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 2.4rem;
+  }
+  #result-gallery .rg-prev { left: 10px; }
+  #result-gallery .rg-next { right: 10px; }
+}
+
+/* ännu snäppet större bild och mer padding på riktigt små mobiler */
+@media (max-width: 480px) {
+  #result-gallery .rg-viewport {
+    padding-inline: 2.25rem;   /* lite luft så pilarna inte ”hänger utanför” */
+  }
+  #result-gallery .rg-slide img {
+    max-width: 92%;
+  }
+}
+/* Mindre body-mapping bilder */
+.pink-grid figure {
+  height: 320px !important;      /* tidigare 420px */
+}
+
+.pink-grid img {
+  max-width: 85% !important;     /* gör bilderna visuellt mindre */
+  max-height: 85% !important;
+}
+
+
