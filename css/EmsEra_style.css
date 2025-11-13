@@ -9,6 +9,8 @@
   --max:72rem;
   --content-w:75%;
 }
+p{ max-width:31rem; line-height:1.6; }
+p span{ font-weight:700; }
 
 html{ font-size:100%; }
 body{
