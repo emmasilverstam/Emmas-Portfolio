@@ -182,7 +182,7 @@ nav a:hover {
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 22%);
-  grid-auto-rows: 28rem; /* Gör varje projekt mer kvadratiskt */
+  grid-auto-rows: 27rem; /* Gör varje projekt mer kvadratiskt */
   gap: 1.2rem 2rem;
   justify-content: center;
 }
@@ -1845,4 +1845,5 @@ main.row {
         display: block;
     }
 }
+
 
