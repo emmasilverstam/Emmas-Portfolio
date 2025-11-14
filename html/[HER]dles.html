@@ -152,10 +152,11 @@ enough for a museum setting.
                 <img src="../pendel/result.jpg" alt="Concept sketch">
             </div>
             <div class="vagg">
-                <video class="result-video" muted playsinline>
+                <video class="result-video" muted playsinline loop>
                     <source src="../pendel/videoherdles.MOV" type="video/mp4">
                 </video>
             </div>
+
         </div>
             <div class="poster">
                 <div><h2>A poster</h2>
@@ -177,24 +178,34 @@ enough for a museum setting.
     </footer>
 </body>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const video = document.querySelector('.result-video');
 
-  if (video) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          video.play();
-        } else {
-          video.pause();
-        }
-      });
-    }, { threshold: 0.5 });
+  if (!video) return;
 
-    observer.observe(video);
-  }
+  // Spela upp / pausa beroende på om videon syns
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        if (video.paused) {
+          video.play();
+        }
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(video);
+
+  // När videon är slut: börja om direkt
+  video.addEventListener('ended', () => {
+    video.currentTime = 0;
+    video.play();
+  });
 });
 </script>
+
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
