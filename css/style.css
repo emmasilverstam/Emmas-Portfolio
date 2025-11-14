@@ -1062,6 +1062,92 @@ main.row {
 
 }
 
+/* === FINAL FIX (endast små skärmar): Vita boxar + tajtare mellan About och Education === */
+@media (max-width: 800px) {
+
+  /* Vita boxar igen */
+  .container .col .contents .box {
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+  }
+
+  /* Dra upp Education närmast About */
+  .about + .container {
+    margin-top: -18rem !important; /* justera mellan -2rem och -5rem vid behov */
+    padding-top: 0 !important;
+  }
+
+  /* Minska internmarginal i Education */
+  .about + .container main.row {
+    margin-top: 0 !important;
+  }
+
+  /* Håll ihop Education och Experience */
+  .container .row .col:nth-child(2) {
+    margin-top: 2rem !important;
+  }
+
+  /* Justera rubrikens toppmarginal */
+  .about + .container .title h2 {
+    margin-top: 0 !important;
+  }
+}
+/* === Justera avståndet mellan Experience och Contact (endast små skärmar) === */
+@media (max-width: 800px) {
+
+  /* Minska eller öka avståndet under sista boxen i Experience */
+  .container {
+    margin-bottom: 16rem !important; /* justera fritt mellan 0 och -4rem */
+  }
+
+  /* Alternativt om du vill finstyra exakt mellan .container och .contact */
+  .container + .contact {
+    margin-top: -2rem !important; /* dra upp Contact-sektionen närmare */
+  }
+}
+
+/* === SAMMA JUSTERINGAR FÖR ÄNNU MINDRE SKÄRMAR (≤ 500px) === */
+@media (max-width: 500px) {
+
+  /* Vita boxar */
+  .container .col .contents .box {
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+  }
+
+  /* Dra upp Education närmast About */
+  .about + .container {
+    margin-top: -15rem !important;
+    padding-top: 0 !important;
+  }
+
+  /* Minska internmarginal i Education */
+  .about + .container main.row {
+    margin-top: 0 !important;
+  }
+
+  /* Luft mellan Education och Experience */
+  .container .row .col:nth-child(2) {
+    margin-top: 2rem !important;
+  }
+
+  /* Justera rubrikens toppmarginal */
+  .about + .container .title h2 {
+    margin-top: 0 !important;
+  }
+
+  /* Minska avståndet under Experience */
+  .container {
+    margin-bottom: 16rem !important;
+  }
+
+  /* Dra upp Contact närmare Experience */
+  .container + .contact {
+    margin-top: -2rem !important;
+  }
+}
+
+
 /*stor telefon*/
 @media only screen and (max-width: 500px) {
     h1 {
@@ -1069,6 +1155,7 @@ main.row {
         width: 100%;
         margin-top: -4rem;
         margin-left: 0;
+        color: #3e2e26;
     }
 
     h1 span {
@@ -1594,7 +1681,7 @@ main.row {
         justify-content: center;
         position: center;
         margin-left: 0;
-        margin-top: 1rem;
+        margin-top: 10rem;
     }
 
     .col .contents .box {
@@ -1605,7 +1692,7 @@ main.row {
         border: 0.05rem solid #ffffff;
         background-color: #ffffff;
         transition: all 0.4s;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
 
     }
 
@@ -1757,91 +1844,4 @@ main.row {
         margin-right: auto;
         display: block;
     }
-}
-/* === FINAL FIX (endast små skärmar): Vita boxar + tajtare mellan About och Education === */
-@media (max-width: 800px) {
-
-  /* Vita boxar igen */
-  .container .col .contents .box {
-    background-color: #ffffff !important;
-    border-color: #ffffff !important;
-  }
-
-  /* Dra upp Education närmast About */
-  .about + .container {
-    margin-top: -18rem !important; /* justera mellan -2rem och -5rem vid behov */
-    padding-top: 0 !important;
-  }
-
-  /* Minska internmarginal i Education */
-  .about + .container main.row {
-    margin-top: 0 !important;
-  }
-
-  /* Håll ihop Education och Experience */
-  .container .row .col:nth-child(2) {
-    margin-top: 0 !important;
-  }
-
-  /* Justera rubrikens toppmarginal */
-  .about + .container .title h2 {
-    margin-top: 0 !important;
-  }
-}
-/* === Justera avståndet mellan Experience och Contact (endast små skärmar) === */
-@media (max-width: 800px) {
-
-  /* Minska eller öka avståndet under sista boxen i Experience */
-  .container {
-    margin-bottom: 16rem !important; /* justera fritt mellan 0 och -4rem */
-  }
-
-  /* Alternativt om du vill finstyra exakt mellan .container och .contact */
-  .container + .contact {
-    margin-top: -2rem !important; /* dra upp Contact-sektionen närmare */
-  }
-}
-  /* === Luft mellan Education och Experience === */
-  .container .row .col:nth-child(2) {
-    margin-top: 2rem !important; /* öka eller minska beroende på önskat mellanrum */
-  }
-/* === SAMMA JUSTERINGAR FÖR ÄNNU MINDRE SKÄRMAR (≤ 500px) === */
-@media (max-width: 500px) {
-
-  /* Vita boxar */
-  .container .col .contents .box {
-    background-color: #ffffff !important;
-    border-color: #ffffff !important;
-  }
-
-  /* Dra upp Education närmast About */
-  .about + .container {
-    margin-top: -15rem !important;
-    padding-top: 0 !important;
-  }
-
-  /* Minska internmarginal i Education */
-  .about + .container main.row {
-    margin-top: 0 !important;
-  }
-
-  /* Luft mellan Education och Experience */
-  .container .row .col:nth-child(2) {
-    margin-top: 2rem !important;
-  }
-
-  /* Justera rubrikens toppmarginal */
-  .about + .container .title h2 {
-    margin-top: 0 !important;
-  }
-
-  /* Minska avståndet under Experience */
-  .container {
-    margin-bottom: 16rem !important;
-  }
-
-  /* Dra upp Contact närmare Experience */
-  .container + .contact {
-    margin-top: -2rem !important;
-  }
 }
