@@ -1,0 +1,1369 @@
+@import url("https://use.typekit.net/ymm5trk.css");
+
+/* ---------------------------
+   Base / tokens
+----------------------------*/
+:root{
+  --text:#3f2e26;
+  --bg:#fffbf8;
+  --accent:#d7e3f9;
+}
+
+html{font-size:100%;}
+
+body{
+  font-family:"futura-pt",sans-serif;
+  font-weight:300;
+  font-size:1.2rem;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.45;
+  margin:0;
+}
+
+/* Typography */
+h1{
+  font-size:5rem;
+  font-weight:300;
+  line-height:1;
+  margin:7rem 0 3rem;
+  max-width:31rem;
+  color:var(--text);
+}
+h2{
+  font-size:1.7rem;
+  font-weight:700;
+  margin:0 0 1rem 0;
+  color:var(--text);
+}
+p{max-width:31rem;margin:0 0 1rem 0;}
+p span{font-weight:700;color:var(--text);}
+
+a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:700;
+  font-size:1.3rem;
+}
+
+/* ---------------------------
+   Nav
+----------------------------*/
+nav{
+  max-width:72rem;
+  margin:2rem auto 0;
+  padding:0 1rem;
+  position:relative;
+  z-index:1000;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:1rem;
+}
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:.75rem;
+  margin:0;
+  padding:0;
+}
+nav a:hover{
+  text-decoration:underline;
+  text-decoration-thickness:.2rem;
+}
+
+.hamburger-menu{display:none;cursor:pointer;}
+.bar{width:25px;height:3px;background:#353535;margin:6px 0;}
+
+/* ---------------------------
+   Sections
+----------------------------*/
+
+/* Intro two-column */
+.info{
+  display:grid;
+  grid-template-columns:36% 36%;
+  justify-content:center;
+  gap:3%;
+  row-gap:5rem;
+  margin: -2rem 0 -5rem;
+  padding:0 1rem;
+}
+.pendel img{width:82%;margin-left:6rem;margin-top:5.5rem;display:block;}
+
+/* Two-col section */
+.interface{
+  display:grid;
+  grid-template-columns:35% 35%;
+  justify-content:center;
+  column-gap:5%;
+  row-gap:5rem;
+  margin:7rem 0 -5rem;
+  padding:3rem 1rem;
+}
+
+/* ✅ block color */
+.background{
+  background:#1C3A3A;
+}
+
+/* ✅ white text in block */
+.interface.background,
+.interface.background h2,
+.interface.background p,
+.interface.background p span{
+  color:#ffffff;
+}
+
+/* Right side container */
+.sidor{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* ✅ stack container (bilder ovanpå varandra) */
+.img-stack{
+  position:relative;
+  width:100%;          /* minskar storlek */
+  max-width:900px;    /* optional cap */
+    padding-top:10%;
+}
+
+/* ger stacken en höjd (så den inte blir 0 innan bilderna laddar) */
+.img-stack::before{
+  content:"";
+  display:block;
+  padding-top:95%; /* justera om dina bilder har annan ratio */
+}
+
+/* varje bild-lager ligger ovanpå */
+.img-stack .stack-layer{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  opacity:0;
+  transition:opacity .7s ease;
+}
+
+/* när den lagts till -> synlig */
+.img-stack .stack-layer.is-visible{
+  opacity:1;
+}
+/* -------- Design process section -------- */
+
+.process-section{
+  display:grid;
+  grid-template-columns:35% 35%;
+  justify-content:center;
+  column-gap:5%;
+  margin:9rem 0 6rem; /* mer luft uppåt */
+  padding:0 1rem;
+  
+
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .9s ease, transform .9s ease;
+}
+
+/* när synlig */
+.process-section.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.process-image img{
+  width:100%;
+  display:block;
+  border-radius:8px;
+}
+
+/* texten till höger */
+.process-text{
+  text-align:left;
+}
+
+.process-text h2{
+  margin-bottom:1rem;
+}
+
+
+/* -------- Research questions -------- */
+
+.rq-section{
+  margin:8rem 0 6rem;
+  padding:0 1rem;
+}
+
+.rq-grid{
+  display:grid;
+  grid-template-columns:35% 35%;
+  justify-content:center;
+  column-gap:5%;
+  row-gap:1.75rem;
+}
+
+/* Rubriken ligger i vänster kolumn */
+.rq-title{
+  grid-column:1 / 2;
+}
+
+.rq-title h2{
+  margin:0;
+}
+.rq-sub{
+  margin: .75rem 0 0 0;
+  max-width: 34rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+
+/* Kort som täcker hela sektionen (båda kolumnerna) */
+.rq-full{
+  grid-column:1 / -1;
+}
+
+/* Card style */
+.rq-card{
+  border:2px solid #CF926D;
+  border-radius:16px;
+  padding:2rem 2rem 1.75rem;
+  background:transparent;
+}
+
+.rq-card h3{
+  margin:0 0 .75rem 0;
+  font-size:2.6rem;
+  font-weight:700;
+  color:#CF926D;
+  line-height:1;
+}
+
+.rq-card p{
+  margin:0;
+  font-size:1.2rem;
+  line-height:1.6;
+  max-width:none;
+  color:var(--text);
+}
+
+/* ---- Reveal animations ---- */
+.reveal-up,
+.reveal-right,
+.reveal-left{
+  opacity:0;
+  transition:opacity .9s ease, transform .9s ease;
+  will-change:opacity, transform;
+}
+
+.reveal-up{ transform:translateY(28px); }
+.reveal-right{ transform:translateX(60px); }
+.reveal-left{ transform:translateX(-60px); }
+
+.is-visible{
+  opacity:1;
+  transform:translate(0,0);
+}
+
+/* Mobile */
+@media (max-width:800px){
+  .rq-grid{
+    grid-template-columns:90%;
+  }
+  .rq-title{
+    grid-column:1 / -1; /* rubriken tar hela bredden på mobil */
+  }
+  .rq-card h3{
+    font-size:2.2rem;
+  }
+}
+
+
+/* -------- Design iterations (bigger image + full-width baseline) -------- */
+
+.gallery-section{
+  margin:8rem 0 6rem;
+  padding:0 1rem;
+}
+
+/* reveal */
+.gallery-section.reveal-up{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .9s ease, transform .9s ease;
+  will-change:opacity, transform;
+}
+.gallery-section.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ✅ Gör högra kolumnen större */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:35% 35%;  /* ✅ samma som resten */
+  justify-content:center;
+  column-gap:5%;
+  row-gap:0;
+  align-items:start;
+}
+
+
+
+/* vänster */
+.gallery-text{
+  padding-bottom:0; /* vi låter grid align-items:end styra baseline */
+  max-width:60rem;   /* 👈 minskar textens bredd */
+}
+.gallery-text h2{ margin:0 0 1rem 0; }
+.gallery-text p{ margin:0; }
+
+/* höger */
+.gallery-rotator{
+  display:flex;
+  justify-content:flex-start;
+  align-items:flex-start;
+
+  margin-top:-5rem; /* 👈 flyttar upp bild + linje */
+}
+
+
+/* gör bilden större */
+.gallery-rotator img{
+  width:180%;              /* ✅ gör bilden större */
+  max-width:1000px;         /* ✅ höj taket */
+  height:auto;
+  display:block;
+  border:none;
+
+  transform:translateX(-15%); /* ✅ flyttar bilden åt vänster */
+}
+
+
+
+/* ✅ Linje: full bredd, exakt på "baslinjen" under bild + text */
+.gallery-line{
+  grid-column: 1 / -1;
+
+  /* thickness + color */
+  height: 200px;              /* <- adjust to the “block” thickness you want */
+  background: #CF926D;
+
+  /* break out of the centered grid to full viewport width */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+
+  /* optional: no gap above */
+  margin-top: 0;
+}
+
+
+/* Mobile */
+@media (max-width:1050px){
+  .gallery-grid{
+    grid-template-columns:40% 50%;
+  }
+  .gallery-rotator img{
+    max-width:680px;
+  }
+}
+
+@media (max-width:800px){
+  .gallery-grid{
+    grid-template-columns:90%;
+    row-gap:1.5rem;
+    align-items:start;
+  }
+  .gallery-line{
+    margin-top:.5rem;
+  }
+  .gallery-rotator img{
+    max-width:100%;
+  }
+}
+
+.req-columns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  margin-top:2.5rem;
+}
+
+/* lista */
+.req-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  counter-reset:item;
+}
+
+.req-list li{
+  display:grid;
+  grid-template-columns:44px 1fr;
+  gap:1rem;
+  align-items:start;
+  margin-bottom:1.2rem;
+  color:#172E2F;
+  line-height:1.5;
+}
+
+/* orange nummercirkel */
+.req-list li::before{
+  counter-increment:item;
+  content: counter(item);
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#CF926D;
+  color:#172E2F;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* mobil */
+@media (max-width:900px){
+  .req-columns{
+    grid-template-columns:1fr;
+    gap:2rem;
+  }
+}
+
+
+/* =========================================================
+   REQUIREMENTS LIST – FINAL WORKING VERSION
+========================================================= */
+
+:root{
+  --req-text:#172E2F;
+  --req-accent:#CF926D;
+}
+
+/* section */
+.req-section{
+  margin:8rem 0 6rem;
+  padding:0 1rem;
+}
+
+.req-container{
+  max-width:72rem;
+  margin:0 auto;
+}
+
+/* intro */
+.req-intro{
+  display:grid;
+  grid-template-columns:60% 35%;
+  justify-content:center;
+  column-gap:5%;
+  margin-bottom:3rem;
+}
+
+.req-intro h2,
+.req-intro p{
+  grid-column:1 / 2;   /* 👈 vänsterkolumn */
+  max-width:34rem;
+  color:var(--req-text);
+}
+
+/* slider */
+.req-slider{
+  position:relative;
+}
+
+/* arrows */
+.req-arrow{
+  position:absolute;
+  top:4.5rem; /* aligns with MUST/SHOULD/COULD */
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:2px solid var(--req-accent);
+  background:transparent;
+  color:var(--req-text);
+  font-size:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.req-arrow-left{ left:0; }
+.req-arrow-right{ right:0; }
+
+/* panels */
+.req-panels{
+  display:flex;
+  justify-content:center;
+}
+
+.req-panel{
+  display:none;
+  width:100%;
+  max-width:980px;
+}
+.req-panel.is-active{
+  display:block;
+}
+
+/* title */
+.req-title-row{
+  display:flex;
+  justify-content:center;
+  margin-bottom:2.5rem;
+}
+.req-title{
+  font-size:3rem;
+  font-weight:700;
+  color:var(--req-text);
+  margin:0;
+}
+
+/* two columns */
+.req-columns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+}
+
+/* LIST RESET */
+.req-list{
+  list-style:none !important;
+  margin:0;
+  padding:0;
+  counter-reset:item var(--req-start);
+}
+
+/* items */
+.req-list li{
+  display:grid;
+  grid-template-columns:44px 1fr;
+  gap:1rem;
+  align-items:start;
+  margin-bottom:.6rem;
+  color:var(--req-text);
+  line-height:1.45;
+}
+
+/* ORANGE CIRCLE */
+.req-list li::before{
+  counter-increment:item;
+  content:counter(item);
+
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:var(--req-accent);
+  color:var(--req-text);
+  font-weight:700;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* start numbers */
+.req-start-1  { --req-start:0; }
+.req-start-9  { --req-start:8; }
+.req-start-17 { --req-start:16; }
+.req-start-24 { --req-start:23; }
+
+
+
+
+/* -------- New section: text + 3 images under -------- */
+
+.flow-section{
+  margin:8rem 0 6rem;
+  padding:0 1rem;
+}
+
+/* reveal (matchar din reveal-up) */
+.flow-section.reveal-up{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .9s ease, transform .9s ease;
+  will-change:opacity, transform;
+}
+.flow-section.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* wrapper centrerad som resten */
+.flow-wrap{
+  max-width:72rem;
+  margin:0 auto;
+}
+
+/* textblock */
+.flow-text{
+  max-width:34rem; /* likt req-intro-ish */
+}
+
+/* bildrad under text */
+.flow-row{
+  margin-top:2.5rem;
+  display:grid;
+  grid-template-columns:1fr auto 1fr auto 1fr;
+  align-items:center;
+  column-gap:1.25rem;
+}
+
+/* bilder */
+.flow-item{
+  margin:0;
+  border-radius:10px;
+  overflow:hidden;
+}
+.flow-item img{
+  width:105%;
+  height:auto;
+  object-fit:contain;
+  display:block;
+}
+
+
+/* pilar */
+.flow-arrow{
+  font-size:3rem;
+  font-weight:700;
+  line-height:1;
+  color:#172E2F;
+  transform:translateY(-2px);
+}
+
+/* mobile: stacka */
+@media (max-width:800px){
+  .flow-row{
+    grid-template-columns:1fr;
+    row-gap:1rem;
+  }
+  .flow-arrow{
+    justify-self:center;
+    transform:none;
+  }
+}
+/* staggered image reveal */
+.flow-img{
+  opacity:0;
+  transform:translateY(24px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.flow-img.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* =========================
+   Reveal (sections)
+========================= */
+
+/* The Problem (interface.background) */
+.interface.background{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .9s ease, transform .9s ease;
+}
+
+/* When visible */
+.interface.background.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Requirements section */
+.req-section{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .9s ease, transform .9s ease;
+}
+
+.req-section.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Optional: reveal slider separately (nice stagger) */
+.req-slider{
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+.req-slider.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+
+
+/* =========================
+   Result intro section
+========================= */
+
+.result-intro-section{
+  margin:8rem 0 0;   /* 👈 ingen bottenmarginal */
+  padding:0 1rem;
+}
+
+
+/* samma grid-logik som resten av sidan */
+.result-intro-grid{
+  display:grid;
+  grid-template-columns:35% 35%;
+  justify-content:center;
+  column-gap:5%;
+  align-items:stretch; /* 👈 viktigt */
+}
+
+
+/* vänster text */
+.result-intro-text{
+  max-width:34rem;
+  margin-top: 6rem; /* justera värdet */
+}
+
+.result-intro-text h2{
+  margin:0 0 1rem 0;
+}
+
+.result-intro-text p{
+  margin:0;
+}
+
+/* höger bild */
+.result-intro-image{
+  
+  display:flex;
+  align-items:flex-end; /* 👈 bilden trycks ner */
+}
+
+.result-intro-image img{
+  width:200%;
+  transform: translateX(-18rem);
+  margin-bottom:-160px;
+  height:auto;
+  display:block;
+  border-radius:0; /* 👈 så den möter nästa block rent */
+}
+
+
+/* mobile */
+@media (max-width:800px){
+  .result-intro-grid{
+    grid-template-columns:90%;
+    row-gap:2rem;
+  }
+}
+
+
+
+
+
+
+/* =========================================================
+   RESULT SECTION – CLEAN + FIXED (drop-in replacement)
+   Fixes:
+   - Logo pinned TOP-LEFT of the GREEN full-width block
+   - Background image NEVER gets clipped on right side
+   - Video sits INSIDE the circle area (controlled via vars)
+   - You can scale + move video left/right/up/down per slide
+========================================================= */
+
+/* 1) Add these vars (put in your main :root) */
+:root{
+  --result-green:#162F30;
+
+  /* Layout */
+  --result-max:72rem;
+  --result-pad-y:4rem;
+  --result-pad-x:3.5rem;
+
+  /* Media (right side) */
+  --media-width: 660px;     /* change to resize the whole image area */
+  --media-radius: 18px;
+
+  /* Background image behaviour (NO clipping) */
+  --bg-scale: 1;            /* 1 = normal, >1 = slightly bigger */
+  
+  /* Video overlay controls (fit into circle) */
+  --video-scale: 1;         /* 1 = normal, 1.1 = bigger */
+  --video-x: 0px;           /* move left/right (negative/positive) */
+  --video-y: 0px;           /* move up/down  */
+  --video-w: 58%;           /* size of video box relative to media */
+  --video-aspect: 9/16;     /* change if your video is landscape (16/9) */
+}
+
+/* section spacing */
+.result-section{
+  margin:8rem 0 6rem;
+  padding:0 1rem;
+}
+
+.result-dots{
+  position:absolute;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:.7rem;
+  z-index:50; /* höj */
+}
+
+/* synliga på grönt */
+.result-dots .dot{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  border:2px solid rgba(255,255,255,.75);
+  background:transparent;
+  cursor:pointer;
+  padding:0;
+}
+
+.result-dots .dot.is-active{
+  background:#fff;
+  border-color:#fff;
+}
+
+
+/* Full-width green block */
+.result-block{
+  background:var(--result-green);
+  width:100vw;
+  position:relative;
+  left:50%;
+  margin-left:-50vw;
+  padding:0;
+  overflow:hidden; /* ok */
+}
+
+/* inner centered content */
+.result-slides{
+  max-width:var(--result-max);
+  margin:0 auto;
+  padding:var(--result-pad-y) var(--result-pad-x);
+  position:relative;
+}
+
+/* arrows on edges */
+.result-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:56px;
+  height:56px;
+  border-radius:999px;
+  border:2px solid rgba(255,255,255,.35);
+  background:rgba(0,0,0,0);
+  color:#fff;
+  font-size:2.2rem;
+  line-height:1;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  z-index:20;
+}
+.result-arrow-left{ left:18px; }
+.result-arrow-right{ right:18px; }
+.result-arrow:hover{ background:rgba(255,255,255,.10); }
+
+/* slide switching */
+.result-slide{ display:none; position:relative; }
+.result-slide.is-active{ display:block; }
+
+/* ✅ LOGO: pinned to the green block top-left */
+.result-logo{
+  position:absolute;
+  top:-10px;
+  left:-140px;
+  width:300px;     /* bigger */
+  height:auto;
+  display:block;
+  z-index:25;
+}
+
+/* layout: text left, media right */
+.result-grid{
+  display:grid;
+  grid-template-columns:40% 60%;
+  column-gap:4%;
+  align-items:center;
+}
+
+/* text styling */
+.result-text h2{
+  margin:0 0 1rem 0;
+  color:#fff;
+}
+.result-text p{
+  margin:0;
+  color:#fff;
+  max-width:34rem;
+}
+
+/* ✅ right media box — controls the entire image area size */
+.result-media{
+  justify-self:end;
+  width:var(--media-width);
+  max-width:100%;
+  position:relative;
+
+  /* IMPORTANT: do NOT clip the background on right side */
+  overflow:visible;
+
+  border-radius:var(--media-radius);
+}
+
+/* ✅ background image should not be clipped and should keep full width */
+.result-bg{
+  width:120%;
+  height:auto;
+  display:block;
+
+  /* no cropping */
+  object-fit:contain;
+
+  /* allow small scaling without cropping */
+  transform: scale(var(--bg-scale));
+  transform-origin:center;
+}
+
+/* ✅ video overlay: placed inside the circle by tweaking vars */
+.result-video{
+  position:absolute;
+
+  /* center baseline */
+  left:42%;
+  top:49%;
+
+  /* size */
+  width:var(--video-w);
+  aspect-ratio: var(--video-aspect);
+  height:auto;
+
+  /* fit nicely inside circle */
+  object-fit:contain;
+
+  /* move + scale */
+  transform:
+    translate(-50%, -50%)
+    translate(var(--video-x), var(--video-y))
+    scale(var(--video-scale));
+
+  pointer-events:none;
+  z-index:10;
+}
+
+/* Responsive */
+@media (max-width:900px){
+  :root{
+    --media-width: 520px;
+    --result-pad-x: 1.25rem;
+  }
+
+  .result-grid{
+    grid-template-columns:1fr;
+    row-gap:2rem;
+  }
+
+  .result-media{
+    justify-self:center;
+  }
+
+  .result-logo{
+    width:160px;
+    top:16px;
+    left:16px;
+  }
+
+  .result-arrow-left{ left:10px; }
+  .result-arrow-right{ right:10px; }
+}
+
+
+
+
+
+
+
+
+
+/* Prototyping text block with scroll scale JS */
+.result{
+  display:grid;
+  grid-template-columns:75%;
+  justify-content:center;
+  margin-top:6rem;
+  padding:0 1rem;
+}
+.progress-zoom{will-change:transform;}
+
+/* Three images row */
+.step_3{
+  display:grid;
+  grid-template-columns:23.666% 23.666% 23.666%;
+  justify-content:center;
+  column-gap:2%;
+  margin:0 0 5rem;
+  padding:0 1rem;
+}
+.step_3 .pic1,.step_3 .pic2,.step_3 .pic3{
+  aspect-ratio:4 / 5;
+  overflow:hidden;
+  margin-top:2rem;
+}
+.step_3 .pic1 img,
+.step_3 .pic2 img,
+.step_3 .pic3 img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  border-radius:8px;
+}
+.step_3 img{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 1.2s ease, transform 1.2s ease;
+  will-change:opacity,transform;
+}
+.step_3 img.is-visible{opacity:1;transform:translateY(0);}
+.step_3 .pic1 img.is-visible{transition-delay:0s;}
+.step_3 .pic2 img.is-visible{transition-delay:.12s;}
+.step_3 .pic3 img.is-visible{transition-delay:.24s;}
+
+/* Result text block */
+.slutgiltig{
+  display:grid;
+  grid-template-columns:75%;
+  justify-content:center;
+  margin-top:1rem;
+  padding:0 1rem;
+}
+
+/* Photo + video duo */
+.miljo{
+  display:grid;
+  grid-template-columns:36.5% 36.5%;
+  justify-content:center;
+  column-gap:2%;
+  margin-top:2rem;
+  padding:0 1rem;
+}
+.ritning img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  border-radius:10px;
+}
+.video-wrapper{
+  position:relative;
+  width:100%;
+  height:100%;
+  border-radius:16px;
+  overflow:hidden;
+  background:#000;
+}
+.video-wrapper video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.video-overlay{
+  position:absolute; inset:0;
+  display:grid; place-items:center;
+  pointer-events:none;
+}
+.play-btn{
+  pointer-events:auto;
+  font-size:3rem;
+  color:#fff;
+  background:rgba(0,0,0,.6);
+  border:0;
+  border-radius:50%;
+  width:80px; height:80px;
+  cursor:pointer;
+  transition:background .2s;
+}
+.play-btn:hover{background:rgba(0,0,0,.8);}
+.video-wrapper.playing .video-overlay{display:none;}
+
+/* Poster two-column */
+.poster{
+  display:grid;
+  grid-template-columns:35% 35%;
+  justify-content:center;
+  column-gap:5%;
+  row-gap:5rem;
+  margin:5rem 0 5rem;
+  padding:0 1rem;
+}
+.post img{width:100%;display:block;margin-top:1rem;}
+
+/* ---------------------------
+   Responsive
+----------------------------*/
+@media (max-width:1050px){
+  nav{max-width:62rem;}
+
+  .info{
+    grid-template-columns:43.5% 43.5%;
+    gap:3%;
+    margin-top:2rem;
+  }
+  .pendel img{width:60%;margin-left:7rem;margin-top:5rem;}
+
+  .interface{grid-template-columns:42.5% 42.5%;}
+  .result{grid-template-columns:90%;}
+  .slutgiltig{grid-template-columns:90%;}
+
+  .step_3{grid-template-columns:28.666% 28.666% 28.666%;}
+  .miljo{grid-template-columns:44% 44%;}
+  .poster{grid-template-columns:42.5% 42.5%;}
+}
+
+@media (max-width:800px){
+  h1{color:#3f2e26;}
+  h2{color:#3f2e26;}
+
+  .hamburger-menu{display:block;margin-left:1rem;}
+  nav{justify-content:flex-start;}
+  nav ul{display:none;flex-direction:column;background:#EBEBEB;width:90%;padding:1rem;margin-top:.5rem;box-shadow:0 2px 5px rgba(0,0,0,.1);}
+  .hamburger-menu.active + ul,
+  nav ul.active{display:flex;align-items:center;justify-content:center;}
+
+  .info{
+    grid-template-columns:90%;
+    grid-auto-rows:auto;
+    row-gap:2rem;
+    margin-top:1rem;
+  }
+  .pendel{order:-1;}
+  .pendel img{width:110%;margin:0 auto;}
+
+  .interface{
+    grid-template-columns:90%;
+    grid-auto-rows:auto;
+    row-gap:1rem;
+    margin-top:5rem;
+  }
+
+  .result{grid-template-columns:90%;margin-top:9rem;}
+  .slutgiltig{grid-template-columns:90%;}
+  .step_3{grid-template-columns:28.666% 28.666% 28.666%;}
+  .miljo{grid-template-columns:44% 44%;}
+
+  .poster{
+    grid-template-columns:90%;
+    grid-auto-rows:auto;
+    row-gap:1rem;
+    margin-top:5rem;
+  }
+  .post img{margin-top:0;margin-bottom:0;}
+}
+
+@media (max-width:500px){
+  h1{font-size:2.8rem;margin:0 0 1rem;}
+  p{max-width:100%;}
+
+  nav{margin-top:1rem;padding:0 .75rem;}
+  nav ul{width:100%;}
+
+  .info{grid-template-columns:90%; row-gap:2rem; overflow:hidden;}
+  .pendel{order:-1;}
+  .pendel img{width:100%;}
+
+  .interface{grid-template-columns:90%; grid-auto-rows:auto;}
+
+  .result{grid-template-columns:90%; margin-top:2rem;}
+
+  .step_3{
+    grid-template-columns:90%;
+    grid-auto-rows:32rem;
+    row-gap:1.25rem;
+  }
+
+  .miljo{
+    grid-template-columns:90%;
+    grid-auto-rows:35rem;
+    row-gap:1rem;
+  }
+
+  .slutgiltig{grid-template-columns:90%;}
+  .poster{grid-template-columns:90%; grid-auto-rows:auto; row-gap:1rem;}
+}
+
+@media (max-width:380px){
+  .step_3{grid-auto-rows:26rem;}
+  .miljo{grid-auto-rows:28rem;}
+}
+/* =========================================
+   MOBILE/TABLET ONLY (does NOT affect laptop)
+   Paste at the VERY END of your CSS
+========================================= */
+
+@media (max-width:900px){
+
+  /* --- Result intro: stop overflow --- */
+  .result-intro-grid{
+    grid-template-columns: 1fr; /* stack */
+    row-gap: 2rem;
+  }
+
+  .result-intro-text{
+    margin-top: 0; /* remove big top push on small screens */
+    max-width: 100%;
+  }
+
+  .result-intro-image{
+    align-items: flex-end;
+  }
+
+  .result-intro-image img{
+    width: 100%;
+    transform: none;        /* remove translate on mobile */
+    margin-bottom: -40px;   /* keep the “kant-i-kant” feeling, but safer */
+  }
+
+
+  /* --- Gallery (Old systems): stop huge image overflow --- */
+  .gallery-grid{
+    grid-template-columns: 1fr; /* stack */
+    row-gap: 2rem;
+  }
+
+  .gallery-rotator{
+    margin-top: 0;
+    justify-content: center;
+  }
+
+  .gallery-rotator img{
+    width: 100%;
+    max-width: 100%;
+    transform: none; /* remove big left shift on mobile */
+  }
+
+  .gallery-line{
+    height: 120px; /* thinner block on smaller screens */
+  }
+
+
+  /* --- Requirements: make it readable --- */
+  .req-intro{
+    grid-template-columns: 1fr;
+    row-gap: .75rem;
+  }
+
+  .req-intro h2,
+  .req-intro p{
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+
+  .req-columns{
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .req-arrow{
+    top: 2.2rem;
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+
+
+  /* --- Flow section: stack the 3 images --- */
+  .flow-row{
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+  .flow-arrow{
+    justify-self: center;
+    transform: none;
+  }
+  .flow-item img{
+    width: 100%;
+  }
+
+
+  /* --- Result slider: stack + keep media inside viewport --- */
+  .result-grid{
+    grid-template-columns: 1fr;
+    row-gap: 1.75rem;
+    align-items: start;
+  }
+
+  .result-media{
+    justify-self: center;
+    width: min(92vw, 520px); /* never overflow screen */
+  }
+
+  .result-bg{
+    width: 100%; /* stop 120% on mobile */
+  }
+
+  .result-logo{
+    top: 10px;
+    left: 10px;
+    width: 160px;
+  }
+
+  .result-arrow-left{ left: 10px; }
+  .result-arrow-right{ right: 10px; }
+}
+
+@media (max-width:800px){
+
+  /* --- The Problem: stack columns --- */
+  .interface{
+    grid-template-columns: 90%;
+    row-gap: 2rem;
+    margin-top: 5rem;
+  }
+
+  .img-stack{
+    max-width: 520px;
+    margin: 0 auto;
+    padding-top: 0;
+  }
+
+  /* --- Process: stack --- */
+  .process-section{
+    grid-template-columns: 90%;
+    row-gap: 2rem;
+  }
+
+  /* --- Research questions: already mostly ok, but tighten padding --- */
+  .rq-card{
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+}
+
+@media (max-width:500px){
+
+  /* --- Result slider controls a bit smaller --- */
+  .result-logo{
+    width: 130px;
+  }
+  .result-dots{
+    gap: .55rem;
+  }
+  .result-dots .dot{
+    width: 9px;
+    height: 9px;
+  }
+}
+
