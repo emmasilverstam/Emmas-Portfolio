@@ -13,7 +13,12 @@
   <div id="container">
     <header>
       <nav>
-        <div class="hamburger-menu" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu" role="button" tabindex="0">
+        <div class="hamburger-menu"
+             aria-controls="primary-nav"
+             aria-expanded="false"
+             aria-label="Open menu"
+             role="button"
+             tabindex="0">
           <div class="bar"></div>
           <div class="bar"></div>
           <div class="bar"></div>
@@ -57,9 +62,8 @@
     </div>
 
     <div class="gallery">
-      <!-- 01 -->
       <div class="gallery__item">
-        <a href="html/furniture.html">
+        <a href="html/IndieFlow.html">
           <img src="Main bild - kopia.png" class="img1" alt="Master Thesis – Mammography AI" />
         </a>
         <p class="bildtext"><span class="produkt">01. A Circular Home Styling System</span><br />Digital design</p>
@@ -68,22 +72,20 @@
 
       <div class="gallery__item">
         <a href="html/Urban.html">
-          <img src="Urban-01.jpg" class="img3" alt="Furniture for remote work – Product design" />
+          <img src="kommer snart-01.jpg" class="img3" alt="Furniture for remote work – Product design" />
         </a>
         <p class="bildtext"><span class="produkt">02. Furniture for Remote Work</span><br />Product design</p>
         <p class="overlay-text1">A project to design furniture for remote work in collaboration with AJ Produkter</p>
       </div>
 
-      <!-- 02 -->
       <div class="gallery__item">
         <a href="html/[HER]dles.html">
-          <img src="herdles.png" class="img2" alt="A interactive musemum – Digital design" />
+          <img src="herdles.png" class="img2" alt="An interactive museum – Digital design" />
         </a>
         <p class="bildtext"><span class="produkt">03. An Interactive Museum Experience</span><br />Exhibition design</p>
         <p class="overlay-text1">A project to develop a interactive museum experience about women in sports</p>
       </div>
 
-      <!-- 04 -->
       <div class="gallery__item">
         <a href="html/TaleAble.html">
           <img src="Toy.png" class="img4" alt="Toy for children – Digital design" />
@@ -92,7 +94,6 @@
         <p class="overlay-text1">A project to develop an inclusive and creative storytelling experience for children</p>
       </div>
 
-      <!-- 05 -->
       <div class="gallery__item">
         <a href="html/Endobreath.html">
           <img src="endobreath.png" class="img5" alt="A pillow for endometriosis – Soma design" />
@@ -101,7 +102,6 @@
         <p class="overlay-text1">A design project exploring soma design principles through the development of a product for endometriosis</p>
       </div>
 
-      <!-- 06 -->
       <div class="gallery__item">
         <a href="html/Meloflora.html">
           <img src="Logo Meloflora.png" class="img6" alt="Interactive flowerpot – Product design" />
@@ -110,7 +110,6 @@
         <p class="overlay-text1">A project to design a human–plant interaction through iterative prototyping of a tangible, sensory-based design</p>
       </div>
 
-      <!-- 07 -->
       <div class="gallery__item">
         <a href="html/Benefit.html">
           <img src="Fitness.png" class="img7" alt="Fitness application – Digital design" />
@@ -119,16 +118,14 @@
         <p class="overlay-text1">A project to design a desktop application that enhances well-being through personalised fitness and nutrition plans</p>
       </div>
 
-      <!-- 08 -->
       <div class="gallery__item">
         <a href="html/EmsSyr.html">
-          <img src="Emssyr-03.png" class="img8" alt="Museum interaction – Exhibition design" />
+          <img src="Emssyr-03.png" class="img8" alt="Accessible webshop – Universal design" />
         </a>
         <p class="bildtext"><span class="produkt">08. An Accessible Webshop</span><br />Universal design</p>
         <p class="overlay-text1">A project to design an accessible e-commerce website that simplifies the shopping experience for handmade products</p>
       </div>
 
-      <!-- 09 -->
       <div class="gallery__item">
         <a href="html/EmsEra.html">
           <img src="logo-01-01.png" class="img9" alt="Fashion collection – Fashion design" />
@@ -139,12 +136,11 @@
     </div>
   </section>
 
-  <!-- ✅ ADD reveal-up here -->
   <div class="about reveal-up" id="about">
     <div>
       <h1>About me</h1>
       <p>
-        I am a 27-year-old industrial design engineer and will be graduating in January with
+        I am a 27-year-old industrial design engineer and will be graduating in February with
         a master’s degree in Interaction Design & Technologies from Chalmers University of Technology.
         My passion is simplifying complexity through technology and design. I am interested
         in graphic design, UI and UX, and aim to create seamless digital experiences by combining
@@ -161,7 +157,6 @@
     </div>
   </div>
 
-  <!-- ✅ OPTIONAL: reveal-up here too -->
   <div class="container reveal-up">
     <main class="row">
       <section class="col">
@@ -214,7 +209,6 @@
   </div>
 
   <section>
-    <!-- ✅ ADD reveal-up here -->
     <div class="contact reveal-up" id="contact">
       <div><h1>Contacts</h1></div>
       <div></div>
@@ -244,19 +238,23 @@
   <script src="https://kit.fontawesome.com/fff0c42ad6.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-  <!-- ✅ One script for menu + gallery pop-in + section move-up -->
+  <!-- ✅ ONE script: burger + smooth scroll + reveals -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const hamburgerMenu = document.querySelector('.hamburger-menu');
-      const navLinks = document.querySelector('nav ul');
+      const navList = document.querySelector('nav ul');
+      const navAnchors = document.querySelectorAll('nav a[href^="#"]');
+
       const gallery = document.querySelector('.gallery');
       const galleryItems = document.querySelectorAll('.gallery__item');
       const revealUps = document.querySelectorAll('.reveal-up');
+
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+      // Burger toggle
       function toggleMenu() {
         hamburgerMenu.classList.toggle('active');
-        navLinks.classList.toggle('active');
+        navList.classList.toggle('active');
         const isOpen = hamburgerMenu.classList.contains('active');
         hamburgerMenu.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       }
@@ -266,14 +264,37 @@
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
       });
 
-      // click-to-toggle (your existing behavior)
-      galleryItems.forEach(function (item) {
+      // Smooth scroll + close menu on click
+      function smoothScrollTo(targetId) {
+        const el = document.querySelector(targetId);
+        if (!el) return;
+        if (prefersReduced) el.scrollIntoView();
+        else el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      navAnchors.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          if (!href || !href.startsWith('#')) return;
+          e.preventDefault();
+          smoothScrollTo(href);
+
+          if (navList.classList.contains('active')) navList.classList.remove('active');
+          if (hamburgerMenu.classList.contains('active')) {
+            hamburgerMenu.classList.remove('active');
+            hamburgerMenu.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      // Click-to-toggle on cards (your existing behavior)
+      galleryItems.forEach(item => {
         item.addEventListener('click', function () {
           this.classList.toggle('active');
         });
       });
 
-      // === Scroll reveal for gallery items (fast) ===
+      // Gallery reveal
       if (!prefersReduced && gallery && galleryItems.length) {
         const getColumnCount = () => {
           const cols = getComputedStyle(gallery).gridTemplateColumns;
@@ -283,23 +304,18 @@
         const galleryObserver = new IntersectionObserver((entries, obs) => {
           const columns = getColumnCount();
 
-          entries.forEach((entry) => {
+          entries.forEach(entry => {
             if (!entry.isIntersecting) return;
 
             const item = entry.target;
             const index = Number(item.dataset.index || 0);
             const col = index % columns;
 
-            // faster stagger
             item.style.transitionDelay = `${col * 50}ms`;
-
             item.classList.add('in-view');
             obs.unobserve(item);
           });
-        }, {
-          threshold: 0.15,
-          rootMargin: '0px 0px -20% 0px'
-        });
+        }, { threshold: 0.15, rootMargin: '0px 0px -20% 0px' });
 
         galleryItems.forEach((item, i) => {
           item.dataset.index = i;
@@ -309,7 +325,7 @@
         galleryItems.forEach(item => item.classList.add('in-view'));
       }
 
-      // === Scroll reveal for sections (move in up) ===
+      // Section reveal-up
       if (!prefersReduced && revealUps.length) {
         const sectionObserver = new IntersectionObserver((entries, obs) => {
           entries.forEach(entry => {
@@ -317,10 +333,7 @@
             entry.target.classList.add('in-view');
             obs.unobserve(entry.target);
           });
-        }, {
-          threshold: 0.15,
-          rootMargin: '0px 0px -15% 0px'
-        });
+        }, { threshold: 0.15, rootMargin: '0px 0px -15% 0px' });
 
         revealUps.forEach(el => sectionObserver.observe(el));
       } else {
@@ -330,44 +343,13 @@
   </script>
 
   <script>
-    var typingEffect = new Typed(".multi-text", {
+    new Typed(".multi-text", {
       strings: ["Emma Silverstam"],
       loop: true,
       typeSpeed: 100,
       backSpeed: 80,
       backDelay: 1500
     });
-  </script>
-
-  <script>
-    (function () {
-      const navLinks = document.querySelectorAll('nav a[href^="#"]');
-      const navList  = document.querySelector('nav ul');
-      const burger   = document.querySelector('.hamburger-menu');
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      function smoothScrollTo(targetId) {
-        const el = document.querySelector(targetId);
-        if (!el) return;
-        if (prefersReduced) el.scrollIntoView();
-        else el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-
-      navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          const href = link.getAttribute('href');
-          if (!href || !href.startsWith('#')) return;
-          e.preventDefault();
-          smoothScrollTo(href);
-
-          if (navList && navList.classList.contains('active')) navList.classList.remove('active');
-          if (burger && burger.classList.contains('active')) {
-            burger.classList.remove('active');
-            burger.setAttribute('aria-expanded', 'false');
-          }
-        });
-      });
-    })();
   </script>
 </body>
 </html>
