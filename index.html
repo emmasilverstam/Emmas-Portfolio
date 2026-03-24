@@ -35,8 +35,13 @@
     <main>
       <div class="header">
         <div>
-          <h1><span>Hi, I'm<br /></span><span class="multi-text"></span></h1>
-          <p>An industrial design engineer with a specialisation in interaction design</p>
+          <h1>
+  <span>Hi, I'm</span><br>
+  <span class="name-line">
+    <span class="multi-text"></span>
+  </span>
+</h1>
+          <p class="intro-text">An industrial design engineer with a specialisation in interaction design</p>
         </div>
 
         <div class="bildcv"></div>
@@ -315,7 +320,7 @@
             item.classList.add('in-view');
             obs.unobserve(item);
           });
-        }, { threshold: 0.15, rootMargin: '0px 0px -20% 0px' });
+        }, { threshold: 0.05, rootMargin: '0px 0px 5% 0px' });
 
         galleryItems.forEach((item, i) => {
           item.dataset.index = i;
