@@ -1,0 +1,1561 @@
+@import url("https://use.typekit.net/ymm5trk.css");
+
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: "futura-pt", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.2rem;
+    color: #3f2e26;
+    background-color: #ffffff;
+}
+
+h1 {
+    font-size: 5rem;
+    color: #3f2e26;
+    font-weight: 300;
+    width: 40rem;
+    line-height: 1em;
+    margin-top: 7rem;
+    margin-bottom: 3rem;
+}
+
+
+h2 {
+    font-size: 1.7rem;
+    color: #3f2e26;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+p {
+    width: 31rem;
+}
+
+a {
+    color: #3f2e26;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+
+nav {
+    max-width: 72rem;
+    margin-left: 70%;
+    margin-top: 2rem;
+
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1000;
+
+}
+
+nav ul span {
+    color: #3f2e26;
+}
+
+nav a {
+    color: #3f2e26;
+    margin: 0.5rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: #3f2e26;
+    text-decoration-thickness: 0.2rem;
+
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(2, 36%);
+    position: center;
+    justify-content: center;
+    column-gap: 3%;
+    row-gap: 5rem;
+    margin-top: -2rem;
+    margin-bottom: -5rem;
+}
+
+.description {
+    font-family: 700;
+}
+
+p span {
+    font-weight: 700;
+    color: #3f2e26;
+}
+
+.pendel img {
+    width: 110%;
+    margin-left: 3rem;
+    margin-top: 5rem;
+}
+
+.process-section{
+  display: grid;
+  grid-template-columns: repeat(1, 75%);
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.process-section img{
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 0.25rem;
+}
+/* PROCESS IMAGE – scroll fade-in */
+.process-image {
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 0.25rem;
+
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+/* När bilden blir synlig */
+.process-image.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* =========================
+   SCROLL REVEAL ANIMATIONS
+   ========================= */
+
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-fade,
+.reveal-pop {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.reveal-up {
+  transform: translateY(40px);
+}
+
+.reveal-left {
+  transform: translateX(-50px);
+}
+
+.reveal-right {
+  transform: translateX(50px);
+}
+
+.reveal-fade {
+  transform: none;
+}
+
+.reveal-pop {
+  transform: translateY(20px) scale(0.92);
+}
+
+/* Visible state */
+.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Optional stagger helpers */
+.delay-1 { transition-delay: 120ms; }
+.delay-2 { transition-delay: 240ms; }
+.delay-3 { transition-delay: 360ms; }
+
+/* Slightly smoother on these */
+.requirements-panel.reveal-right,
+.urban-slider.reveal-right,
+.problem-image.reveal-right {
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.concept-label.reveal-pop {
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-fade,
+  .reveal-pop {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* =========================
+   REQUIREMENTS – CLEAN GREEN
+   ========================= */
+
+:root {
+  --accent-green: #2f5d50;
+}
+.requirements-block {
+  margin-top: 6rem; /* öka från t.ex. 8rem → 10–12rem */
+}
+
+/* Layout (behåll högerplacering) */
+.requirements-inner {
+  display: grid;
+  grid-template-columns: 50% 45%;
+  column-gap: 5%;
+  align-items: start;
+  width: 75%;
+  margin: 0 auto;
+}
+
+/* Panel */
+.requirements-panel {
+  border: 1.5px solid var(--accent-green);
+  border-radius: 1.2rem;
+  padding: 2rem;
+  background-color: #f5f1ec;
+}
+
+/* Rubrik */
+.requirements-panel h2 {
+  color: var(--accent-green);
+  margin-bottom: 1rem;
+}
+
+/* Lista */
+.requirements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Item */
+.requirements-list li {
+  position: relative;
+  padding: 0.9rem 0 0.9rem 2rem;
+  border-bottom: 1px solid rgba(47, 93, 80, 0.2);
+
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.requirements-list li:last-child {
+  border-bottom: none;
+}
+
+/* Punkt */
+.requirements-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.3rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background-color: var(--accent-green);
+}
+
+/* Animation in */
+.requirements-list li.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger */
+.requirements-list li:nth-child(1) { transition-delay: 0ms; }
+.requirements-list li:nth-child(2) { transition-delay: 120ms; }
+.requirements-list li:nth-child(3) { transition-delay: 240ms; }
+.requirements-list li:nth-child(4) { transition-delay: 360ms; }
+.requirements-list li:nth-child(5) { transition-delay: 480ms; }
+.requirements-list li:nth-child(6) { transition-delay: 600ms; }
+.requirements-list li:nth-child(7) { transition-delay: 720ms; }
+
+/* Responsive */
+@media only screen and (max-width: 900px) {
+  .requirements-inner {
+    grid-template-columns: 1fr;
+    width: 90%;
+    row-gap: 2rem;
+  }
+}
+
+
+/* =========================
+   MOODBOARD – WAVY SHAPE
+   ========================= */
+
+.moodboard-block {
+  position: relative;
+  margin-top: 2rem;
+  padding: 7rem 0;
+  overflow: hidden;
+}
+
+.moodboard-shape {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.moodboard-shape svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.moodboard-shape path {
+  fill: #2f5d50;
+}
+
+.moodboard-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 50% 45%;
+  column-gap: 5%;
+  align-items: center;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.moodboard-image img {
+  width: 100%;
+  display: block;
+  border-radius: 0.25rem;
+}
+
+.moodboard-text h2,
+.moodboard-text p {
+  color: #ffffff;
+}
+
+.moodboard-text p {
+  max-width: 60ch;
+}
+/* =========================
+   MOODBOARD ANIMATION
+   ========================= */
+
+.moodboard-image,
+.moodboard-text {
+  opacity: 0;
+}
+
+/* Bild: slide in from left */
+.moodboard-image {
+  transform: translateX(-70px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Text: pop up */
+.moodboard-text {
+  transform: translateY(35px) scale(0.96);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+  transition-delay: 180ms;
+}
+
+/* Visible state */
+.moodboard-image.is-visible,
+.moodboard-text.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .moodboard-image,
+  .moodboard-text {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Responsive */
+@media only screen and (max-width: 900px) {
+  .moodboard-block {
+    padding: 5rem 0;
+  }
+
+  .moodboard-inner {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    width: 90%;
+  }
+}
+
+
+
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .process-image {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.process-section h2 {
+  margin-bottom: 0.4rem; /* justera till 0.25–0.5rem efter känsla */
+}
+
+.process-section p {
+  margin-top: 0;
+}
+
+
+/* =========================
+   USER STUDY + THE PROBLEM
+   ========================= */
+
+.research-block{
+  margin-top: 8rem;
+}
+
+.research-inner{
+  display: grid;
+  grid-template-columns: repeat(1, 75%);
+  justify-content: center;
+}
+
+/* USER STUDY */
+.research-section{
+  margin-bottom: 1rem;
+}
+
+.research-section h2{
+  margin-bottom: 0.4rem;
+  margin-top: -4rem;
+}
+
+.research-section p{
+  width: 100%;
+  max-width: 70ch;
+  margin-top: 0;
+}
+
+/* =========================
+   THE PROBLEM
+   ========================= */
+
+.problem-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 45%;
+  column-gap: 5%;
+  align-items: start;
+  overflow: visible;
+  padding: 2rem 0;
+  min-height: 42rem;
+}
+
+.problem-text,
+.problem-image {
+  position: relative;
+  z-index: 2;
+}
+
+.problem-text {
+  padding-right: 2rem;
+}
+
+.problem-text h2 {
+  margin-bottom: 0.4rem;
+}
+
+.problem-text p {
+  width: 100%;
+  max-width: 70ch;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+
+.problem-text p:last-child {
+  margin-bottom: 0;
+}
+
+.problem-image {
+  display: flex;
+  align-items: flex-start;
+}
+
+.problem-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.25rem;
+}
+
+/* =========================
+   THE PROBLEM – ORGANIC BAND
+   ========================= */
+
+.problem-shape-band {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.problem-shape-band svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.problem-shape-band path {
+  fill: #2f5d50;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media only screen and (max-width: 900px) {
+  .problem-section {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    min-height: auto;
+    padding: 0;
+  }
+
+  .problem-text {
+    padding-right: 0;
+  }
+
+  .problem-shape-band {
+    display: none;
+  }
+}
+
+
+/* =========================
+   CONCEPT DEVELOPMENT
+   ========================= */
+
+.concept-journey {
+  margin-top: 4rem;
+}
+
+.concept-journey-inner {
+  width: 75%;   /* samma som resten av sidan */
+  margin: 0 auto;
+}
+
+.concept-intro {
+  max-width: 72ch;
+  margin-bottom: 5rem;
+}
+
+.concept-intro h2 {
+  margin-bottom: 0.4rem;
+}
+
+.concept-intro p {
+  width: 100%;
+  max-width: 72ch;
+  margin-top: 0;
+}
+
+/* FLOW */
+.concept-flow-visual {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto minmax(220px, 1fr) auto minmax(220px, 1fr);
+  justify-content: center;
+  align-items: center;
+  column-gap: 2.5rem;
+  width: 100%;
+}
+
+/* ITEMS */
+.concept-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* LABELS */
+.concept-label {
+  font-size: 6.5rem;
+  line-height: 1;
+  font-weight: 700;
+  color: #2f5d50;
+  margin-bottom: 1.8rem;
+  text-align: center;
+}
+
+/* IMAGE */
+.concept-item img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  border-radius: 0.25rem;
+}
+
+/* ARROWS */
+.concept-arrow {
+  font-size: 3.2rem;
+  line-height: 1;
+  color: #2f5d50;
+  align-self: center;
+  justify-self: center;
+  margin-top: 4.5rem;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 900px) {
+  .concept-journey-inner {
+    width: 90%;
+  }
+
+  .concept-flow-visual {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
+  .concept-arrow {
+    transform: rotate(90deg);
+    margin-top: 0;
+  }
+
+  .concept-label {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+/* =========================
+   URBAN SECTION
+   ========================= */
+
+.urban-section {
+  margin-top: 8rem;
+}
+
+.urban-inner {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.urban-content {
+  display: grid;
+  grid-template-columns: 42% 53%;
+  column-gap: 5%;
+  align-items: start;
+}
+
+/* TEXT */
+.urban-intro h2 {
+  margin-bottom: 0.4rem;
+}
+
+.urban-intro p {
+  width: 100%;
+  max-width: 60ch;
+  margin-top: 0;
+  line-height: 1.6;
+}
+
+/* SLIDER */
+.urban-slider {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2rem 1fr 2rem; /* smalare pilar */
+  align-items: center;
+  column-gap: 0.5rem;
+
+  margin-right: -3rem; /* gör att bilden kan bli större */
+}
+
+.slider-track {
+  position: relative;
+  width: 100%;
+}
+
+.slide {
+  width: 100%;
+  display: none;
+  border-radius: 0.1rem;
+}
+
+.slide.active {
+  display: block;
+}
+
+/* BUTTONS */
+.slider-btn {
+  background: none;
+  border: none;
+  font-size: 4rem;
+  line-height: 1;
+  color: #2f5d50;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider-btn.prev {
+  transform: translateX(18px);
+}
+
+.slider-btn.next {
+  transform: translateX(-18px);
+}
+
+.slider-btn:hover {
+  opacity: 0.7;
+}
+
+/* DOTS OVER IMAGE */
+.slider-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 33rem;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.7rem;
+  z-index: 2;
+}
+
+.dot {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  border: 2px solid #2f5d50;
+  background: rgba(255,255,255,0.7);
+  cursor: pointer;
+  padding: 0;
+}
+
+.dot.active {
+  background-color: #2f5d50;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 900px) {
+  .urban-inner {
+    width: 90%;
+  }
+
+  .urban-content {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
+  .urban-slider {
+    grid-template-columns: 2.5rem 1fr 2.5rem;
+  }
+
+  .urban-intro p {
+    max-width: 100%;
+  }
+  
+}
+@media only screen and (max-width: 900px) {
+
+  .slider-dots {
+    position: static; /* ← viktig */
+    transform: none;
+    margin-top: 1rem;
+  }
+
+}
+
+
+
+
+.step_1 {
+    display: grid;
+    grid-template-columns: repeat(2, 35%);
+    position: center;
+    justify-content: center;
+    column-gap: 5%;
+    row-gap: 5rem;
+    margin-bottom: -5rem;
+    margin-top: 12rem;
+}
+
+.mood img {
+    width: 100%;
+}
+
+.sketch {
+    display: grid;
+    grid-template-columns: repeat(1, 75%);
+    position: center;
+    justify-content: center;
+    column-gap: 5%;
+    margin-top: 12rem;
+    margin-bottom: -5rem;
+    color: #ffffff; /* gör texten vit */
+}
+
+.sketch p {
+    margin-top: -3rem;
+}
+.sketch h2 {
+    color: #3e2e26; /* beige/brun ton så den syns över ljus bakgrund */
+    position: relative;
+    top: -4rem; /* justera så den sticker upp över den svarta ytan */
+    z-index: 3; /* placera rubriken överst */
+}
+
+.background {
+    background-color: #000000;
+    /* Background color */
+    position: relative;
+    padding-top: 0rem;
+    padding-bottom: 2rem; /* öka från t.ex. 6rem till 12rem */
+}
+
+.step_2 {
+    display: grid;
+    grid-template-columns: repeat(3, 23.333%);
+    position: center;
+    justify-content: center;
+    column-gap: 1.875rem;
+    /* Gap between columns */
+    padding-bottom: 1.5rem;
+    padding-top: 3rem;
+    margin-top: 1rem;
+}
+
+.concept-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.concept-video video {
+    width: 100%;         /* ändra till 100% om du vill att videon fyller hela bredden */
+    max-width: 1000px;  /* valfritt, för att inte bli för bred */
+    border-radius: 0.25rem; /* valfritt, för rundade hörn */
+}
+
+
+.interface-black {
+    background-color: #ffffff;
+    color: #3f2e26;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.interface-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.interface-item {
+    width: 18rem;
+}
+
+/* Rubriker */
+.interface-item h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: -1rem;
+}
+
+/* Bilder – med fade-in animation */
+.interface-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+/* När bilden blir synlig */
+.interface-item.is-visible img {
+    opacity: 1;
+    transform: none;
+}
+
+/* Stagger-effekt så de dyker upp med liten fördröjning */
+.interface-item:nth-child(1).is-visible img { transition-delay: 0ms; }
+.interface-item:nth-child(2).is-visible img { transition-delay: 120ms; }
+.interface-item:nth-child(3).is-visible img { transition-delay: 240ms; }
+
+/* Text */
+.interface-item p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 18rem;
+    margin: 0 auto;
+    margin-top: -2rem;
+}
+
+/* Pil med streck */
+.down-arrow {
+    position: relative;
+    width: 0;
+    height: 0;
+    margin: 3rem auto 0 auto;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid #3e2e26;
+    animation: bounce 2s infinite;
+}
+
+.down-arrow::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: -2px;
+    width: 5px;
+    height: 28px;
+    background-color: #3e2e26;
+    margin: 0 auto;
+}
+
+/* Studsanimation för pilen */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Respekt för användare med reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .interface-item img {
+        transition: none;
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.video-section {
+    margin-top: -4rem; /* flyttar upp sektionen över den ovanför */
+    background-color: #ffffff; /* svart bakgrund – ändra vid behov */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 0;
+}
+
+.video-container {
+    width: 80%;
+    max-width: 1000px;
+    overflow: hidden;
+    border-radius: 0.25rem;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.25rem;
+}
+
+
+.sidor img {
+    width: 120%;
+    margin-top: -5rem;
+}
+
+.result {
+    display: grid;
+    grid-template-columns: repeat(1, 75%);
+    position: center;
+    justify-content: center;
+    margin-top: 6rem;
+}
+
+.result h2 {
+    margin-bottom: 0rem;
+}
+
+.step_3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+    align-items: center;
+    max-width: 71rem; /* samma som texten ovanför */
+    margin: 2rem auto 0 auto; /* centrera inom sidan */
+}
+
+.step_3 div {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* gör bilderna kvadratiska */
+    overflow: hidden;
+    border-radius: 0.2rem; /* rundade hörn – ta bort om du vill ha raka */
+}
+
+.step_3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fyller hela rutan utan att ändra proportioner */
+    transition: transform 0.4s ease;
+}
+/* PROTOTYPE: scroll-reveal för bilderna */
+.step_3 img {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* När bilden blir synlig */
+.step_3 img.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Valfri liten "stagger"-fördröjning */
+.step_3 div:nth-child(1) img.is-visible { transition-delay: 0ms; }
+.step_3 div:nth-child(2) img.is-visible { transition-delay: 120ms; }
+.step_3 div:nth-child(3) img.is-visible { transition-delay: 240ms; }
+.step_3 div:nth-child(4) img.is-visible { transition-delay: 0ms; }
+.step_3 div:nth-child(5) img.is-visible { transition-delay: 120ms; }
+.step_3 div:nth-child(6) img.is-visible { transition-delay: 240ms; }
+.step_3 div:nth-child(7) img.is-visible { transition-delay: 0ms; }
+.step_3 div:nth-child(8) img.is-visible { transition-delay: 120ms; }
+.step_3 div:nth-child(9) img.is-visible { transition-delay: 240ms; }
+
+/* Respekt för reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .step_3 img {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+
+
+.slutgiltig {
+    display: grid;
+    grid-template-columns: repeat(1, 75%);
+    position: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.miljo {
+    display: grid;
+    grid-template-columns: repeat(2, 36.5%);
+    justify-content: center;
+    column-gap: 2%;
+    margin-top: 2rem;
+}
+
+.miljo img,
+.miljo video {
+    width: 100%;
+    height: 45rem; /* lägg till fast höjd */
+    border-radius: 0.25rem;
+    object-fit: cover; /* beskär snyggt */
+    object-position: center;
+}
+
+
+.poster {
+    display: grid;
+    grid-template-columns: repeat(2, 35%);
+    position: center;
+    justify-content: center;
+    column-gap: 5%;
+    row-gap: 5rem;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+}
+
+.post img {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #353535;
+    margin: 6px 0;
+}
+/* Progress-zoom från mitten för textblocken */
+.progress-zoom {
+  transform-origin: center center;
+  transform: scale(1);
+  will-change: transform;
+  transition: transform 100ms linear; /* liten smoothing */
+}
+
+/* Reduced motion: ingen animation */
+@media (prefers-reduced-motion: reduce) {
+  .progress-zoom {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* ===========================
+   RESPONSIVE – SMALLER SCREENS
+   (färger konsekvent #3f2e26)
+   =========================== */
+
+/* Liten dator */
+@media only screen and (max-width: 1050px) {
+
+  h1,h2,a{ color:#3f2e26; }
+
+  /* H1 får inte klippas */
+  h1{
+    line-height:1.05;
+    margin-top:1.25rem !important;
+    margin-bottom:0;
+    margin-left: 1.4rem !important;
+    width:auto;
+  }
+
+  /* Brödtext: släpp 31rem-bredd */
+  p{ width:100%; max-width:60ch; margin:1rem 0 1.25rem 0; }
+
+  /* Nav */
+  nav{ max-width:100%; margin-left:0; margin-top:1rem; }
+  nav a{ text-decoration:none; font-weight:700; font-size:1.3rem; }
+
+  /* Intro: bild under text */
+  .info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    justify-content:center;
+    align-items:start;
+    gap:3%;
+    margin-top:2rem;
+  }
+  .pendel{ order:2; }
+  .pendel img{
+    width:70%;
+    margin:5rem auto 0 auto;
+    display:block;
+  }
+
+  .step_1{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    justify-content:center;
+    align-items:start;
+    gap:5%;
+    margin-top:10rem;
+    margin-bottom:0;
+  }
+  .mood img{ width:100%; }
+
+  /* “The concept” – rubrik närmare, box svart */
+  .sketch{
+    display:grid;
+    grid-template-columns:1fr;
+    justify-content:center;
+    margin:10rem auto 0 auto;
+    max-width:90%;
+  }
+  .sketch p{ margin-top:0; margin-left:1.4;}
+  .sketch h2{
+    margin-left: 1.4rem;
+    position:relative;
+    top:-1rem;                 /* närmare boxen */
+    z-index:3;
+    color:#ffffff;
+    margin-bottom:.25rem;
+  }
+  .background{
+    background-color:#000000;  /* svart box */
+    position:relative;
+    padding-top:0;
+    padding-bottom:1rem;       /* mindre gap till Game */
+  }
+  .background .sketch p{ color:#ffffff; } /* vit text i boxen */
+
+  .step_2{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1.875rem;
+    padding:3rem 0 1.5rem 0;
+    margin-top:1rem;
+    justify-items:center;
+  }
+
+  /* Interface-sektion + spacing */
+  .interface-black{ background:#ffffff; color:#3f2e26; padding:2rem 0; text-align:center; }
+  .interface-grid{
+    display:flex; justify-content:center; align-items:flex-start;
+    gap:2rem; flex-wrap:wrap; max-width:1000px; margin:0 auto;
+    padding:0rem;
+  }
+  .interface-item{ width:22rem; }
+
+  /* Video under den svarta sektionen – vänsterlinjera med text/rubrik */
+  :root{ --content-max:71rem; --gutter:1rem; }
+  .video-section,
+  .result,
+  .slutgiltig,
+  .sketch,
+  .interface-black,
+  .interface-grid{
+    max-width:var(--content-max);
+    margin-left:auto; margin-right:auto;
+    padding-left:var(--gutter); padding-right:var(--gutter);
+  }
+  .video-section{ margin-top:0rem; background:#fff; display:flex; justify-content:center; align-items:center; padding:20px; }
+  .video-container{ width:100%; max-width:none; overflow:hidden; border-radius:.25rem; }
+  .video-container video{ width:100%; height:auto; display:block; border-radius:.25rem; }
+
+  .sidor img{ width:110%; margin-top:-2rem; }
+
+  .result{
+    display:grid; grid-template-columns:1fr;
+    max-width:90%; margin:9rem auto 0 auto; justify-content:center;
+  }
+  .result h2{ margin-bottom:0; margin-left: 1.4rem; }
+
+  .step_3{
+    max-width:71rem; margin:0 auto 5rem auto;
+    display:grid; grid-template-columns:repeat(3,1fr); gap:2%;
+  }
+
+  .slutgiltig{
+    display:grid; grid-template-columns:1fr;
+    max-width:90%; margin:1rem auto 0 auto;
+  }
+
+  /* Miljö – full höjd */
+  .miljo{
+    display:grid; grid-template-columns:1fr 1fr; gap:2%;
+    align-items:stretch; margin-top:2rem; justify-content:center;
+  }
+  .miljo .ritning, .miljo .vagg{ min-height:32rem; }
+  .miljo img, .miljo video{
+    width:100%; height:100%; object-fit:cover; object-position:center; border-radius:.25rem;
+  }
+
+  .poster{
+    display:grid; grid-template-columns:1fr 1fr; gap:5%;
+    margin:5rem auto; max-width:90%;
+  }
+  .post img{ width:100%; margin-top:1rem; }
+}
+
+/* iPad */
+@media only screen and (max-width: 800px) {
+  /* Färger */
+  h1, h2, a { color:#3f2e26; }
+
+  h1{ font-size:5.5rem; width:90%; margin-top:-2rem; }
+  p { width:100%; margin-top:1rem; }
+
+  /* Burger-meny */
+  nav{ max-width:100%; margin:1rem 0 0 0; }
+  .hamburger-menu{ display:block; margin-left:1rem; }
+  nav ul{ display:none; }
+  nav ul.active{
+    display:flex; flex-direction:column; gap:.5rem;
+    background:#EBEBEB; width:100%; padding:1rem;
+    box-shadow:0 0.125rem 0.313rem rgba(0,0,0,.1);
+    justify-content:center; align-items:center; margin:0;
+  }
+
+  /* Intro: EN kolumn, BILD FÖRST */
+  .info{
+    display:grid; grid-template-columns:1fr; gap:2rem;
+    max-width:90%; margin:1rem auto 0 auto;
+  }
+  .pendel{ order:1; margin-top:0; }
+  .info > :not(.pendel){ order:2; }
+  .pendel img{ width:60%; margin:0 auto; display:block; }
+
+  .step_1{
+    display:grid; grid-template-columns:1fr; gap:1.5rem;
+    max-width:90%; margin:2rem auto 0 auto;
+  }
+
+  .sketch{
+    display:grid; grid-template-columns:1fr;
+    max-width:90%; margin:2rem auto 0 auto;
+  }
+  .background{ background:#000; } /* svart */
+
+  .step_2{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem;
+    padding:3rem 0 1.5rem 0; max-width:90%; margin:1rem auto 0 auto;
+  }
+
+  /* Interface-order: Radio före Hurdle på mindre skärmar */
+  .interface-grid{ 
+    display:flex; 
+    flex-wrap:wrap; 
+    justify-content:center; 
+    align-items:flex-start; 
+    max-width:90%; 
+    margin:5rem auto 0 auto; 
+    gap:2rem; 
+  }
+  .interface-grid .interface-item:nth-child(1){ order:1; } /* Game */
+  .interface-grid .interface-item:nth-child(3){ order:2; } /* Radio */
+  .interface-grid .interface-item:nth-child(2){ order:3; } /* Hurdle */
+
+  .sidor img{ width:80%; margin:0 auto; display:block; }
+
+  .result{ max-width:90%; margin:6rem auto 0 auto; }
+  .step_3{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:2%;
+    max-width:90%; margin:1rem auto 5rem auto;
+  }
+
+  .slutgiltig{ max-width:90%; margin:1rem auto 0 auto; }
+
+  .miljo{
+    display:grid; grid-template-columns:1fr 1fr; gap:2%;
+    max-width:90%; margin:1rem auto 0 auto;
+  }
+
+  .poster{ display:grid; grid-template-columns:1fr; gap:1rem; max-width:90%; margin:5rem auto 0 auto; }
+  .post img{ margin:0 auto; display:block; }
+}
+
+/* Stor telefon */
+@media only screen and (max-width: 500px) {
+  h1, h2, a { color:#3f2e26; }
+
+  h1{ font-size:2.8rem; width:100%; margin-top:-4rem; margin-left:0; }
+  h1 span{ font-size:2.8rem; }
+  p{ width:90%; margin:1rem auto 0 auto; }
+
+  nav{ max-width:100%; margin:1rem 0 0 0; }
+  .hamburger-menu{ display:block; margin-left:0; }
+  nav ul{ display:none; }
+  nav ul.active{
+    display:flex; flex-direction:column; gap:.5rem;
+    background:#EBEBEB; width:100%; padding:1rem;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
+    justify-content:center; align-items:center; margin:0 0 1rem 0;
+  }
+
+  .info{
+    display:grid; grid-template-columns:1fr; gap:2rem;
+    max-width:90%; margin:1rem auto 0 auto; overflow:hidden;
+  }
+  .pendel{ order:1; margin-top:0; }
+  .info > :not(.pendel){ order:2; }
+  .pendel img{ width:100%; margin:0; }
+
+  .step_1{
+    display:grid; grid-template-columns:1fr; gap:1rem;
+    max-width:90%; margin:2rem auto 0 auto;
+  }
+
+  .sketch{
+    display:grid; grid-template-columns:1fr;
+    max-width:90%; margin:3rem auto 0 auto;
+  }
+  .background{ background:#000; }
+
+  .step_2{
+    display:grid; grid-template-columns:1fr; gap:2rem;
+    max-width:70%; margin:4rem auto 0 auto;
+    padding:4rem 0 3rem 0;
+  }
+
+  /* behåll interface-ordningen från 800px (Radio före Hurdle) */
+
+  .interface-grid{ max-width:90%; margin:5rem auto 0 auto; gap:1.25rem; }
+
+  .sidor img{ width:100%; margin:0; }
+
+  .result{ max-width:90%; margin:2rem auto 0 auto; }
+
+  .step_3{
+    display:grid; grid-template-columns:1fr; gap:1.25rem;
+    max-width:90%; margin:0 auto 5rem auto;
+  }
+
+  .slutgiltig{ max-width:90%; margin:1rem auto 0 auto; }
+
+  /* Miljö – full höjd men något lägre */
+  .miljo{
+    display:grid; grid-template-columns:1fr; gap:1rem;
+    max-width:90%; margin:2rem auto 0 auto;
+  }
+  .miljo .ritning, .miljo .vagg{ min-height:24rem; }
+  .miljo img, .miljo video{ width:100%; height:100%; object-fit:cover; }
+
+  .poster{ display:grid; grid-template-columns:1fr; gap:1rem; max-width:90%; margin:5rem auto 0 auto; }
+}
+
+/* Mellan telefon */
+@media only screen and (max-width: 400px) {
+  h1, h2, a { color:#3f2e26; }
+  
+  h1{ font-size:2.4rem; margin-top:1rem !important; }
+  h1 span{ font-size:2.4rem; }
+  p{ width:90%; margin:1rem auto 0 auto; }
+
+  nav{ margin-top:1rem; }
+  .hamburger-menu{ display:block; margin-left:0; }
+  nav ul{ display:none; }
+  nav ul.active{
+    display:flex; flex-direction:column; gap:.5rem;
+    background:#EBEBEB; width:100%; padding:1rem;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
+    justify-content:center; align-items:center; margin:0 0 1rem 0;
+  }
+
+  .info{ max-width:90%; margin:1rem auto 0 auto; gap:1.5rem; }
+  .pendel{ order:1; }
+  .info > :not(.pendel){ order:2; }
+
+  .step_1{ max-width:90%; margin:1rem auto 0 auto; gap:1rem; }
+  .sketch{ max-width:90%; margin:2rem auto 0 auto; }
+
+  .step_2{
+    max-width:80%; margin:3rem auto 0 auto; gap:1.25rem;
+    padding:3rem 0 1.5rem 0;
+  }
+
+  .interface-grid{ max-width:90%; gap:1rem; }
+  .result{ max-width:90%; margin:1rem auto 0 auto; }
+  .step_3{ max-width:90%; gap:1rem; margin:0 auto 5rem auto; }
+  .miljo{ max-width:90%; gap:1rem; }
+  .poster{ max-width:90%; gap:1rem; }
+}
+
+@media only screen and (max-width: 350px) {
+  /* Färgpalett (samma som desktop) */
+  h1, h2, a { color:#3f2e26; }
+
+  /* H1: synlig och inte avklippt */
+  h1{
+    font-size:2.4rem;
+    margin-top:1rem !important;  /* tar bort negativa värden som klipper rubriken */
+    width:100%;
+    margin-left:0;
+  }
+  h1 span{ font-size:2.4rem; }
+
+  /* Brödtextbredd + vänsterkant justeras */
+  p{ width:90%; margin:1rem auto 0 auto; }
+
+  /* Nav / burgermeny */
+  nav{ margin-top:1rem; max-width:100%; }
+  .hamburger-menu{ display:block; margin-left:0; }
+  nav ul{ display:none; }
+  nav ul.active{
+    display:flex; flex-direction:column; gap:.5rem;
+    background:#EBEBEB; width:100%; padding:1rem;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
+    justify-content:center; align-items:center; margin:0 0 1rem 0;
+  }
+
+  /* Intro: bild UNDER texten + vänsterkant */
+  .info{
+    display:grid; grid-template-columns:1fr; gap:1rem;
+    max-width:90%; margin:1rem auto 0 auto;
+  }
+  .pendel{ order:1; }
+  .info > :not(.pendel){ order:2; }
+  .pendel img{ width:100%; margin:0; display:block; }
+
+  /* Steg 1 */
+  .step_1{
+    display:grid; grid-template-columns:1fr; gap:1rem;
+    max-width:90%; margin:2rem auto 0 auto;
+  }
+
+  /* “The concept”: rubrik ovanför SVART box + mindre gap mot Game */
+  .background{ background:#000; padding-top:2rem; padding-bottom:.5rem; }
+  .sketch{ max-width:90%; margin:3rem auto 0 auto; position:relative; }
+  .sketch h2{
+    position:relative;
+    transform:translateY(-6rem);    /* lyfter rubriken ovan boxen */
+    margin:0 0 .5rem 0;
+    background:#fff; padding:.1rem .25rem;
+    display:inline-block;
+    color:#ffffff;
+  }
+  .sketch p{ color:#fff; margin-top:0; }
+
+  /* Game-korten vänsterlinjerade */
+  .interface-black{ text-align:left; padding:1rem 0; }
+  .interface-grid{
+    max-width:90%; margin:0 auto; gap:1rem;
+    justify-content:flex-start; align-items:stretch;
+  }
+  /* Ordning kvar: Game (1), Radio (2), Hurdle (3) */
+  .interface-grid .interface-item:nth-child(1){ order:1; }
+  .interface-grid .interface-item:nth-child(3){ order:2; }
+  .interface-grid .interface-item:nth-child(2){ order:3; }
+
+  .interface-item h3, .interface-item p{ text-align:left; margin-left:0; }
+
+  /* Video: lite smalare och mer luft mot texten ovan */
+  .video-section{ max-width:90%; margin:0 auto; padding-top:1rem; }
+  .video-container{ width:100%; max-width:100%; }
+  .video-container video{ width:100%; height:auto; display:block; }
+
+  /* Resultat + prototypbilder: vänsterkant och spacing */
+  .result{ max-width:90%; margin:1.5rem auto 0 auto; }
+  .step_3{
+    display:grid; grid-template-columns:1fr; gap:1rem;
+    max-width:90%; margin:0 auto 5rem auto;
+  }
+
+  /* Miljö-bilder: full höjd (cover) */
+  .miljo{
+    display:grid; grid-template-columns:1fr; gap:1rem;
+    max-width:90%; margin:2rem auto 0 auto;
+  }
+  .miljo .ritning, .miljo .vagg{ min-height:24rem; }
+  .miljo img, .miljo video{ width:100%; height:100%; object-fit:cover; }
+
+  /* Poster-sektion */
+  .poster{ max-width:90%; margin:5rem auto 0 auto; gap:1rem; display:grid; grid-template-columns:1fr; }
+  .post img{ width:100%; margin:0; }
+}
