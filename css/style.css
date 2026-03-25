@@ -39,7 +39,7 @@ h1 {
     font-weight: 700;
 }
 h2 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     color: #3e2e26;
     font-weight: 700;
     margin-top: 0.5rem;
@@ -187,7 +187,7 @@ nav a:hover {
 }
 
 .contact h1 {
-    font-size: 1.7rem;
+    font-size: 2.2rem !important;
     font-weight: 700;
 }
 
@@ -433,7 +433,7 @@ nav a:hover {
 }
 
 .about h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     grid-template-columns: repeat(2, 31%);
     justify-content: center;
     position: center;
