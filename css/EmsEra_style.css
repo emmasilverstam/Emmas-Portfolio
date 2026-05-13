@@ -250,7 +250,7 @@ nav a:hover{
 .scroll-image-section{
   width:var(--content-w);
   max-width:var(--max);
-  margin:6rem auto;
+  margin:6rem auto 12rem;
   overflow:hidden;
   position:relative;
 }
@@ -591,3 +591,181 @@ nav a:hover{
   nav{ justify-content:flex-start; padding-left:.75rem; }
   .hamburger-menu{ margin-left:0; }
 }
+/* ============================= */
+/* LARGE SCREEN ALIGNMENT FIX    */
+/* paste last                    */
+/* ============================= */
+
+:root{
+  --page-w: min(75vw, 72rem);
+  --page-pad: max(1rem, calc((100vw - var(--page-w)) / 2));
+}
+
+@media (min-width:1051px){
+
+  /* Alla vanliga sektioner får samma containerbredd */
+  .info,
+  .step_1,
+  .sketch,
+  .result,
+  #prototyping-gallery,
+  .slutgiltig,
+  .scroll-image-section{
+    width:var(--page-w);
+    max-width:var(--max);
+    margin-left:auto;
+    margin-right:auto;
+    box-sizing:border-box;
+  }
+
+  /* Intro och moodboard */
+  .info{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    column-gap:4rem;
+    margin-top:-2rem;
+    margin-bottom:4rem;
+  }
+
+  .step_1{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    column-gap:4rem;
+    margin-top:6rem;
+    margin-bottom:4rem;
+  }
+
+  /* Textblock ska inte ha egen grid som skapar annan marginal */
+  .sketch,
+  .result,
+  .slutgiltig{
+    display:block;
+  }
+
+  .sketch{
+    margin-top:5rem;
+    margin-bottom:2rem;
+  }
+
+  .result{
+    margin-top:5rem;
+    margin-bottom:2rem;
+  }
+
+  .slutgiltig{
+    margin-top:5rem;
+    margin-bottom:2rem;
+  }
+
+  /* Keywords-bilder: full bakgrund, men innehåll alignas med resten */
+  .step_2{
+    box-sizing:border-box;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    column-gap:1.875rem;
+    padding:3rem var(--page-pad) 1.5rem;
+    margin-top:0;
+  }
+
+  .step_2 .sketches{
+    width:100%;
+    max-width:none;
+    height:clamp(180px, 14vw, 240px);
+  }
+
+  /* Line-up */
+  #prototyping-gallery{
+    margin-top:2rem;
+    margin-bottom:5rem;
+  }
+
+  .step_3{
+    grid-template-columns:repeat(7, minmax(0, 1fr));
+    gap:2%;
+    margin:0;
+  }
+
+  /* Colours and materials: full bakgrund men samma innerbredd */
+  .miljo-section{
+    box-sizing:border-box;
+    padding:3rem var(--page-pad);
+  }
+
+  .miljo{
+    width:100%;
+    max-width:var(--max);
+  }
+
+  .miljo img{
+    width:100%;
+    max-width:none;
+  }
+
+  /* Technical sketch */
+  .scroll-image-section{
+    margin-top:3rem;
+    margin-bottom:12rem;
+  }
+}
+/* ============================= */
+/* WIDER LARGE SCREEN LAYOUT     */
+/* paste last                    */
+/* ============================= */
+
+:root{
+  --max:70rem;              /* öka från 72rem */
+  --content-w:82%;
+  --page-w:min(86vw, 90rem);
+  --page-pad:max(1rem, calc((100vw - var(--page-w)) / 2));
+}
+
+@media (min-width:1051px){
+
+  .info,
+  .step_1,
+  .sketch,
+  .result,
+  #prototyping-gallery,
+  .slutgiltig,
+  .scroll-image-section{
+    width:var(--page-w);
+    max-width:var(--max);
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .step_2{
+    padding-left:var(--page-pad);
+    padding-right:var(--page-pad);
+  }
+
+  .miljo-section{
+    padding-left:var(--page-pad);
+    padding-right:var(--page-pad);
+  }
+
+  .miljo{
+    width:100%;
+    max-width:var(--max);
+  }
+
+  .miljo img{
+    width:100%;
+    max-width:none;
+  }
+}
+/* ============================= */
+/* FIX LINE-UP OVERLAP DESKTOP   */
+/* paste last                    */
+/* ============================= */
+
+@media (min-width:1051px){
+
+  #prototyping-gallery{
+    margin-bottom:6rem;
+  }
+
+  .step_3{
+    padding-bottom:2rem;
+  }
+}
+
+
+
