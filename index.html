@@ -141,26 +141,46 @@
     </div>
   </section>
 
-  <div class="about reveal-up" id="about">
-    <div>
-      <h1>About me</h1>
-      <p>
-        I am a 27-year-old industrial design engineer who recently graduated from the Industrial 
-        Design program at Chalmers University of Technology with a master's degree in Interaction Design.
-        My passion is simplifying complexity through technology and design. I am interested
-        in graphic design, UI and UX, and aim to create seamless digital experiences by combining
-        creativity with innovative technology.
-      </p>
+<div class="about reveal-up" id="about">
+  <div>
+    <h1>About me</h1>
+    <p>
+      I am a 27-year-old industrial design engineer who recently graduated from the Industrial 
+      Design program at Chalmers University of Technology with a master's degree in Interaction Design.
+      My passion is simplifying complexity through technology and design. I am interested
+      in graphic design, UI and UX, and aim to create seamless digital experiences by combining
+      creativity with innovative technology.
+    </p>
 
-      <h3>Skills</h3>
-      <p>User Research / User Testing / Universal Design / UX / UI / <br />Graphic Design /
-        Product & Service Design / Prototyping / <br />Wireframing / Ideation
-      </p>
+    <h3>Skills</h3>
+    <p>
+      User Research / User Testing / Universal Design / UX / UI / <br />
+      Graphic Design / Product & Service Design / Prototyping / <br />
+      Wireframing / Ideation
+    </p>
 
-      <h3>Software & programming skills</h3>
-      <p>Adobe Creative Cloud / Figma / HTML / CSS /</p>
-    </div>
+    <h3>Software & programming skills</h3>
+    <p>Adobe Creative Cloud / Figma / HTML / CSS / Blender</p>
   </div>
+
+  <div class="creative-side">
+        <h2>I love making things</h2>
+      <p>
+        I am a very creative person and enjoy creating both digitally and by hand.
+        In my free time, I like to sew toiletry bags and pouches, build furniture,
+        make headboards and reupholster stools. I enjoy working hands-on with
+        materials, colours and details, and below you can see some examples of
+        projects I have made.
+      </p>
+    <div class="hobby-grid">
+      <img src="sang.jpg" alt="Handmade toiletry bags and pouches" />
+      <img src="bord.jpg" alt="A handmade coffee table" />
+      <img src="pall.jpg" alt="A handmade headboard" />
+      <img src="nes.jpg" alt="A reupholstered stool" />
+    </div>
+
+  </div>
+</div>
 
   <div class="container reveal-up">
     <main class="row">
@@ -243,118 +263,182 @@
   <script src="https://kit.fontawesome.com/fff0c42ad6.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-  <!-- ✅ ONE script: burger + smooth scroll + reveals -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const hamburgerMenu = document.querySelector('.hamburger-menu');
-      const navList = document.querySelector('nav ul');
-      const navAnchors = document.querySelectorAll('nav a[href^="#"]');
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navList = document.querySelector('nav ul');
+    const navAnchors = document.querySelectorAll('nav a[href^="#"]');
 
-      const gallery = document.querySelector('.gallery');
-      const galleryItems = document.querySelectorAll('.gallery__item');
-      const revealUps = document.querySelectorAll('.reveal-up');
+    const gallery = document.querySelector('.gallery');
+    const galleryItems = document.querySelectorAll('.gallery__item');
+    const revealUps = document.querySelectorAll('.reveal-up');
 
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hobbyGrid = document.querySelector('.hobby-grid');
+    const hobbyImages = document.querySelectorAll('.hobby-grid img');
 
-      // Burger toggle
-      function toggleMenu() {
-        hamburgerMenu.classList.toggle('active');
-        navList.classList.toggle('active');
-        const isOpen = hamburgerMenu.classList.contains('active');
-        hamburgerMenu.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      }
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    /* === Burger menu === */
+    function toggleMenu() {
+      if (!hamburgerMenu || !navList) return;
+
+      hamburgerMenu.classList.toggle('active');
+      navList.classList.toggle('active');
+
+      const isOpen = hamburgerMenu.classList.contains('active');
+      hamburgerMenu.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    if (hamburgerMenu && navList) {
       hamburgerMenu.addEventListener('click', toggleMenu);
-      hamburgerMenu.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
-      });
 
-      // Smooth scroll + close menu on click
-      function smoothScrollTo(targetId) {
-        const el = document.querySelector(targetId);
-        if (!el) return;
-        if (prefersReduced) el.scrollIntoView();
-        else el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-
-      navAnchors.forEach(link => {
-        link.addEventListener('click', (e) => {
-          const href = link.getAttribute('href');
-          if (!href || !href.startsWith('#')) return;
+      hamburgerMenu.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          smoothScrollTo(href);
+          toggleMenu();
+        }
+      });
+    }
 
-          if (navList.classList.contains('active')) navList.classList.remove('active');
-          if (hamburgerMenu.classList.contains('active')) {
-            hamburgerMenu.classList.remove('active');
-            hamburgerMenu.setAttribute('aria-expanded', 'false');
-          }
+    /* === Smooth scroll === */
+    function smoothScrollTo(targetId) {
+      const el = document.querySelector(targetId);
+      if (!el) return;
+
+      if (prefersReduced) {
+        el.scrollIntoView();
+      } else {
+        el.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
         });
+      }
+    }
+
+    navAnchors.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        const href = link.getAttribute('href');
+
+        if (!href || !href.startsWith('#')) return;
+
+        e.preventDefault();
+        smoothScrollTo(href);
+
+        if (navList && navList.classList.contains('active')) {
+          navList.classList.remove('active');
+        }
+
+        if (hamburgerMenu && hamburgerMenu.classList.contains('active')) {
+          hamburgerMenu.classList.remove('active');
+          hamburgerMenu.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    /* === Click-to-toggle on project cards === */
+    galleryItems.forEach(function (item) {
+      item.addEventListener('click', function () {
+        this.classList.toggle('active');
+      });
+    });
+
+    /* === Project cards reveal on scroll === */
+    if (!prefersReduced && gallery && galleryItems.length) {
+      const getColumnCount = function () {
+        const cols = getComputedStyle(gallery).gridTemplateColumns;
+        return cols ? cols.split(' ').length : 1;
+      };
+
+      const galleryObserver = new IntersectionObserver(function (entries, obs) {
+        const columns = getColumnCount();
+
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+
+          const item = entry.target;
+          const index = Number(item.dataset.index || 0);
+          const col = index % columns;
+
+          item.style.transitionDelay = `${col * 50}ms`;
+          item.classList.add('in-view');
+
+          obs.unobserve(item);
+        });
+      }, {
+        threshold: 0.05,
+        rootMargin: '0px 0px 5% 0px'
       });
 
-      // Click-to-toggle on cards (your existing behavior)
-      galleryItems.forEach(item => {
-        item.addEventListener('click', function () {
-          this.classList.toggle('active');
+      galleryItems.forEach(function (item, i) {
+        item.dataset.index = i;
+        galleryObserver.observe(item);
+      });
+    } else {
+      galleryItems.forEach(function (item) {
+        item.classList.add('in-view');
+      });
+    }
+
+    /* === Section reveal-up === */
+    if (!prefersReduced && revealUps.length) {
+      const sectionObserver = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
         });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -15% 0px'
       });
 
-      // Gallery reveal
-      if (!prefersReduced && gallery && galleryItems.length) {
-        const getColumnCount = () => {
-          const cols = getComputedStyle(gallery).gridTemplateColumns;
-          return cols ? cols.split(' ').length : 1;
-        };
+      revealUps.forEach(function (el) {
+        sectionObserver.observe(el);
+      });
+    } else {
+      revealUps.forEach(function (el) {
+        el.classList.add('in-view');
+      });
+    }
 
-        const galleryObserver = new IntersectionObserver((entries, obs) => {
-          const columns = getColumnCount();
+    /* === Hobby images pop in one by one === */
+    if (!prefersReduced && hobbyGrid && hobbyImages.length) {
+      const hobbyObserver = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
 
-          entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-
-            const item = entry.target;
-            const index = Number(item.dataset.index || 0);
-            const col = index % columns;
-
-            item.style.transitionDelay = `${col * 50}ms`;
-            item.classList.add('in-view');
-            obs.unobserve(item);
+          hobbyImages.forEach(function (img, index) {
+            setTimeout(function () {
+              img.classList.add('pop-in');
+            }, index * 220);
           });
-        }, { threshold: 0.05, rootMargin: '0px 0px 5% 0px' });
 
-        galleryItems.forEach((item, i) => {
-          item.dataset.index = i;
-          galleryObserver.observe(item);
+          obs.unobserve(entry.target);
         });
-      } else {
-        galleryItems.forEach(item => item.classList.add('in-view'));
-      }
+      }, {
+        threshold: 0.25,
+        rootMargin: '0px 0px -10% 0px'
+      });
 
-      // Section reveal-up
-      if (!prefersReduced && revealUps.length) {
-        const sectionObserver = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('in-view');
-            obs.unobserve(entry.target);
-          });
-        }, { threshold: 0.15, rootMargin: '0px 0px -15% 0px' });
+      hobbyObserver.observe(hobbyGrid);
+    } else {
+      hobbyImages.forEach(function (img) {
+        img.classList.add('pop-in');
+      });
+    }
 
-        revealUps.forEach(el => sectionObserver.observe(el));
-      } else {
-        revealUps.forEach(el => el.classList.add('in-view'));
-      }
-    });
-  </script>
-
-  <script>
-    new Typed(".multi-text", {
-      strings: ["Emma Silverstam"],
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 80,
-      backDelay: 1500
-    });
-  </script>
+    /* === Typewriter animation === */
+    if (window.Typed) {
+      new Typed(".multi-text", {
+        strings: ["Emma Silverstam"],
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 80,
+        backDelay: 1500
+      });
+    }
+  });
+</script>
 </body>
 </html>
