@@ -27,7 +27,7 @@ body {
   font-style: normal;
   font-size: 1.2rem;
   color: #3e2e26;
-  background-color: #dbecff;
+  background-color: #f3eee9;
   margin: 0;
   width: 100%;
   overflow-x: hidden;
@@ -101,14 +101,38 @@ nav ul span {
 }
 
 nav a {
+  position: relative;
+  display: inline-block;
   color: #3e2e26;
   margin: 1rem;
+  font-size: 1.8rem;
+  text-decoration: none;
 }
 
-nav a:hover {
-  text-decoration: underline;
-  text-decoration-color: #3e2e26;
-  text-decoration-thickness: 0.2rem;
+.home-page nav a {
+  font-size: 1.5rem;
+}
+
+.home-page nav {
+  margin-top: 1rem;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.2rem;
+  height: 0.2rem;
+  background-color: #3e2e26;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 280ms ease-out;
+}
+
+nav a:hover::after,
+nav a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .hamburger-menu {
@@ -248,7 +272,8 @@ nav a:hover {
 }
 
 .gallery__item:hover {
-  box-shadow: none;
+  transform: translateY(-0.35rem);
+  box-shadow: 0 0.7rem 1.4rem rgba(63, 46, 38, 0.16);
 }
 
 .gallery__item a {
@@ -332,7 +357,7 @@ nav a:hover {
   width: 100%;
   padding: 1rem;
   margin: 0;
-  background-color: #dbecff;
+  background-color: #f3eee9;
   text-align: center;
   line-height: 1.3rem;
   box-sizing: border-box;
@@ -1070,7 +1095,7 @@ main.row {
     width: 15rem;
     height: 15rem;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 2rem;
   }
 
   .project {
@@ -1474,7 +1499,7 @@ section {
   }
 
   .contact h1 {
-    margin: 0 0 1.5rem 0 !important;
+    margin: 0 0 1rem 0 !important;
     font-size: 1.7rem !important;
   }
 
@@ -1482,15 +1507,17 @@ section {
     display: grid !important;
     grid-template-columns: 1fr !important;
     grid-template-rows: none !important;
-    gap: 1rem !important;
+    gap: 0.8rem !important;
     margin: 0 0 3rem 0 !important;
+    max-width: 22rem;
   }
 
   .icons_contact > div {
     display: grid !important;
-    grid-template-columns: 2.6rem 1fr;
+    grid-template-columns: 2.6rem minmax(0, 1fr);
     align-items: center;
     column-gap: 1.2rem;
+    min-width: 0;
   }
 
   .icons_contact a {
@@ -1510,6 +1537,7 @@ section {
     margin: 0 !important;
     font-size: 1.1rem;
     line-height: 1.4;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -1520,7 +1548,7 @@ section {
   }
 
   .icons_contact > div {
-    grid-template-columns: 2.4rem 1fr;
+    grid-template-columns: 2.4rem minmax(0, 1fr);
     column-gap: 1rem;
   }
 
