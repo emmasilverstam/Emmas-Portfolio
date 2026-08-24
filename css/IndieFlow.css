@@ -10,6 +10,7 @@
 }
 
 html{font-size:100%;}
+html, body{overflow-x:hidden;}
 
 body{
   font-family:"futura-pt",sans-serif;
@@ -273,6 +274,18 @@ nav a:hover{
   .rq-grid{
     grid-template-columns:90%;
   }
+
+@media (min-width:1051px){
+  .req-container,
+  .flow-wrap{
+    width:75%;
+    max-width:none;
+  }
+
+  .req-panel{
+    max-width:none;
+  }
+}
   .rq-title{
     grid-column:1 / -1; /* rubriken tar hela bredden på mobil */
   }
@@ -1323,6 +1336,49 @@ nav a:hover{
 
   .result-arrow-left{ left: 10px; }
   .result-arrow-right{ right: 10px; }
+
+  .result-section {
+    margin: 4rem 0;
+    padding: 0;
+  }
+
+  .result-slides {
+    padding: 4rem 1.25rem 3.5rem;
+  }
+
+  .result-text {
+    padding: 0 1.5rem;
+  }
+
+  .result-text h2 {
+    font-size: 1.7rem;
+    line-height: 1.15;
+  }
+
+  .result-text p {
+    font-size: 1.1rem;
+    line-height: 1.45;
+  }
+
+  .result-media {
+    width: min(100%, 32rem);
+    max-width: 100%;
+  }
+
+  .result-video {
+    left: 50%;
+    top: 50%;
+    --video-x: 0px !important;
+    --video-y: 0px !important;
+    --video-scale: 1 !important;
+  }
+
+  .result-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 1.8rem;
+  }
+
 }
 
 @media (max-width:800px){
@@ -1355,8 +1411,20 @@ nav a:hover{
 @media (max-width:500px){
 
   /* --- Result slider controls a bit smaller --- */
+  .result-slides{
+    padding-top:2rem;
+  }
+
   .result-logo{
-    width: 130px;
+    position:relative;
+    top:auto;
+    left:auto;
+    width:130px;
+    margin:0 0 1.25rem 1.5rem;
+  }
+
+  .result-video{
+    --video-w:32% !important;
   }
   .result-dots{
     gap: .55rem;
@@ -1366,4 +1434,5 @@ nav a:hover{
     height: 9px;
   }
 }
+
 
