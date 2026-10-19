@@ -105,7 +105,6 @@ nav a {
   display: inline-block;
   color: #3e2e26;
   margin: 1rem;
-  font-size: 1.8rem;
   text-decoration: none;
 }
 
@@ -258,17 +257,12 @@ nav a:focus-visible::after {
   align-items: center;
   justify-content: center;
   border-radius: 0.1rem;
-  opacity: 0;
-  transform: translateY(16px);
+  opacity: 1;
+  transform: none;
   box-shadow: none;
   transition:
-    opacity 320ms ease-out,
+    background-color 250ms ease,
     transform 320ms ease-out;
-}
-
-.gallery__item.in-view {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .gallery__item:hover {
@@ -438,7 +432,7 @@ nav a:focus-visible::after {
 
 .img6 {
   width: 87%;
-  margin-top: -0.5rem;
+  margin-top: -3.5rem;
   margin-left: auto;
   margin-right: 0;
   display: block;
@@ -1592,5 +1586,1167 @@ section {
     left: auto !important;
     right: calc(100% + 1.1rem) !important;
     top: -0.2rem !important;
+  }
+}
+
+.home-page {
+  background-color: #fff;
+}
+
+/* Centered capsule portrait on the home page. */
+.home-page .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: -1.5rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.home-page .portrait-stage {
+  order: -1;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  padding: 1rem 0;
+  overflow: clip !important;
+}
+
+.home-page .name-banner {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.home-page .name-banner--top {
+  top: 1rem;
+}
+
+.home-page .name-banner--bottom {
+  bottom: 1rem;
+}
+
+.home-page .name-banner__track {
+  display: flex;
+  width: max-content;
+  color: #3a2b22;
+  font-size: clamp(5rem, 13vw, 15rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  animation: name-banner-scroll 30s linear infinite;
+}
+
+.home-page .name-banner__track span {
+  flex: 0 0 auto;
+}
+
+@keyframes name-banner-scroll {
+  from { transform: translateX(100vw); }
+  to { transform: translateX(-100%); }
+}
+
+.home-page .name-banner--top .name-banner__track {
+  animation-duration: 24s;
+  animation-timing-function: cubic-bezier(0.42, 0, 0.75, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .name-banner__track {
+    animation: none;
+  }
+}
+
+.home-page .header .bildcv {
+  position: relative;
+  z-index: 1;
+  justify-self: center;
+  background-image: url(../images/proff.png);
+  order: -1;
+  flex-shrink: 0;
+  width: clamp(11rem, 20vw, 19rem);
+  height: auto;
+  aspect-ratio: 2 / 3;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 999px;
+  background-position: center;
+  animation: none;
+  transition: none;
+  box-shadow: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-page .header .bildcv:hover {
+    background-image: url(../images/bild3.png);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .header .bildcv,
+  .home-page .header .bildcv:hover {
+    animation: none;
+    transition: none;
+    transform: none;
+    border-radius: 999px;
+  }
+}
+
+.home-page .header h1 {
+  max-width: none;
+  margin: 0;
+  font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+}
+
+.home-page .header .intro-text {
+  max-width: 36rem;
+  margin: 1rem auto 0;
+  white-space: normal;
+  text-wrap: balance;
+}
+
+.home-page .header .icons {
+  justify-content: center;
+  gap: 1rem;
+  margin: 0;
+}
+
+.home-page .project {
+  margin-top: 4rem;
+}
+
+.home-page .project h1 {
+  margin-top: 0;
+}
+
+/* Work cards */
+.home-page .project,
+.home-page .gallery {
+  width: calc(100% - clamp(2.5rem, 10vw, 12rem));
+  max-width: 100rem;
+}
+
+.home-page .project {
+  display: block;
+  margin-top: clamp(4rem, 8vw, 8rem);
+  scroll-margin-top: 2rem;
+}
+
+.home-page .project h1 {
+  color: #111;
+  font-size: clamp(3.5rem, 7vw, 7.5rem);
+  font-weight: 400;
+  line-height: 1;
+  margin: 0 0 clamp(1rem, 2vw, 2rem);
+}
+
+.home-page .gallery {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  gap: clamp(1rem, 2vw, 2.5rem);
+}
+
+.home-page .gallery__item {
+  opacity: 1;
+  transform: none;
+  transition: background-color 250ms ease, transform 250ms ease;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-width: 0;
+  background: #f6f6f6;
+  border-radius: clamp(1.5rem, 3vw, 3rem);
+  padding: clamp(1.25rem, 2vw, 2.25rem);
+  box-shadow: none;
+}
+
+.home-page .gallery__item::before {
+  content: none;
+}
+
+.home-page .gallery__item:hover {
+  background-color: #ececec;
+  transform: scale(1.015);
+  box-shadow: none;
+}
+
+.home-page .gallery__item a {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: auto;
+  height: clamp(10rem, 18vw, 19rem);
+  min-height: 0;
+  flex: 0 0 auto;
+  margin-bottom: 1rem;
+  opacity: 1;
+}
+
+.home-page .gallery__item a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  border-radius: inherit;
+}
+
+.home-page .gallery__item:focus-within {
+  outline: 2px solid #3e2e26;
+  outline-offset: 4px;
+}
+
+.home-page .gallery__item a img {
+  display: block;
+  width: 90%;
+  height: 90%;
+  max-height: 100%;
+  object-fit: contain;
+  margin: 0;
+  transition: transform 400ms ease;
+}
+
+.home-page .gallery__item:hover a img {
+  transform: none;
+}
+
+.home-page .gallery__item .bildtext {
+  position: static;
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  text-align: left;
+  color: #777;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.home-page .gallery__item .produkt {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  white-space: normal;
+  color: #111;
+  font-size: clamp(1.25rem, 1.6vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.home-page .gallery__item .overlay-text1 {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  .home-page .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .home-page .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .gallery__item:hover,
+  .home-page .gallery__item:hover a img {
+    transform: none;
+  }
+  .home-page .gallery__item a img {
+    transition: none;
+  }
+}
+
+/* Typography inspired by the supplied references. */
+body.home-page {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+}
+
+.home-page h1,
+.home-page h2,
+.home-page h3,
+.home-page .gallery__item .produkt {
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.home-page p {
+  letter-spacing: 0;
+}
+
+.home-page nav a {
+  font-weight: 500;
+}
+
+/* Compact identity in the top left corner. */
+.home-page .site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.25rem clamp(1.25rem, 3vw, 3rem);
+}
+
+.home-page .site-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: #3a2b22;
+  flex-shrink: 0;
+}
+
+.home-page .site-brand__name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+
+.home-page .site-brand__description {
+  color: #85817e;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.home-page .site-header nav {
+  width: auto;
+  max-width: none;
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .home-page .site-header {
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .home-page .site-header nav {
+    position: static;
+    padding: 0;
+  }
+
+  .home-page .site-header {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .home-page .site-header nav ul {
+    top: 100%;
+    margin-top: 0;
+  }
+}
+
+/* Header lettering matched to the reference. */
+.home-page .site-brand__name,
+.home-page .site-header nav a {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* Consistent dimensions for every project card. */
+.home-page .gallery {
+  grid-auto-rows: 1fr;
+}
+
+.home-page .gallery__item {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: stretch;
+}
+
+.home-page .gallery__item a {
+  width: 100%;
+  height: clamp(15rem, 23vw, 27rem);
+  min-height: 0;
+  margin-bottom: 1.25rem;
+}
+
+.home-page .gallery__item a img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  object-position: center;
+  margin: auto;
+  align-self: center;
+}
+
+.home-page .gallery__item .bildtext {
+  align-self: end;
+  margin: 0;
+}
+
+@media (max-width: 1050px) {
+  .home-page .gallery__item {
+    aspect-ratio: 10 / 11;
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: 1rem;
+  }
+
+  .home-page .gallery__item a {
+    height: 100%;
+    margin-bottom: 0;
+    min-width: 0;
+  }
+
+  .home-page .gallery__item a img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
+
+/* Subtle dotted background for the introduction. */
+.home-page #container {
+  background-color: #fff;
+  background-image:
+    radial-gradient(circle, rgb(58 43 34 / 25%) 1.8px, transparent 2.1px),
+    radial-gradient(circle, rgb(58 43 34 / 25%) 1.8px, transparent 2.1px);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px;
+  padding-bottom: 2rem;
+}
+
+/* Center project images within their full image area. */
+.home-page .gallery__item a {
+  display: grid;
+  place-items: center;
+  justify-self: stretch;
+  padding: 0;
+}
+
+.home-page .gallery__item a img {
+  margin: 0;
+  justify-self: center;
+  align-self: center;
+}
+
+.home-page .gallery__item a .img8 {
+  position: relative;
+  left: 3%;
+}
+
+/* Let the pillow illustration meet the right edge of its card. */
+.home-page .gallery__item a .img5,
+.home-page .gallery__item a .img6 {
+  width: calc(100% + clamp(1.25rem, 2vw, 2.25rem));
+  height: 100%;
+  max-width: none;
+  max-height: 100%;
+  justify-self: start;
+  object-position: right center;
+}
+
+.home-page .gallery__item a .img6 {
+  width: 100%;
+  height: 90%;
+  justify-self: end;
+  position: relative;
+  left: clamp(1.25rem, 2vw, 2.25rem);
+}
+
+.home-page .gallery__item a .img8 {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Museum image spans the card from edge to edge. */
+.home-page .gallery__item a .img2 {
+  position: relative;
+  top: -3.5rem;
+  width: calc(100% + clamp(1.25rem, 2vw, 2.25rem) * 2);
+  height: 100%;
+  max-width: none;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  justify-self: center;
+}
+
+.home-page .gallery__item a .img4 {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.home-page .gallery__item a .img7 {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.home-page .project h1 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  color: #3a2b22;
+  letter-spacing: -0.04em;
+}
+
+.home-page .gallery__item a .img6 {
+  width: calc(100% + clamp(1.25rem, 2vw, 2.25rem));
+  height: 100%;
+  max-width: none;
+  max-height: 100%;
+  justify-self: start;
+  object-position: right center;
+  left: 0;
+  top: -1rem;
+}
+
+.home-page .gallery__item a .img6 {
+  height: 92%;
+  top: -2.5rem;
+}
+
+/* Anchor the flowerpot image to the card edge at every screen size. */
+.home-page .gallery__item a .img6 {
+  justify-self: end;
+  left: auto;
+  right: calc(-1 * clamp(1.25rem, 2vw, 2.25rem) - 0.5rem);
+  object-position: right center;
+}
+
+.home-page .header .icons {
+  margin-top: -1.25rem;
+}
+
+.home-page .about h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(3.5rem, 7vw, 7.5rem);
+  font-weight: 700;
+  color: #3a2b22;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+  max-width: none;
+  margin: 0 0 clamp(1rem, 2vw, 2rem);
+}
+
+.home-page .about {
+  width: calc(100% - clamp(2.5rem, 10vw, 12rem));
+  max-width: 100rem;
+  margin: clamp(4rem, 7vw, 7rem) auto 0;
+}
+
+.home-page .about h1 {
+  white-space: nowrap;
+  font-size: clamp(2.5rem, 7vw, 7.5rem);
+}
+
+.home-page .creative-side .making-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  font-weight: 700;
+}
+
+.home-page .sketched-heart {
+  width: 1.15em;
+  height: 1.15em;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform: rotate(-8deg);
+}
+
+.home-page .about h3 {
+  font-weight: 700;
+}
+
+/* Align the timeline with the rest of the portfolio. */
+.home-page .container main.row {
+  width: calc(100% - clamp(2.5rem, 10vw, 12rem));
+  max-width: 100rem;
+  margin-left: auto;
+  margin-right: auto;
+  column-gap: clamp(2rem, 6vw, 7rem);
+}
+
+.home-page .col .title h2 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: #3a2b22;
+  margin-bottom: 2rem;
+}
+
+.home-page .col .contents {
+  border-color: #ded9d5;
+}
+
+.home-page .col .contents .box {
+  border: 0;
+  background: transparent;
+  padding-top: 0;
+  margin-bottom: 2rem;
+}
+
+.home-page .col .contents .box::before {
+  background: #3a2b22;
+}
+
+.home-page .box h4 {
+  color: #85817e;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.home-page .box h3 {
+  color: #3a2b22;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.home-page .box p {
+  color: #777;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Animated timeline nodes and entries. */
+.home-page .col .contents .box::before {
+  width: 0.75rem;
+  height: 0.75rem;
+  box-shadow: 0 0 0 4px #fff, 0 0 0 5px #c8b9ad;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-page .box.timeline-pending {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 450ms ease, transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1.15);
+    transition-delay: var(--timeline-delay, 0ms);
+  }
+
+  .home-page .box.timeline-pending::before {
+    transform: scale(0);
+    transition: transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-delay: var(--timeline-delay, 0ms);
+  }
+
+  .home-page .box.timeline-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .home-page .box.timeline-visible::before {
+    transform: scale(1);
+  }
+}
+
+/* Handmade project gallery. */
+.home-page .hobby-grid {
+  gap: 1.5rem 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.home-page .hobby-grid figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.home-page .hobby-photo {
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: #f6f6f6;
+  aspect-ratio: 4 / 3;
+}
+
+.home-page .hobby-grid img {
+  height: 100%;
+  border-radius: inherit;
+}
+
+.home-page .hobby-grid figcaption {
+  margin-top: 0.65rem;
+  padding-left: 0.2rem;
+  color: #3a2b22;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .home-page .hobby-grid figure:hover img.pop-in {
+    transform: scale(1.045);
+  }
+}
+
+/* Contact section follows the Work and About typography. */
+.home-page .contact {
+  display: block !important;
+  width: calc(100% - clamp(2.5rem, 10vw, 12rem));
+  max-width: 100rem;
+  margin: 5rem auto 4rem !important;
+}
+
+.home-page .contact h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(2.5rem, 7vw, 7.5rem) !important;
+  font-weight: 700;
+  color: #3a2b22;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  max-width: none;
+  margin: 0 0 2rem !important;
+}
+
+.home-page .contact .icons_contact {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-rows: none !important;
+  gap: 1rem;
+  max-width: none;
+  margin: 0 !important;
+}
+
+.home-page .contact .icons_contact > div {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: #f6f6f6;
+  transition: background-color 250ms ease;
+}
+
+.home-page .contact .icons_contact > div:hover {
+  background: #ececec;
+}
+
+.home-page .contact .icons_contact a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.home-page .contact .icons_contact .linkedin {
+  color: #3a2b22;
+  font-size: 2.5rem !important;
+}
+
+.home-page .contact .icons_contact p {
+  margin: 0 !important;
+  color: #3a2b22;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1050px) {
+  .home-page .contact .icons_contact {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Mobile menu styled to match the portfolio cards. */
+@media (max-width: 800px) {
+  .home-page .site-header .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: 1px solid #e6e0db;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  .home-page .site-header .bar {
+    width: 20px;
+    height: 2px;
+    margin: 0;
+    border-radius: 2px;
+    background: #3a2b22;
+    transition: transform 200ms ease, opacity 200ms ease;
+  }
+
+  .home-page .hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .home-page .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .home-page .hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .home-page .site-header nav ul {
+    left: auto;
+    right: 1.25rem;
+    width: min(22rem, calc(100% - 2.5rem));
+    align-items: stretch;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    border: 1px solid #ece7e2;
+    border-radius: 1.5rem;
+    background: #fff;
+    box-shadow: 0 12px 36px rgb(58 43 34 / 10%);
+  }
+
+  .home-page .site-header nav li {
+    text-align: left;
+  }
+
+  .home-page .site-header nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 1rem 1.25rem;
+    border-radius: 0.9rem;
+    color: #3a2b22;
+    transition: background-color 200ms ease;
+  }
+
+  .home-page .site-header nav a::after {
+    content: '\2197';
+    position: static;
+    height: auto;
+    background: none;
+    transform: none;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #97877a;
+  }
+
+  .home-page .site-header nav a:hover,
+  .home-page .site-header nav a:focus-visible {
+    background: #f4f1ee;
+  }
+}
+
+@media (max-width: 800px) {
+  .home-page .site-header nav ul {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 7.5rem 1.25rem 1.5rem;
+    border: 0;
+    border-radius: 0 0 1.5rem 1.5rem;
+    box-shadow: 0 12px 30px rgb(58 43 34 / 10%);
+    z-index: 1;
+  }
+
+  .home-page .site-header .site-brand {
+    position: relative;
+    z-index: 2;
+  }
+
+  .home-page .site-header .hamburger-menu {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+
+.home-page .hero-description {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #3a2b22;
+  max-width: 36rem;
+  margin: -0.25rem clamp(1.25rem, 3vw, 3rem) 0;
+}
+
+@media (max-width: 600px) {
+  .home-page .site-brand {
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .home-page .site-brand__description {
+    text-wrap: balance;
+  }
+
+  .home-page .hero-description {
+    max-width: 28rem;
+    margin-top: -0.25rem;
+  }
+}
+
+.home-page .portrait-stage .hero-description {
+  position: absolute;
+  top: 50%;
+  right: clamp(1.25rem, 3vw, 3rem);
+  z-index: 2;
+  width: 30%;
+  max-width: 28rem;
+  margin: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  text-wrap: pretty;
+}
+
+@media (max-width: 600px) {
+  .home-page .portrait-stage .hero-description {
+    position: static;
+    width: calc(100% - 2.5rem);
+    max-width: 28rem;
+    margin: 1.25rem auto 0;
+    transform: none;
+  }
+}
+
+.home-page .portrait-stage .hero-description {
+  right: auto;
+  left: calc(50% + clamp(11rem, 20vw, 19rem) / 2 + 1rem);
+  width: min(28rem, calc(50% - clamp(11rem, 20vw, 19rem) / 2 - 2rem));
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+@media (max-width: 600px) {
+  .home-page .portrait-stage .hero-description {
+    left: auto;
+    width: calc(100% - 2.5rem);
+  }
+}
+
+.home-page .portrait-stage .hero-description {
+  width: calc(50% - clamp(11rem, 20vw, 19rem) / 2 - 1.5rem);
+  max-width: 38rem;
+  padding: 0.9rem;
+  text-wrap: normal;
+}
+
+@media (max-width: 600px) {
+  .home-page .portrait-stage .hero-description {
+    width: calc(100% - 2.5rem);
+    max-width: none;
+  }
+}
+
+/* Keep navigation above the raised hero section. */
+.home-page .site-header {
+  position: relative;
+  z-index: 1000;
+}
+
+@media (min-width: 801px) {
+  .home-page .site-header nav a {
+    margin: 0 0.25rem;
+    padding: 0.75rem;
+  }
+}
+
+/* Continue the dots through the space above Work. */
+.home-page #container {
+  padding-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+.home-page .project {
+  margin-top: 0;
+}
+
+/* Accent line matching the height of the introduction text. */
+@media (min-width: 601px) {
+  .home-page .portrait-stage .hero-description::before {
+    content: '';
+    position: absolute;
+    top: 0.9rem;
+    bottom: 0.9rem;
+    left: -0.3rem;
+    width: 8px;
+    border-radius: 2px;
+    background: #3a2b22;
+  }
+}
+
+@media (min-width: 601px) {
+  .home-page .portrait-stage .hero-description {
+    box-shadow: -1rem 0 0 #fff;
+  }
+}
+
+/* Leave the final row above Work clear. */
+.home-page #container {
+  background-image:
+    linear-gradient(to top, #fff 50px, transparent 50px),
+    radial-gradient(circle, rgb(58 43 34 / 25%) 1.8px, transparent 2.1px),
+    radial-gradient(circle, rgb(58 43 34 / 25%) 1.8px, transparent 2.1px);
+  background-size: 100% 100%, 50px 50px, 50px 50px;
+  background-position: 0 0, 0 0, 25px 25px;
+  background-repeat: no-repeat, repeat, repeat;
+}
+
+/* Hand-drawn circles around desktop menu links. */
+@media (min-width: 801px) {
+  .home-page .site-header nav a::after {
+    content: none;
+  }
+
+  .home-page .site-header nav a::before {
+    content: '';
+    position: absolute;
+    inset: 0.25rem -0.15rem;
+    border: 1.5px solid #3a2b22;
+    border-radius: 48% 52% 46% 54% / 53% 45% 55% 47%;
+    box-shadow: 1px -1px 0 -0.2px rgb(58 43 34 / 35%);
+    transform: rotate(-5deg) scale(0.94);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 160ms ease, transform 220ms ease;
+  }
+
+  .home-page .site-header nav a:hover::before,
+  .home-page .site-header nav a:focus-visible::before {
+    opacity: 1;
+    transform: rotate(-5deg) scale(1);
+  }
+}
+
+.home-page .menu-circle {
+  display: none;
+}
+
+@media (min-width: 801px) {
+  .home-page .site-header nav a::before {
+    content: none;
+  }
+
+  .home-page .menu-circle {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    transform: rotate(-4deg);
+    fill: none;
+    stroke: #3a2b22;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+  }
+
+  .home-page .menu-circle path {
+    vector-effect: non-scaling-stroke;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 550ms ease;
+  }
+
+  .home-page .site-header nav a:hover .menu-circle path,
+  .home-page .site-header nav a:focus-visible .menu-circle path {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .menu-circle path {
+    transition: none;
+  }
+}
+
+/* Bring the desktop navigation back when scrolling upward. */
+@media (min-width: 801px) {
+  .home-page .site-header nav.nav-floating {
+    position: fixed;
+    top: 1rem;
+    right: clamp(1.25rem, 3vw, 3rem);
+    z-index: 1100;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ece7e2;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 6px 24px rgb(58 43 34 / 8%);
+  }
+}
+
+/* Mobile hero: portrait, social links, then introduction. */
+@media (max-width: 600px) {
+  .home-page .header {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .home-page .portrait-stage {
+    display: contents;
+  }
+
+  .home-page .header .bildcv {
+    order: 0;
+    margin-top: 1rem;
+  }
+
+  .home-page .header .icons {
+    position: relative;
+    z-index: 2;
+    order: 1;
+    margin-top: 0;
+  }
+
+  .home-page .portrait-stage .hero-description {
+    position: relative;
+    order: 2;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .home-page .name-banner {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+
+  .home-page .name-banner--top {
+    top: 1rem;
+  }
+
+  .home-page .name-banner--bottom {
+    bottom: auto;
+    top: calc(1rem + clamp(11rem, 20vw, 19rem) * 1.5 - clamp(5rem, 13vw, 15rem));
+  }
+}
+
+/* Keep the mobile menu available when scrolling upward. */
+@media (max-width: 800px) {
+  .home-page .site-header nav.nav-floating {
+    position: fixed;
+    top: 1rem;
+    right: 1.25rem;
+    z-index: 1100;
+  }
+
+  .home-page .site-header nav.nav-floating ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 5rem;
   }
 }

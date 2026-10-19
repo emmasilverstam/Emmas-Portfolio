@@ -4,15 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2" />
   <link href="css/normalize.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=compact-work-3" />
   <link rel="stylesheet" href="css/mobile-nav.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
   <title>Emmas portfolio</title>
+  <link rel="preload" as="image" href="images/bild3.png" />
 </head>
 
 <body class="home-page">
   <div id="container">
-    <header>
+    <header class="site-header">
+      <div class="site-brand">
+        <span class="site-brand__name">Emma Silverstam</span>
+        <span class="site-brand__description">Interaction Designer × Product Designer</span>
+      </div>
       <nav>
         <div class="hamburger-menu"
              aria-controls="primary-nav"
@@ -26,26 +35,29 @@
         </div>
 
         <ul id="primary-nav">
-          <li><a href="#project">Projects</a></li>
-          <li><a href="#about">About me</a></li>
-          <li><a href="#contact">Contacts</a></li>
+          <li><a href="#project">Work<svg class="menu-circle" viewBox="0 0 160 60" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M145 18C122-3 35 0 12 19C-12 43 35 59 88 54C136 52 163 33 146 17C133 5 101 3 76 5" /></svg></a></li>
+          <li><a href="#about">About me<svg class="menu-circle" viewBox="0 0 160 60" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M145 18C122-3 35 0 12 19C-12 43 35 59 88 54C136 52 163 33 146 17C133 5 101 3 76 5" /></svg></a></li>
+          <li><a href="#contact">Contacts<svg class="menu-circle" viewBox="0 0 160 60" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M145 18C122-3 35 0 12 19C-12 43 35 59 88 54C136 52 163 33 146 17C133 5 101 3 76 5" /></svg></a></li>
         </ul>
       </nav>
     </header>
 
     <main>
       <div class="header">
-        <div>
-          <h1>
-  <span>Hi, I'm</span><br>
-  <span class="name-line">
-    <span class="multi-text"></span>
-  </span>
-</h1>
-          <p class="intro-text">An industrial design engineer with a specialisation in interaction design</p>
+        <div class="portrait-stage">
+          <div class="name-banner name-banner--top" aria-hidden="true">
+            <div class="name-banner__track">
+              <span>EMMA</span>
+            </div>
+          </div>
+          <div class="name-banner name-banner--bottom" aria-hidden="true">
+            <div class="name-banner__track">
+              <span>SILVERSTAM</span>
+            </div>
+          </div>
+          <div class="bildcv" role="img" aria-label="Portrait of Emma Silverstam"></div>
+          <p class="hero-description">Emma is an industrial design engineer specialising in interaction design. She combines creativity and technology to create intuitive digital experiences and thoughtful physical products.</p>
         </div>
-
-        <div class="bildcv"></div>
 
         <div class="icons">
           <a href="https://www.linkedin.com/in/emma-silverstam/" aria-label="LinkedIn – Emma Silverstam">
@@ -58,12 +70,11 @@
       </div>
     </main>
 
-    <footer></footer>
   </div>
 
   <section>
     <div class="project" id="project">
-      <div><h1>Projects</h1></div>
+      <div><h1>WORK</h1></div>
       <div></div>
     </div>
 
@@ -72,15 +83,15 @@
         <a href="html/IndieFlow.html">
           <img src="Main bild - kopia.png" class="img1" alt="Master Thesis – Mammography AI" />
         </a>
-        <p class="bildtext"><span class="produkt">01. A Circular Home Styling System</span><br />Digital design</p>
+        <p class="bildtext"><span class="produkt">A Circular Home Styling System</span><br />Digital design</p>
         <p class="overlay-text1">A project to design a mobile application for coordinating a circular home styling workflow for the company Indie Studios</p>
       </div>
 
       <div class="gallery__item">
         <a href="html/Urban.html">
-          <img src="urbaniosis-07.jpg" class="img3" alt="Furniture for remote work – Product design" />
+          <img src="kandidaten.png" class="img3" alt="Furniture for remote work – Product design" />
         </a>
-        <p class="bildtext"><span class="produkt">02. Furniture for Remote Work</span><br />Product design</p>
+        <p class="bildtext"><span class="produkt">Furniture for Remote Work</span><br />Product design</p>
         <p class="overlay-text1">A project to design furniture for remote work in collaboration with AJ Produkter</p>
       </div>
 
@@ -88,7 +99,7 @@
         <a href="html/[HER]dles.html">
           <img src="herdles.png" class="img2" alt="An interactive museum – Digital design" />
         </a>
-        <p class="bildtext"><span class="produkt">03. An Interactive Museum Experience</span><br />Exhibition design</p>
+        <p class="bildtext"><span class="produkt">An Interactive Museum Experience</span><br />Exhibition design</p>
         <p class="overlay-text1">A project to develop an interactive museum experience about women in sports</p>
       </div>
 
@@ -96,7 +107,7 @@
         <a href="html/TaleAble.html">
           <img src="Toy.png" class="img4" alt="Toy for children – Digital design" />
         </a>
-        <p class="bildtext"><span class="produkt">04. A Storytelling app for Children</span><br />Digital design</p>
+        <p class="bildtext"><span class="produkt">A Storytelling app for Children</span><br />Digital design</p>
         <p class="overlay-text1">A project to develop an inclusive and creative storytelling experience for children</p>
       </div>
 
@@ -104,15 +115,15 @@
         <a href="html/Endobreath.html">
           <img src="endobreath.png" class="img5" alt="A pillow for endometriosis – Soma design" />
         </a>
-        <p class="bildtext"><span class="produkt">05. A Pillow for Endometriosis</span><br />Soma design</p>
+        <p class="bildtext"><span class="produkt">A Pillow for Endometriosis</span><br />Soma design</p>
         <p class="overlay-text1">A design project exploring soma design principles through the development of a product for endometriosis</p>
       </div>
 
       <div class="gallery__item">
         <a href="html/Meloflora.html">
-          <img src="Logo Meloflora.png" class="img6" alt="Interactive flowerpot – Product design" />
+          <img src="flowerpot.png" class="img6" alt="Interactive flowerpot – Product design" />
         </a>
-        <p class="bildtext"><span class="produkt">06. An Interactive Flowerpot</span><br />Digital design</p>
+        <p class="bildtext"><span class="produkt">An Interactive Flowerpot</span><br />Digital design</p>
         <p class="overlay-text1">A project to design a human–plant interaction through iterative prototyping of a tangible, sensory-based design</p>
       </div>
 
@@ -120,7 +131,7 @@
         <a href="html/Benefit.html">
           <img src="Fitness.png" class="img7" alt="Fitness application – Digital design" />
         </a>
-        <p class="bildtext"><span class="produkt">07. A Fitness & Nutrition Website</span><br />Digital design</p>
+        <p class="bildtext"><span class="produkt">A Fitness & Nutrition Website</span><br />Digital design</p>
         <p class="overlay-text1">A project to design a desktop application that enhances well-being through personalised fitness and nutrition plans</p>
       </div>
 
@@ -128,15 +139,15 @@
         <a href="html/EmsSyr.html">
           <img src="Emssyr-03.png" class="img8" alt="Accessible webshop – Universal design" />
         </a>
-        <p class="bildtext"><span class="produkt">08. An Accessible Webshop</span><br />Universal design</p>
+        <p class="bildtext"><span class="produkt">An Accessible Webshop</span><br />Universal design</p>
         <p class="overlay-text1">A project to design an accessible e-commerce website that simplifies the shopping experience for handmade products</p>
       </div>
 
       <div class="gallery__item">
         <a href="html/EmsEra.html">
-          <img src="logo-01-01.png" class="img9" alt="Fashion collection – Fashion design" />
+          <img src="logooo.png" class="img9" alt="Fashion collection – Fashion design" />
         </a>
-        <p class="bildtext"><span class="produkt">09. A Fashion Collection</span><br />Fashion design</p>
+        <p class="bildtext"><span class="produkt">A Fashion Collection</span><br />Fashion design</p>
         <p class="overlay-text1">A project to design my own fashion collection</p>
       </div>
     </div>
@@ -165,7 +176,7 @@
   </div>
 
   <div class="creative-side">
-        <h2>I love making things</h2>
+        <h2 class="making-heading" aria-label="I love making things">I <svg class="sketched-heart" viewBox="0 0 48 44" aria-hidden="true"><path d="M24 39C19 34 3 24 4 13C5 2 18 2 24 12C30 1 44 4 44 14C44 24 30 35 24 39Z" /><path d="M23 37C16 31 5 23 6 14C7 5 18 4 23 13" /></svg> making things</h2>
       <p>
         I am a very creative person and enjoy creating both digitally and by hand.
         In my free time, I like to sew toiletry bags and pouches, build furniture,
@@ -174,10 +185,10 @@
         projects I have made.
       </p>
     <div class="hobby-grid">
-      <img src="sang.jpg" alt="Handmade toiletry bags and pouches" />
-      <img src="bord.jpg" alt="A handmade coffee table" />
-      <img src="pall.jpg" alt="A handmade headboard" />
-      <img src="nes.jpg" alt="A reupholstered stool" />
+      <figure><div class="hobby-photo"><img src="sang.jpg" alt="A handmade upholstered headboard" /></div><figcaption>Upholstered headboard</figcaption></figure>
+      <figure><div class="hobby-photo"><img src="bord.jpg" alt="A handmade coffee table" /></div><figcaption>Handmade coffee table</figcaption></figure>
+      <figure><div class="hobby-photo"><img src="pall.jpg" alt="A reupholstered stool" /></div><figcaption>Reupholstered stool</figcaption></figure>
+      <figure><div class="hobby-photo"><img src="nes.jpg" alt="Handmade toiletry bags and pouches" /></div><figcaption>Sewn bags &amp; pouches</figcaption></figure>
     </div>
 
   </div>
@@ -279,6 +290,21 @@
 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    /* Show the desktop menu when scrolling back up. */
+    const siteNavigation = document.querySelector('.site-header nav');
+    let menuScrollAnchor = window.scrollY;
+    window.addEventListener('scroll', function () {
+      const currentScroll = Math.max(0, window.scrollY);
+      if (currentScroll < 180) {
+        siteNavigation.classList.remove('nav-floating');
+        menuScrollAnchor = currentScroll;
+        return;
+      }
+      if (Math.abs(currentScroll - menuScrollAnchor) < 8) return;
+      siteNavigation.classList.toggle('nav-floating', currentScroll < menuScrollAnchor);
+      menuScrollAnchor = currentScroll;
+    }, { passive: true });
+
     /* === Burger menu === */
     function toggleMenu() {
       if (!hamburgerMenu || !navList) return;
@@ -301,19 +327,12 @@
       });
     }
 
-    /* === Smooth scroll === */
-    function smoothScrollTo(targetId) {
+    /* === Direct section navigation === */
+    function scrollToSection(targetId) {
       const el = document.querySelector(targetId);
       if (!el) return;
 
-      if (prefersReduced) {
-        el.scrollIntoView();
-      } else {
-        el.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
+      el.scrollIntoView({ behavior: prefersReduced ? 'instant' : 'smooth', block: 'start' });
     }
 
     navAnchors.forEach(function (link) {
@@ -323,7 +342,7 @@
         if (!href || !href.startsWith('#')) return;
 
         e.preventDefault();
-        smoothScrollTo(href);
+        scrollToSection(href);
 
         if (navList && navList.classList.contains('active')) {
           navList.classList.remove('active');
@@ -343,40 +362,22 @@
       });
     });
 
-    /* === Project cards reveal on scroll === */
-    if (!prefersReduced && gallery && galleryItems.length) {
-      const getColumnCount = function () {
-        const cols = getComputedStyle(gallery).gridTemplateColumns;
-        return cols ? cols.split(' ').length : 1;
-      };
-
-      const galleryObserver = new IntersectionObserver(function (entries, obs) {
-        const columns = getColumnCount();
-
+    /* === Timeline entries appear one by one === */
+    if (!prefersReduced && 'IntersectionObserver' in window) {
+      const timelineObserver = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-
-          const item = entry.target;
-          const index = Number(item.dataset.index || 0);
-          const col = index % columns;
-
-          item.style.transitionDelay = `${col * 50}ms`;
-          item.classList.add('in-view');
-
-          obs.unobserve(item);
+          entry.target.classList.add('timeline-visible');
+          observer.unobserve(entry.target);
         });
-      }, {
-        threshold: 0.05,
-        rootMargin: '0px 0px 5% 0px'
-      });
+      }, { threshold: 0.15 });
 
-      galleryItems.forEach(function (item, i) {
-        item.dataset.index = i;
-        galleryObserver.observe(item);
-      });
-    } else {
-      galleryItems.forEach(function (item) {
-        item.classList.add('in-view');
+      document.querySelectorAll('.col .contents').forEach(function (timeline) {
+        timeline.querySelectorAll('.box').forEach(function (entry, index) {
+          entry.style.setProperty('--timeline-delay', `${index * 100}ms`);
+          entry.classList.add('timeline-pending');
+          timelineObserver.observe(entry);
+        });
       });
     }
 
@@ -429,16 +430,6 @@
       });
     }
 
-    /* === Typewriter animation === */
-    if (window.Typed) {
-      new Typed(".multi-text", {
-        strings: ["Emma Silverstam"],
-        loop: true,
-        typeSpeed: 100,
-        backSpeed: 80,
-        backDelay: 1500
-      });
-    }
   });
 </script>
 </body>
