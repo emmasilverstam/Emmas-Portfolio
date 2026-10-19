@@ -1684,7 +1684,7 @@ section {
 
 @media (hover: hover) and (pointer: fine) {
   .home-page .header .bildcv:hover {
-    background-image: url(../images/bild3.png);
+    background-image: url(../images/bild2.png);
   }
 }
 
@@ -1798,7 +1798,7 @@ section {
   border-radius: inherit;
 }
 
-.home-page .gallery__item:focus-within {
+.home-page .gallery__item:has(a:focus-visible) {
   outline: 2px solid #3e2e26;
   outline-offset: 4px;
 }
@@ -2748,5 +2748,65 @@ body.home-page {
     right: 0;
     width: 100%;
     padding-top: 5rem;
+  }
+}
+
+.home-page .gallery__item .produkt {
+  font-size: clamp(1.15rem, 1.45vw, 1.7rem);
+}
+
+.home-page .gallery__item .bildtext {
+  font-size: 0.9rem;
+}
+
+/* Sketch-like timeline markers and a rounded connecting line. */
+.home-page .col .contents {
+  position: relative;
+  border-left: 0;
+}
+
+.home-page .col .contents::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 999px;
+  background: #c4b8ae;
+}
+
+.home-page .col .contents .box::before {
+  width: 1rem;
+  height: 0.85rem;
+  border: 1.7px solid #3a2b22;
+  border-radius: 47% 53% 44% 56% / 54% 46% 55% 45%;
+  background: #fff;
+  box-shadow: 1px -1px 0 -0.4px rgb(58 43 34 / 35%);
+  rotate: -9deg;
+  z-index: 1;
+}
+
+.home-page .col .contents .box::before {
+  left: calc(-2rem + 1.5px) !important;
+  right: auto !important;
+  translate: -50% 0;
+}
+
+@media (max-width: 800px) {
+  .home-page .col .contents .box::before {
+    left: calc(-1.6rem + 1.5px) !important;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-page .header .bildcv.portrait-held:hover {
+    background-image: url(../images/bild4.png);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-page .header .bildcv.portrait-middle:hover {
+    background-image: url(../images/bild3.png);
   }
 }

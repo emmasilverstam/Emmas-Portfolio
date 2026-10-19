@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
   <title>Emmas portfolio</title>
   <link rel="preload" as="image" href="images/bild3.png" />
+  <link rel="preload" as="image" href="images/bild2.png" />
+  <link rel="preload" as="image" href="images/bild4.png" />
 </head>
 
 <body class="home-page">
@@ -289,6 +291,30 @@
     const hobbyImages = document.querySelectorAll('.hobby-grid img');
 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const portrait = document.querySelector('.bildcv');
+    let portraitHoverTimer;
+    if (portrait) {
+      portrait.addEventListener('pointerenter', function (event) {
+        if (event.pointerType === 'touch') return;
+        clearTimeout(portraitHoverTimer);
+        portrait.classList.remove('portrait-middle', 'portrait-held');
+        let portraitFrame = 0;
+        const advancePortrait = function () {
+          portraitFrame = (portraitFrame + 1) % 3;
+          portrait.classList.toggle('portrait-middle', portraitFrame === 1);
+          portrait.classList.toggle('portrait-held', portraitFrame === 2);
+          portraitHoverTimer = setTimeout(advancePortrait, portraitFrame === 2 ? 1200 : 600);
+        };
+        portraitHoverTimer = setTimeout(advancePortrait, 600);
+      });
+      const resetPortrait = function () {
+        clearTimeout(portraitHoverTimer);
+        portrait.classList.remove('portrait-middle', 'portrait-held');
+      };
+      portrait.addEventListener('pointerleave', resetPortrait);
+      portrait.addEventListener('pointercancel', resetPortrait);
+    }
 
     /* Show the desktop menu when scrolling back up. */
     const siteNavigation = document.querySelector('.site-header nav');
