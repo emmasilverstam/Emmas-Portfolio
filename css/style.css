@@ -3042,3 +3042,17 @@ body.home-page {
     font-size: clamp(3rem, 3vw, 4rem);
   }
 }
+
+/* Slightly wider framing for every portrait state. */
+.home-page .header .bildcv {
+  background-size: auto 94%;
+  background-position: center bottom;
+  background-color: #3a2b22;
+}
+
+/* Fill the exposed portrait edge with each pink photo's background tone. */
+@media (hover: hover) and (pointer: fine) {
+  .home-page .header .bildcv:hover { background-color: #fce3e8; }
+  .home-page .header .bildcv.portrait-middle:hover { background-color: #fde4e9; }
+  .home-page .header .bildcv.portrait-held:hover { background-color: #fce2e7; }
+}
