@@ -1761,7 +1761,7 @@ section {
   align-items: stretch;
   justify-content: flex-start;
   min-width: 0;
-  background: #f6f6f6;
+  background: #f2f0ee;
   border-radius: clamp(1.5rem, 3vw, 3rem);
   padding: clamp(1.25rem, 2vw, 2.25rem);
   box-shadow: none;
@@ -1772,7 +1772,7 @@ section {
 }
 
 .home-page .gallery__item:hover {
-  background-color: #ececec;
+  background-color: #e5e1dd;
   transform: scale(1.015);
   box-shadow: none;
 }
@@ -2592,7 +2592,7 @@ body.home-page {
 /* Leave the final row above Work clear. */
 .home-page #container {
   background-image:
-    linear-gradient(to top, #fff 50px, transparent 50px),
+    linear-gradient(to top, #fff 25px, transparent 25px),
     linear-gradient(to right, rgb(58 43 34 / 12%) 1px, transparent 1px),
     linear-gradient(to bottom, rgb(58 43 34 / 12%) 1px, transparent 1px);
   background-size: 100% 100%, 25px 25px, 25px 25px;
