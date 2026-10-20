@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500&display=swap");
+
+/* Match the home page typography and navigation across all case studies. */
+body.project-page { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 1.1rem; }
+.project-page h1, .project-page h2, .project-page h3 { font-family: 'Manrope', sans-serif; font-weight: 500; letter-spacing: -0.035em; }
+.project-page p { letter-spacing: 0; }
+.project-page .site-header { box-sizing: border-box; width: 100%; max-width: none; margin: 0; background: #fff; }
+.project-page .site-brand { text-decoration: none; }
+.project-page .site-header nav { display: flex; align-items: center; justify-content: center; }
+.project-page .site-header nav ul { display: flex; list-style: none; margin: 0; padding: 0; transform: none; gap: 0; }
+.project-page .site-header nav a { position: relative; display: inline-block; text-decoration: none; color: #3a2b22; }
+.project-page .site-header nav a::after { content: none; }
+.project-page .site-header .hamburger-menu { display: none; cursor: pointer; }
+@media (max-width: 800px) {
+  .project-page .site-header nav ul { display: none; flex-direction: column; position: absolute; }
+  .project-page .site-header nav ul.active { display: flex; }
+}
+
+.project-page .site-header {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.25rem clamp(1.25rem, 3vw, 3rem);
+}
+
+.project-page .site-brand {
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: #3a2b22;
+  flex-shrink: 0;
+}
+
+.project-page .site-brand__name {
+
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+
+.project-page .site-brand__description {
+
+  color: #85817e;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.project-page .site-header nav {
+
+  width: auto;
+  max-width: none;
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+.project-page .site-header {
+
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+.project-page .site-header nav {
+
+    position: static;
+    padding: 0;
+  }
+
+.project-page .site-header {
+
+    position: relative;
+    z-index: 1000;
+  }
+
+.project-page .site-header nav ul {
+
+    top: 100%;
+    margin-top: 0;
+  }
+}
+
+.project-page .site-brand__name,
+.project-page .site-header nav a {
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 800px) {
+.project-page .site-header .hamburger-menu {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: 1px solid #e6e0db;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+.project-page .site-header .bar {
+
+    width: 20px;
+    height: 2px;
+    margin: 0;
+    border-radius: 2px;
+    background: #3a2b22;
+    transition: transform 200ms ease, opacity 200ms ease;
+  }
+
+.project-page .hamburger-menu.active .bar:nth-child(1) {
+
+    transform: translateY(7px) rotate(45deg);
+  }
+
+.project-page .hamburger-menu.active .bar:nth-child(2) {
+
+    opacity: 0;
+  }
+
+.project-page .hamburger-menu.active .bar:nth-child(3) {
+
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+.project-page .site-header nav ul {
+
+    left: auto;
+    right: 1.25rem;
+    width: min(22rem, calc(100% - 2.5rem));
+    align-items: stretch;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    border: 1px solid #ece7e2;
+    border-radius: 1.5rem;
+    background: #fff;
+    box-shadow: 0 12px 36px rgb(58 43 34 / 10%);
+  }
+
+.project-page .site-header nav li {
+
+    text-align: left;
+  }
+
+.project-page .site-header nav a {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 1rem 1.25rem;
+    border-radius: 0.9rem;
+    color: #3a2b22;
+    transition: background-color 200ms ease;
+  }
+
+.project-page .site-header nav a::after {
+
+    content: '\2197';
+    position: static;
+    height: auto;
+    background: none;
+    transform: none;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #97877a;
+  }
+
+.project-page .site-header nav a:hover,
+  .project-page .site-header nav a:focus-visible {
+
+    background: #f4f1ee;
+  }
+}
+
+@media (max-width: 800px) {
+.project-page .site-header nav ul {
+
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 7.5rem 1.25rem 1.5rem;
+    border: 0;
+    border-radius: 0 0 1.5rem 1.5rem;
+    box-shadow: 0 12px 30px rgb(58 43 34 / 10%);
+    z-index: 1;
+  }
+
+.project-page .site-header .site-brand {
+
+    position: relative;
+    z-index: 2;
+  }
+
+.project-page .site-header .hamburger-menu {
+
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 600px) {
+.project-page .site-brand {
+
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+.project-page .site-brand__description {
+
+    text-wrap: balance;
+  }
+}
+
+.project-page .site-header {
+
+  position: relative;
+  z-index: 1000;
+}
+
+@media (min-width: 801px) {
+.project-page .site-header nav a {
+
+    margin: 0 0.25rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 801px) {
+.project-page .site-header nav a::after {
+
+    content: none;
+  }
+
+.project-page .site-header nav a::before {
+
+    content: '';
+    position: absolute;
+    inset: 0.25rem -0.15rem;
+    border: 1.5px solid #3a2b22;
+    border-radius: 48% 52% 46% 54% / 53% 45% 55% 47%;
+    box-shadow: 1px -1px 0 -0.2px rgb(58 43 34 / 35%);
+    transform: rotate(-5deg) scale(0.94);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 160ms ease, transform 220ms ease;
+  }
+
+.project-page .site-header nav a:hover::before,
+  .project-page .site-header nav a:focus-visible::before {
+
+    opacity: 1;
+    transform: rotate(-5deg) scale(1);
+  }
+}
+
+.project-page .menu-circle {
+
+  display: none;
+}
+
+@media (min-width: 801px) {
+.project-page .site-header nav a::before {
+
+    content: none;
+  }
+
+.project-page .menu-circle {
+
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    transform: rotate(-4deg);
+    fill: none;
+    stroke: #3a2b22;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+  }
+
+.project-page .menu-circle path {
+
+    vector-effect: non-scaling-stroke;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 550ms ease;
+  }
+
+.project-page .site-header nav a:hover .menu-circle path,
+  .project-page .site-header nav a:focus-visible .menu-circle path {
+
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+.project-page .menu-circle path {
+
+    transition: none;
+  }
+}
+
+@media (min-width: 801px) {
+.project-page .site-header nav.nav-floating {
+
+    position: fixed;
+    top: 1rem;
+    right: clamp(1.25rem, 3vw, 3rem);
+    z-index: 1100;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ece7e2;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 6px 24px rgb(58 43 34 / 8%);
+  }
+}
+
+@media (max-width: 800px) {
+.project-page .site-header nav.nav-floating {
+
+    position: fixed;
+    top: 1rem;
+    right: 1.25rem;
+    z-index: 1100;
+  }
+
+.project-page .site-header nav.nav-floating ul {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 5rem;
+  }
+}
+
+/* Project pages show only the navigation in the header. */
+.project-page .site-header { justify-content: flex-end; }

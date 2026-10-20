@@ -2007,14 +2007,14 @@ body.home-page {
   }
 }
 
-/* Subtle dotted background for the introduction. */
+/* Subtle grid background for the introduction. */
 .home-page #container {
   background-color: #fff;
   background-image:
-    radial-gradient(circle, rgb(58 43 34 / 25%) 1.8px, transparent 2.1px),
-    radial-gradient(circle, rgb(58 43 34 / 25%) 1.8px, transparent 2.1px);
-  background-size: 50px 50px;
-  background-position: 0 0, 25px 25px;
+    linear-gradient(to right, rgb(58 43 34 / 12%) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(58 43 34 / 12%) 1px, transparent 1px);
+  background-size: 25px 25px;
+  background-position: 0 0, 0 0;
   padding-bottom: 2rem;
 }
 
@@ -2560,7 +2560,7 @@ body.home-page {
   }
 }
 
-/* Continue the dots through the space above Work. */
+/* Continue the grid through the space above Work. */
 .home-page #container {
   padding-bottom: clamp(4rem, 8vw, 8rem);
 }
@@ -2593,10 +2593,10 @@ body.home-page {
 .home-page #container {
   background-image:
     linear-gradient(to top, #fff 50px, transparent 50px),
-    radial-gradient(circle, rgb(58 43 34 / 25%) 1.8px, transparent 2.1px),
-    radial-gradient(circle, rgb(58 43 34 / 25%) 1.8px, transparent 2.1px);
-  background-size: 100% 100%, 50px 50px, 50px 50px;
-  background-position: 0 0, 0 0, 25px 25px;
+    linear-gradient(to right, rgb(58 43 34 / 12%) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(58 43 34 / 12%) 1px, transparent 1px);
+  background-size: 100% 100%, 25px 25px, 25px 25px;
+  background-position: 0 0, 0 0, 0 0;
   background-repeat: no-repeat, repeat, repeat;
 }
 

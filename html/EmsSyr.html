@@ -8,22 +8,29 @@
   <link rel="stylesheet" href="../css/mobile-nav.css" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <title>Ems Syr</title>
+  <link rel="stylesheet" href="../css/project-shared.css?v=20261020" />
+  <script src="../js/project-navigation.js" defer></script>
 </head>
 
-<body>
+<body class="project-page">
   <div id="container">
-    <header>
+    <header class="site-header">
       <nav>
-        <div class="hamburger-menu">
+        <div class="hamburger-menu"
+             aria-controls="primary-nav"
+             aria-expanded="false"
+             aria-label="Open menu"
+             role="button"
+             tabindex="0">
           <div class="bar"></div>
           <div class="bar"></div>
           <div class="bar"></div>
         </div>
-        <ul>
-          <li><a href="../index.html#header">Home</a></li>
-          <li><a href="../index.html#project">Projects</a></li>
-          <li><a href="../index.html#about">About me</a></li>
-          <li><a href="../index.html#contact">Contacts</a></li>
+
+        <ul id="primary-nav">
+          <li><a href="../index.html#project">Work<svg class="menu-circle" viewBox="0 0 160 60" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M145 18C122-3 35 0 12 19C-12 43 35 59 88 54C136 52 163 33 146 17C133 5 101 3 76 5" /></svg></a></li>
+          <li><a href="../index.html#about">About me<svg class="menu-circle" viewBox="0 0 160 60" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M145 18C122-3 35 0 12 19C-12 43 35 59 88 54C136 52 163 33 146 17C133 5 101 3 76 5" /></svg></a></li>
+          <li><a href="../index.html#contact">Contacts<svg class="menu-circle" viewBox="0 0 160 60" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M145 18C122-3 35 0 12 19C-12 43 35 59 88 54C136 52 163 33 146 17C133 5 101 3 76 5" /></svg></a></li>
         </ul>
       </nav>
     </header>

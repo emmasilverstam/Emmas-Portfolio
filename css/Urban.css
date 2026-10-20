@@ -536,6 +536,21 @@ p span {
   fill: #2f5d50;
 }
 
+/* Lower the illustration and green band below the final lines of text. */
+@media (min-width: 901px) {
+  .problem-section {
+    margin-bottom: 4rem;
+  }
+
+  .problem-image {
+    margin-top: 4rem;
+  }
+
+  .problem-shape-band {
+    top: 4rem;
+  }
+}
+
 /* =========================
    RESPONSIVE
    ========================= */
