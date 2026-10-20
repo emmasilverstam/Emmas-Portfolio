@@ -266,3 +266,11 @@ nav a{ margin:0.5rem; }
 @media (max-width: 350px){
   h1{ font-size:2.6rem; }
 }
+
+/* Align the opening title and mockup near the top on desktop. */
+@media (min-width: 901px) {
+  .info { margin-top: 0; align-items: start; }
+  .info h1 { margin-top: 2rem; }
+  .info .booking { padding-top: 0; transform: translateY(-2rem); }
+  .info .booking img { margin-top: 0; }
+}

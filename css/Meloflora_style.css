@@ -5,7 +5,7 @@
 ----------------------------*/
 :root{
   --text:#3f2e26;
-  --bg:#fffbf8;
+  --bg:#ffffff;
   --accent:#d7e3f9; /* blue band behind Sketching */
 }
 
@@ -343,4 +343,8 @@ nav a:hover{
 @media (max-width:380px){
   .step_3{grid-auto-rows:26rem;}
   .miljo{grid-auto-rows:28rem;}
+}
+
+@media (min-width: 901px) {
+  .info .pendel img { margin-top: 0; }
 }

@@ -769,3 +769,7 @@ nav a:hover{
 
 
 
+
+@media (min-width: 901px) {
+  .info .pendel img { margin-top: 2rem; }
+}

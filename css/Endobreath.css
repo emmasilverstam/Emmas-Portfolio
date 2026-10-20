@@ -1227,3 +1227,7 @@ html, body { overflow-x: hidden; }
 }
 
 
+
+@media (min-width: 901px) {
+  .info .pendel img { margin-top: -6rem; }
+}

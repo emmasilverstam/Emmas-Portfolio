@@ -240,3 +240,7 @@ nav a{ margin:0.5rem; }
     margin-right:0 !important;
   }
 }
+
+@media (min-width: 901px) {
+  .info .booking img { margin-top: 0; }
+}

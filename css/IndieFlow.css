@@ -5,7 +5,7 @@
 ----------------------------*/
 :root{
   --text:#3f2e26;
-  --bg:#fffbf8;
+  --bg:#ffffff;
   --accent:#d7e3f9;
 }
 
@@ -1436,3 +1436,15 @@ nav a:hover{
 }
 
 
+
+@media (min-width: 901px) {
+  .info .pendel img { margin-top: 0; }
+}
+
+@media (min-width: 1051px) {
+  #loopGallery .gallery-rotator {
+    margin-top: -3rem;
+    align-self: end;
+  }
+  #loopGallery .gallery-line { margin-top: 0; }
+}
