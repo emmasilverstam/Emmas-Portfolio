@@ -2845,8 +2845,8 @@ body.home-page {
   .home-page #container {
     display: flex;
     flex-direction: column;
-    min-height: 100svh;
-    padding-bottom: 2rem;
+    min-height: calc(100svh + 4rem);
+    padding-bottom: 3rem;
   }
 
   .home-page #container > main {
@@ -2885,23 +2885,34 @@ body.home-page {
 
   .home-page .gallery__item:first-child {
     aspect-ratio: auto;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto;
     gap: 1.25rem;
   }
 
   .home-page .gallery__item:first-child a {
-    height: clamp(14rem, 70vw, 24rem);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: clamp(15rem, 76vw, 26rem);
     min-height: 0;
     overflow: hidden;
   }
 
   .home-page .gallery .gallery__item:first-child a img {
     position: static;
-    width: 100%;
+    inset: auto;
+    width: auto;
     height: 100%;
+    min-width: 0;
+    min-height: 0;
     max-width: 100%;
     max-height: 100%;
-    margin: 0;
+    margin: auto;
+    justify-self: stretch;
+    align-self: stretch;
     object-fit: contain;
     object-position: center;
     transform: none;
@@ -2910,5 +2921,13 @@ body.home-page {
   .home-page .hobby-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 1.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-page .header .bildcv,
+  .home-page .header .icons,
+  .home-page .header .name-banner {
+    translate: 0 -1.5rem;
   }
 }
