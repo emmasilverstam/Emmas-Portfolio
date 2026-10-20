@@ -2826,3 +2826,90 @@ body.home-page {
 }
 .designer-roles__text { display: inline-block; white-space: nowrap; }
 .designer-roles__dash { flex-shrink: 0; }
+
+/* Small-screen layout: compact navigation and a full-height introduction. */
+@media (max-width: 800px) {
+  .home-page .site-header nav ul,
+  .home-page .site-header nav.nav-floating ul {
+    padding-top: 5.25rem;
+    padding-bottom: 0.75rem;
+    gap: 0;
+  }
+
+  .home-page .site-header nav a::after { content: none; }
+  .home-page .site-header nav li + li { border-top: 1px solid #e5e1dd; }
+  .home-page .site-header nav a { padding: 0.85rem 0.75rem; }
+}
+
+@media (max-width: 600px) {
+  .home-page #container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    padding-bottom: 2rem;
+  }
+
+  .home-page #container > main {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+  }
+
+  .home-page .header {
+    width: calc(100% - 2.5rem);
+    margin-top: 2rem;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+  }
+
+  .home-page .header .bildcv { margin-top: 1rem; }
+
+  .home-page .portrait-stage .hero-description {
+    position: relative;
+    padding-left: 1.25rem;
+  }
+
+  .home-page .portrait-stage .hero-description::before {
+    content: '';
+    position: absolute;
+    top: 0.9rem;
+    bottom: 0.9rem;
+    left: 0;
+    width: 4px;
+    border-radius: 2px;
+    background: #3a2b22;
+  }
+
+  .home-page .project { margin-top: 2.5rem; }
+
+  .home-page .gallery { grid-auto-rows: auto; }
+  .home-page .gallery__item {
+    aspect-ratio: auto;
+    grid-template-rows: auto auto;
+    gap: 1.25rem;
+  }
+
+  .home-page .gallery__item a {
+    height: clamp(14rem, 70vw, 24rem);
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .home-page .gallery .gallery__item a img {
+    position: static;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    object-fit: contain;
+    object-position: center;
+    transform: none;
+  }
+
+  .home-page .hobby-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+}

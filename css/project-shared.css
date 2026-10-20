@@ -353,3 +353,16 @@ body.project-page { font-family: 'Manrope', sans-serif; font-weight: 400; font-s
 
 /* Project pages show only the navigation in the header. */
 .project-page .site-header { justify-content: flex-end; }
+
+/* Match the compact mobile menu on the home page. */
+@media (max-width: 800px) {
+  .project-page .site-header nav ul,
+  .project-page .site-header nav.nav-floating ul {
+    padding-top: 5.25rem;
+    padding-bottom: 0.75rem;
+    gap: 0;
+  }
+  .project-page .site-header nav a::after { content: none; }
+  .project-page .site-header nav li + li { border-top: 1px solid #e5e1dd; }
+  .project-page .site-header nav a { padding: 0.85rem 0.75rem; }
+}
