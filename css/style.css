@@ -2009,7 +2009,7 @@ body.home-page {
 
 /* Subtle grid background for the introduction. */
 .home-page #container {
-  background-color: #fff;
+  background-color: #f2f0ee;
   background-image:
     linear-gradient(to right, rgb(58 43 34 / 12%) 1px, transparent 1px),
     linear-gradient(to bottom, rgb(58 43 34 / 12%) 1px, transparent 1px);
@@ -2523,7 +2523,7 @@ body.home-page {
   width: min(28rem, calc(50% - clamp(11rem, 20vw, 19rem) / 2 - 2rem));
   padding: 1rem 1.25rem;
   border-radius: 1rem;
-  background: #fff;
+  background: #f2f0ee;
 }
 
 @media (max-width: 600px) {
@@ -2585,7 +2585,7 @@ body.home-page {
 
 @media (min-width: 601px) {
   .home-page .portrait-stage .hero-description {
-    box-shadow: -1rem 0 0 #fff;
+    box-shadow: -1rem 0 0 #f2f0ee;
   }
 }
 
@@ -2810,3 +2810,19 @@ body.home-page {
     background-image: url(../images/bild3.png);
   }
 }
+
+/* Handwritten titles, written and erased between roles. */
+.home-page .designer-roles {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  width: 14rem;
+  height: 2rem;
+  color: #66564a;
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+.designer-roles__text { display: inline-block; white-space: nowrap; }
+.designer-roles__dash { flex-shrink: 0; }
