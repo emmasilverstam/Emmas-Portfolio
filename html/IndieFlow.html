@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
   <link href="css/normalize.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/IndieFlow.css?v=20261020-project-layout-5" />
+  <link rel="stylesheet" href="../css/IndieFlow.css?v=20261023-video-controls-8" />
   <link rel="stylesheet" href="../css/mobile-nav.css" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <title>Indie Flow</title>
   <link rel="stylesheet" href="../css/project-shared.css?v=20261020-project-layout-5" />
   <script src="../js/project-navigation.js" defer></script>
+  <script src="../js/indie-video-controls.js" defer></script>
 </head>
 
 <body class="project-page">
@@ -395,9 +396,12 @@ The project resulted in a role-based mobile interface that supports coordination
 
             <div class="result-media">
               <img class="result-bg" src="../IndieFlow/frame1.png" alt="">
-              <video class="result-video" muted playsinline preload="metadata">
+              <div class="result-player">
+<video class="result-video" controls playsinline preload="none" poster="../IndieFlow/result-1-poster.jpg">
                 <source src="../IndieFlow/1 - kopia.mp4" type="video/mp4">
               </video>
+<button class="result-play" type="button" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7Z" /></svg></button>
+</div>
             </div>
           </div>
         </article>
@@ -430,9 +434,12 @@ The project resulted in a role-based mobile interface that supports coordination
             </div>
             <div class="result-media">
               <img class="result-bg" src="../IndieFlow/frame2.png" alt="">
-              <video class="result-video" muted playsinline preload="metadata">
+              <div class="result-player">
+<video class="result-video" controls playsinline preload="none" poster="../IndieFlow/result-2-poster.jpg">
                 <source src="../IndieFlow/2 - kopia.mp4" type="video/mp4">
               </video>
+<button class="result-play" type="button" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7Z" /></svg></button>
+</div>
             </div>
           </div>
         </article>
@@ -464,9 +471,12 @@ The project resulted in a role-based mobile interface that supports coordination
             </div>
             <div class="result-media">
               <img class="result-bg" src="../IndieFlow/frame3.png" alt="">
-              <video class="result-video" muted playsinline preload="metadata">
+              <div class="result-player">
+<video class="result-video" controls playsinline preload="none" poster="../IndieFlow/result-3-poster.jpg">
                 <source src="../IndieFlow/3 - kopia.mp4" type="video/mp4">
               </video>
+<button class="result-play" type="button" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7Z" /></svg></button>
+</div>
             </div>
           </div>
         </article>
@@ -495,9 +505,6 @@ The project resulted in a role-based mobile interface that supports coordination
             </div>
             <div class="result-media">
               <img class="result-bg" src="../IndieFlow/frame4.png" alt="">
-              <video class="result-video" muted playsinline preload="metadata">
-                <source src="../IndieFlow/vid4.mp4" type="video/mp4">
-              </video>
             </div>
           </div>
         </article>
@@ -530,9 +537,12 @@ The project resulted in a role-based mobile interface that supports coordination
             </div>
             <div class="result-media">
               <img class="result-bg" src="../IndieFlow/frame5.png" alt="">
-              <video class="result-video" muted playsinline preload="metadata">
+              <div class="result-player">
+<video class="result-video" controls playsinline preload="none" poster="../IndieFlow/result-5-poster.jpg">
                 <source src="../IndieFlow/4 - kopia.mp4" type="video/mp4">
               </video>
+<button class="result-play" type="button" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7Z" /></svg></button>
+</div>
             </div>
           </div>
         </article>
@@ -565,9 +575,12 @@ The project resulted in a role-based mobile interface that supports coordination
             </div>
             <div class="result-media">
               <img class="result-bg" src="../IndieFlow/frame6.png" alt="">
-              <video class="result-video" muted playsinline preload="metadata">
+              <div class="result-player">
+<video class="result-video" controls playsinline preload="none" poster="../IndieFlow/result-6-poster.jpg">
                 <source src="../IndieFlow/5.6 - kopia.mp4" type="video/mp4">
               </video>
+<button class="result-play" type="button" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7Z" /></svg></button>
+</div>
             </div>
           </div>
         </article>
@@ -893,9 +906,9 @@ The project resulted in a role-based mobile interface that supports coordination
 
   <script>
     /* ===========================
-       RESULT SLIDER JS (same behaviour)
-       - autoplay when in view
-       - restart video on slide change
+       RESULT SLIDER JS
+       - playback starts only through the video controls
+       - pause hidden slides while preserving playback position
     =========================== */
     document.addEventListener('DOMContentLoaded', () => {
       const section = document.getElementById('resultSection');
@@ -910,30 +923,18 @@ The project resulted in a role-based mobile interface that supports coordination
       let index = slides.findIndex(s => s.classList.contains('is-active'));
       if (index < 0) index = 0;
 
-      let inView = false;
 
-      function stopAndResetAllVideos() {
+      function pauseAllVideos() {
         slides.forEach(slide => {
           const v = slide.querySelector('.result-video');
           if (!v) return;
           v.pause();
-          try { v.currentTime = 0; } catch (e) { }
         });
       }
 
-      function playActiveVideo() {
-        const active = slides[index];
-        const v = active.querySelector('.result-video');
-        if (!v) return;
-
-        v.pause();
-        try { v.currentTime = 0; } catch (e) { }
-        const p = v.play();
-        if (p && typeof p.catch === 'function') p.catch(() => { });
-      }
 
       function setActive(i) {
-        stopAndResetAllVideos();
+        pauseAllVideos();
 
         slides.forEach(s => s.classList.remove('is-active'));
         dots.forEach(d => d.classList.remove('is-active'));
@@ -943,7 +944,6 @@ The project resulted in a role-based mobile interface that supports coordination
         slides[index].classList.add('is-active');
         if (dots[index]) dots[index].classList.add('is-active');
 
-        if (inView) playActiveVideo();
       }
 
       function next() { setActive(index + 1); }
@@ -955,13 +955,7 @@ The project resulted in a role-based mobile interface that supports coordination
 
       const obs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            inView = true;
-            playActiveVideo();
-          } else {
-            inView = false;
-            stopAndResetAllVideos();
-          }
+          if (!entry.isIntersecting) pauseAllVideos();
         });
       }, { threshold: 0.35 });
 

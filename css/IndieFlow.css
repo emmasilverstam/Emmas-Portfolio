@@ -951,7 +951,7 @@ nav a:hover{
 }
 
 /* ✅ video overlay: placed inside the circle by tweaking vars */
-.result-video{
+.result-player{
   position:absolute;
 
   /* center baseline */
@@ -1365,7 +1365,7 @@ nav a:hover{
     max-width: 100%;
   }
 
-  .result-video {
+  .result-player {
     left: 50%;
     top: 50%;
     --video-x: 0px !important;
@@ -1423,7 +1423,7 @@ nav a:hover{
     margin:0 0 1.25rem 1.5rem;
   }
 
-  .result-video{
+  .result-player{
     --video-w:32% !important;
   }
   .result-dots{
@@ -1448,3 +1448,45 @@ nav a:hover{
   }
   #loopGallery .gallery-line { margin-top: 0; }
 }
+
+/* Allow native play, pause, seeking and fullscreen controls. */
+.result-player { pointer-events: auto; }
+
+/* Rounded players with a central play button before playback. */
+.result-player {
+  overflow: hidden;
+  border-radius: 12% / 6%;
+  background: #cf926d;
+  pointer-events: auto;
+}
+.result-player .result-video {
+  display: block;
+  position: static;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: inherit;
+  object-fit: contain;
+  transform: none;
+  pointer-events: auto;
+}
+.result-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  border: 1px solid rgb(255 255 255 / 55%);
+  border-radius: 50%;
+  background: rgb(22 47 48 / 30%);
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(3px);
+}
+.result-play svg { width: 2.2rem; height: 2.2rem; fill: currentColor; }
+.result-play:hover { background: rgb(22 47 48 / 50%); }
+.result-play:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.result-player.is-playing .result-play { display: none; }
