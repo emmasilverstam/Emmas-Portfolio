@@ -3079,3 +3079,19 @@ body.home-page {
     transform: none;
   }
 }
+
+/* A native link covers each entire card, including its caption and padding. */
+.home-page .gallery .gallery__item > .project-card-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: auto;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border-radius: inherit;
+  z-index: 5;
+}
+.home-page .gallery .gallery__item > .project-card-link::after { content: none; }
+.home-page .gallery .gallery__item:first-child a .img1 { translate: 1.25rem 0; }
