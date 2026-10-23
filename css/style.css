@@ -3056,3 +3056,26 @@ body.home-page {
   .home-page .header .bildcv.portrait-middle:hover { background-color: #fde4e9; }
   .home-page .header .bildcv.portrait-held:hover { background-color: #fce2e7; }
 }
+
+/* Keep the first project image inside its own row at desktop/tablet widths. */
+@media (min-width: 601px) {
+  .home-page .gallery__item:first-child a {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .home-page .gallery .gallery__item:first-child a .img1 {
+    position: absolute;
+    inset: 0;
+    width: 90%;
+    height: 90%;
+    min-width: 0;
+    min-height: 0;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    object-fit: contain;
+    object-position: center;
+    transform: none;
+  }
+}
