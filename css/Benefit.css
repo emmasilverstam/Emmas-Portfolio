@@ -244,3 +244,40 @@ nav a{ margin:0.5rem; }
 @media (min-width: 901px) {
   .info .booking img { margin-top: 0; }
 }
+
+.benefit-page .benefit-player {
+  position: relative;
+  width: 110%;
+  flex-shrink: 0;
+}
+.benefit-page .feature--reverse .benefit-player { margin-left: -15%; }
+.benefit-page .benefit-player video {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 !important;
+}
+.benefit-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  border: 1px solid rgb(255 255 255 / 55%);
+  border-radius: 50%;
+  color: #fff;
+  background: rgb(22 47 48 / 30%);
+  backdrop-filter: blur(3px);
+  cursor: pointer;
+}
+.benefit-play[hidden] { display: none; }
+.benefit-play svg { width: 2.2rem; height: 2.2rem; fill: currentColor; }
+.benefit-play:hover { background: rgb(22 47 48 / 50%); }
+.benefit-play:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+@media (max-width: 900px) {
+  .benefit-page .benefit-player { width: min(700px, 90%); }
+  .benefit-page .feature--reverse .benefit-player { margin-left: 0; }
+}

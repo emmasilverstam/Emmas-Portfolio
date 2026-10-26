@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
   <link href="css/normalize.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/EmsSyr.css" />
+  <link rel="stylesheet" href="../css/EmsSyr.css?v=thumbnail-play-1" />
   <link rel="stylesheet" href="../css/mobile-nav.css" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <title>Ems Syr</title>
@@ -53,17 +53,16 @@ The objective of this project was to design an accessible e-commerce website for
     </section>
 
 <section class="hero-video" data-project-layout="native">
-  <div class="hero-video__inner">
+  <div class="hero-video__inner benefit-player">
     <video
       class="hero-video__media"
       src="../Emssyr/video_prototyp.mp4"
-      autoplay
-      muted
-      loop
+      controls
       playsinline
-      preload="metadata"
-      poster="../TaleAble/intro-poster.jpg">
+      preload="none"
+      poster="../Emssyr/video-poster.jpg">
     </video>
+    <button class="benefit-play" type="button" aria-label="Play EmsSyr video" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7Z" /></svg></button>
   </div>
 </section>
 
@@ -107,6 +106,7 @@ The project also emphasised the importance of meaningful alt text for all images
   </main>
 
   <footer></footer>
+  <script src="../js/benefit-video-controls.js" defer></script>
 
 <script>
   (function () {
