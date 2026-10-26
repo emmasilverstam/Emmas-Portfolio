@@ -891,3 +891,11 @@ p span {
     margin-inline: 0 !important;
   }
 }
+
+.herdles-page .background .sketch p,
+.herdles-page .result[data-project-layout] p,
+.herdles-page .slutgiltig[data-project-layout] p {
+  width: 100%;
+  max-width: 40rem;
+  margin-inline: 0;
+}
