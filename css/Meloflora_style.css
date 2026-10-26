@@ -207,16 +207,21 @@ nav a:hover{
 }
 .play-btn{
   pointer-events:auto;
-  font-size:3rem;
+  display:grid;
+  place-items:center;
+  padding:0;
   color:#fff;
-  background:rgba(0,0,0,.6);
-  border:0;
+  background:rgb(22 47 48 / 30%);
+  border:1px solid rgb(255 255 255 / 55%);
   border-radius:50%;
-  width:80px; height:80px;
+  width:4rem; height:4rem;
+  backdrop-filter:blur(3px);
   cursor:pointer;
   transition:background .2s;
 }
-.play-btn:hover{background:rgba(0,0,0,.8);}
+.play-btn svg{width:2.2rem;height:2.2rem;fill:currentColor;}
+.play-btn:hover{background:rgb(22 47 48 / 50%);}
+.play-btn:focus-visible{outline:3px solid #fff;outline-offset:4px;}
 .video-wrapper.playing .video-overlay{display:none;}
 
 /* Poster two-column */
@@ -347,4 +352,67 @@ nav a:hover{
 
 @media (min-width: 901px) {
   .info .pendel img { margin-top: 0; }
+}
+
+html:has(> body.meloflora-page),
+body.meloflora-page { overflow-x: clip; }
+.meloflora-page .interface.background {
+  margin-bottom: 0;
+  overflow-x: clip;
+}
+@media (max-width: 900px) {
+  .meloflora-page .step_3,
+  .meloflora-page .miljo {
+    grid-auto-rows: auto;
+    row-gap: 1.5rem;
+  }
+  .meloflora-page .step_3 > div,
+  .meloflora-page .miljo > div {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+  }
+  .meloflora-page .miljo :is(img, video) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+.meloflora-page .interface.background + .result {
+  margin-top: clamp(2.5rem, 5vw, 5rem);
+}
+.meloflora-page [data-project-layout] p {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+}
+.meloflora-page [data-project-layout] :is(h1, h2, h3) {
+  margin-inline: 0;
+}
+@media (max-width: 800px) {
+  .meloflora-page .info { overflow: visible; }
+  .meloflora-page .info > .pendel {
+    min-width: 0;
+    margin-right: calc(-5vw - 0.9rem);
+  }
+  .meloflora-page .info > .pendel img {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+  }
+  .meloflora-page .info > :not(.pendel) {
+    min-width: 0;
+    margin-inline: calc(var(--project-gutter) - 5vw - 0.9rem);
+  }
+  .meloflora-page .info :is(h1, p) {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+  }
 }

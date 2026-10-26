@@ -162,7 +162,7 @@ nav a:hover{
   column-gap:5%;
   margin:9rem 0 6rem; /* mer luft uppåt */
   padding:0 1rem;
-  
+
 
   opacity:0;
   transform:translateY(40px);
@@ -188,6 +188,19 @@ nav a:hover{
 
 .process-text h2{
   margin-bottom:1rem;
+}
+
+@media (max-width: 900px) {
+  .process-section .process-text { order: 0; }
+  .process-section .process-image { order: 1; }
+}
+
+/* Align the introductory text with the shared mobile gutter without moving its image. */
+@media (max-width: 800px) {
+  .project-page .info > div:not(.pendel) {
+    min-width: 0;
+    margin-inline: calc(var(--project-gutter) - 5vw - 0.9rem);
+  }
 }
 
 
@@ -754,7 +767,7 @@ nav a:hover{
 
 /* höger bild */
 .result-intro-image{
-  
+
   display:flex;
   align-items:flex-end; /* 👈 bilden trycks ner */
 }
@@ -806,7 +819,7 @@ nav a:hover{
 
   /* Background image behaviour (NO clipping) */
   --bg-scale: 1;            /* 1 = normal, >1 = slightly bigger */
-  
+
   /* Video overlay controls (fit into circle) */
   --video-scale: 1;         /* 1 = normal, 1.1 = bigger */
   --video-x: 0px;           /* move left/right (negative/positive) */
@@ -870,8 +883,10 @@ nav a:hover{
 /* arrows on edges */
 .result-arrow{
   position:absolute;
-  top:50%;
+  top:calc(50% + 2rem);
   transform:translateY(-50%);
+  box-sizing:border-box;
+  padding:0;
   width:56px;
   height:56px;
   border-radius:999px;
@@ -884,6 +899,16 @@ nav a:hover{
   place-items:center;
   cursor:pointer;
   z-index:20;
+}
+.result-arrow svg {
+  display:block;
+  width:24px;
+  height:24px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 .result-arrow-left{ left:18px; }
 .result-arrow-right{ right:18px; }
@@ -1449,7 +1474,22 @@ nav a:hover{
   #loopGallery .gallery-line { margin-top: 0; }
 }
 
+/* Join the result introduction image directly to the green result block. */
+.project-page .result-intro-image img { margin-bottom: 0; }
+.project-page .result-intro-section + #resultSection { margin-top: 0; }
+
 /* Allow native play, pause, seeking and fullscreen controls. */
+#loopGallery .gallery-grid { row-gap: 0; }
+#loopGallery .gallery-rotator {
+  align-self: end;
+  align-items: flex-end;
+  margin-bottom: 0;
+}
+#loopGallery .gallery-line { margin-top: 0; }
+@media (max-width: 900px) {
+  #loopGallery .gallery-text { margin-bottom: 2rem; }
+}
+
 .result-player { pointer-events: auto; }
 
 /* Rounded players with a central play button before playback. */
@@ -1490,3 +1530,21 @@ nav a:hover{
 .result-play:hover { background: rgb(22 47 48 / 50%); }
 .result-play:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
 .result-player.is-playing .result-play { display: none; }
+
+.project-page .result-arrow-left { left: 24px; }
+.project-page .result-arrow-right { right: 24px; }
+@media (max-width: 900px) {
+  .project-page .result-grid { row-gap: 1.5rem; }
+  .project-page .result-grid > .result-dots {
+    position: static;
+    transform: none;
+    width: 100%;
+    justify-content: center;
+    margin: 0.5rem 0;
+    padding: 0;
+  }
+}
+@media (max-width: 1050px) {
+  .project-page .result-arrow-left { left: 16px; }
+  .project-page .result-arrow-right { right: 16px; }
+}

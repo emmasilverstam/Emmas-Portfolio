@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <link href="css/normalize.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/Endobreath.css?v=20261020-project-layout-5" />
+    <link rel="stylesheet" href="../css/Endobreath.css?v=process-mobile-gutters-16" />
     <link rel="stylesheet" href="../css/mobile-nav.css" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <title>EndoBreathe</title>
-  <link rel="stylesheet" href="../css/project-shared.css?v=20261020-project-layout-5" />
+  <link rel="stylesheet" href="../css/project-shared.css?v=preserve-intro-2" />
   <script src="../js/project-navigation.js" defer></script>
+  <script src="../js/endobreath-video-controls.js" defer></script>
 </head>
 
 <body class="project-page">
@@ -49,11 +50,11 @@
             </div>
             <div class="pendel"><img src="../EndoBreathe/icon-09.png"></div>
         </div>
-        <div class="sketch"><h2>The process</h2></div>
+        <div class="sketch" data-project-layout="one"><h2>The process</h2></div>
         <div class="step_2">
             <div class="sketches"><img src="../EndoBreathe/process1.png" class="helmet1"></div>
         </div>
-        <div class="step_1" id="moodboard-section">
+        <div class="step_1" id="moodboard-section" data-project-layout="two">
         <div class="mood">
             <img src="../EndoBreathe/conceptportrait.png" alt="Moodboard">
         </div>
@@ -63,7 +64,7 @@
         </div>
         </div>
         <!-- Mirrored section: text left, image right -->
-        <div class="step_1" id="moodboard-right-section">
+        <div class="step_1" id="moodboard-right-section" data-project-layout="two">
           <div>
             <h2>First-person perspective</h2>
             <p>Since I live with endometriosis, I used first-person reflections from my own pain diary to understand how pain shapes presence, breath and emotional wellbeing. Writing from within the experience helped me identify recurring patterns such as disconnection, tension, shallow breathing and the need for comfort. These insights became the foundation for how the design should feel on the body.</p>
@@ -74,7 +75,7 @@
         </div>
         <!-- Pink gallery block -->
         <section class="pink-section" id="bodymap-gallery">
-          <div class="pink-wrap">
+          <div class="pink-wrap" data-project-layout="native">
             <h2>Body mapping</h2>
             <p class="pink-intro">
              I worked with body mapping in three stages, each with a different purpose. The first map was created during an actual pain episode to capture where the pain appeared, how it moved and how it affected my body. The second map was made after a somatic meditation and focused on how conscious breathing softened tension and changed my sensations during pain. The final map was created after using the prototype, allowing me to evaluate how the warmth, weight and light influenced my body and helped me feel more grounded and connected.
@@ -87,7 +88,7 @@
           </div>
         </section>
         <!-- 1️⃣ Concept portrait -->
-        <div class="step_1" id="moodboard-section-1">
+        <div class="step_1" id="moodboard-section-1" data-project-layout="two">
           <div class="mood">
             <img src="../EndoBreathe/prototyping.png" alt="Concept portrait">
           </div>
@@ -98,7 +99,7 @@
         </div>
 
         <!-- 2️⃣ First-person perspective (bild höger) -->
-        <div class="step_1" id="moodboard-section-2">
+        <div class="step_1" id="moodboard-section-2" data-project-layout="two">
           <div>
             <h2>Love Letter</h2>
             <p>I wrote a love letter to the emerging concept to articulate the emotional role the product could play. Writing to the design as if it were a companion helped me clarify its purpose: a calm, supportive presence that stays with the user through discomfort, mirrors their state with kindness and gently guides them back into their body.</p>
@@ -109,7 +110,7 @@
         </div>
 
         <!-- 3️⃣ Body mapping (bild vänster) -->
-        <div class="step_1" id="moodboard-section-3">
+        <div class="step_1" id="moodboard-section-3" data-project-layout="two">
           <div class="mood">
             <img src="../EndoBreathe/moodboard.png" alt="Body mapping">
           </div>
@@ -120,7 +121,7 @@
         </div>
 
         <!-- 4️⃣ Trajectory (bild höger) -->
-        <div class="step_1" id="moodboard-section-4">
+        <div class="step_1" id="moodboard-section-4" data-project-layout="two">
           <div>
             <h2>Digital Sketching</h2>
             <p>I used digital sketches to quickly explore shapes, placements and interactions. These sketches helped translate insights from the somaesthetic explorations into visual forms and allowed me to iterate on different silhouettes before making the physical prototype.</p>
@@ -130,7 +131,7 @@
           </div>
         </div>
         <!-- 5️⃣ Sensory prototyping (bild vänster) -->
-        <div class="step_1" id="moodboard-section-5">
+        <div class="step_1" id="moodboard-section-5" data-project-layout="two">
           <div class="mood">
             <img src="../EndoBreathe/prototype2.png" alt="Sensory prototyping">
           </div>
@@ -147,7 +148,7 @@
   </p>
     </div>
 
-  <div class="video-side">
+  <div class="video-side endobreath-player">
     <video
       src="../EndoBreathe/Video_slide30 - kopia.mp4"
       controls
@@ -155,11 +156,12 @@
       preload="metadata"
       poster="../EndoBreathe/pillow-01 - kopia.png"
     ></video>
+    <button class="endobreath-play" type="button" aria-label="Play EndoBreathe video" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7Z" /></svg></button>
   </div>
 </section>
-<section id="result-gallery" aria-label="The result — image gallery">
+<section id="result-gallery" class="details-split" aria-label="The result — image gallery">
   <div class="rg-wrap">
-    <h2 class="rg-title">Design Details</h2>
+    <h2 class="rg-title">Design details - Storyboard</h2>
     <p class="rg-intro" id="rg-caption">
       Final appearance and feel of the prototype in use.
     </p>
@@ -202,7 +204,7 @@
 
 
         </section>
-   <div class="result">
+   <div class="result" data-project-layout="one">
       <h2>The Prototype</h2>
       <p>The final prototype shows how the pillow looks and feels on the body, with its soft shape, weight and light all working together. In the video, the light follows the breath while the pillow rests naturally across the stomach and chest. I tested the interaction using a Wizard-of-Oz setup to simulate the breathing-synced light, which helped me understand how warmth, weight and glow support the body during pain.</p>
     </div>
@@ -218,10 +220,32 @@
 
 
 
-  
+
     <footer>
 
     </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const processSection = document.querySelector('.step_2');
+        if (!processSection) return;
+
+        if (!('IntersectionObserver' in window)) {
+          processSection.classList.add('is-visible');
+          return;
+        }
+
+        const processObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+
+            processSection.classList.add('is-visible');
+            observer.unobserve(processSection);
+          });
+        }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+
+        processObserver.observe(processSection);
+      });
+    </script>
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -249,13 +273,13 @@
       const hamburgerMenu = document.querySelector('.hamburger-menu');
       const navLinks = document.querySelector('nav ul');
       const galleryItems = document.querySelectorAll('.gallery__item');
-  
+
       // Add click event for hamburger menu
       hamburgerMenu.addEventListener('click', function () {
         hamburgerMenu.classList.toggle('active');
         navLinks.classList.toggle('active');
       });
-  
+
       // Add click event for gallery items
       galleryItems.forEach(function (item) {
         item.addEventListener('click', function () {
@@ -575,6 +599,15 @@
   const prevBtn  = root.querySelector('.rg-prev');
   const nextBtn  = root.querySelector('.rg-next');
   const caption  = root.querySelector('#rg-caption');
+  const title = root.querySelector('.rg-title');
+  const titles = [
+    'Design details - Storyboard',
+    'Design details - Placement',
+    'Design details - Fabric',
+    'Design details - Weight',
+    'Design details - Heat',
+    'Design details - Colours'
+  ];
 
   // Optional: dynamic captions per slide (edit if you want)
   const captions = [
@@ -589,12 +622,67 @@
   let index = 0;
   const last = slides.length - 1;
 
+  // Reserve space for the longest caption so changing slides never resizes the block.
+  let captionWidth = 0;
+  function reserveCaptionSpace() {
+    if (!caption) return;
+    const width = caption.getBoundingClientRect().width;
+    if (!width) return;
+    captionWidth = width;
+    const measure = caption.cloneNode(false);
+    measure.removeAttribute('id');
+    measure.setAttribute('aria-hidden', 'true');
+    Object.assign(measure.style, {
+      position: 'absolute', visibility: 'hidden', pointerEvents: 'none',
+      width: `${width}px`, height: 'auto', minHeight: '0',
+      top: '0', left: '0'
+    });
+    caption.parentElement.appendChild(measure);
+    let height = 0;
+    captions.forEach(text => {
+      measure.textContent = text;
+      height = Math.max(height, measure.getBoundingClientRect().height);
+    });
+    measure.remove();
+    caption.style.minHeight = `${Math.ceil(height)}px`;
+    if (title) {
+      const titleMeasure = title.cloneNode(false);
+      titleMeasure.setAttribute('aria-hidden', 'true');
+      Object.assign(titleMeasure.style, {
+        position: 'absolute', visibility: 'hidden', pointerEvents: 'none',
+        width: `${title.getBoundingClientRect().width}px`,
+        height: 'auto', minHeight: '0', top: '0', left: '0'
+      });
+      title.parentElement.appendChild(titleMeasure);
+      let titleHeight = 0;
+      titles.forEach(text => {
+        titleMeasure.textContent = text;
+        titleHeight = Math.max(titleHeight, titleMeasure.getBoundingClientRect().height);
+      });
+      titleMeasure.remove();
+      title.style.minHeight = `${Math.ceil(titleHeight)}px`;
+    }
+  }
+  reserveCaptionSpace();
+  if (document.fonts) document.fonts.ready.then(reserveCaptionSpace);
+  if (caption && 'ResizeObserver' in window) {
+    const observer = new ResizeObserver(() => {
+      if (Math.abs(caption.getBoundingClientRect().width - captionWidth) > 0.5) {
+        reserveCaptionSpace();
+      }
+    });
+    observer.observe(caption);
+  } else {
+    window.addEventListener('resize', reserveCaptionSpace);
+  }
+
   function show(i){
     index = (i + slides.length) % slides.length;
     slides.forEach((el, j) => {
       el.setAttribute('aria-hidden', String(j !== index));
     });
     if(caption) caption.textContent = captions[index] || caption.textContent;
+    if(title) title.textContent = titles[index];
   }
 
   function step(dir){ show(index + dir); }
@@ -604,6 +692,7 @@
 
   // Keyboard arrows
   root.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') e.preventDefault();
     if (e.key === 'ArrowLeft')  step(-1);
     if (e.key === 'ArrowRight') step(1);
   });

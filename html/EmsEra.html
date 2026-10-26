@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <link href="css/normalize.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/EmsEra_style.css?v=20261020-project-layout-5" />
+    <link rel="stylesheet" href="../css/EmsEra_style.css" />
     <link rel="stylesheet" href="../css/mobile-nav.css" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <title>Ems Era</title>
-  <link rel="stylesheet" href="../css/project-shared.css?v=20261020-project-layout-5" />
+  <link rel="stylesheet" href="../css/project-shared.css?v=preserve-intro-2" />
   <script src="../js/project-navigation.js" defer></script>
 </head>
 
@@ -51,7 +51,7 @@ I drew inspiration from COS, Acne Studios and Magda Butry by combining their min
             </div>
             <div class="pendel"><img src="../Fashion/logo-01-01.png"></div>
         </div>
-        <div class="step_1" id="moodboard-section">
+        <div class="step_1" id="moodboard-section" data-project-layout="two">
         <div class="mood">
             <img src="../Fashion/Moodboard.png" alt="Moodboard">
         </div>
@@ -61,7 +61,7 @@ I drew inspiration from COS, Acne Studios and Magda Butry by combining their min
         </div>
         </div>
 
-        <div class="sketch"><h2>Key words</h2>
+        <div class="sketch" data-project-layout="one"><h2>Key words</h2>
         <p>The keywords were chosen after research and moodboard creation. They capture the balance between COS’s minimalism, Acne Studios’ creative edge and Magda Butrym’s feminine sophistication. Together they described the overall direction of the collection:  minimalistic, earthy, sophisticated, feminine and contemporary.</p>
         </div>
         <div class="step_2">
@@ -70,11 +70,11 @@ I drew inspiration from COS, Acne Studios and Magda Butry by combining their min
             <div class="sketches"><img src="../Fashion/inspo3.png" class="helmet3"></div>
         </div>
 
-        <div class="result">
+        <div class="result" data-project-layout="one">
             <h2>The Line-up</h2>
             <p>I sketched all the garments digitally in Adobe Illustrator, which allowed me to work precisely with proportions, shape and details. The final line-up shows seven coordinated looks that form a cohesive story including structured coats, soft knits, tailored trousers and versatile dresses. Each piece was designed to be simple but expressive by combining clean lines with texture and subtle accents</p>
         </div>
-            <div class="step_3" id="prototyping-gallery">
+            <div class="step_3" id="prototyping-gallery" data-project-layout="native">
             <div class="pic"><img src="../Fashion/model1.jpg"  alt="Prototyp 1"></div>
             <div class="pic"><img src="../Fashion/model2.jpg" alt="Prototyp 2"></div>
             <div class="pic"><img src="../Fashion/model3.jpg" alt="Prototyp 3"></div>
@@ -85,25 +85,25 @@ I drew inspiration from COS, Acne Studios and Magda Butry by combining their min
         </div>
 
 
-        <div class="slutgiltig">
+        <div class="slutgiltig" data-project-layout="one">
             <div>
                 <h2>Colours and Materials</h2>
                 <p>The colour palette reflects the calm and warmth of autumn, with white, off-white, grey-brown, light and dark brown, burgundy and black colours. The materials were chosen for their texture and feel. Soft and tactile fabrics were paired with structured surfaces to create depth and balance. This combination gave each piece a sense of comfort and quality while keeping the overall look simple and clear.</p>
             </div>
         </div>
         <div class="miljo-section" id="result-section">
-        <div class="miljo">
+        <div class="miljo" data-project-layout="native">
             <img src="../Fashion/Colour-01.png" alt="Final prototype result" loading="lazy">
         </div>
         </div>
 
-        <div class="slutgiltig">
+        <div class="slutgiltig" data-project-layout="one">
             <div>
                 <h2>Technical Sketch</h2>
                 <p>The technical sketch was created digitally in Adobe Illustrator to make every line clear and precise. It shows one of the key garments from both the front and back, including seams, stitching and small construction details. I also explored the design in three different colour variations to see how the shape and mood changed with each tone. The drawing connects the creative part of the process with the practical side of making clothes and by doing that, turning an idea into something that could actually be produced.</p>
             </div>
         </div>
-        <div class="scroll-image-section" id="pattern-section">
+        <div class="scroll-image-section" id="pattern-section" data-project-layout="native">
         <img src="../Fashion/Tech-sketch-01.png" alt="Pattern overview" loading="lazy">
         </div>
 
@@ -144,13 +144,13 @@ I drew inspiration from COS, Acne Studios and Magda Butry by combining their min
       const hamburgerMenu = document.querySelector('.hamburger-menu');
       const navLinks = document.querySelector('nav ul');
       const galleryItems = document.querySelectorAll('.gallery__item');
-  
+
       // Add click event for hamburger menu
       hamburgerMenu.addEventListener('click', function () {
         hamburgerMenu.classList.toggle('active');
         navLinks.classList.toggle('active');
       });
-  
+
       // Add click event for gallery items
       galleryItems.forEach(function (item) {
         item.addEventListener('click', function () {

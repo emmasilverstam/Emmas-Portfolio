@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
   <link href="css/normalize.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/IndieFlow.css?v=20261023-video-controls-8" />
+  <link rel="stylesheet" href="../css/IndieFlow.css?v=result-dots-between-7" />
   <link rel="stylesheet" href="../css/mobile-nav.css" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <title>Indie Flow</title>
-  <link rel="stylesheet" href="../css/project-shared.css?v=20261020-project-layout-5" />
+  <link rel="stylesheet" href="../css/project-shared.css?v=preserve-intro-2" />
   <script src="../js/project-navigation.js" defer></script>
   <script src="../js/indie-video-controls.js" defer></script>
 </head>
@@ -60,7 +60,7 @@ The project resulted in a role-based mobile interface that supports coordination
     </div>
 
     <!-- ✅ UPPDATERAT BLOCK -->
-    <div class="interface background">
+    <div class="interface background" data-project-layout="bleed-two">
       <div>
         <h2>The Problem</h2>
 
@@ -94,7 +94,7 @@ The project resulted in a role-based mobile interface that supports coordination
   </section>
   <!-- ✅ FIX: STÄNGER första <section> korrekt innan nästa sektion börjar -->
 
-  <section class="rq-section">
+  <section class="rq-section" data-project-layout="native">
     <div class="rq-grid">
 
       <div class="rq-title reveal-up">
@@ -121,7 +121,7 @@ The project resulted in a role-based mobile interface that supports coordination
     </div>
   </section>
 
-  <div class="process-section reveal">
+  <div class="process-section reveal" data-project-layout="two">
     <div class="process-image">
       <img src="../IndieFlow/process-01.png" alt="">
     </div>
@@ -137,7 +137,7 @@ The project resulted in a role-based mobile interface that supports coordination
     </div>
   </div>
 
-  <section class="gallery-section reveal-up" id="loopGallery">
+  <section class="gallery-section reveal-up" id="loopGallery" data-project-layout="native">
     <div class="gallery-grid">
 
       <div class="gallery-text">
@@ -169,7 +169,7 @@ The project resulted in a role-based mobile interface that supports coordination
     </div>
   </section>
 
-  <section class="req-section" id="reqSection">
+  <section class="req-section" id="reqSection" data-project-layout="native">
     <div class="req-container">
 
       <!-- Intro -->
@@ -280,7 +280,7 @@ The project resulted in a role-based mobile interface that supports coordination
     </div>
   </section>
 
-  <section class="flow-section reveal-up" id="flowSection">
+  <section class="flow-section reveal-up" data-project-layout="native" id="flowSection">
     <div class="flow-wrap">
 
       <div class="flow-text">
@@ -321,7 +321,7 @@ The project resulted in a role-based mobile interface that supports coordination
     </div>
   </section>
 
-  <section class="result-intro-section reveal-up">
+  <section class="result-intro-section reveal-up" data-project-layout="native">
     <div class="result-intro-grid">
 
       <div class="result-intro-text">
@@ -361,8 +361,8 @@ The project resulted in a role-based mobile interface that supports coordination
         <button class="dot"></button>
         <button class="dot"></button>
       </div>
-      <button class="result-arrow result-arrow-left" type="button" aria-label="Previous slide">‹</button>
-      <button class="result-arrow result-arrow-right" type="button" aria-label="Next slide">›</button>
+      <button class="result-arrow result-arrow-left" type="button" aria-label="Previous slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6" /></svg></button>
+      <button class="result-arrow result-arrow-right" type="button" aria-label="Next slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" /></svg></button>
 
       <div class="result-slides">
 
@@ -919,9 +919,21 @@ The project resulted in a role-based mobile interface that supports coordination
       const dots = Array.from(section.querySelectorAll('.dot'));
       const prevBtn = section.querySelector('.result-arrow-left');
       const nextBtn = section.querySelector('.result-arrow-right');
+      const dotsContainer = section.querySelector('.result-dots');
+      const stackedResults = window.matchMedia('(max-width: 900px)');
 
       let index = slides.findIndex(s => s.classList.contains('is-active'));
       if (index < 0) index = 0;
+
+      function positionDots() {
+        const media = slides[index].querySelector('.result-media');
+        if (stackedResults.matches && media) {
+          media.before(dotsContainer);
+        } else {
+          block.prepend(dotsContainer);
+        }
+      }
+      stackedResults.addEventListener('change', positionDots);
 
 
       function pauseAllVideos() {
@@ -943,6 +955,7 @@ The project resulted in a role-based mobile interface that supports coordination
 
         slides[index].classList.add('is-active');
         if (dots[index]) dots[index].classList.add('is-active');
+        positionDots();
 
       }
 

@@ -399,7 +399,10 @@ p span {
 @media only screen and (max-width: 900px) {
   .moodboard-block {
     padding: 5rem 0;
+    background: #2f5d50;
   }
+
+  .moodboard-block .moodboard-shape { display: none; }
 
   .moodboard-inner {
     grid-template-columns: 1fr;
@@ -797,7 +800,7 @@ p span {
   .urban-intro p {
     max-width: 100%;
   }
-  
+
 }
 @media only screen and (max-width: 900px) {
 
@@ -1344,14 +1347,14 @@ p span {
   }
 
   /* Interface-order: Radio före Hurdle på mindre skärmar */
-  .interface-grid{ 
-    display:flex; 
-    flex-wrap:wrap; 
-    justify-content:center; 
-    align-items:flex-start; 
-    max-width:90%; 
-    margin:5rem auto 0 auto; 
-    gap:2rem; 
+  .interface-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:flex-start;
+    max-width:90%;
+    margin:5rem auto 0 auto;
+    gap:2rem;
   }
   .interface-grid .interface-item:nth-child(1){ order:1; } /* Game */
   .interface-grid .interface-item:nth-child(3){ order:2; } /* Radio */
@@ -1448,7 +1451,7 @@ p span {
 /* Mellan telefon */
 @media only screen and (max-width: 400px) {
   h1, h2, a { color:#3f2e26; }
-  
+
   h1{ font-size:2.4rem; margin-top:1rem !important; }
   h1 span{ font-size:2.4rem; }
   p{ width:90%; margin:1rem auto 0 auto; }
@@ -1577,4 +1580,50 @@ p span {
 
 @media (min-width: 901px) {
   .info .pendel img { margin-top: 0; }
+}
+
+/* Content containers provide the gutters; text should not add another inset. */
+.urban-page .urban-slider {
+  min-width: 0;
+  width: 100%;
+  margin-inline: 0;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  grid-template-areas: "dots dots dots" "previous image next";
+  row-gap: 1.25rem;
+  column-gap: 0.5rem;
+}
+.urban-page .urban-slider .slider-dots {
+  grid-area: dots;
+  position: static;
+  transform: none;
+  margin: 0;
+  justify-content: center;
+  justify-self: center;
+}
+.urban-page .urban-slider .slider-track { grid-area: image; min-width: 0; }
+.urban-page .urban-slider .prev { grid-area: previous; transform: none; }
+.urban-page .urban-slider .next { grid-area: next; transform: none; }
+.urban-page [data-project-layout] p {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+  box-sizing: border-box;
+}
+.urban-page [data-project-layout] :is(h1, h2, h3) {
+  margin-inline: 0 !important;
+}
+.urban-page .problem-text { padding-right: 0; }
+@media (max-width: 800px) {
+  .urban-page .info { overflow: visible; }
+  .urban-page .info > :not(.pendel) {
+    width: calc(100vw - 2 * var(--project-gutter));
+    min-width: 0;
+    justify-self: center;
+  }
+  .urban-page .info :is(h1, p) {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0 !important;
+  }
 }

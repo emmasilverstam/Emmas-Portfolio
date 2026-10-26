@@ -636,14 +636,14 @@ p span {
   }
 
   /* Interface-order: Radio före Hurdle på mindre skärmar */
-  .interface-grid{ 
-    display:flex; 
-    flex-wrap:wrap; 
-    justify-content:center; 
-    align-items:flex-start; 
-    max-width:90%; 
-    margin:5rem auto 0 auto; 
-    gap:2rem; 
+  .interface-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:flex-start;
+    max-width:90%;
+    margin:5rem auto 0 auto;
+    gap:2rem;
   }
   .interface-grid .interface-item:nth-child(1){ order:1; } /* Game */
   .interface-grid .interface-item:nth-child(3){ order:2; } /* Radio */
@@ -740,7 +740,7 @@ p span {
 /* Mellan telefon */
 @media only screen and (max-width: 400px) {
   h1, h2, a { color:#3f2e26; }
-  
+
   h1{ font-size:2.4rem; margin-top:1rem !important; }
   h1 span{ font-size:2.4rem; }
   p{ width:90%; margin:1rem auto 0 auto; }
@@ -865,4 +865,29 @@ p span {
   /* Poster-sektion */
   .poster{ max-width:90%; margin:5rem auto 0 auto; gap:1rem; display:grid; grid-template-columns:1fr; }
   .post img{ width:100%; margin:0; }
+}
+
+/* Keep text aligned with the section gutters rather than adding nested margins. */
+.herdles-page [data-project-layout] p {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+}
+.herdles-page [data-project-layout] :is(h1, h2, h3) {
+  margin-inline: 0 !important;
+}
+@media (max-width: 800px) {
+  .herdles-page .info { overflow: visible; }
+  .herdles-page .info > :not(.pendel) {
+    width: calc(100vw - 2 * var(--project-gutter));
+    min-width: 0;
+    justify-self: center;
+  }
+  .herdles-page .info :is(h1, p) {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0 !important;
+  }
 }
