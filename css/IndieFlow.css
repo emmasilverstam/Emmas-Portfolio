@@ -1555,3 +1555,56 @@ nav a:hover{
   .project-page .result-arrow-left { left: 16px; }
   .project-page .result-arrow-right { right: 16px; }
 }
+
+/* Keep logos, descriptions and media clear of one another on tablets and laptops. */
+@media (min-width: 501px) and (max-width: 1920px) {
+  .project-page .result-slides {
+    box-sizing: border-box;
+    max-width: 1440px;
+    padding: 3rem clamp(4rem, 6vw, 7rem);
+  }
+  .project-page .result-logo {
+    position: static;
+    width: clamp(160px, 16vw, 240px);
+    height: 96px;
+    object-fit: contain;
+    object-position: left center;
+    margin: 0 0 2rem;
+  }
+  .project-page .result-text {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+  .project-page .result-text p { width: 100%; max-width: none; }
+  .project-page .result-media {
+    width: 100%;
+    max-width: 540px;
+    min-width: 0;
+  }
+  .project-page .result-bg { width: 100%; }
+  .project-page .result-player {
+    left: 50%;
+    top: 49%;
+    width: 32%;
+    --video-x: 0px !important;
+    --video-y: 0px !important;
+    --video-scale: 1.05 !important;
+  }
+}
+@media (min-width: 901px) and (max-width: 1920px) {
+  .project-page .result-media {
+    max-width: 590px;
+    transform: translateY(-3.5rem) scale(1.27);
+    transform-origin: center;
+  }
+  .project-page .result-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    column-gap: clamp(2rem, 4vw, 4rem);
+  }
+  .project-page .result-text {
+    padding-right: clamp(1rem, 2vw, 2rem);
+    padding-top: clamp(2rem, 4vw, 4rem);
+    align-self: start;
+  }
+}

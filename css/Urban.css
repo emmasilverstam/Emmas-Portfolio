@@ -554,6 +554,10 @@ p span {
   }
 }
 
+@media (min-width: 901px) and (max-width: 1920px) {
+  .problem-shape-band { top: 0; }
+}
+
 /* =========================
    RESPONSIVE
    ========================= */
