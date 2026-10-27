@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
   <link href="css/normalize.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/IndieFlow.css?v=stable-result-headings-16" />
+  <link rel="stylesheet" href="../css/IndieFlow.css?v=mobile-slider-arrows-17" />
   <link rel="stylesheet" href="../css/mobile-nav.css" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <title>Indie Flow</title>
@@ -928,8 +928,11 @@ The project resulted in a role-based mobile interface that supports coordination
       function positionDots() {
         const media = slides[index].querySelector('.result-media');
         if (stackedResults.matches && media) {
+          dotsContainer.prepend(prevBtn);
+          dotsContainer.append(nextBtn);
           media.before(dotsContainer);
         } else {
+          block.prepend(prevBtn, nextBtn);
           block.prepend(dotsContainer);
         }
       }

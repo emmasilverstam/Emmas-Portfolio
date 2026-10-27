@@ -1549,6 +1549,18 @@ nav a:hover{
     justify-content: center;
     margin: 0.5rem 0;
     padding: 0;
+    align-items: center;
+  }
+  .project-page .result-dots > .result-arrow {
+    position: static;
+    transform: none;
+    flex-shrink: 0;
+  }
+  .project-page .result-dots > .result-arrow-left {
+    margin-right: auto;
+  }
+  .project-page .result-dots > .result-arrow-right {
+    margin-left: auto;
   }
 }
 @media (max-width: 1050px) {

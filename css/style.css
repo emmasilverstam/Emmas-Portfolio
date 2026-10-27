@@ -2353,6 +2353,13 @@ body.home-page {
   overflow-wrap: anywhere;
 }
 
+.home-page .contact .icons_contact p a {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  text-decoration: none;
+}
+
 @media (max-width: 1050px) {
   .home-page .contact .icons_contact {
     grid-template-columns: 1fr !important;
@@ -3099,4 +3106,48 @@ body.home-page {
   z-index: 5;
 }
 .home-page .gallery .gallery__item > .project-card-link::after { content: none; }
-.home-page .gallery .gallery__item:first-child a .img1 { translate: 1.25rem 0; }
+.home-page .gallery .gallery__item:first-child a .img1 {
+  position: static;
+  inset: auto;
+  width: 90%;
+  height: 90%;
+  min-width: 0;
+  min-height: 0;
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  align-self: center;
+  justify-self: center;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+  translate: none;
+}
+.home-page .gallery .gallery__item:first-child > a:first-child {
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 601px) and (max-width: 1920px) {
+  .home-page .gallery .gallery__item:first-child a .img1 {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-position: 70% center;
+    translate: 8% 0;
+  }
+}
+@media (max-width: 600px) {
+  .home-page .gallery .gallery__item:first-child > a:first-child {
+    display: block;
+  }
+  .home-page .gallery .gallery__item:first-child a .img1 {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+  }
+}
