@@ -16,15 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.benefit-player').forEach(player => {
     const video = player.querySelector('video');
     const button = player.querySelector('.benefit-play');
+    let hasStarted = false;
     const showButton = () => {
-      video.controls = false;
-      button.hidden = false;
+      video.controls = hasStarted;
+      button.hidden = hasStarted;
     };
     button.addEventListener('click', () => {
       if (video.ended) video.currentTime = 0;
       video.play().catch(showButton);
     });
     video.addEventListener('play', () => {
+      hasStarted = true;
       button.hidden = true;
       video.controls = true;
     });
