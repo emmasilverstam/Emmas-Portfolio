@@ -2564,6 +2564,11 @@ body.home-page {
 .home-page #container {
   padding-bottom: clamp(4rem, 8vw, 8rem);
 }
+@media (min-width: 1600px) {
+  .home-page #container {
+    padding-bottom: calc(clamp(4rem, 8vw, 8rem) + 100px);
+  }
+}
 
 .home-page .project {
   margin-top: 6rem;
