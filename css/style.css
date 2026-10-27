@@ -2266,7 +2266,7 @@ body.home-page {
 .home-page .hobby-photo {
   overflow: hidden;
   border-radius: 1.25rem;
-  background: #f6f6f6;
+  background: #f2f0ee;
   aspect-ratio: 4 / 3;
 }
 
@@ -2330,7 +2330,7 @@ body.home-page {
 }
 
 .home-page .contact .icons_contact > div:hover {
-  background: #ececec;
+  background: #e5e1dd;
 }
 
 .home-page .contact .icons_contact a::after {
@@ -2571,11 +2571,6 @@ body.home-page {
 .home-page #container {
   padding-bottom: clamp(4rem, 8vw, 8rem);
 }
-@media (min-width: 1600px) {
-  .home-page #container {
-    padding-bottom: calc(clamp(4rem, 8vw, 8rem) + 100px);
-  }
-}
 
 .home-page .project {
   margin-top: 6rem;
@@ -2770,6 +2765,11 @@ body.home-page {
 .home-page .gallery__item .bildtext {
   font-size: 0.9rem;
 }
+@media (min-width: 1600px) {
+  .home-page .gallery__item .bildtext {
+    font-size: clamp(1.05rem, 1vw, 1.3rem);
+  }
+}
 
 /* Sketch-like timeline markers and a rounded connecting line. */
 .home-page .col .contents {
@@ -2838,6 +2838,17 @@ body.home-page {
 }
 .designer-roles__text { display: inline-block; white-space: nowrap; }
 .designer-roles__dash { flex-shrink: 0; }
+@media (min-width: 1600px) {
+  .home-page .site-brand__name,
+  .home-page .site-header nav a {
+    font-size: clamp(1.4rem, 1.2vw, 1.75rem);
+  }
+  .home-page .designer-roles {
+    font-size: clamp(1.8rem, 1.5vw, 2.2rem);
+    width: 19rem;
+    height: 2.8rem;
+  }
+}
 
 /* Small-screen layout: compact navigation and a full-height introduction. */
 @media (max-width: 800px) {
@@ -3023,7 +3034,7 @@ body.home-page {
     display: flex;
     flex-direction: column;
     min-height: 100svh;
-    padding-bottom: 3rem;
+    padding-bottom: calc(3rem + 150px);
   }
 
   .home-page #container > main {
@@ -3035,6 +3046,7 @@ body.home-page {
 
   .home-page .header { margin: 0 auto; }
   .home-page .portrait-stage { padding: 2rem 0; }
+  .home-page .name-banner--top { top: 0; }
   .home-page .header .bildcv { width: var(--hero-portrait-width); }
 
   .home-page .portrait-stage .hero-description {
