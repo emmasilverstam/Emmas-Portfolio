@@ -867,6 +867,32 @@ p span {
   .post img{ width:100%; margin:0; }
 }
 
+@media (min-width: 901px) {
+  .herdles-page .concept-video {
+    width: calc(100% - 2 * var(--project-gutter));
+    margin-inline: auto;
+  }
+  .herdles-page .concept-video video {
+    width: 100%;
+    max-width: none;
+    height: auto;
+  }
+  .herdles-page .interface-black {
+    max-width: none;
+    padding-inline: 0;
+  }
+  .herdles-page .interface-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: calc(100% - 2 * var(--project-gutter));
+    max-width: none;
+    padding-inline: 0;
+    gap: var(--project-gap);
+  }
+  .herdles-page .interface-item { width: 100%; min-width: 0; }
+  .herdles-page .interface-item p { width: 100%; max-width: none; }
+}
+
 /* Keep text aligned with the section gutters rather than adding nested margins. */
 .herdles-page [data-project-layout] p {
   box-sizing: border-box;

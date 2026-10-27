@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <link href="css/normalize.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/Urban.css?v=centered-slider-dots-3" />
+    <link rel="stylesheet" href="../css/Urban.css?v=result-reveal-8" />
     <link rel="stylesheet" href="../css/mobile-nav.css" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <title>Urban</title>
-  <link rel="stylesheet" href="../css/project-shared.css?v=preserve-intro-2" />
+  <link rel="stylesheet" href="../css/project-shared.css?v=intro-text-limit-4" />
   <script src="../js/project-navigation.js" defer></script>
 </head>
 
@@ -558,7 +558,23 @@ document.addEventListener('DOMContentLoaded', () => {
     rootMargin: '0px 0px -40px 0px'
   });
 
-  revealElements.forEach(el => observer.observe(el));
+  revealElements.forEach(el => {
+    if (!el.closest('.urban-section')) observer.observe(el);
+  });
+
+  const resultSection = document.querySelector('.urban-section');
+  if (resultSection) {
+    const resultObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.querySelectorAll('.reveal-up, .reveal-right').forEach(el => {
+          el.classList.add('is-visible');
+        });
+        obs.unobserve(entry.target);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px 180px 0px' });
+    resultObserver.observe(resultSection);
+  }
 });
 </script>
 

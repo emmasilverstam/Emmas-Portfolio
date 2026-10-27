@@ -539,7 +539,7 @@ p span {
   fill: #2f5d50;
 }
 
-/* Lower the illustration and green band below the final lines of text. */
+/* Position the illustration and its decorative green band on desktop. */
 @media (min-width: 901px) {
   .problem-section {
     margin-bottom: 4rem;
@@ -550,7 +550,7 @@ p span {
   }
 
   .problem-shape-band {
-    top: 4rem;
+    top: -8rem;
   }
 }
 
@@ -1613,6 +1613,17 @@ p span {
   margin-inline: 0 !important;
 }
 .urban-page .problem-text { padding-right: 0; }
+.urban-page .urban-section :is(.urban-intro, .urban-slider) {
+  transition-duration: 0.4s;
+}
+@media (min-width: 901px) {
+  .urban-page .problem-text { padding-top: 2rem; }
+  .urban-page .process-section > p,
+  .urban-page .research-section > p {
+    width: calc((100% - var(--project-gap)) / 2);
+    max-width: none;
+  }
+}
 @media (max-width: 800px) {
   .urban-page .info { overflow: visible; }
   .urban-page .info > :not(.pendel) {

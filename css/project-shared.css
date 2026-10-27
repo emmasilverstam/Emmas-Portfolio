@@ -431,6 +431,14 @@ body.project-page { --project-gutter: 12.5vw; --project-gap: clamp(2rem, 4vw, 5r
 }
 
 /* Consistent opening title position across desktop case studies. */
+@media (min-width: 1200px) {
+  .project-page .info > div:has(> h1) > p {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
 @media (min-width: 901px) {
   .project-page .info {
     margin-top: 0;

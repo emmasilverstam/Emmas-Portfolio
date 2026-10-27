@@ -495,7 +495,7 @@ nav a:hover{
 .req-intro p{
   grid-column:1 / 2;   /* 👈 vänsterkolumn */
   max-width:34rem;
-  color:var(--req-text);
+  color:#3f2e26;
 }
 
 /* slider */
@@ -1533,6 +1533,13 @@ nav a:hover{
 
 .project-page .result-arrow-left { left: 24px; }
 .project-page .result-arrow-right { right: 24px; }
+/* Align each description with the logo above it. */
+@media (min-width: 901px) {
+  .project-page .result-text { margin-left: -140px; }
+}
+@media (min-width: 501px) and (max-width: 900px) {
+  .project-page .result-text { padding-inline: 10px; }
+}
 @media (max-width: 900px) {
   .project-page .result-grid { row-gap: 1.5rem; }
   .project-page .result-grid > .result-dots {

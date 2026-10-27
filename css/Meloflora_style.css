@@ -89,6 +89,16 @@ nav a:hover{
   padding:0 1rem;
 }
 .pendel img{width:110%;margin-left:9rem;margin-top:5.5rem;display:block;}
+@media (min-width: 1051px) {
+  .project-page .info .pendel img {
+    width: calc(100% + 12.5vw + 12px);
+    max-width: none;
+    margin-left: 0;
+    margin-top: -3rem;
+    transform: scale(0.92);
+    transform-origin: right top;
+  }
+}
 
 /* “Sketching” band + two-col */
 .interface{
@@ -356,6 +366,20 @@ nav a:hover{
 
 html:has(> body.meloflora-page),
 body.meloflora-page { overflow-x: clip; }
+@media (min-width: 901px) {
+  .meloflora-page :is(.result, .step_3, .slutgiltig, .miljo) {
+    --project-gap: 24px;
+  }
+  .meloflora-page .result[data-project-layout] > p {
+    width: calc((200% - var(--project-gap)) / 3);
+    max-width: none;
+  }
+  .meloflora-page .slutgiltig[data-project-layout] p {
+    width: calc((100% - var(--project-gap)) / 2);
+    max-width: none;
+  }
+}
+
 .meloflora-page .interface.background {
   margin-bottom: 0;
   overflow-x: clip;
