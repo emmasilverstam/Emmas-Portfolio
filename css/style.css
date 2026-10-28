@@ -1762,7 +1762,7 @@ section {
   justify-content: flex-start;
   min-width: 0;
   background: #f2f0ee;
-  border-radius: clamp(1.5rem, 3vw, 3rem);
+  border-radius: clamp(1rem, 2vw, 2rem);
   padding: clamp(1.25rem, 2vw, 2.25rem);
   box-shadow: none;
 }
