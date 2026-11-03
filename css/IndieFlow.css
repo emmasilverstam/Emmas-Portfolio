@@ -654,6 +654,12 @@ nav a:hover{
   display:block;
 }
 
+/* Lift the near-white canvas of the Figma exports to pure white. */
+.flow-item[data-i="1"] img,
+.flow-item[data-i="2"] img{
+  filter:brightness(1.04);
+}
+
 
 /* pilar */
 .flow-arrow{
