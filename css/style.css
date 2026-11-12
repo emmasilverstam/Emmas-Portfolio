@@ -1813,6 +1813,15 @@ section {
   transition: transform 400ms ease;
 }
 
+.home-page .gallery__item a img[hidden] {
+  display: none;
+}
+
+.home-page .gallery__item a img.fashion-model {
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
 .home-page .gallery__item:hover a img {
   transform: none;
 }
@@ -3168,4 +3177,192 @@ body.home-page {
     max-height: none;
     margin: 0;
   }
+}
+
+.home-page .gallery__item > a.museum-card-stage { position: relative; }
+.home-page .museum-card-stage .museum-card-floor {
+  position: absolute;
+  inset: 60% calc(-1 * clamp(1.25rem, 2vw, 2.25rem)) 0;
+  z-index: 0;
+  background: #bdbbb7 url('../images/museum-floor-texture.svg') repeat;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+.home-page .museum-playing .museum-card-floor { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .home-page .museum-card-stage .museum-card-floor { transition: none; }
+}
+.home-page .museum-card-stage .museum-card-video {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  pointer-events: none;
+  opacity: 0;
+}
+.home-page .museum-card-stage .museum-card-video.is-playing { opacity: 1; }
+.home-page .gallery .museum-card-stage img.museum-card-soft-edge {
+  position: absolute;
+  inset: auto;
+  z-index: 3;
+  min-width: 0;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  pointer-events: none;
+  opacity: 0;
+  mask-image: linear-gradient(to bottom, #000 0 18%, transparent 29%), linear-gradient(to right, #000 0 28%, transparent 36% 81%, #000 89%);
+  mask-composite: intersect;
+}
+.home-page .gallery .museum-playing img.museum-card-soft-edge { opacity: 1; }
+
+.home-page .gallery__item:has(> a.pillow-card-stage) {
+  overflow: hidden;
+  clip-path: inset(0 round clamp(1rem, 2vw, 2rem));
+}
+.home-page .gallery__item > a.pillow-card-stage {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+.home-page .pillow-card-stage .pillow-card-floor {
+  position: absolute;
+  inset: 0 calc(-1 * clamp(1.25rem, 2vw, 2.25rem));
+  z-index: 0;
+  pointer-events: none;
+  background: url('../images/pillow-wood-floor.svg?v=simple-4') center / cover;
+  opacity: 0;
+  transition: opacity 350ms ease;
+}
+.home-page .pillow-playing .pillow-card-floor {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-page .pillow-card-stage .pillow-card-floor { transition: none; }
+}
+.home-page .pillow-card-stage .pillow-card-video {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  pointer-events: none;
+  opacity: 0;
+}
+.home-page .pillow-card-stage .pillow-card-video.is-playing {
+  opacity: 1;
+}
+.home-page .pillow-card-stage video.pillow-card-source {
+  opacity: 0;
+}
+.home-page .pillow-card-stage .pillow-mouth {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  pointer-events: none;
+  opacity: 1;
+}
+.home-page .pillow-playing .pillow-mouth {
+  opacity: 1;
+}
+.home-page .pillow-sound {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 6;
+  padding: .5rem .85rem;
+  border: 1px solid #8d7660;
+  border-radius: 2rem;
+  background: #f2f0ee;
+  color: #3e2e26;
+  font: inherit;
+  font-size: .85rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+}
+.home-page .gallery__item:hover .pillow-sound,
+.home-page .gallery__item:focus-within .pillow-sound {
+  opacity: 1;
+  pointer-events: auto;
+}
+.home-page .pillow-sound:focus-visible {
+  outline: 2px solid #3e2e26;
+  outline-offset: 3px;
+}
+
+/* Preserve the original cover layout; position only carousel models absolutely. */
+.home-page .gallery .fashion-card > a.fashion-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  overflow: visible;
+  isolation: isolate;
+}
+.home-page .gallery .fashion-stage .img9 {
+  opacity: 1;
+  transition: opacity 350ms ease;
+}
+.home-page .gallery .fashion-stage .fashion-room {
+  position: absolute;
+  inset: 0 calc(-1 * clamp(1.25rem, 2vw, 2.25rem));
+  overflow: hidden;
+  border-radius: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  background: url('../images/fashion-catwalk-sketch.svg?v=perspective-4') center / 100% 100% no-repeat;
+  transition: opacity 400ms ease;
+}
+.home-page .gallery .fashion-room__floor {
+  display: none;
+  position: absolute;
+  inset: 72% 0 0;
+  border-top: 1px solid rgb(70 65 60 / 18%);
+  background:
+    radial-gradient(ellipse at 50% 78%, rgb(45 39 34 / 26%) 0, transparent 17%),
+    radial-gradient(ellipse at 15% 34%, rgb(45 39 34 / 20%) 0, transparent 14%),
+    radial-gradient(ellipse at 85% 34%, rgb(45 39 34 / 20%) 0, transparent 14%),
+    linear-gradient(115deg, transparent 31%, rgb(85 79 72 / 12%) 31.3%, transparent 31.7%),
+    linear-gradient(65deg, transparent 68%, rgb(85 79 72 / 12%) 68.3%, transparent 68.7%),
+    linear-gradient(#a9a49c, #c6c1b8);
+  box-shadow: inset 0 8px 16px -12px rgb(50 45 40 / 40%);
+}
+.home-page .gallery .fashion-playing .fashion-stage .fashion-room {
+  opacity: 1;
+}
+.home-page .gallery .fashion-card > .fashion-stage img.fashion-model {
+  position: absolute;
+  inset: auto;
+  left: 50%;
+  top: 50%;
+  width: 44%;
+  height: 88%;
+  min-width: 0;
+  min-height: 0;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+  mix-blend-mode: normal;
+  opacity: 0;
+  transform: translate(-50%, -50%) translateX(calc(var(--slot) * 80%)) scale(.68);
+  transition: opacity 450ms ease, transform 650ms cubic-bezier(.22, 1, .36, 1);
+}
+.home-page .gallery .fashion-playing .fashion-stage .img9 { opacity: 0; }
+.home-page .gallery .fashion-playing .fashion-stage img.fashion-model.is-side {
+  opacity: 1;
+}
+.home-page .gallery .fashion-playing .fashion-stage img.fashion-model.is-center {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-page .gallery .fashion-card > .fashion-stage img { transition: none !important; }
+  .home-page .gallery .fashion-stage .fashion-room { transition: none; }
 }

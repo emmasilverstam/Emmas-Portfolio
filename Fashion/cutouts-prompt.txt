@@ -1,0 +1,5 @@
+Tool: built-in image_gen, transparent_background=true.
+Inputs: model1.jpg through model7.jpg, one background removal edit per input.
+Outputs: model1-cutout.png through model7-cutout.png.
+
+Remove only the white background from this fashion illustration. Output a transparent PNG cutout of the exact original single full body woman, preserving all drawing details, face, hair, pose, garment colors, white garment areas, lace and shoes. Entire figure from hair to shoe soles must be visible with small transparent margins, no cropping, no redesign, no shadow, no text. Keep original tall portrait aspect ratio. This is a background removal edit for a portfolio website.

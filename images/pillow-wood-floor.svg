@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="none">
+<defs>
+<g id="plank">
+<path d="M0 0h88v22H0z" fill="#c8a07a" stroke="#856448" stroke-width=".85"/>
+</g>
+<pattern id="herringbone" width="176" height="176" patternUnits="userSpaceOnUse" patternTransform="rotate(45) scale(1.8)">
+<path fill="#d8b994" d="M0 0h176v176H0z"/>
+<use href="#plank" x="-176" y="0" opacity="0.83"/>
+<use href="#plank" x="0" y="0" opacity="0.83"/>
+<use href="#plank" x="-154" y="22" opacity="0.8999999999999999"/>
+<use href="#plank" x="22" y="22" opacity="0.8999999999999999"/>
+<use href="#plank" x="-132" y="44" opacity="0.97"/>
+<use href="#plank" x="44" y="44" opacity="0.97"/>
+<use href="#plank" x="-110" y="66" opacity="0.83"/>
+<use href="#plank" x="66" y="66" opacity="0.83"/>
+<use href="#plank" x="-88" y="88" opacity="0.8999999999999999"/>
+<use href="#plank" x="88" y="88" opacity="0.8999999999999999"/>
+<use href="#plank" x="-66" y="110" opacity="0.97"/>
+<use href="#plank" x="110" y="110" opacity="0.97"/>
+<use href="#plank" x="-44" y="132" opacity="0.83"/>
+<use href="#plank" x="132" y="132" opacity="0.83"/>
+<use href="#plank" x="-22" y="154" opacity="0.8999999999999999"/>
+<use href="#plank" x="154" y="154" opacity="0.8999999999999999"/>
+<use href="#plank" transform="translate(22 -154) rotate(90)" opacity="0.8"/>
+<use href="#plank" transform="translate(22 22) rotate(90)" opacity="0.8"/>
+<use href="#plank" transform="translate(44 -132) rotate(90)" opacity="0.88"/>
+<use href="#plank" transform="translate(44 44) rotate(90)" opacity="0.88"/>
+<use href="#plank" transform="translate(66 -110) rotate(90)" opacity="0.9600000000000001"/>
+<use href="#plank" transform="translate(66 66) rotate(90)" opacity="0.9600000000000001"/>
+<use href="#plank" transform="translate(88 -88) rotate(90)" opacity="0.8"/>
+<use href="#plank" transform="translate(88 88) rotate(90)" opacity="0.8"/>
+<use href="#plank" transform="translate(110 -66) rotate(90)" opacity="0.88"/>
+<use href="#plank" transform="translate(110 110) rotate(90)" opacity="0.88"/>
+<use href="#plank" transform="translate(132 -44) rotate(90)" opacity="0.9600000000000001"/>
+<use href="#plank" transform="translate(132 132) rotate(90)" opacity="0.9600000000000001"/>
+<use href="#plank" transform="translate(154 -22) rotate(90)" opacity="0.8"/>
+<use href="#plank" transform="translate(154 154) rotate(90)" opacity="0.8"/>
+<use href="#plank" transform="translate(176 0) rotate(90)" opacity="0.88"/>
+<use href="#plank" transform="translate(176 176) rotate(90)" opacity="0.88"/>
+</pattern>
+<radialGradient id="light"><stop stop-color="#f9e8ce" stop-opacity=".18"/><stop offset="1" stop-color="#73513b" stop-opacity=".1"/></radialGradient>
+</defs>
+<path fill="url(#herringbone)" d="M0 0h800v600H0z"/>
+<path fill="url(#light)" d="M0 0h800v600H0z"/>
+</svg>

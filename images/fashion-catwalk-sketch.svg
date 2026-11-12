@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="none">
+  <defs>
+    <pattern id="pencil" width="47" height="39" patternUnits="userSpaceOnUse">
+      <path d="M2 32l10-13m17 19 12-17M18 9l4-5" fill="none" stroke="#777168" stroke-width=".65" opacity=".12"/>
+    </pattern>
+    <linearGradient id="paper" x2="0" y2="1">
+      <stop stop-color="#e6e2db"/><stop offset="1" stop-color="#d8d3ca"/>
+    </linearGradient>
+  </defs>
+  <path fill="#e9e5de" d="M0 0h800v600H0z"/>
+  <path fill="url(#paper)" d="M0 432l397-3 403 5v166H0z"/>
+  <path fill="url(#pencil)" d="M0 0h800v600H0z"/>
+  <g fill="none" stroke="#7d776f" stroke-linecap="round" stroke-linejoin="round">
+    <g opacity=".45" stroke-width="1.15">
+      <path d="M-8 432l143-2 126 3 136-4 174 4 132-2 108 3"/>
+      <path d="M-9 435l195-2 211-1 207 3 207 1" opacity=".4"/>
+      <path d="M261-5l2 108-2 146 3 184M542-5l-2 144 3 152-2 141"/>
+      <path d="M258 22l2 158-1 135m286-277-3 169 2 167" opacity=".35"/>
+      <path d="M0 207l128 2 135-2m0 0 143 2 134-3m3 0 152 3 105-2" opacity=".6"/>
+      <!-- Floor seams share the vanishing point (400, 240). -->
+      <path d="M309 432L229.4 600M491 432L570.6 600M100 432L-162.5 600M700 432L962.5 600"/>
+      <path d="M308 435L227 600M492 435L573 600" opacity=".3"/>
+      <!-- Tile rows spread out towards the viewer. -->
+      <path d="M0 452l198-1 202 1 201-1 199 1M0 482l202 1 198-1 204 1 196-1M0 528l201-1 199 1 202-1 198 1M0 594l197 1 203-1 204 1 196-1" opacity=".45"/>
+    </g>
+    <g stroke-width=".8" opacity=".18">
+      <path d="M25 398l18-24m-12 34 24-31m-7 33 19-25m-5 25 14-17M723 379l29-33m-19 44 27-33m-14 41 26-34M279 30l15-20m-9 31 21-28M22 555l29-23m-15 31 29-24m-12 32 27-21M690 572l27-23m-13 32 33-28"/>
+      <path d="M80 89l37 1m-31 4 47 1m498 196 40 1m-31 4 24 1M331 393l38 1m-27 4 46-1"/>
+    </g>
+    <g opacity=".2" stroke-width="1.5">
+      <path d="M341 551q59-9 118 0m-107 4q48-6 96 0m-82 4 68-1M103 475q34-6 68 0m-57 4 46-1M629 475q34-6 68 0m-57 4 46-1"/>
+    </g>
+  </g>
+</svg>
