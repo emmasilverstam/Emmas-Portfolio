@@ -30,7 +30,7 @@
   let pointerInside = false;
   let requested = false;
   function syncPlaybackRate() {
-    const rate = video.currentTime >= 20 ? 1 : 3;
+    const rate = video.currentTime >= 20 ? 1 : video.currentTime >= 14 ? 1.5 : 3;
     if (video.playbackRate !== rate) video.playbackRate = rate;
   }
   video.addEventListener('timeupdate', syncPlaybackRate);
