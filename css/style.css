@@ -3179,6 +3179,11 @@ body.home-page {
   }
 }
 
+.home-page .gallery__item:has(> a.museum-card-stage) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
 .home-page .gallery__item > a.museum-card-stage { position: relative; }
 .home-page .museum-card-stage .museum-card-floor {
   position: absolute;
@@ -3214,7 +3219,6 @@ body.home-page {
   mask-image: linear-gradient(to bottom, #000 0 18%, transparent 29%), linear-gradient(to right, #000 0 28%, transparent 36% 81%, #000 89%);
   mask-composite: intersect;
 }
-.home-page .gallery .museum-playing img.museum-card-soft-edge { opacity: 1; }
 
 .home-page .gallery__item:has(> a.pillow-card-stage) {
   overflow: hidden;
@@ -3225,18 +3229,25 @@ body.home-page {
   isolation: isolate;
   overflow: visible;
 }
+.home-page .pillow-card-stage .img5 {
+  z-index: 1;
+}
 .home-page .pillow-card-stage .pillow-card-floor {
   position: absolute;
-  inset: 0 calc(-1 * clamp(1.25rem, 2vw, 2.25rem));
+  inset: calc(-1 * clamp(1.25rem, 2vw, 2.25rem)) calc(-1 * clamp(1.25rem, 2vw, 2.25rem)) 0;
   z-index: 0;
   pointer-events: none;
   background: url('../images/pillow-wood-floor.svg?v=simple-4') center / cover;
   opacity: 0;
-  transition: opacity 350ms ease;
+  transition: none;
 }
 .home-page .pillow-playing .pillow-card-floor {
   opacity: 1;
 }
+@media (hover: hover) and (pointer: fine) {
+  .home-page .gallery__item:hover .pillow-card-floor { opacity: 1; }
+}
+.home-page .gallery__item:focus-within .pillow-card-floor { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   .home-page .pillow-card-stage .pillow-card-floor { transition: none; }
 }
@@ -3294,6 +3305,9 @@ body.home-page {
 }
 
 /* Preserve the original cover layout; position only carousel models absolutely. */
+.home-page .gallery .fashion-card {
+  overflow: hidden;
+}
 .home-page .gallery .fashion-card > a.fashion-stage {
   position: relative;
   display: grid;
@@ -3308,7 +3322,7 @@ body.home-page {
 }
 .home-page .gallery .fashion-stage .fashion-room {
   position: absolute;
-  inset: 0 calc(-1 * clamp(1.25rem, 2vw, 2.25rem));
+  inset: calc(-1 * clamp(1.25rem, 2vw, 2.25rem)) calc(-1 * clamp(1.25rem, 2vw, 2.25rem)) 0;
   overflow: hidden;
   border-radius: 0;
   pointer-events: none;
@@ -3497,6 +3511,16 @@ body.home-page {
   --flowerpot-background-replay: flowerpot-background-replay;
   --flowerpot-background-colors: flowerpot-background-colors;
 }
+.home-page .gallery__item.mobile-card-visible:has(.flowerpot-scene) {
+  --flowerpot-hand-animation: flowerpot-hand-replay;
+  --flowerpot-light-sequence: flowerpot-light-replay;
+  --flowerpot-light-animation: flowerpot-colors;
+  --flowerpot-background-opacity: 1;
+  --flowerpot-background-replay: flowerpot-background-replay;
+  --flowerpot-background-colors: flowerpot-background-colors;
+}
+.home-page .mobile-card-visible .pillow-card-floor { opacity: 1; }
+.home-page .mobile-card-visible .pillow-sound { opacity: 1; pointer-events: auto; }
 
 @media (prefers-reduced-motion: reduce) {
   .home-page .gallery .gallery__item > a:has(.flowerpot-scene)::before {
@@ -3521,5 +3545,109 @@ body.home-page {
     width: 100%;
     height: 100%;
     max-width: none;
+  }
+}
+
+/* Furniture configurations replace the overview one at a time on hover. */
+.home-page .gallery .furniture-card {
+  --furniture-inset: clamp(1.25rem, 2vw, 2.25rem);
+  --furniture-zoom: 1.25;
+  grid-template-columns: minmax(0, 1fr);
+  padding-top: var(--furniture-inset);
+  overflow: hidden;
+}
+.home-page .gallery .furniture-card > .furniture-stage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: calc(100% + 2 * var(--furniture-inset));
+  height: clamp(15rem, 23vw, 27rem);
+  aspect-ratio: auto;
+  margin-left: calc(-1 * var(--furniture-inset));
+  margin-right: calc(-1 * var(--furniture-inset));
+}
+.home-page .gallery .furniture-playing {
+  padding-top: 0;
+}
+.home-page .gallery .furniture-playing > .furniture-stage {
+  height: calc(clamp(15rem, 23vw, 27rem) + var(--furniture-inset));
+}
+.home-page .gallery .furniture-card > .furniture-stage::before {
+  content: '';
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: var(--furniture-scene-size, 100%);
+  height: var(--furniture-scene-size, 100%);
+  transform-origin: 0 0;
+  transform: translate(-50%, -50%) translateX(50%) scale(var(--furniture-zoom)) translateX(-50%);
+  z-index: -1;
+  border-radius: 0;
+  background: url('../urban/hover-room-no-window.png') center / cover no-repeat;
+  visibility: hidden;
+  pointer-events: none;
+}
+.home-page .gallery .furniture-playing > .furniture-stage::before {
+  visibility: visible;
+}
+.home-page .gallery .furniture-card .furniture-frame {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  margin: 0;
+  width: var(--furniture-scene-size, 100%);
+  height: var(--furniture-scene-size, 100%);
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  visibility: hidden;
+  pointer-events: none;
+  transform-origin: 0 0;
+  /* Fix the upper corner; each uniform scale also puts the rear feet on the wall/floor line. */
+  transform: translate(-50%, -50%) translateX(50%) scale(var(--furniture-zoom)) translateX(-50%) translate(59.5%, var(--furniture-top-y, 18.5%)) scale(var(--furniture-scale, 1)) translate(calc(-1 * var(--furniture-anchor-x)), calc(-1 * var(--furniture-anchor-y)));
+}
+.home-page .gallery .furniture-frame[data-configuration="1"] {
+  --furniture-top-y: 17.2%;
+  --furniture-anchor-x: 68%;
+  --furniture-anchor-y: 5.4%;
+  --furniture-scale: .48;
+  filter: saturate(.95);
+}
+.home-page .gallery .furniture-frame[data-configuration="2"] {
+  --furniture-anchor-x: 65.2%;
+  --furniture-anchor-y: 18.2%;
+  --furniture-scale: .537;
+  filter: hue-rotate(-4deg) saturate(.9);
+}
+.home-page .gallery .furniture-frame[data-configuration="3"] {
+  --furniture-anchor-x: 52.6%;
+  --furniture-anchor-y: 7.9%;
+  --furniture-scale: .631;
+  filter: hue-rotate(-6deg) saturate(.87);
+}
+.home-page .gallery .furniture-frame[data-configuration="4"] {
+  --furniture-top-y: 17.3%;
+  --furniture-anchor-x: 49%;
+  --furniture-anchor-y: 21.7%;
+  --furniture-scale: .58;
+  filter: hue-rotate(4deg) saturate(.95);
+}
+.home-page .gallery .furniture-playing .furniture-cover {
+  visibility: hidden;
+}
+.home-page .gallery .furniture-playing .furniture-frame.is-current {
+  visibility: visible;
+}
+
+@media (max-width: 1050px) {
+  .home-page .gallery .furniture-card > .furniture-stage {
+    height: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-page .gallery .furniture-card > .furniture-stage {
+    height: clamp(15rem, 76vw, 26rem);
+  }
+  .home-page .gallery .furniture-playing > .furniture-stage {
+    height: calc(clamp(15rem, 76vw, 26rem) + var(--furniture-inset));
   }
 }

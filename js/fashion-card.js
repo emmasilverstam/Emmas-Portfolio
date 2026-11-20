@@ -52,11 +52,12 @@
     timer = setTimeout(advance, 500);
   }
   function update() {
-    if (!document.hidden && ((pointerInside && hover.matches) || card.matches(':focus-within'))) start();
+    if (!document.hidden && ((pointerInside && hover.matches) || card.classList.contains('mobile-card-visible') || card.matches(':focus-within'))) start();
     else stop();
   }
   position();
   card.addEventListener('pointerenter', () => { pointerInside = true; update(); });
+  card.addEventListener('cardvisibilitychange', update);
   card.addEventListener('pointerleave', () => { pointerInside = false; update(); });
   card.addEventListener('focusin', update);
   card.addEventListener('focusout', () => setTimeout(update, 0));

@@ -78,7 +78,7 @@
     card.classList.remove('museum-playing');
   }
   function update() {
-    if (!document.hidden && ((pointerInside && hover.matches) || card.matches(':focus-visible, :has(:focus-visible)'))) {
+    if (!document.hidden && ((pointerInside && hover.matches) || card.classList.contains('mobile-card-visible') || card.matches(':focus-visible, :has(:focus-visible)'))) {
       if (requested) return;
       requested = true;
       video.play().catch(stop);
@@ -93,7 +93,8 @@
   });
   video.addEventListener('error', stop);
   card.addEventListener('pointerenter', () => { pointerInside = true; update(); });
-  card.addEventListener('pointerleave', () => { pointerInside = false; stop(); });
+  card.addEventListener('cardvisibilitychange', update);
+  card.addEventListener('pointerleave', () => { pointerInside = false; update(); });
   card.addEventListener('focusin', update);
   card.addEventListener('focusout', () => setTimeout(update, 0));
   document.addEventListener('visibilitychange', update);

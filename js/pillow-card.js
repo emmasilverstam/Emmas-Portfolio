@@ -201,10 +201,11 @@
   video.addEventListener('playing', () => {
     if (!requested) { stop(); return; }
     layout();
+    lastBodyTime = -1;
+    drawBody(0);
     cover.style.visibility = 'hidden';
     video.classList.add('is-playing');
     body.classList.add('is-playing');
-    lastBodyTime = -1;
     card.classList.add('pillow-playing');
     cancelAnimationFrame(mouthFrame);
     animateMouth();
@@ -249,10 +250,11 @@
     }
   }
   function update() {
-    if (!document.hidden && ((pointerInside && hover.matches) || card.matches(':focus-within'))) start();
+    if (!document.hidden && ((pointerInside && hover.matches) || card.classList.contains('mobile-card-visible') || card.matches(':focus-within'))) start();
     else stop();
   }
   card.addEventListener('pointerenter', () => { pointerInside = true; update(); });
+  card.addEventListener('cardvisibilitychange', update);
   card.addEventListener('pointerleave', () => {
     pointerInside = false;
     // A mouse click leaves the sound button focused; end the hover preview anyway.
