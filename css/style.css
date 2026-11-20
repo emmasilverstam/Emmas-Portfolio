@@ -1682,7 +1682,7 @@ section {
   box-shadow: none;
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (min-width: 601px) {
   .home-page .header .bildcv:hover {
     background-image: url(../images/bild2.png);
   }
@@ -2826,13 +2826,13 @@ body.home-page {
   }
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (min-width: 601px) {
   .home-page .header .bildcv.portrait-held:hover {
     background-image: url(../images/bild4.png);
   }
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (min-width: 601px) {
   .home-page .header .bildcv.portrait-middle:hover {
     background-image: url(../images/bild3.png);
   }
@@ -3090,7 +3090,7 @@ body.home-page {
 }
 
 /* Fill the exposed portrait edge with each pink photo's background tone. */
-@media (hover: hover) and (pointer: fine) {
+@media (min-width: 601px) {
   .home-page .header .bildcv:hover { background-color: #fce3e8; }
   .home-page .header .bildcv.portrait-middle:hover { background-color: #fde4e9; }
   .home-page .header .bildcv.portrait-held:hover { background-color: #fce2e7; }
