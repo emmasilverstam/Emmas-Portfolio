@@ -3244,7 +3244,7 @@ body.home-page {
 .home-page .pillow-playing .pillow-card-floor {
   opacity: 1;
 }
-@media (hover: hover) and (pointer: fine) {
+@media (min-width: 601px) {
   .home-page .gallery__item:hover .pillow-card-floor { opacity: 1; }
 }
 .home-page .gallery__item:focus-within .pillow-card-floor { opacity: 1; }
@@ -3492,7 +3492,7 @@ body.home-page {
   50% { filter: hue-rotate(55deg); }
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (min-width: 601px) {
   .home-page .gallery__item:has(.flowerpot-scene):hover {
     --flowerpot-hand-animation: flowerpot-hand-replay;
     --flowerpot-light-sequence: flowerpot-light-replay;
@@ -3511,7 +3511,7 @@ body.home-page {
   --flowerpot-background-replay: flowerpot-background-replay;
   --flowerpot-background-colors: flowerpot-background-colors;
 }
-@media (max-width: 600px), (hover: none) {
+@media (max-width: 600px) {
   .home-page .gallery__item:hover { transform: none; background-color: #f2f0ee; }
   .home-page .gallery__item:has(.flowerpot-scene):focus-within {
     --flowerpot-hand-animation: none;

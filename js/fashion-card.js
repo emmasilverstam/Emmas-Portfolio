@@ -52,11 +52,11 @@
     timer = setTimeout(advance, 500);
   }
   function update() {
-    if (!document.hidden && !matchMedia('(max-width: 600px), (hover: none)').matches && ((pointerInside && hover.matches) || card.matches(':focus-within'))) start();
+    if (!document.hidden && !matchMedia('(max-width: 600px)').matches && (pointerInside || card.matches(':focus-visible, :has(:focus-visible)'))) start();
     else stop();
   }
   position();
-  card.addEventListener('pointerenter', () => { pointerInside = true; update(); });
+  card.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') { pointerInside = true; update(); } });
   card.addEventListener('cardvisibilitychange', update);
   card.addEventListener('pointerleave', () => { pointerInside = false; update(); });
   card.addEventListener('focusin', update);

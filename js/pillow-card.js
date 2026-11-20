@@ -60,7 +60,7 @@
   video.classList.add('pillow-card-source');
   let lastBodyTime = -1;
   function drawBody(level) {
-    if (!bodyContext || lastBodyTime === video.currentTime) return;
+    if (!bodyContext || video.readyState < 2 || lastBodyTime === video.currentTime) return;
     lastBodyTime = video.currentTime;
     const ctx = bodyContext;
     ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -250,15 +250,15 @@
     }
   }
   function update() {
-    if (!document.hidden && !matchMedia('(max-width: 600px), (hover: none)').matches && ((pointerInside && hover.matches) || card.matches(':focus-within'))) start();
+    if (!document.hidden && !matchMedia('(max-width: 600px)').matches && (pointerInside || card.matches(':focus-visible, :has(:focus-visible)'))) start();
     else stop();
   }
-  card.addEventListener('pointerenter', () => { pointerInside = true; update(); });
+  card.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') { pointerInside = true; update(); } });
   card.addEventListener('cardvisibilitychange', update);
-  card.addEventListener('pointerleave', () => {
+  card.addEventListener('pointerleave', event => {
     pointerInside = false;
     // A mouse click leaves the sound button focused; end the hover preview anyway.
-    if (hover.matches) {
+    if (event.pointerType === 'mouse') {
       if (document.activeElement === soundButton) soundButton.blur();
       stop();
     } else update();
