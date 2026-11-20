@@ -51,7 +51,7 @@
     timer = setTimeout(advance, current === 0 ? 800 : 1200);
   }
   function update() {
-    const wanted = !document.hidden && ((inside && hover.matches) || card.classList.contains('mobile-card-visible') || card.matches(':has(:focus-visible)'));
+    const wanted = !document.hidden && !matchMedia('(max-width: 600px), (hover: none)').matches && ((inside && hover.matches) || card.matches(':has(:focus-visible)'));
     if (!wanted) { stop(); return; }
     if (active || !frames[0].complete || !frames[0].naturalWidth || !room.complete || !room.naturalWidth) return;
     active = true;

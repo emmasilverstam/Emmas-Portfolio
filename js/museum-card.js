@@ -78,7 +78,7 @@
     card.classList.remove('museum-playing');
   }
   function update() {
-    if (!document.hidden && ((pointerInside && hover.matches) || card.classList.contains('mobile-card-visible') || card.matches(':focus-visible, :has(:focus-visible)'))) {
+    if (!document.hidden && !matchMedia('(max-width: 600px), (hover: none)').matches && ((pointerInside && hover.matches) || card.matches(':focus-visible, :has(:focus-visible)'))) {
       if (requested) return;
       requested = true;
       video.play().catch(stop);

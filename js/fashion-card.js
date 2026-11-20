@@ -52,7 +52,7 @@
     timer = setTimeout(advance, 500);
   }
   function update() {
-    if (!document.hidden && ((pointerInside && hover.matches) || card.classList.contains('mobile-card-visible') || card.matches(':focus-within'))) start();
+    if (!document.hidden && !matchMedia('(max-width: 600px), (hover: none)').matches && ((pointerInside && hover.matches) || card.matches(':focus-within'))) start();
     else stop();
   }
   position();
